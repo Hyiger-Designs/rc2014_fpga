@@ -18,7 +18,7 @@
 #
 # Quartus Prime
 # Version 18.1.0 Build 625 09/12/2018 SJ Lite Edition
-# Date created = 20:59:51  March 07, 2019
+# Date created = 22:33:32  March 07, 2019
 #
 # -------------------------------------------------------------------------- #
 #
@@ -43,6 +43,7 @@ set_global_assignment -name ORIGINAL_QUARTUS_VERSION 16.0.0
 set_global_assignment -name LAST_QUARTUS_VERSION "18.1.0 Lite Edition"
 set_global_assignment -name PROJECT_CREATION_TIME_DATE "18:33:33 MARCH 07,2019"
 set_global_assignment -name PROJECT_OUTPUT_DIRECTORY output_files
+set_global_assignment -name VHDL_FILE ../rtl/ROM_Page.vhd
 set_global_assignment -name SDC_FILE RC2014_fpga.sdc
 set_global_assignment -name VHDL_FILE ../rtl/T80/T80s.vhd
 set_global_assignment -name VHDL_FILE ../rtl/T80/T80_Reg.vhd
@@ -66,6 +67,7 @@ set_location_assignment PIN_B8 -to n_reset
 set_location_assignment PIN_W9 -to txd
 set_location_assignment PIN_W8 -to rxd
 set_location_assignment PIN_V5 -to rts
+set_location_assignment PIN_A8 -to page_LED
 
 # Classic Timing Assignments
 # ==========================
@@ -101,6 +103,7 @@ set_global_assignment -name USE_CONFIGURATION_DEVICE OFF
 # ============================
 set_global_assignment -name POWER_PRESET_COOLING_SOLUTION "23 MM HEAT SINK WITH STILL AIR"
 set_global_assignment -name POWER_BOARD_THERMAL_MODEL "NONE (CONSERVATIVE)"
+set_global_assignment -name POWER_USE_TA_VALUE 20
 
 # Advanced I/O Timing Assignments
 # ===============================
@@ -125,11 +128,10 @@ set_global_assignment -name OUTPUT_IO_TIMING_FAR_END_VMEAS "HALF SIGNAL SWING" -
 		set_global_assignment -name PARTITION_NETLIST_TYPE SOURCE -section_id Top
 		set_global_assignment -name PARTITION_FITTER_PRESERVATION_LEVEL PLACEMENT_AND_ROUTING -section_id Top
 		set_global_assignment -name PARTITION_COLOR 16764057 -section_id Top
+		set_instance_assignment -name PARTITION_HIERARCHY root_partition -to | -section_id Top
 
 	# end DESIGN_PARTITION(Top)
 	# -------------------------
 
 # end ENTITY(RC2014_fpga)
 # -----------------------
-set_global_assignment -name POWER_USE_TA_VALUE 20
-set_instance_assignment -name PARTITION_HIERARCHY root_partition -to | -section_id Top

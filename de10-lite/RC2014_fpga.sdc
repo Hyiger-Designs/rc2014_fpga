@@ -50,7 +50,7 @@ derive_clock_uncertainty
 # Set False Path
 #**************************************************************
 set_false_path -from [get_ports n_reset]
-
+set_false_path -from [get_ports page_LED]
 
 #**************************************************************
 # Set Multicycle Path

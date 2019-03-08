@@ -9,14 +9,17 @@ entity RC2014_fpga is
 		n_reset : in  std_logic;
 		rxd     : in  std_logic;
 		txd     : out std_logic;
-		rts     : out std_logic
+		rts     : out std_logic;
+		
+		page_LED : out std_logic
 	);
 end RC2014_fpga;
 
 architecture struct of RC2014_fpga is
 	-- Frequency of board clock in Hz
-	constant CLK_FREQUENCY : Real := 50000000.0;
-
+	constant BRD_FREQUENCY : Real := 50000000.0;
+	constant CPU_FREQUENCY : Real := 7372800.0;
+	
 	signal CPU_clk : std_logic;
 	signal n_WR    : std_logic;
 	signal n_RD    : std_logic;
@@ -64,8 +67,8 @@ begin
 	-- Z80 CPU clock - 7.3728 Mhz
 	clk1 : entity work.fracn20
 		generic map(
-			input_frequency    => CLK_FREQUENCY,
-			output_frequency   => 7372800.0,
+			input_frequency    => BRD_FREQUENCY,
+			output_frequency   => CPU_FREQUENCY,
 			improve_duty_cycle => TRUE
 		)
 		port map(
@@ -110,6 +113,15 @@ begin
 			RTS_n    => rts             -- Request To send
 		);
 
+	-- Page out rom on port 0x38
+	page : entity work.ROM_Page
+		port map(
+			nWR 		=> UART_nWR,
+			nReset  	=> n_reset,
+			A        => A,
+			nPage		=> ROM_nPage
+		);
+
 	-- 32K ROM from 0x0000 to 0x7FFF
 	ROM_nCS <= '0' when A(15) = '0' and ROM_nPage = '0' else '1';
 
@@ -127,16 +139,6 @@ begin
 		else RAM_D when RAM_nCS = '0'
 		else x"FF";
 
-	-- Disable ROM if out 38. Re-enable when (asynchronous) reset pressed
-	process(UART_nWR, n_reset)
-	begin
-		if (n_reset = '0') then
-			ROM_nPage <= '0';
-		elsif (rising_edge(UART_nWR)) then
-			if A(7 downto 0) = to_stdlogicvector(x"38") then
-				ROM_nPage <= '1';
-			end if;
-		end if;
-	end process;
-
+	page_LED <= not ROM_nPage;
+	
 end;

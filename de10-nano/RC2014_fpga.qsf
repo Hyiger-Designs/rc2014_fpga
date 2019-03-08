@@ -18,7 +18,7 @@
 #
 # Quartus Prime
 # Version 18.1.0 Build 625 09/12/2018 SJ Lite Edition
-# Date created = 21:24:30  March 07, 2019
+# Date created = 22:20:39  March 07, 2019
 #
 # -------------------------------------------------------------------------- #
 #
@@ -58,6 +58,7 @@ set_global_assignment -name VHDL_FILE ../rtl/acia6850.vhd
 set_global_assignment -name SOURCE_FILE RC2014_fpga.qsf
 set_global_assignment -name CDF_FILE output_files/RC2014_fpga.cdf
 set_global_assignment -name QIP_FILE SCM_V100_S3_SCS3_32K.qip
+set_global_assignment -name VHDL_FILE ../rtl/ROM_Page.vhd
 
 # Pin & Location Assignments
 # ==========================
@@ -66,6 +67,7 @@ set_location_assignment PIN_AH17 -to n_reset
 set_location_assignment PIN_D11 -to txd
 set_location_assignment PIN_AH13 -to rxd
 set_location_assignment PIN_AH3 -to rts
+set_location_assignment PIN_W15 -to page_LED
 
 # Compiler Assignments
 # ====================
@@ -108,7 +110,6 @@ set_global_assignment -name POWER_USE_TA_VALUE 22
 
 		# Incremental Compilation Assignments
 		# ===================================
-		set_instance_assignment -name PARTITION_HIERARCHY root_partition -to | -section_id Top
 		set_global_assignment -name PARTITION_NETLIST_TYPE SOURCE -section_id Top
 		set_global_assignment -name PARTITION_FITTER_PRESERVATION_LEVEL PLACEMENT_AND_ROUTING -section_id Top
 		set_global_assignment -name PARTITION_COLOR 16764057 -section_id Top
@@ -118,3 +119,4 @@ set_global_assignment -name POWER_USE_TA_VALUE 22
 
 # end ENTITY(RC2014_fpga)
 # -----------------------
+set_instance_assignment -name PARTITION_HIERARCHY root_partition -to | -section_id Top
