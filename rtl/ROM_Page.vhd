@@ -6,12 +6,12 @@ use ieee.numeric_std.all;
 
 entity ROM_Page is
 	generic(page_port : integer := 16#38#);
-	
+
 	port(
-		nWR 		: 	in  std_logic;
-		nReset	: in  std_logic;
-		A        : in  std_logic_vector(15 downto 0);
-		nPage		: out std_logic
+		nWR    : in  std_logic;
+		nReset : in  std_logic;
+		A      : in  std_logic_vector(15 downto 0);
+		nPage  : out std_logic
 	);
 end ROM_Page;
 

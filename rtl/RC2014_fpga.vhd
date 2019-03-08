@@ -1,17 +1,66 @@
+-- RC2014 Emulator
+-- Z80 CPU at 7.3728mhz
+-- 64K RAM
+-- 64K Pageable ROM with 8K page size and page selection
+-- Dual ACIA 6850 UARTs at 115200 8N1
+-- SD Filesystem
+
+-- see: https://rc2014.co.uk/ for details
+
+-- License:
+--  This source code (and accompanying test bench and scripts) are released
+--  under the terms of the BSD license.
+--  http://www.opensource.org/licenses/bsd-license.html
+--
+--    Copyright (c) 2003, Allan Herriman
+--    All rights reserved.
+--
+--    Redistribution and use in source and binary forms, with or without
+--    modification, are permitted provided that the following conditions
+--    are met:
+--
+--        Redistributions of source code must retain the above copyright
+--        notice, this list of conditions and the following disclaimer.
+--        Redistributions in binary form must reproduce the above copyright
+--        notice, this list of conditions and the following disclaimer in
+--        the documentation and/or other materials provided with the
+--        distribution.
+--        The name of Richard Lewis may not be used to endorse or promote
+--        products derived from this software without specific prior
+--        written permission.
+--
+--    THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS
+--    "AS IS" AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT
+--    LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR
+--    A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT
+--    OWNER OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL,
+--    SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT
+--    LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE,
+--    DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY
+--    THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT
+--    (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE
+--    OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+
 library ieee;
 use ieee.std_logic_1164.all;
 use IEEE.STD_LOGIC_ARITH.all;
 use IEEE.STD_LOGIC_UNSIGNED.all;
+use ieee.numeric_std.all;
 
 entity RC2014_fpga is
+  generic (
+    rom_select      : natural := 0        -- 0 = SCM, 1 - CPM/Basic
+  );
 	port(
-		clk     : in  std_logic;
-		n_reset : in  std_logic;
-		rxd     : in  std_logic;
-		txd     : out std_logic;
-		rts     : out std_logic;
+		clk        	: in  std_logic;
+		n_reset    	: in  std_logic;
+
+		rxd        	: in  std_logic;
+		txd        	: out std_logic;
+		rts        	: out std_logic;
 		
-		page_LED : out std_logic
+		page_select	: in  std_logic_vector(2 downto 0);
+		page_LED   	: out std_logic_vector(7 downto 0)
 	);
 end RC2014_fpga;
 
@@ -19,7 +68,7 @@ architecture struct of RC2014_fpga is
 	-- Frequency of board clock in Hz
 	constant BRD_FREQUENCY : Real := 50000000.0;
 	constant CPU_FREQUENCY : Real := 7372800.0;
-	
+
 	signal CPU_clk : std_logic;
 	signal n_WR    : std_logic;
 	signal n_RD    : std_logic;
@@ -43,6 +92,8 @@ architecture struct of RC2014_fpga is
 	signal UART_nWR : std_logic := '1';
 	signal UART_nRD : std_logic := '1';
 	signal UART_nCS : std_logic := '1';
+	
+	signal nPage_LED   : std_logic_vector(7 downto 0);
 
 begin
 
@@ -76,14 +127,27 @@ begin
 			output_50 => CPU_clk
 		);
 
-	-- TODO: figure out how to infer a ROM/RAM from a file
-	rom32k : entity work.SCM_V100_S3_SCS3_32K
-		port map(
-			clock   => clk,
-			address => A(14 downto 0),
-			q       => ROM_D
-		);
-
+	scm : if rom_select = 0 generate
+		rom32k : entity work.SCM_V100_S3_SCS3_32K
+			port map(
+				clock   => clk,
+				address => A(14 downto 0),
+				q       => ROM_D
+			);
+		ROM_nCS <= '0' when A(15) = '0' and ROM_nPage = '0' else '1';
+	end generate scm;
+	
+	cpm_basic : if rom_select = 1 generate
+			rom8k : entity work.CPM_BASIC
+			port map(
+				clock   => clk,
+				address => A(12 downto 0),
+				q       => ROM_D
+			);
+		
+		ROM_nCS <= '0' when A(15 downto 13) = "000" and ROM_nPage = '0' else '1';
+	end generate cpm_basic;
+	
 	ram64k : entity work.single_port_ram
 		port map(
 			clock   => clk,
@@ -116,29 +180,36 @@ begin
 	-- Page out rom on port 0x38
 	page : entity work.ROM_Page
 		port map(
-			nWR 		=> UART_nWR,
-			nReset  	=> n_reset,
-			A        => A,
-			nPage		=> ROM_nPage
+			nWR    => UART_nWR,
+			nReset => n_reset,
+			A      => A,
+			nPage  => ROM_nPage
 		);
 
-	-- 32K ROM from 0x0000 to 0x7FFF
-	ROM_nCS <= '0' when A(15) = '0' and ROM_nPage = '0' else '1';
+	led_select : entity work.decoder_3x8
+		port map(
+			i => std_logic_vector(to_unsigned(rom_select, page_select'length)),
+			y => nPage_LED
+		);
+	
+	page_LED <= not nPage_LED when ROM_nPage = '0' else (others => '0');
+
 
 	RAM_nRD <= n_RD or n_MREQ;
 	RAM_nWR <= n_WR or n_MREQ;
 	RAM_nCS <= not ROM_nCS;
 
-	UART_nRD <= n_RD or n_IORQ;
-	UART_nWR <= n_WR or n_IORQ;
 	-- Serial Channel A - 2 Bytes $80-$81
 	UART_nCS <= '0' when A(7 downto 1) = "1000000" and (UART_nWR = '0' or UART_nRD = '0') else '1';
-
+	UART_nRD <= n_RD or n_IORQ;
+	UART_nWR <= n_WR or n_IORQ;
+	
 	D_I <= UART_D when UART_nCS = '0'
 		else ROM_D when ROM_nCS = '0'
 		else RAM_D when RAM_nCS = '0'
 		else x"FF";
 
-	page_LED <= not ROM_nPage;
-	
+	-- TODO: base this off of page selection
+	-- page_LED <= (7 downto 1 => '0', 0 => not ROM_nPage);
+
 end;
