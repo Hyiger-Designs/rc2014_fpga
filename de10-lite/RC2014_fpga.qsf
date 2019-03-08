@@ -1,0 +1,135 @@
+# -------------------------------------------------------------------------- #
+#
+# Copyright (C) 2018  Intel Corporation. All rights reserved.
+# Your use of Intel Corporation's design tools, logic functions 
+# and other software and tools, and its AMPP partner logic 
+# functions, and any output files from any of the foregoing 
+# (including device programming or simulation files), and any 
+# associated documentation or information are expressly subject 
+# to the terms and conditions of the Intel Program License 
+# Subscription Agreement, the Intel Quartus Prime License Agreement,
+# the Intel FPGA IP License Agreement, or other applicable license
+# agreement, including, without limitation, that your use is for
+# the sole purpose of programming logic devices manufactured by
+# Intel and sold by Intel or its authorized distributors.  Please
+# refer to the applicable agreement for further details.
+#
+# -------------------------------------------------------------------------- #
+#
+# Quartus Prime
+# Version 18.1.0 Build 625 09/12/2018 SJ Lite Edition
+# Date created = 20:59:51  March 07, 2019
+#
+# -------------------------------------------------------------------------- #
+#
+# Notes:
+#
+# 1) The default values for assignments are stored in the file:
+#		RC2014_fpga_assignment_defaults.qdf
+#    If this file doesn't exist, see file:
+#		assignment_defaults.qdf
+#
+# 2) Altera recommends that you do not modify this file. This
+#    file is updated automatically by the Quartus Prime software
+#    and any changes you make may be lost or overwritten.
+#
+# -------------------------------------------------------------------------- #
+
+
+
+# Project-Wide Assignments
+# ========================
+set_global_assignment -name ORIGINAL_QUARTUS_VERSION 16.0.0
+set_global_assignment -name LAST_QUARTUS_VERSION "18.1.0 Lite Edition"
+set_global_assignment -name PROJECT_CREATION_TIME_DATE "18:33:33 MARCH 07,2019"
+set_global_assignment -name PROJECT_OUTPUT_DIRECTORY output_files
+set_global_assignment -name SDC_FILE RC2014_fpga.sdc
+set_global_assignment -name VHDL_FILE ../rtl/T80/T80s.vhd
+set_global_assignment -name VHDL_FILE ../rtl/T80/T80_Reg.vhd
+set_global_assignment -name VHDL_FILE ../rtl/T80/T80_Pack.vhd
+set_global_assignment -name VHDL_FILE ../rtl/T80/T80_MCode.vhd
+set_global_assignment -name VHDL_FILE ../rtl/T80/T80_ALU.vhd
+set_global_assignment -name VHDL_FILE ../rtl/T80/T80.vhd
+set_global_assignment -name VHDL_FILE ../rtl/single_port_ram.vhd
+set_global_assignment -name VHDL_FILE ../rtl/RC2014_fpga.vhd
+set_global_assignment -name VHDL_FILE ../rtl/frac20.vhd
+set_global_assignment -name VHDL_FILE ../rtl/clock_div.vhd
+set_global_assignment -name VHDL_FILE ../rtl/acia6850.vhd
+set_global_assignment -name QIP_FILE SCM_V100_S3_SCS3_32K.qip
+set_global_assignment -name SOURCE_FILE RC2014_fpga.qsf
+set_global_assignment -name CDF_FILE output_files/RC2014_fpga.cdf
+
+# Pin & Location Assignments
+# ==========================
+set_location_assignment PIN_P11 -to clk
+set_location_assignment PIN_B8 -to n_reset
+set_location_assignment PIN_W9 -to txd
+set_location_assignment PIN_W8 -to rxd
+set_location_assignment PIN_V5 -to rts
+
+# Classic Timing Assignments
+# ==========================
+set_global_assignment -name MIN_CORE_JUNCTION_TEMP 0
+set_global_assignment -name MAX_CORE_JUNCTION_TEMP 85
+
+# Analysis & Synthesis Assignments
+# ================================
+set_global_assignment -name FAMILY "MAX 10"
+set_global_assignment -name DEVICE_FILTER_PACKAGE FBGA
+set_global_assignment -name DEVICE_FILTER_PIN_COUNT 484
+set_global_assignment -name DEVICE_FILTER_SPEED_GRADE 7
+set_global_assignment -name TOP_LEVEL_ENTITY RC2014_fpga
+
+# Fitter Assignments
+# ==================
+set_global_assignment -name DEVICE 10M50DAF484C7G
+set_global_assignment -name INTERNAL_FLASH_UPDATE_MODE "SINGLE IMAGE WITH ERAM"
+set_global_assignment -name ERROR_CHECK_FREQUENCY_DIVISOR 1
+set_global_assignment -name OPTIMIZE_HOLD_TIMING "IO PATHS AND MINIMUM TPD PATHS"
+set_global_assignment -name OPTIMIZE_MULTI_CORNER_TIMING ON
+set_global_assignment -name WEAK_PULL_UP_RESISTOR OFF
+set_global_assignment -name RESERVE_ALL_UNUSED_PINS "AS OUTPUT DRIVING GROUND"
+set_global_assignment -name STRATIX_DEVICE_IO_STANDARD "3.3-V LVTTL"
+
+# Assembler Assignments
+# =====================
+set_global_assignment -name ENABLE_OCT_DONE ON
+set_global_assignment -name EXTERNAL_FLASH_FALLBACK_ADDRESS 00000000
+set_global_assignment -name USE_CONFIGURATION_DEVICE OFF
+
+# Power Estimation Assignments
+# ============================
+set_global_assignment -name POWER_PRESET_COOLING_SOLUTION "23 MM HEAT SINK WITH STILL AIR"
+set_global_assignment -name POWER_BOARD_THERMAL_MODEL "NONE (CONSERVATIVE)"
+
+# Advanced I/O Timing Assignments
+# ===============================
+set_global_assignment -name OUTPUT_IO_TIMING_NEAR_END_VMEAS "HALF VCCIO" -rise
+set_global_assignment -name OUTPUT_IO_TIMING_NEAR_END_VMEAS "HALF VCCIO" -fall
+set_global_assignment -name OUTPUT_IO_TIMING_FAR_END_VMEAS "HALF SIGNAL SWING" -rise
+set_global_assignment -name OUTPUT_IO_TIMING_FAR_END_VMEAS "HALF SIGNAL SWING" -fall
+
+# -------------------------
+# start ENTITY(RC2014_fpga)
+
+	# Fitter Assignments
+	# ==================
+	set_instance_assignment -name WEAK_PULL_UP_RESISTOR ON -to n_reset
+	set_instance_assignment -name WEAK_PULL_UP_RESISTOR ON -to rxd
+
+	# start DESIGN_PARTITION(Top)
+	# ---------------------------
+
+		# Incremental Compilation Assignments
+		# ===================================
+		set_global_assignment -name PARTITION_NETLIST_TYPE SOURCE -section_id Top
+		set_global_assignment -name PARTITION_FITTER_PRESERVATION_LEVEL PLACEMENT_AND_ROUTING -section_id Top
+		set_global_assignment -name PARTITION_COLOR 16764057 -section_id Top
+
+	# end DESIGN_PARTITION(Top)
+	# -------------------------
+
+# end ENTITY(RC2014_fpga)
+# -----------------------
+set_global_assignment -name POWER_USE_TA_VALUE 20
+set_instance_assignment -name PARTITION_HIERARCHY root_partition -to | -section_id Top
