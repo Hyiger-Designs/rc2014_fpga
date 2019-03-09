@@ -47,7 +47,7 @@ use ieee.numeric_std.all;
 
 entity RC2014_fpga is
 	generic(
-		rom_select : natural := 0      -- 0 = SCM, 1 - CPM/Basic
+		rom_type : natural := 0         -- 0 = SCM, 1 - CPM/Basic
 	);
 	port(
 		clk         : in  std_logic;
@@ -89,27 +89,61 @@ architecture struct of RC2014_fpga is
 	signal UART_nRD : std_logic := '1';
 	signal UART_nCS : std_logic := '1';
 
-	signal nPage_LED : std_logic_vector(7 downto 0);
+
+
+	COMPONENT NextZ80 is
+		port(
+			DI    : in  std_logic_vector(7 downto 0);
+			CLK   : in  std_logic;
+			RESET : in  std_logic;
+			INT   : in  std_logic;
+			NMI   : in  std_logic;
+			WT    : in  std_logic;
+			DO    : out std_logic_vector(7 downto 0);
+			ADDR  : out std_logic_vector(15 downto 0);
+			WR    : out std_logic;
+			MREQ  : out std_logic;
+			IORQ  : out std_logic;
+			HALT  : out std_logic;
+			M1    : out std_logic
+		);
+	end COMPONENT;
 
 begin
 
-	cpu : entity work.t80s
-		generic map(mode => 1, t2write => 1, iowait => 0)
-		port map(
-			reset_n => n_reset,
-			clk_n   => CPU_clk,
-			wait_n  => '1',
-			int_n   => '1',
-			nmi_n   => '1',
-			busrq_n => '1',
-			mreq_n  => n_MREQ,
-			iorq_n  => n_IORQ,
-			rd_n    => n_RD,
-			wr_n    => n_WR,
-			a       => A,
-			di      => D_I,
-			do      => D_O
-		);
+		cpu : entity work.t80s
+			generic map(mode => 1, t2write => 1, iowait => 0)
+			port map(
+				reset_n => n_reset,
+				clk_n   => CPU_clk,
+				wait_n  => '1',
+				int_n   => '1',
+				nmi_n   => '1',
+				busrq_n => '1',
+				mreq_n  => n_MREQ,
+				iorq_n  => n_IORQ,
+				rd_n    => n_RD,
+				wr_n    => n_WR,
+				a       => A,
+				di      => D_I,
+				do      => D_O
+			);
+
+	--		
+--	cpu : NextZ80
+--		port map(
+--			DI    => D_I,
+--			CLK   => CPU_clk,
+--			RESET => n_reset,
+--			INT   => '1',
+--			NMI   => '1',
+--			WT    => '1',
+--			DO    => D_O,
+--			ADDR  => A,
+--			WR    => n_WR,
+--			MREQ  => n_MREQ,
+--			IORQ  => n_IORQ
+--		);
 
 	-- Z80 CPU clock - 7.3728 Mhz
 	clk1 : entity work.fracn20
@@ -122,27 +156,18 @@ begin
 			clock     => clk,
 			output_50 => CPU_clk
 		);
+		
+	rom : entity work.ROM_Page_Select
+		port map(
+			clk   => clk,
+			page_select => page_select,
 
-	scm : if rom_select = 0 generate
-		rom32k : entity work.SCM_V100_S3_SCS3_32K
-			port map(
-				clock   => clk,
-				address => A(14 downto 0),
-				q       => ROM_D
-			);
-		ROM_nCS <= '0' when A(15) = '0' and ROM_nPage = '0' else '1';
-	end generate scm;
-
-	cpm_basic : if rom_select = 1 generate
-		rom8k : entity work.CPM_BASIC
-			port map(
-				clock   => clk,
-				address => A(13 downto 0),
-				q       => ROM_D
-			);
-
-		ROM_nCS <= '0' when A(15 downto 13) = "000" and ROM_nPage = '0' else '1';
-	end generate cpm_basic;
+			nPage => ROM_nPage,
+			A     => A,
+			D     => ROM_D,
+			nCS   => ROM_nCS,
+			page_LED => page_LED
+		);
 
 	ram64k : entity work.single_port_ram
 		port map(
@@ -181,16 +206,7 @@ begin
 			A      => A,
 			nPage  => ROM_nPage
 		);
-
-	led_select : entity work.decoder_3x8
-		port map(
-			i => std_logic_vector(to_unsigned(rom_select, page_select'length)),
-			y => nPage_LED
-		);
-
-
-	page_LED <= not nPage_LED when ROM_nPage = '0' else (others => '0');
-
+		
 	RAM_nRD <= n_RD or n_MREQ;
 	RAM_nWR <= n_WR or n_MREQ;
 	RAM_nCS <= not ROM_nCS;
