@@ -43,24 +43,20 @@
 
 library ieee;
 use ieee.std_logic_1164.all;
-use IEEE.STD_LOGIC_ARITH.all;
-use IEEE.STD_LOGIC_UNSIGNED.all;
 use ieee.numeric_std.all;
 
 entity RC2014_fpga is
-  generic (
-    rom_select      : natural := 0        -- 0 = SCM, 1 - CPM/Basic
-  );
+	generic(
+		rom_select : natural := 0      -- 0 = SCM, 1 - CPM/Basic
+	);
 	port(
-		clk        	: in  std_logic;
-		n_reset    	: in  std_logic;
-
-		rxd        	: in  std_logic;
-		txd        	: out std_logic;
-		rts        	: out std_logic;
-		
-		page_select	: in  std_logic_vector(2 downto 0);
-		page_LED   	: out std_logic_vector(7 downto 0)
+		clk         : in  std_logic;
+		n_reset     : in  std_logic;
+		rxd         : in  std_logic;
+		txd         : out std_logic;
+		rts         : out std_logic;
+		page_select : in  std_logic_vector(2 downto 0);
+		page_LED    : out std_logic_vector(7 downto 0)
 	);
 end RC2014_fpga;
 
@@ -92,8 +88,8 @@ architecture struct of RC2014_fpga is
 	signal UART_nWR : std_logic := '1';
 	signal UART_nRD : std_logic := '1';
 	signal UART_nCS : std_logic := '1';
-	
-	signal nPage_LED   : std_logic_vector(7 downto 0);
+
+	signal nPage_LED : std_logic_vector(7 downto 0);
 
 begin
 
@@ -136,18 +132,18 @@ begin
 			);
 		ROM_nCS <= '0' when A(15) = '0' and ROM_nPage = '0' else '1';
 	end generate scm;
-	
+
 	cpm_basic : if rom_select = 1 generate
-			rom8k : entity work.CPM_BASIC
+		rom8k : entity work.CPM_BASIC
 			port map(
 				clock   => clk,
-				address => A(12 downto 0),
+				address => A(13 downto 0),
 				q       => ROM_D
 			);
-		
+
 		ROM_nCS <= '0' when A(15 downto 13) = "000" and ROM_nPage = '0' else '1';
 	end generate cpm_basic;
-	
+
 	ram64k : entity work.single_port_ram
 		port map(
 			clock   => clk,
@@ -177,7 +173,7 @@ begin
 			RTS_n    => rts             -- Request To send
 		);
 
-	-- Page out rom on port 0x38
+	-- Page out rom on ports 0x30 & 0x38
 	page : entity work.ROM_Page
 		port map(
 			nWR    => UART_nWR,
@@ -191,9 +187,9 @@ begin
 			i => std_logic_vector(to_unsigned(rom_select, page_select'length)),
 			y => nPage_LED
 		);
-	
-	page_LED <= not nPage_LED when ROM_nPage = '0' else (others => '0');
 
+
+	page_LED <= not nPage_LED when ROM_nPage = '0' else (others => '0');
 
 	RAM_nRD <= n_RD or n_MREQ;
 	RAM_nWR <= n_WR or n_MREQ;
@@ -203,7 +199,7 @@ begin
 	UART_nCS <= '0' when A(7 downto 1) = "1000000" and (UART_nWR = '0' or UART_nRD = '0') else '1';
 	UART_nRD <= n_RD or n_IORQ;
 	UART_nWR <= n_WR or n_IORQ;
-	
+
 	D_I <= UART_D when UART_nCS = '0'
 		else ROM_D when ROM_nCS = '0'
 		else RAM_D when RAM_nCS = '0'
