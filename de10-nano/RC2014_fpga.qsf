@@ -135,10 +135,9 @@ set_global_assignment -name VHDL_FILE ../rtl/acia6850.vhd
 set_global_assignment -name SOURCE_FILE RC2014_fpga.qsf
 set_global_assignment -name CDF_FILE output_files/RC2014_fpga.cdf
 set_global_assignment -name QIP_FILE SCM_V100_S3_SCS3_32K.qip
-set_global_assignment -name VHDL_FILE ../rtl/ROM_Page.vhd
 set_global_assignment -name QIP_FILE ROM_24886009.qip
 set_global_assignment -name QIP_FILE CPM_BASIC.qip
 set_global_assignment -name QIP_FILE K0000000.qip
-set_global_assignment -name VHDL_FILE ../rtl/ROM_select.vhd
 set_global_assignment -name QIP_FILE R0001009.qip
 set_instance_assignment -name PARTITION_HIERARCHY root_partition -to | -section_id Top
+set_global_assignment -name VHDL_FILE Serial.vhd
