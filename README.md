@@ -1,5 +1,5 @@
 RC2014_fpga - A VHDL emulation of the RC2014 (Z80) environment
-==============================================================
+========================================================
 
 This project is a VHDL implementation of the RC2014 Homebrew Z80 Computer targeting the following boards:
 
@@ -15,13 +15,22 @@ Currently the following peripherals are implemented:
 * 64K Internal RAM
 * 64K Pageable ROM (currently with fixed 8K pages): [Pageable ROM](https://rc2014.co.uk/modules/pageable-rom/)
 
+ROM can be configured for the following applications:
+1. Microsoft BASIC, for 32k RAM, 68B50 ACIA, with origin 0x0000
+2. Microsoft BASIC, for 56k RAM, 68B50 ACIA, with origin 0x0000
+3. CP/M Monitor, for pageable ROM, 64k RAM, 68B50 ACIA, CF Module at 0x10, with origin at 0x0000
+4. [Small Computer Monitor](https://smallcomputercentral.wordpress.com/small-computer-monitor/) for pageable ROM, 64k RAM, SIO/2 or 68B50 ACIA, with Microsoft BASIC and CP/M boot options
+
 In progress:
 * CF Flash emulator
 * SD Card  enulator
 * Zilog SIO/2 Uart (planned to be an interface wrapper around the 6850)
 
-For details on building your own RC2014 visit: [RC2014 - Homebrew Z80 Computer](https://rc2014.co.uk/)  
-
-Inspiration for this project is due to: [Grant's MULTICOMP](http://searle.hostei.com/grant/Multicomp/index.html). *However, where otherwise noted the work is my own*
-
 ## Installation
+
+## Usage
+
+### References
+* To build your own RC2014 visit: [RC2014 - Homebrew Z80 Computer](https://rc2014.co.uk/) or purchase on [Tindie](https://www.tindie.com/products/Semachthemonkey/rc2014-pro-homebrew-z80-computer-kit/?pt=ac_prod_search)
+* [Grant's MULTICOMP](http://searle.hostei.com/grant/Multicomp/index.html). *However, where otherwise noted the work is my own*
+* Steve Cousin's [Small Computer Monitor](https://smallcomputercentral.wordpress.com/small-computer-monitor/)
