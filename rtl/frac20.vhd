@@ -160,7 +160,6 @@ end entity fracn20;
 
 architecture rtl of fracn20 is
 
-	constant desired_ratio : real := (input_frequency / output_frequency);
 	constant min_ratio     : real := (input_frequency / (output_frequency * (1.0 + tolerance)));
 	constant max_ratio     : real := (input_frequency / (output_frequency * (1.0 - tolerance)));
 

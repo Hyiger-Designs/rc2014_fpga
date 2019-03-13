@@ -47,23 +47,8 @@ set_global_assignment -name PROJECT_OUTPUT_DIRECTORY output_files
 # Pin & Location Assignments
 # ==========================
 set_location_assignment PIN_V11 -to clk
-set_location_assignment PIN_AH17 -to n_reset
-set_location_assignment PIN_D11 -to txd
-set_location_assignment PIN_AH13 -to rxd
-set_location_assignment PIN_AH3 -to rts
 
-set_location_assignment PIN_Y24 -to page_select[0]
-set_location_assignment PIN_W24 -to page_select[1]
-set_location_assignment PIN_W21 -to page_select[2]
 
-set_location_assignment PIN_W15 -to page_LED[0]
-set_location_assignment PIN_AA24 -to page_LED[1]
-set_location_assignment PIN_V16 -to page_LED[2]
-set_location_assignment PIN_V15 -to page_LED[3]
-set_location_assignment PIN_AF26 -to page_LED[4]
-set_location_assignment PIN_AE26 -to page_LED[5]
-set_location_assignment PIN_Y16 -to page_LED[6]
-set_location_assignment PIN_AA23 -to page_LED[7]
 
 # Compiler Assignments
 # ====================
@@ -98,8 +83,6 @@ set_global_assignment -name POWER_USE_TA_VALUE 22
 
 	# Fitter Assignments
 	# ==================
-set_instance_assignment -name WEAK_PULL_UP_RESISTOR ON -to n_reset
-set_instance_assignment -name WEAK_PULL_UP_RESISTOR ON -to rxd
 
 	# start DESIGN_PARTITION(Top)
 	# ---------------------------
@@ -139,5 +122,27 @@ set_global_assignment -name QIP_FILE ROM_24886009.qip
 set_global_assignment -name QIP_FILE CPM_BASIC.qip
 set_global_assignment -name QIP_FILE K0000000.qip
 set_global_assignment -name QIP_FILE R0001009.qip
-set_instance_assignment -name PARTITION_HIERARCHY root_partition -to | -section_id Top
 set_global_assignment -name VHDL_FILE Serial.vhd
+set_location_assignment PIN_Y24 -to rom_page_select[0]
+set_location_assignment PIN_W24 -to rom_page_select[1]
+set_location_assignment PIN_W21 -to rom_page_select[2]
+set_location_assignment PIN_W15 -to rom_page_LED[0]
+set_location_assignment PIN_AA24 -to rom_page_LED[1]
+set_location_assignment PIN_V16 -to rom_page_LED[2]
+set_location_assignment PIN_V15 -to rom_page_LED[3]
+set_location_assignment PIN_AF26 -to rom_page_LED[4]
+set_location_assignment PIN_AE26 -to rom_page_LED[5]
+set_location_assignment PIN_Y16 -to rom_page_LED[6]
+set_location_assignment PIN_AA23 -to rom_page_LED[7]
+set_instance_assignment -name WEAK_PULL_UP_RESISTOR ON -to nINT
+set_instance_assignment -name WEAK_PULL_UP_RESISTOR ON -to nBUSRQ
+set_instance_assignment -name WEAK_PULL_UP_RESISTOR ON -to nNMI
+set_instance_assignment -name WEAK_PULL_UP_RESISTOR ON -to nWAIT
+set_location_assignment PIN_AH17 -to nRST
+set_location_assignment PIN_D11 -to TX
+set_location_assignment PIN_AH13 -to RX
+set_location_assignment PIN_AH3 -to RTS
+set_global_assignment -name QIP_FILE data_bus.qip
+set_instance_assignment -name WEAK_PULL_UP_RESISTOR ON -to nRST
+set_instance_assignment -name WEAK_PULL_UP_RESISTOR ON -to RX
+set_instance_assignment -name PARTITION_HIERARCHY root_partition -to | -section_id Top

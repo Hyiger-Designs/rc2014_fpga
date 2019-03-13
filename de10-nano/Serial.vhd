@@ -2,7 +2,8 @@ library ieee;
 use ieee.std_logic_1164.all;
 use ieee.numeric_std.all;
 
-entity Serial is
+-- WIP - intended to be a simple implementation of the Zilog SIO/2
+entity SIO is
 	port(
 		clk       : in  std_logic;
 		rst       : in  std_logic;
@@ -13,13 +14,13 @@ entity Serial is
 		rxd       : in  std_logic;
 		txd       : out std_logic;
 		D         : out std_logic_vector(7 downto 0);
-		nCS       : out std_logic;
+		nCS       : in std_logic;
 		n_int     : out std_logic;
 		rts       : out std_logic
 	);
-end entity Serial;
+end entity SIO;
 
-architecture RTL of Serial is
+architecture RTL of SIO is
 
 begin
 	uart : entity work.acia6850
