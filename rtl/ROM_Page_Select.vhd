@@ -36,7 +36,7 @@ begin
 			);
 
 		nCS      <= '0' when A(15 downto 13) = "000" and nPage = '0' else '1';
-		--page_LED <= (0 => '1', others => '0');
+
 		page_LED <= not nPage_LED when nPage = '0' else (others => '0');
 	end generate cpm;
 

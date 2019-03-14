@@ -18,7 +18,7 @@
 #
 # Quartus Prime
 # Version 18.1.0 Build 625 09/12/2018 SJ Lite Edition
-# Date created = 22:33:32  March 07, 2019
+# Date created = 17:52:28  March 13, 2019
 #
 # -------------------------------------------------------------------------- #
 #
@@ -39,18 +39,76 @@
 
 # Project-Wide Assignments
 # ========================
-set_global_assignment -name ORIGINAL_QUARTUS_VERSION 16.0.0
 set_global_assignment -name LAST_QUARTUS_VERSION "18.1.0 Lite Edition"
 set_global_assignment -name PROJECT_CREATION_TIME_DATE "18:33:33 MARCH 07,2019"
 set_global_assignment -name PROJECT_OUTPUT_DIRECTORY output_files
+set_global_assignment -name VHDL_FILE ../rtl/ROM_Page_Select.vhd
+set_global_assignment -name VHDL_FILE ../rtl/decoder_3x8.vhd
+set_global_assignment -name SDC_FILE RC2014_fpga.sdc
+set_global_assignment -name VHDL_FILE ../rtl/T80/T80s.vhd
+set_global_assignment -name VHDL_FILE ../rtl/T80/T80_Reg.vhd
+set_global_assignment -name VHDL_FILE ../rtl/T80/T80_Pack.vhd
+set_global_assignment -name VHDL_FILE ../rtl/T80/T80_MCode.vhd
+set_global_assignment -name VHDL_FILE ../rtl/T80/T80_ALU.vhd
+set_global_assignment -name VHDL_FILE ../rtl/T80/T80.vhd
+set_global_assignment -name VHDL_FILE ../rtl/single_port_ram.vhd
+set_global_assignment -name VHDL_FILE ../rtl/RC2014_fpga.vhd
+set_global_assignment -name VHDL_FILE ../rtl/frac20.vhd
+set_global_assignment -name VHDL_FILE ../rtl/clock_div.vhd
+set_global_assignment -name VHDL_FILE ../rtl/acia6850.vhd
+set_global_assignment -name SOURCE_FILE RC2014_fpga.qsf
+set_global_assignment -name CDF_FILE output_files/RC2014_fpga.cdf
+set_global_assignment -name QIP_FILE CPM_BASIC.qip
+set_global_assignment -name QIP_FILE SCM_V100_S3_SCS3_32K.qip
+set_global_assignment -name QIP_FILE R0001009.qip
 
 # Pin & Location Assignments
 # ==========================
 set_location_assignment PIN_P11 -to clk
-set_location_assignment PIN_B8 -to n_reset
-set_location_assignment PIN_W9 -to txd
-set_location_assignment PIN_W8 -to rxd
-set_location_assignment PIN_V5 -to rts
+set_location_assignment PIN_W10 -to A[15]
+set_location_assignment PIN_W9 -to A[14]
+set_location_assignment PIN_W8 -to A[13]
+set_location_assignment PIN_W7 -to A[12]
+set_location_assignment PIN_V5 -to A[11]
+set_location_assignment PIN_AA15 -to A[10]
+set_location_assignment PIN_W13 -to A[9]
+set_location_assignment PIN_AB16 -to A[8]
+set_location_assignment PIN_Y11 -to A[7]
+set_location_assignment PIN_W11 -to A[6]
+set_location_assignment PIN_AA10 -to A[5]
+set_location_assignment PIN_Y8 -to A[4]
+set_location_assignment PIN_Y7 -to A[3]
+set_location_assignment PIN_Y6 -to A[2]
+set_location_assignment PIN_Y5 -to A[1]
+set_location_assignment PIN_Y4 -to A[0]
+set_location_assignment PIN_V10 -to nM1
+set_location_assignment PIN_V8 -to nINT
+set_location_assignment PIN_V7 -to nMREQ
+set_location_assignment PIN_W6 -to nWR
+set_location_assignment PIN_W5 -to D[0]
+set_location_assignment PIN_AA14 -to D[1]
+set_location_assignment PIN_W12 -to D[2]
+set_location_assignment PIN_AB12 -to D[3]
+set_location_assignment PIN_AB11 -to D[4]
+set_location_assignment PIN_AB10 -to D[5]
+set_location_assignment PIN_AA9 -to D[6]
+set_location_assignment PIN_AA8 -to D[7]
+set_location_assignment PIN_V9 -to nRST
+set_location_assignment PIN_D14 -to rom_page_LED[7]
+set_location_assignment PIN_E14 -to rom_page_LED[6]
+set_location_assignment PIN_C13 -to rom_page_LED[5]
+set_location_assignment PIN_D13 -to rom_page_LED[4]
+set_location_assignment PIN_B10 -to rom_page_LED[3]
+set_location_assignment PIN_A10 -to rom_page_LED[2]
+set_location_assignment PIN_A9 -to rom_page_LED[1]
+set_location_assignment PIN_A8 -to rom_page_LED[0]
+set_location_assignment PIN_C10 -to rom_page_select[0]
+set_location_assignment PIN_C11 -to rom_page_select[1]
+set_location_assignment PIN_D12 -to rom_page_select[2]
+set_location_assignment PIN_AB20 -to RTS
+set_location_assignment PIN_AA7 -to nRFSH
+set_location_assignment PIN_AA6 -to nRST2
+set_location_assignment PIN_AA5 -to clk2
 
 # Classic Timing Assignments
 # ==========================
@@ -63,6 +121,7 @@ set_global_assignment -name FAMILY "MAX 10"
 set_global_assignment -name DEVICE_FILTER_PACKAGE FBGA
 set_global_assignment -name DEVICE_FILTER_PIN_COUNT 484
 set_global_assignment -name DEVICE_FILTER_SPEED_GRADE 7
+set_global_assignment -name TOP_LEVEL_ENTITY RC2014_fpga
 set_global_assignment -name TOP_LEVEL_ENTITY RC2014_fpga
 
 # Fitter Assignments
@@ -100,8 +159,12 @@ set_global_assignment -name OUTPUT_IO_TIMING_FAR_END_VMEAS "HALF SIGNAL SWING" -
 
 	# Fitter Assignments
 	# ==================
-	set_instance_assignment -name WEAK_PULL_UP_RESISTOR ON -to n_reset
-	set_instance_assignment -name WEAK_PULL_UP_RESISTOR ON -to rxd
+	set_instance_assignment -name WEAK_PULL_UP_RESISTOR ON -to nINT
+	set_instance_assignment -name WEAK_PULL_UP_RESISTOR ON -to nBUSRQ
+	set_instance_assignment -name WEAK_PULL_UP_RESISTOR ON -to nNMI
+	set_instance_assignment -name WEAK_PULL_UP_RESISTOR ON -to nWAIT
+	set_instance_assignment -name WEAK_PULL_UP_RESISTOR ON -to nRST
+	set_instance_assignment -name WEAK_PULL_UP_RESISTOR ON -to RX
 
 	# start DESIGN_PARTITION(Top)
 	# ---------------------------
@@ -111,39 +174,10 @@ set_global_assignment -name OUTPUT_IO_TIMING_FAR_END_VMEAS "HALF SIGNAL SWING" -
 		set_global_assignment -name PARTITION_NETLIST_TYPE SOURCE -section_id Top
 		set_global_assignment -name PARTITION_FITTER_PRESERVATION_LEVEL PLACEMENT_AND_ROUTING -section_id Top
 		set_global_assignment -name PARTITION_COLOR 16764057 -section_id Top
+		set_instance_assignment -name PARTITION_HIERARCHY root_partition -to | -section_id Top
 
 	# end DESIGN_PARTITION(Top)
 	# -------------------------
 
 # end ENTITY(RC2014_fpga)
 # -----------------------
-set_global_assignment -name VHDL_FILE ../rtl/decoder_3x8.vhd
-set_global_assignment -name VHDL_FILE ../rtl/ROM_Page.vhd
-set_global_assignment -name SDC_FILE RC2014_fpga.sdc
-set_global_assignment -name VHDL_FILE ../rtl/T80/T80s.vhd
-set_global_assignment -name VHDL_FILE ../rtl/T80/T80_Reg.vhd
-set_global_assignment -name VHDL_FILE ../rtl/T80/T80_Pack.vhd
-set_global_assignment -name VHDL_FILE ../rtl/T80/T80_MCode.vhd
-set_global_assignment -name VHDL_FILE ../rtl/T80/T80_ALU.vhd
-set_global_assignment -name VHDL_FILE ../rtl/T80/T80.vhd
-set_global_assignment -name VHDL_FILE ../rtl/single_port_ram.vhd
-set_global_assignment -name VHDL_FILE ../rtl/RC2014_fpga.vhd
-set_global_assignment -name VHDL_FILE ../rtl/frac20.vhd
-set_global_assignment -name VHDL_FILE ../rtl/clock_div.vhd
-set_global_assignment -name VHDL_FILE ../rtl/acia6850.vhd
-set_global_assignment -name QIP_FILE SCM_V100_S3_SCS3_32K.qip
-set_global_assignment -name SOURCE_FILE RC2014_fpga.qsf
-set_global_assignment -name CDF_FILE output_files/RC2014_fpga.cdf
-set_global_assignment -name QIP_FILE CPM_BASIC.qip
-set_location_assignment PIN_A8 -to page_LED[0]
-set_location_assignment PIN_A9 -to page_LED[1]
-set_location_assignment PIN_A10 -to page_LED[2]
-set_location_assignment PIN_B10 -to page_LED[3]
-set_location_assignment PIN_D13 -to page_LED[4]
-set_location_assignment PIN_C13 -to page_LED[5]
-set_location_assignment PIN_E14 -to page_LED[6]
-set_location_assignment PIN_D14 -to page_LED[7]
-set_location_assignment PIN_C10 -to page_select[0]
-set_location_assignment PIN_C11 -to page_select[1]
-set_location_assignment PIN_D12 -to page_select[2]
-set_instance_assignment -name PARTITION_HIERARCHY root_partition -to | -section_id Top
