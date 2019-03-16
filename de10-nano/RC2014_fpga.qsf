@@ -42,30 +42,6 @@
 set_global_assignment -name LAST_QUARTUS_VERSION "18.1.0 Lite Edition"
 set_global_assignment -name PROJECT_CREATION_TIME_DATE "21:11:47 MARCH 07,2019"
 set_global_assignment -name PROJECT_OUTPUT_DIRECTORY output_files
-set_global_assignment -name VHDL_FILE ../rtl/ROM_Page_Select.vhd
-set_global_assignment -name VERILOG_FILE ../rtl/NextZ80.v
-set_global_assignment -name VHDL_FILE ../rtl/decoder_3x8.vhd
-set_global_assignment -name SDC_FILE RC2014_fpga.sdc
-set_global_assignment -name VHDL_FILE ../rtl/T80/T80s.vhd
-set_global_assignment -name VHDL_FILE ../rtl/T80/T80_Reg.vhd
-set_global_assignment -name VHDL_FILE ../rtl/T80/T80_Pack.vhd
-set_global_assignment -name VHDL_FILE ../rtl/T80/T80_MCode.vhd
-set_global_assignment -name VHDL_FILE ../rtl/T80/T80_ALU.vhd
-set_global_assignment -name VHDL_FILE ../rtl/T80/T80.vhd
-set_global_assignment -name VHDL_FILE ../rtl/single_port_ram.vhd
-set_global_assignment -name VHDL_FILE ../rtl/RC2014_fpga.vhd
-set_global_assignment -name VHDL_FILE ../rtl/frac20.vhd
-set_global_assignment -name VHDL_FILE ../rtl/clock_div.vhd
-set_global_assignment -name VHDL_FILE ../rtl/acia6850.vhd
-set_global_assignment -name SOURCE_FILE RC2014_fpga.qsf
-set_global_assignment -name CDF_FILE output_files/RC2014_fpga.cdf
-set_global_assignment -name QIP_FILE SCM_V100_S3_SCS3_32K.qip
-set_global_assignment -name QIP_FILE ROM_24886009.qip
-set_global_assignment -name QIP_FILE CPM_BASIC.qip
-set_global_assignment -name QIP_FILE K0000000.qip
-set_global_assignment -name QIP_FILE R0001009.qip
-set_global_assignment -name VHDL_FILE Serial.vhd
-set_global_assignment -name QIP_FILE data_bus.qip
 
 # Pin & Location Assignments
 # ==========================
@@ -108,7 +84,7 @@ set_global_assignment -name TOP_LEVEL_ENTITY RC2014_fpga
 set_global_assignment -name DEVICE 5CSEBA6U23I7
 set_global_assignment -name ERROR_CHECK_FREQUENCY_DIVISOR 1
 set_global_assignment -name STRATIX_DEVICE_IO_STANDARD "3.3-V LVTTL"
-set_global_assignment -name OPTIMIZE_HOLD_TIMING "IO PATHS AND MINIMUM TPD PATHS"
+set_global_assignment -name OPTIMIZE_HOLD_TIMING "ALL PATHS"
 set_global_assignment -name OPTIMIZE_MULTI_CORNER_TIMING ON
 set_global_assignment -name WEAK_PULL_UP_RESISTOR OFF
 set_global_assignment -name RESERVE_ALL_UNUSED_PINS "AS OUTPUT DRIVING GROUND"
@@ -124,25 +100,118 @@ set_global_assignment -name POWER_USE_TA_VALUE 22
 
 	# Fitter Assignments
 	# ==================
-	set_instance_assignment -name WEAK_PULL_UP_RESISTOR ON -to nINT
-	set_instance_assignment -name WEAK_PULL_UP_RESISTOR ON -to nBUSRQ
-	set_instance_assignment -name WEAK_PULL_UP_RESISTOR ON -to nNMI
-	set_instance_assignment -name WEAK_PULL_UP_RESISTOR ON -to nWAIT
-	set_instance_assignment -name WEAK_PULL_UP_RESISTOR ON -to nRST
-	set_instance_assignment -name WEAK_PULL_UP_RESISTOR ON -to RX
+set_instance_assignment -name WEAK_PULL_UP_RESISTOR ON -to nINT
+set_instance_assignment -name WEAK_PULL_UP_RESISTOR ON -to nBUSRQ
+set_instance_assignment -name WEAK_PULL_UP_RESISTOR ON -to nNMI
+set_instance_assignment -name WEAK_PULL_UP_RESISTOR ON -to nWAIT
+set_instance_assignment -name WEAK_PULL_UP_RESISTOR ON -to nRST
+set_instance_assignment -name WEAK_PULL_UP_RESISTOR ON -to RX
 
 	# start DESIGN_PARTITION(Top)
 	# ---------------------------
 
 		# Incremental Compilation Assignments
 		# ===================================
-		set_global_assignment -name PARTITION_NETLIST_TYPE SOURCE -section_id Top
-		set_global_assignment -name PARTITION_FITTER_PRESERVATION_LEVEL PLACEMENT_AND_ROUTING -section_id Top
-		set_global_assignment -name PARTITION_COLOR 16764057 -section_id Top
-		set_instance_assignment -name PARTITION_HIERARCHY root_partition -to | -section_id Top
+set_global_assignment -name PARTITION_NETLIST_TYPE SOURCE -section_id Top
+set_global_assignment -name PARTITION_FITTER_PRESERVATION_LEVEL PLACEMENT_AND_ROUTING -section_id Top
+set_global_assignment -name PARTITION_COLOR 16764057 -section_id Top
 
 	# end DESIGN_PARTITION(Top)
 	# -------------------------
 
 # end ENTITY(RC2014_fpga)
 # -----------------------
+set_global_assignment -name VERILOG_FILE ../rtl/tv80/tv80s.v
+set_global_assignment -name VERILOG_FILE ../rtl/tv80/tv80n.v
+set_global_assignment -name VERILOG_FILE ../rtl/tv80/tv80_reg.v
+set_global_assignment -name VERILOG_FILE ../rtl/tv80/tv80_mcode.v
+set_global_assignment -name VERILOG_FILE ../rtl/tv80/tv80_core.v
+set_global_assignment -name VERILOG_FILE ../rtl/tv80/tv80_alu.v
+set_global_assignment -name VERILOG_FILE ../rtl/tv80/sd_zmem.v
+set_global_assignment -name VERILOG_FILE ../rtl/tv80/sd_access64.v
+set_global_assignment -name VERILOG_INCLUDE_FILE "../rtl/a-z80/temp_wires.vh"
+set_global_assignment -name VERILOG_INCLUDE_FILE "../rtl/a-z80/globals.vh"
+set_global_assignment -name VERILOG_INCLUDE_FILE "../rtl/a-z80/exec_zero.vh"
+set_global_assignment -name VERILOG_INCLUDE_FILE "../rtl/a-z80/exec_module.vh"
+set_global_assignment -name VERILOG_INCLUDE_FILE "../rtl/a-z80/exec_matrix_compiled.vh"
+set_global_assignment -name VERILOG_INCLUDE_FILE "../rtl/a-z80/exec_matrix.vh"
+set_global_assignment -name VERILOG_INCLUDE_FILE "../rtl/a-z80/coremodules.vh"
+set_global_assignment -name VERILOG_INCLUDE_FILE "../rtl/a-z80/core.vh"
+set_global_assignment -name VERILOG_FILE "../rtl/a-z80/z80_top_direct_n.v"
+set_global_assignment -name VERILOG_FILE "../rtl/a-z80/sequencer.v"
+set_global_assignment -name VERILOG_FILE "../rtl/a-z80/resets.v"
+set_global_assignment -name VERILOG_FILE "../rtl/a-z80/reg_latch.v"
+set_global_assignment -name VERILOG_FILE "../rtl/a-z80/reg_file.v"
+set_global_assignment -name VERILOG_FILE "../rtl/a-z80/reg_control.v"
+set_global_assignment -name VERILOG_FILE "../rtl/a-z80/pla_decode.v"
+set_global_assignment -name VERILOG_FILE "../rtl/a-z80/pin_control.v"
+set_global_assignment -name VERILOG_FILE "../rtl/a-z80/memory_ifc.v"
+set_global_assignment -name VERILOG_FILE "../rtl/a-z80/ir.v"
+set_global_assignment -name VERILOG_FILE "../rtl/a-z80/interrupts.v"
+set_global_assignment -name VERILOG_FILE "../rtl/a-z80/inc_dec_2bit.v"
+set_global_assignment -name VERILOG_FILE "../rtl/a-z80/inc_dec.v"
+set_global_assignment -name VERILOG_FILE "../rtl/a-z80/execute.v"
+set_global_assignment -name VERILOG_FILE "../rtl/a-z80/decode_state.v"
+set_global_assignment -name VERILOG_FILE "../rtl/a-z80/data_switch_mask.v"
+set_global_assignment -name VERILOG_FILE "../rtl/a-z80/data_switch.v"
+set_global_assignment -name VERILOG_FILE "../rtl/a-z80/data_pins.v"
+set_global_assignment -name VERILOG_FILE "../rtl/a-z80/control_pins_n.v"
+set_global_assignment -name VERILOG_FILE "../rtl/a-z80/clk_delay.v"
+set_global_assignment -name VERILOG_FILE "../rtl/a-z80/bus_switch.v"
+set_global_assignment -name VERILOG_FILE "../rtl/a-z80/bus_control.v"
+set_global_assignment -name VERILOG_FILE "../rtl/a-z80/alu_slice.v"
+set_global_assignment -name VERILOG_FILE "../rtl/a-z80/alu_shifter_core.v"
+set_global_assignment -name VERILOG_FILE "../rtl/a-z80/alu_select.v"
+set_global_assignment -name VERILOG_FILE "../rtl/a-z80/alu_prep_daa.v"
+set_global_assignment -name VERILOG_FILE "../rtl/a-z80/alu_mux_8.v"
+set_global_assignment -name VERILOG_FILE "../rtl/a-z80/alu_mux_4.v"
+set_global_assignment -name VERILOG_FILE "../rtl/a-z80/alu_mux_3z.v"
+set_global_assignment -name VERILOG_FILE "../rtl/a-z80/alu_mux_2z.v"
+set_global_assignment -name VERILOG_FILE "../rtl/a-z80/alu_mux_2.v"
+set_global_assignment -name VERILOG_FILE "../rtl/a-z80/alu_flags.v"
+set_global_assignment -name VERILOG_FILE "../rtl/a-z80/alu_core.v"
+set_global_assignment -name VERILOG_FILE "../rtl/a-z80/alu_control.v"
+set_global_assignment -name VERILOG_FILE "../rtl/a-z80/alu_bit_select.v"
+set_global_assignment -name VERILOG_FILE "../rtl/a-z80/alu.v"
+set_global_assignment -name VERILOG_FILE "../rtl/a-z80/address_pins.v"
+set_global_assignment -name VERILOG_FILE "../rtl/a-z80/address_mux.v"
+set_global_assignment -name VERILOG_FILE "../rtl/a-z80/address_latch.v"
+set_global_assignment -name VHDL_FILE SCM_V100_S3_SCS3_32K.vhd
+set_global_assignment -name VHDL_FILE R0001009.vhd
+set_global_assignment -name VHDL_FILE CPM_BASIC.vhd
+set_global_assignment -name VHDL_FILE ../rtl/ROM_Page_Select.vhd
+set_global_assignment -name VERILOG_FILE ../rtl/NextZ80.v
+set_global_assignment -name VHDL_FILE ../rtl/decoder_3x8.vhd
+set_global_assignment -name SDC_FILE RC2014_fpga.sdc
+set_global_assignment -name VHDL_FILE ../rtl/T80/T80s.vhd
+set_global_assignment -name VHDL_FILE ../rtl/T80/T80_Reg.vhd
+set_global_assignment -name VHDL_FILE ../rtl/T80/T80_Pack.vhd
+set_global_assignment -name VHDL_FILE ../rtl/T80/T80_MCode.vhd
+set_global_assignment -name VHDL_FILE ../rtl/T80/T80_ALU.vhd
+set_global_assignment -name VHDL_FILE ../rtl/T80/T80.vhd
+set_global_assignment -name VHDL_FILE ../rtl/single_port_ram.vhd
+set_global_assignment -name VHDL_FILE ../rtl/RC2014_fpga.vhd
+set_global_assignment -name VHDL_FILE ../rtl/frac20.vhd
+set_global_assignment -name VHDL_FILE ../rtl/clock_div.vhd
+set_global_assignment -name VHDL_FILE ../rtl/acia6850.vhd
+set_global_assignment -name SOURCE_FILE RC2014_fpga.qsf
+set_global_assignment -name CDF_FILE output_files/RC2014_fpga.cdf
+set_global_assignment -name VHDL_FILE Serial.vhd
+set_global_assignment -name QIP_FILE CPM_BASIC_NANO.qip
+set_global_assignment -name QIP_FILE SCM_V100_S3_SCS3_32K_NANO.qip
+set_global_assignment -name QIP_FILE R0001009_NANO.qip
+set_global_assignment -name QIP_FILE cpu_data.qip
+set_global_assignment -name SMART_RECOMPILE ON
+set_global_assignment -name OPTIMIZATION_TECHNIQUE SPEED
+set_global_assignment -name PHYSICAL_SYNTHESIS_COMBO_LOGIC ON
+set_global_assignment -name PHYSICAL_SYNTHESIS_REGISTER_DUPLICATION ON
+set_global_assignment -name PHYSICAL_SYNTHESIS_REGISTER_RETIMING ON
+set_global_assignment -name ROUTER_LCELL_INSERTION_AND_LOGIC_DUPLICATION ON
+set_global_assignment -name ROUTER_TIMING_OPTIMIZATION_LEVEL MAXIMUM
+set_global_assignment -name QII_AUTO_PACKED_REGISTERS NORMAL
+set_global_assignment -name FITTER_EFFORT "STANDARD FIT"
+set_global_assignment -name ROUTER_CLOCKING_TOPOLOGY_ANALYSIS ON
+set_global_assignment -name PHYSICAL_SYNTHESIS_ASYNCHRONOUS_SIGNAL_PIPELINING ON
+set_global_assignment -name ADV_NETLIST_OPT_SYNTH_WYSIWYG_REMAP ON
+set_global_assignment -name MUX_RESTRUCTURE OFF
+set_instance_assignment -name PARTITION_HIERARCHY root_partition -to | -section_id Top

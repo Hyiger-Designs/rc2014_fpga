@@ -4,7 +4,7 @@
 -- MODULE: altsyncram 
 
 -- ============================================================
--- File Name: K0000000.vhd
+-- File Name: CPM_BASIC_NANO.vhd
 -- Megafunction Name(s):
 -- 			altsyncram
 --
@@ -39,17 +39,17 @@ USE ieee.std_logic_1164.all;
 LIBRARY altera_mf;
 USE altera_mf.altera_mf_components.all;
 
-ENTITY K0000000 IS
+ENTITY CPM_BASIC_NANO IS
 	PORT
 	(
 		address		: IN STD_LOGIC_VECTOR (12 DOWNTO 0);
 		clock		: IN STD_LOGIC  := '1';
 		q		: OUT STD_LOGIC_VECTOR (7 DOWNTO 0)
 	);
-END K0000000;
+END CPM_BASIC_NANO;
 
 
-ARCHITECTURE SYN OF k0000000 IS
+ARCHITECTURE SYN OF cpm_basic_nano IS
 
 	SIGNAL sub_wire0	: STD_LOGIC_VECTOR (7 DOWNTO 0);
 
@@ -61,7 +61,7 @@ BEGIN
 		address_aclr_a => "NONE",
 		clock_enable_input_a => "BYPASS",
 		clock_enable_output_a => "BYPASS",
-		init_file => "../roms/K0000000.HEX",
+		init_file => "../roms/CPM_BASIC.HEX",
 		intended_device_family => "Cyclone V",
 		lpm_hint => "ENABLE_RUNTIME_MOD=NO",
 		lpm_type => "altsyncram",
@@ -103,7 +103,7 @@ END SYN;
 -- Retrieval info: PRIVATE: JTAG_ENABLED NUMERIC "0"
 -- Retrieval info: PRIVATE: JTAG_ID STRING "NONE"
 -- Retrieval info: PRIVATE: MAXIMUM_DEPTH NUMERIC "0"
--- Retrieval info: PRIVATE: MIFfilename STRING "../roms/K0000000.HEX"
+-- Retrieval info: PRIVATE: MIFfilename STRING "../roms/CPM_BASIC.HEX"
 -- Retrieval info: PRIVATE: NUMWORDS_A NUMERIC "8192"
 -- Retrieval info: PRIVATE: RAM_BLOCK_TYPE NUMERIC "0"
 -- Retrieval info: PRIVATE: RegAddr NUMERIC "1"
@@ -118,7 +118,7 @@ END SYN;
 -- Retrieval info: CONSTANT: ADDRESS_ACLR_A STRING "NONE"
 -- Retrieval info: CONSTANT: CLOCK_ENABLE_INPUT_A STRING "BYPASS"
 -- Retrieval info: CONSTANT: CLOCK_ENABLE_OUTPUT_A STRING "BYPASS"
--- Retrieval info: CONSTANT: INIT_FILE STRING "../roms/K0000000.HEX"
+-- Retrieval info: CONSTANT: INIT_FILE STRING "../roms/CPM_BASIC.HEX"
 -- Retrieval info: CONSTANT: INTENDED_DEVICE_FAMILY STRING "Cyclone V"
 -- Retrieval info: CONSTANT: LPM_HINT STRING "ENABLE_RUNTIME_MOD=NO"
 -- Retrieval info: CONSTANT: LPM_TYPE STRING "altsyncram"
@@ -135,9 +135,9 @@ END SYN;
 -- Retrieval info: CONNECT: @address_a 0 0 13 0 address 0 0 13 0
 -- Retrieval info: CONNECT: @clock0 0 0 0 0 clock 0 0 0 0
 -- Retrieval info: CONNECT: q 0 0 8 0 @q_a 0 0 8 0
--- Retrieval info: GEN_FILE: TYPE_NORMAL K0000000.vhd TRUE
--- Retrieval info: GEN_FILE: TYPE_NORMAL K0000000.inc FALSE
--- Retrieval info: GEN_FILE: TYPE_NORMAL K0000000.cmp TRUE
--- Retrieval info: GEN_FILE: TYPE_NORMAL K0000000.bsf FALSE
--- Retrieval info: GEN_FILE: TYPE_NORMAL K0000000_inst.vhd FALSE
+-- Retrieval info: GEN_FILE: TYPE_NORMAL CPM_BASIC_NANO.vhd TRUE
+-- Retrieval info: GEN_FILE: TYPE_NORMAL CPM_BASIC_NANO.inc FALSE
+-- Retrieval info: GEN_FILE: TYPE_NORMAL CPM_BASIC_NANO.cmp TRUE
+-- Retrieval info: GEN_FILE: TYPE_NORMAL CPM_BASIC_NANO.bsf FALSE
+-- Retrieval info: GEN_FILE: TYPE_NORMAL CPM_BASIC_NANO_inst.vhd FALSE
 -- Retrieval info: LIB_FILE: altera_mf

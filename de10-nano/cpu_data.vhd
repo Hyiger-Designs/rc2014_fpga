@@ -4,7 +4,7 @@
 -- MODULE: altiobuf_bidir 
 
 -- ============================================================
--- File Name: data_bus.vhd
+-- File Name: cpu_data.vhd
 -- Megafunction Name(s):
 -- 			altiobuf_bidir
 --
@@ -43,7 +43,7 @@
  LIBRARY ieee;
  USE ieee.std_logic_1164.all;
 
- ENTITY  data_bus_iobuf_bidir_soo IS 
+ ENTITY  cpu_data_iobuf_bidir_soo IS 
 	 PORT 
 	 ( 
 		 datain	:	IN  STD_LOGIC_VECTOR (7 DOWNTO 0);
@@ -51,9 +51,9 @@
 		 dataout	:	OUT  STD_LOGIC_VECTOR (7 DOWNTO 0);
 		 oe	:	IN  STD_LOGIC_VECTOR (7 DOWNTO 0)
 	 ); 
- END data_bus_iobuf_bidir_soo;
+ END cpu_data_iobuf_bidir_soo;
 
- ARCHITECTURE RTL OF data_bus_iobuf_bidir_soo IS
+ ARCHITECTURE RTL OF cpu_data_iobuf_bidir_soo IS
 
 	 SIGNAL  wire_ibufa_i	:	STD_LOGIC_VECTOR (7 DOWNTO 0);
 	 SIGNAL  wire_ibufa_o	:	STD_LOGIC_VECTOR (7 DOWNTO 0);
@@ -126,14 +126,14 @@
 	  );
 	END GENERATE loop1;
 
- END RTL; --data_bus_iobuf_bidir_soo
+ END RTL; --cpu_data_iobuf_bidir_soo
 --VALID FILE
 
 
 LIBRARY ieee;
 USE ieee.std_logic_1164.all;
 
-ENTITY data_bus IS
+ENTITY cpu_data IS
 	PORT
 	(
 		datain		: IN STD_LOGIC_VECTOR (7 DOWNTO 0);
@@ -141,16 +141,16 @@ ENTITY data_bus IS
 		dataio		: INOUT STD_LOGIC_VECTOR (7 DOWNTO 0);
 		dataout		: OUT STD_LOGIC_VECTOR (7 DOWNTO 0)
 	);
-END data_bus;
+END cpu_data;
 
 
-ARCHITECTURE RTL OF data_bus IS
+ARCHITECTURE RTL OF cpu_data IS
 
 	SIGNAL sub_wire0	: STD_LOGIC_VECTOR (7 DOWNTO 0);
 
 
 
-	COMPONENT data_bus_iobuf_bidir_soo
+	COMPONENT cpu_data_iobuf_bidir_soo
 	PORT (
 			datain	: IN STD_LOGIC_VECTOR (7 DOWNTO 0);
 			oe	: IN STD_LOGIC_VECTOR (7 DOWNTO 0);
@@ -162,7 +162,7 @@ ARCHITECTURE RTL OF data_bus IS
 BEGIN
 	dataout    <= sub_wire0(7 DOWNTO 0);
 
-	data_bus_iobuf_bidir_soo_component : data_bus_iobuf_bidir_soo
+	cpu_data_iobuf_bidir_soo_component : cpu_data_iobuf_bidir_soo
 	PORT MAP (
 		datain => datain,
 		oe => oe,
@@ -196,9 +196,9 @@ END RTL;
 -- Retrieval info: CONNECT: @oe 0 0 8 0 oe 0 0 8 0
 -- Retrieval info: CONNECT: dataio 0 0 8 0 @dataio 0 0 8 0
 -- Retrieval info: CONNECT: dataout 0 0 8 0 @dataout 0 0 8 0
--- Retrieval info: GEN_FILE: TYPE_NORMAL data_bus.vhd TRUE
--- Retrieval info: GEN_FILE: TYPE_NORMAL data_bus.inc FALSE
--- Retrieval info: GEN_FILE: TYPE_NORMAL data_bus.cmp TRUE
--- Retrieval info: GEN_FILE: TYPE_NORMAL data_bus.bsf FALSE
--- Retrieval info: GEN_FILE: TYPE_NORMAL data_bus_inst.vhd TRUE
+-- Retrieval info: GEN_FILE: TYPE_NORMAL cpu_data.vhd TRUE
+-- Retrieval info: GEN_FILE: TYPE_NORMAL cpu_data.inc FALSE
+-- Retrieval info: GEN_FILE: TYPE_NORMAL cpu_data.cmp TRUE
+-- Retrieval info: GEN_FILE: TYPE_NORMAL cpu_data.bsf FALSE
+-- Retrieval info: GEN_FILE: TYPE_NORMAL cpu_data_inst.vhd TRUE
 -- Retrieval info: LIB_FILE: cyclonev
