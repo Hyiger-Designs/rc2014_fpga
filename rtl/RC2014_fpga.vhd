@@ -15,7 +15,7 @@ use ieee.numeric_std.all;
 entity RC2014_fpga is
 	generic(
 		cpu : natural := 1;     -- 0 = t80, 1 = tv80
-		rom : natural := 1		-- 0 = CP/M Monitor, 1 = SCM, 2 = R0001009
+		rom : natural := 0		-- 0 = CP/M Monitor, 1 = SCM, 2 = R0001009
 	);
 	port(
 		-- Z80_BUS
@@ -100,7 +100,9 @@ architecture struct of RC2014_fpga is
 	signal SD_clk   : std_logic;
 	signal SD_D     : std_logic_vector(7 downto 0);
 	signal SD_nCS   : std_logic := '1';
-
+	signal SD_nWR	 : std_logic;
+	signal SD_nRD	 : std_logic;
+	
 	--signal OE : std_logic_vector(7 downto 0);
 	--signal D               :  std_logic_vector(7 downto 0);
 
@@ -145,7 +147,7 @@ begin
 			output_50 => CPU_clk
 		);
 
-	-- If using the CP/M Monitor set the UART to 1.8432Mhz
+	-- If using the CP/M Monitor (CPM_BASIC) set the UART to 1.8432Mhz
 	u_clk : if rom = 0 generate
 		clk_1_8432mhz : entity work.fracn20
 			generic map(
@@ -287,14 +289,17 @@ begin
 			RTS_n    => rts             -- Request To send
 		);
 
+	SD_nWR <= SD_nCS or IO_nRD;
+	SD_nRD <= SD_nCS or IO_nWR;
+		
 	sd1 : entity work.sd_controller
 		port map(
 			sdCS     => SD_CS,
 			sdMOSI   => SD_MOSI,
 			sdMISO   => SD_MISO,
 			sdSCLK   => SD_SCLK,
-			n_wr     => SD_nCS or IO_nRD,
-			n_rd     => SD_nCS or IO_nWR,
+			n_wr     => SD_nWR,
+			n_rd     => SD_nRD,
 			n_reset  => nRST,
 			dataIn   => CPU_D_O,
 			dataOut  => SD_D,
@@ -303,7 +308,7 @@ begin
 			clk      => SD_clk          -- twice the spi clk
 		);
 
-	-- 8 Bytes $88-$8F
+	-- 8 Bytes $88-$8F 10001---
 	SD_nCS <= '0' when CPU_A(7 downto 3) = "10001" and (IO_nWR = '0' or IO_nRD = '0') else '1';
 		
 	-- Serial Channel A - 2 Bytes $80-$81
