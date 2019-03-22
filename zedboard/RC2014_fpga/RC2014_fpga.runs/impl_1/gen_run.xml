@@ -1,0 +1,197 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<GenRun Id="impl_1" LaunchPart="xc7z020clg484-1" LaunchTime="1552544761">
+  <File Type="ROUTE-PWR" Name="RC2014_fpga_power_routed.rpt"/>
+  <File Type="PA-TCL" Name="RC2014_fpga.tcl"/>
+  <File Type="BITSTR-BMM" Name="RC2014_fpga_bd.bmm"/>
+  <File Type="ROUTE-PWR-SUM" Name="RC2014_fpga_power_summary_routed.pb"/>
+  <File Type="REPORTS-TCL" Name="RC2014_fpga_reports.tcl"/>
+  <File Type="OPT-DCP" Name="RC2014_fpga_opt.dcp"/>
+  <File Type="OPT-DRC" Name="RC2014_fpga_drc_opted.rpt"/>
+  <File Type="OPT-HWDEF" Name="RC2014_fpga.hwdef"/>
+  <File Type="PWROPT-DCP" Name="RC2014_fpga_pwropt.dcp"/>
+  <File Type="PLACE-DCP" Name="RC2014_fpga_placed.dcp"/>
+  <File Type="PLACE-IO" Name="RC2014_fpga_io_placed.rpt"/>
+  <File Type="PLACE-UTIL" Name="RC2014_fpga_utilization_placed.rpt"/>
+  <File Type="PLACE-UTIL-PB" Name="RC2014_fpga_utilization_placed.pb"/>
+  <File Type="PLACE-CTRL" Name="RC2014_fpga_control_sets_placed.rpt"/>
+  <File Type="PLACE-PRE-SIMILARITY" Name="RC2014_fpga_incremental_reuse_pre_placed.rpt"/>
+  <File Type="BG-BGN" Name="RC2014_fpga.bgn"/>
+  <File Type="POSTPLACE-PWROPT-DCP" Name="RC2014_fpga_postplace_pwropt.dcp"/>
+  <File Type="BG-BIN" Name="RC2014_fpga.bin"/>
+  <File Type="PHYSOPT-DCP" Name="RC2014_fpga_physopt.dcp"/>
+  <File Type="BITSTR-MSK" Name="RC2014_fpga.msk"/>
+  <File Type="ROUTE-ERROR-DCP" Name="RC2014_fpga_routed_error.dcp"/>
+  <File Type="ROUTE-DCP" Name="RC2014_fpga_routed.dcp"/>
+  <File Type="ROUTE-BLACKBOX-DCP" Name="RC2014_fpga_routed_bb.dcp"/>
+  <File Type="ROUTE-DRC" Name="RC2014_fpga_drc_routed.rpt"/>
+  <File Type="ROUTE-DRC-PB" Name="RC2014_fpga_drc_routed.pb"/>
+  <File Type="ROUTE-DRC-RPX" Name="RC2014_fpga_drc_routed.rpx"/>
+  <File Type="BITSTR-LTX" Name="RC2014_fpga.ltx"/>
+  <File Type="ROUTE-METHODOLOGY-DRC" Name="RC2014_fpga_methodology_drc_routed.rpt"/>
+  <File Type="BITSTR-MMI" Name="RC2014_fpga.mmi"/>
+  <File Type="ROUTE-METHODOLOGY-DRC-RPX" Name="RC2014_fpga_methodology_drc_routed.rpx"/>
+  <File Type="ROUTE-METHODOLOGY-DRC-PB" Name="RC2014_fpga_methodology_drc_routed.pb"/>
+  <File Type="BITSTR-SYSDEF" Name="RC2014_fpga.sysdef"/>
+  <File Type="ROUTE-PWR-RPX" Name="RC2014_fpga_power_routed.rpx"/>
+  <File Type="ROUTE-STATUS" Name="RC2014_fpga_route_status.rpt"/>
+  <File Type="ROUTE-STATUS-PB" Name="RC2014_fpga_route_status.pb"/>
+  <File Type="ROUTE-TIMINGSUMMARY" Name="RC2014_fpga_timing_summary_routed.rpt"/>
+  <File Type="ROUTE-TIMING-PB" Name="RC2014_fpga_timing_summary_routed.pb"/>
+  <File Type="ROUTE-TIMING-RPX" Name="RC2014_fpga_timing_summary_routed.rpx"/>
+  <File Type="ROUTE-CLK" Name="RC2014_fpga_clock_utilization_routed.rpt"/>
+  <File Type="ROUTE-BUS-SKEW" Name="RC2014_fpga_bus_skew_routed.rpt"/>
+  <File Type="ROUTE-BUS-SKEW-PB" Name="RC2014_fpga_bus_skew_routed.pb"/>
+  <File Type="ROUTE-BUS-SKEW-RPX" Name="RC2014_fpga_bus_skew_routed.rpx"/>
+  <File Type="POSTROUTE-PHYSOPT-DCP" Name="RC2014_fpga_postroute_physopt.dcp"/>
+  <File Type="POSTROUTE-PHYSOPT-BLACKBOX-DCP" Name="RC2014_fpga_postroute_physopt_bb.dcp"/>
+  <File Type="BG-BIT" Name="RC2014_fpga.bit"/>
+  <File Type="BITSTR-RBT" Name="RC2014_fpga.rbt"/>
+  <File Type="BITSTR-NKY" Name="RC2014_fpga.nky"/>
+  <File Type="BG-DRC" Name="RC2014_fpga.drc"/>
+  <File Type="RDI-RDI" Name="RC2014_fpga.vdi"/>
+  <File Type="WBT-USG" Name="usage_statistics_webtalk.html"/>
+  <FileSet Name="sources" Type="DesignSrcs" RelSrcDir="$PSRCDIR/sources_1">
+    <Filter Type="Srcs"/>
+    <File Path="$PSRCDIR/sources_1/ip/CPM_BASIC/CPM_BASIC.xci">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/ip/SCM_V100_S3_SCS3_32K/SCM_V100_S3_SCS3_32K.xci">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PPRDIR/../../rtl/frac20.vhd">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PPRDIR/../../rtl/T80/T80_Pack.vhd">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PPRDIR/../../rtl/T80/T80s.vhd">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PPRDIR/../../rtl/single_port_ram.vhd">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PPRDIR/../../rtl/decoder_3x8.vhd">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PPRDIR/../../rtl/ROM_Page_Select.vhd">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PPRDIR/../../rtl/acia6850.vhd">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PPRDIR/../../rtl/T80/T80.vhd">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PPRDIR/../../rtl/T80/T80_ALU.vhd">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PPRDIR/../../rtl/T80/T80_MCode.vhd">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PPRDIR/../../rtl/T80/T80_Reg.vhd">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PPRDIR/../../rtl/RC2014_fpga.vhd">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PPRDIR/../../roms/CPM_BASIC.coe">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PPRDIR/../../roms/SCMonitor-v100-S3-SCS3-32k-ROM.coe">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PPRDIR/../../roms/R0001009.coe">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <Config>
+      <Option Name="DesignMode" Val="RTL"/>
+      <Option Name="TopModule" Val="RC2014_fpga"/>
+      <Option Name="TopAutoSet" Val="TRUE"/>
+    </Config>
+  </FileSet>
+  <FileSet Name="constrs_in" Type="Constrs" RelSrcDir="$PSRCDIR/constrs_1">
+    <Filter Type="Constrs"/>
+    <File Path="$PSRCDIR/constrs_1/new/RC2014_fpga.xdc">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+      </FileInfo>
+    </File>
+    <Config>
+      <Option Name="TargetConstrsFile" Val="$PSRCDIR/constrs_1/new/RC2014_fpga.xdc"/>
+      <Option Name="ConstrsType" Val="XDC"/>
+    </Config>
+  </FileSet>
+  <FileSet Name="utils" Type="Utils" RelSrcDir="$PSRCDIR/utils_1">
+    <Filter Type="Utils"/>
+    <Config>
+      <Option Name="TopAutoSet" Val="TRUE"/>
+    </Config>
+  </FileSet>
+  <Strategy Version="1" Minor="2">
+    <StratHandle Name="Vivado Implementation Defaults" Flow="Vivado Implementation 2018"/>
+    <Step Id="init_design"/>
+    <Step Id="opt_design"/>
+    <Step Id="power_opt_design"/>
+    <Step Id="place_design"/>
+    <Step Id="post_place_power_opt_design"/>
+    <Step Id="phys_opt_design"/>
+    <Step Id="route_design"/>
+    <Step Id="post_route_phys_opt_design"/>
+    <Step Id="write_bitstream"/>
+  </Strategy>
+  <BlockFileSet Type="BlockSrcs" Name="R0001009"/>
+</GenRun>

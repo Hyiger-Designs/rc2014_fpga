@@ -1,0 +1,888 @@
+#-----------------------------------------------------------
+# Vivado v2018.3 (64-bit)
+# SW Build 2405991 on Thu Dec  6 23:38:27 MST 2018
+# IP Build 2404404 on Fri Dec  7 01:43:56 MST 2018
+# Start of session at: Wed Mar 13 23:25:10 2019
+# Process ID: 18992
+# Current directory: C:/Users/richa/gitrepo/RC2014_fpga/zedboard/RC2014_fpga/RC2014_fpga.runs/synth_1
+# Command line: vivado.exe -log RC2014_fpga.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source RC2014_fpga.tcl
+# Log file: C:/Users/richa/gitrepo/RC2014_fpga/zedboard/RC2014_fpga/RC2014_fpga.runs/synth_1/RC2014_fpga.vds
+# Journal file: C:/Users/richa/gitrepo/RC2014_fpga/zedboard/RC2014_fpga/RC2014_fpga.runs/synth_1\vivado.jou
+#-----------------------------------------------------------
+source RC2014_fpga.tcl -notrace
+Command: synth_design -top RC2014_fpga -part xc7z020clg484-1
+Starting synth_design
+Attempting to get a license for feature 'Synthesis' and/or device 'xc7z020'
+INFO: [Common 17-349] Got license for feature 'Synthesis' and/or device 'xc7z020'
+INFO: Launching helper process for spawning children vivado processes
+INFO: Helper process launched with PID 14960 
+---------------------------------------------------------------------------------
+Starting RTL Elaboration : Time (s): cpu = 00:00:02 ; elapsed = 00:00:02 . Memory (MB): peak = 393.898 ; gain = 99.918
+---------------------------------------------------------------------------------
+INFO: [Synth 8-638] synthesizing module 'RC2014_fpga' [C:/Users/richa/gitrepo/RC2014_fpga/rtl/RC2014_fpga.vhd:49]
+INFO: [Synth 8-638] synthesizing module 'fracn20' [C:/Users/richa/gitrepo/RC2014_fpga/rtl/frac20.vhd:161]
+	Parameter input_frequency bound to: 100000000.000000 - type: float 
+	Parameter output_frequency bound to: 7372800.000000 - type: float 
+	Parameter tolerance bound to: 0.000000 - type: float 
+	Parameter improve_duty_cycle bound to: 1 - type: bool 
+	Parameter suppress_report bound to: 1 - type: bool 
+WARNING: [Synth 8-6426] Mix of Sync and Async assignments to register 'controllers[1].carry_reg' in module 'fracn20' in the same process may cause logic issues. 
+ Please split the sync and async parts into different processes [C:/Users/richa/gitrepo/RC2014_fpga/rtl/frac20.vhd:513]
+WARNING: [Synth 8-6426] Mix of Sync and Async assignments to register 'controllers[1].stageout_reg' in module 'fracn20' in the same process may cause logic issues. 
+ Please split the sync and async parts into different processes [C:/Users/richa/gitrepo/RC2014_fpga/rtl/frac20.vhd:514]
+WARNING: [Synth 8-6426] Mix of Sync and Async assignments to register 'controllers[2].carry_reg' in module 'fracn20' in the same process may cause logic issues. 
+ Please split the sync and async parts into different processes [C:/Users/richa/gitrepo/RC2014_fpga/rtl/frac20.vhd:513]
+WARNING: [Synth 8-6426] Mix of Sync and Async assignments to register 'controllers[2].stageout_reg' in module 'fracn20' in the same process may cause logic issues. 
+ Please split the sync and async parts into different processes [C:/Users/richa/gitrepo/RC2014_fpga/rtl/frac20.vhd:514]
+WARNING: [Synth 8-6426] Mix of Sync and Async assignments to register 'controllers[3].carry_reg' in module 'fracn20' in the same process may cause logic issues. 
+ Please split the sync and async parts into different processes [C:/Users/richa/gitrepo/RC2014_fpga/rtl/frac20.vhd:513]
+WARNING: [Synth 8-6426] Mix of Sync and Async assignments to register 'controllers[3].stageout_reg' in module 'fracn20' in the same process may cause logic issues. 
+ Please split the sync and async parts into different processes [C:/Users/richa/gitrepo/RC2014_fpga/rtl/frac20.vhd:514]
+WARNING: [Synth 8-6426] Mix of Sync and Async assignments to register 'controllers[4].carry_reg' in module 'fracn20' in the same process may cause logic issues. 
+ Please split the sync and async parts into different processes [C:/Users/richa/gitrepo/RC2014_fpga/rtl/frac20.vhd:513]
+WARNING: [Synth 8-6426] Mix of Sync and Async assignments to register 'controllers[4].stageout_reg' in module 'fracn20' in the same process may cause logic issues. 
+ Please split the sync and async parts into different processes [C:/Users/richa/gitrepo/RC2014_fpga/rtl/frac20.vhd:514]
+WARNING: [Synth 8-6426] Mix of Sync and Async assignments to register 'controllers[5].carry_reg' in module 'fracn20' in the same process may cause logic issues. 
+ Please split the sync and async parts into different processes [C:/Users/richa/gitrepo/RC2014_fpga/rtl/frac20.vhd:513]
+WARNING: [Synth 8-6426] Mix of Sync and Async assignments to register 'controllers[5].stageout_reg' in module 'fracn20' in the same process may cause logic issues. 
+ Please split the sync and async parts into different processes [C:/Users/richa/gitrepo/RC2014_fpga/rtl/frac20.vhd:514]
+INFO: [Synth 8-256] done synthesizing module 'fracn20' (1#1) [C:/Users/richa/gitrepo/RC2014_fpga/rtl/frac20.vhd:161]
+INFO: [Synth 8-638] synthesizing module 'T80s' [C:/Users/richa/gitrepo/RC2014_fpga/rtl/T80/T80s.vhd:100]
+	Parameter Mode bound to: 1 - type: integer 
+	Parameter T2Write bound to: 1 - type: integer 
+	Parameter IOWait bound to: 0 - type: integer 
+	Parameter Mode bound to: 1 - type: integer 
+	Parameter IOWait bound to: 0 - type: integer 
+	Parameter Flag_C bound to: 0 - type: integer 
+	Parameter Flag_N bound to: 1 - type: integer 
+	Parameter Flag_P bound to: 2 - type: integer 
+	Parameter Flag_X bound to: 3 - type: integer 
+	Parameter Flag_H bound to: 4 - type: integer 
+	Parameter Flag_Y bound to: 5 - type: integer 
+	Parameter Flag_Z bound to: 6 - type: integer 
+	Parameter Flag_S bound to: 7 - type: integer 
+INFO: [Synth 8-3491] module 'T80' declared at 'C:/Users/richa/gitrepo/RC2014_fpga/rtl/T80/T80.vhd:75' bound to instance 'u0' of component 'T80' [C:/Users/richa/gitrepo/RC2014_fpga/rtl/T80/T80s.vhd:115]
+INFO: [Synth 8-638] synthesizing module 'T80' [C:/Users/richa/gitrepo/RC2014_fpga/rtl/T80/T80.vhd:115]
+	Parameter Mode bound to: 1 - type: integer 
+	Parameter IOWait bound to: 0 - type: integer 
+	Parameter Flag_C bound to: 0 - type: integer 
+	Parameter Flag_N bound to: 1 - type: integer 
+	Parameter Flag_P bound to: 2 - type: integer 
+	Parameter Flag_X bound to: 3 - type: integer 
+	Parameter Flag_H bound to: 4 - type: integer 
+	Parameter Flag_Y bound to: 5 - type: integer 
+	Parameter Flag_Z bound to: 6 - type: integer 
+	Parameter Flag_S bound to: 7 - type: integer 
+	Parameter Mode bound to: 1 - type: integer 
+	Parameter Flag_C bound to: 0 - type: integer 
+	Parameter Flag_N bound to: 1 - type: integer 
+	Parameter Flag_P bound to: 2 - type: integer 
+	Parameter Flag_X bound to: 3 - type: integer 
+	Parameter Flag_H bound to: 4 - type: integer 
+	Parameter Flag_Y bound to: 5 - type: integer 
+	Parameter Flag_Z bound to: 6 - type: integer 
+	Parameter Flag_S bound to: 7 - type: integer 
+INFO: [Synth 8-3491] module 'T80_MCode' declared at 'C:/Users/richa/gitrepo/RC2014_fpga/rtl/T80/T80_MCode.vhd:68' bound to instance 'mcode' of component 'T80_MCode' [C:/Users/richa/gitrepo/RC2014_fpga/rtl/T80/T80.vhd:244]
+INFO: [Synth 8-638] synthesizing module 'T80_MCode' [C:/Users/richa/gitrepo/RC2014_fpga/rtl/T80/T80_MCode.vhd:137]
+	Parameter Mode bound to: 1 - type: integer 
+	Parameter Flag_C bound to: 0 - type: integer 
+	Parameter Flag_N bound to: 1 - type: integer 
+	Parameter Flag_P bound to: 2 - type: integer 
+	Parameter Flag_X bound to: 3 - type: integer 
+	Parameter Flag_H bound to: 4 - type: integer 
+	Parameter Flag_Y bound to: 5 - type: integer 
+	Parameter Flag_Z bound to: 6 - type: integer 
+	Parameter Flag_S bound to: 7 - type: integer 
+INFO: [Synth 8-256] done synthesizing module 'T80_MCode' (2#1) [C:/Users/richa/gitrepo/RC2014_fpga/rtl/T80/T80_MCode.vhd:137]
+	Parameter Mode bound to: 1 - type: integer 
+	Parameter Flag_C bound to: 0 - type: integer 
+	Parameter Flag_N bound to: 1 - type: integer 
+	Parameter Flag_P bound to: 2 - type: integer 
+	Parameter Flag_X bound to: 3 - type: integer 
+	Parameter Flag_H bound to: 4 - type: integer 
+	Parameter Flag_Y bound to: 5 - type: integer 
+	Parameter Flag_Z bound to: 6 - type: integer 
+	Parameter Flag_S bound to: 7 - type: integer 
+INFO: [Synth 8-3491] module 'T80_ALU' declared at 'C:/Users/richa/gitrepo/RC2014_fpga/rtl/T80/T80_ALU.vhd:62' bound to instance 'alu' of component 'T80_ALU' [C:/Users/richa/gitrepo/RC2014_fpga/rtl/T80/T80.vhd:309]
+INFO: [Synth 8-638] synthesizing module 'T80_ALU' [C:/Users/richa/gitrepo/RC2014_fpga/rtl/T80/T80_ALU.vhd:88]
+	Parameter Mode bound to: 1 - type: integer 
+	Parameter Flag_C bound to: 0 - type: integer 
+	Parameter Flag_N bound to: 1 - type: integer 
+	Parameter Flag_P bound to: 2 - type: integer 
+	Parameter Flag_X bound to: 3 - type: integer 
+	Parameter Flag_H bound to: 4 - type: integer 
+	Parameter Flag_Y bound to: 5 - type: integer 
+	Parameter Flag_Z bound to: 6 - type: integer 
+	Parameter Flag_S bound to: 7 - type: integer 
+INFO: [Synth 8-256] done synthesizing module 'T80_ALU' (3#1) [C:/Users/richa/gitrepo/RC2014_fpga/rtl/T80/T80_ALU.vhd:88]
+INFO: [Synth 8-3491] module 'T80_Reg' declared at 'C:/Users/richa/gitrepo/RC2014_fpga/rtl/T80/T80_Reg.vhd:56' bound to instance 'Regs' of component 'T80_Reg' [C:/Users/richa/gitrepo/RC2014_fpga/rtl/T80/T80.vhd:819]
+INFO: [Synth 8-638] synthesizing module 'T80_Reg' [C:/Users/richa/gitrepo/RC2014_fpga/rtl/T80/T80_Reg.vhd:76]
+INFO: [Synth 8-256] done synthesizing module 'T80_Reg' (4#1) [C:/Users/richa/gitrepo/RC2014_fpga/rtl/T80/T80_Reg.vhd:76]
+INFO: [Synth 8-256] done synthesizing module 'T80' (5#1) [C:/Users/richa/gitrepo/RC2014_fpga/rtl/T80/T80.vhd:115]
+INFO: [Synth 8-256] done synthesizing module 'T80s' (6#1) [C:/Users/richa/gitrepo/RC2014_fpga/rtl/T80/T80s.vhd:100]
+INFO: [Synth 8-638] synthesizing module 'single_port_ram' [C:/Users/richa/gitrepo/RC2014_fpga/rtl/single_port_ram.vhd:15]
+INFO: [Synth 8-256] done synthesizing module 'single_port_ram' (7#1) [C:/Users/richa/gitrepo/RC2014_fpga/rtl/single_port_ram.vhd:15]
+INFO: [Synth 8-638] synthesizing module 'ROM_Page_Select' [C:/Users/richa/gitrepo/RC2014_fpga/rtl/ROM_Page_Select.vhd:24]
+	Parameter rom bound to: 1 - type: integer 
+	Parameter page_port bound to: 8'b00111000 
+INFO: [Synth 8-3491] module 'SCM_V100_S3_SCS3_32K' declared at 'C:/Users/richa/gitrepo/RC2014_fpga/zedboard/RC2014_fpga/RC2014_fpga.runs/synth_1/.Xil/Vivado-18992-richards-pc/realtime/SCM_V100_S3_SCS3_32K_stub.vhdl:5' bound to instance 'rom32k' of component 'SCM_V100_S3_SCS3_32K' [C:/Users/richa/gitrepo/RC2014_fpga/rtl/ROM_Page_Select.vhd:69]
+INFO: [Synth 8-638] synthesizing module 'SCM_V100_S3_SCS3_32K' [C:/Users/richa/gitrepo/RC2014_fpga/zedboard/RC2014_fpga/RC2014_fpga.runs/synth_1/.Xil/Vivado-18992-richards-pc/realtime/SCM_V100_S3_SCS3_32K_stub.vhdl:14]
+INFO: [Synth 8-256] done synthesizing module 'ROM_Page_Select' (8#1) [C:/Users/richa/gitrepo/RC2014_fpga/rtl/ROM_Page_Select.vhd:24]
+INFO: [Synth 8-638] synthesizing module 'acia6850' [C:/Users/richa/gitrepo/RC2014_fpga/rtl/acia6850.vhd:165]
+INFO: [Synth 8-226] default block is never used [C:/Users/richa/gitrepo/RC2014_fpga/rtl/acia6850.vhd:400]
+INFO: [Synth 8-226] default block is never used [C:/Users/richa/gitrepo/RC2014_fpga/rtl/acia6850.vhd:635]
+WARNING: [Synth 8-6014] Unused sequential element RxEnable_reg was removed.  [C:/Users/richa/gitrepo/RC2014_fpga/rtl/acia6850.vhd:547]
+WARNING: [Synth 8-6014] Unused sequential element RxStart_reg was removed.  [C:/Users/richa/gitrepo/RC2014_fpga/rtl/acia6850.vhd:548]
+INFO: [Synth 8-256] done synthesizing module 'acia6850' (9#1) [C:/Users/richa/gitrepo/RC2014_fpga/rtl/acia6850.vhd:165]
+WARNING: [Synth 8-3848] Net TX2 in module/entity RC2014_fpga does not have driver. [C:/Users/richa/gitrepo/RC2014_fpga/rtl/RC2014_fpga.vhd:39]
+INFO: [Synth 8-256] done synthesizing module 'RC2014_fpga' (10#1) [C:/Users/richa/gitrepo/RC2014_fpga/rtl/RC2014_fpga.vhd:49]
+WARNING: [Synth 8-3331] design ROM_Page_Select has unconnected port page_select[2]
+WARNING: [Synth 8-3331] design ROM_Page_Select has unconnected port page_select[1]
+WARNING: [Synth 8-3331] design ROM_Page_Select has unconnected port page_select[0]
+WARNING: [Synth 8-3331] design T80_MCode has unconnected port F[5]
+WARNING: [Synth 8-3331] design T80_MCode has unconnected port F[4]
+WARNING: [Synth 8-3331] design T80_MCode has unconnected port F[3]
+WARNING: [Synth 8-3331] design T80_MCode has unconnected port F[1]
+WARNING: [Synth 8-3331] design RC2014_fpga has unconnected port TX2
+WARNING: [Synth 8-3331] design RC2014_fpga has unconnected port nINT
+WARNING: [Synth 8-3331] design RC2014_fpga has unconnected port nRST2
+WARNING: [Synth 8-3331] design RC2014_fpga has unconnected port clk2
+WARNING: [Synth 8-3331] design RC2014_fpga has unconnected port RX2
+---------------------------------------------------------------------------------
+Finished RTL Elaboration : Time (s): cpu = 00:00:04 ; elapsed = 00:00:04 . Memory (MB): peak = 496.742 ; gain = 202.762
+---------------------------------------------------------------------------------
+
+Report Check Netlist: 
++------+------------------+-------+---------+-------+------------------+
+|      |Item              |Errors |Warnings |Status |Description       |
++------+------------------+-------+---------+-------+------------------+
+|1     |multi_driven_nets |      0|        0|Passed |Multi driven nets |
++------+------------------+-------+---------+-------+------------------+
+---------------------------------------------------------------------------------
+Start Handling Custom Attributes
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:05 ; elapsed = 00:00:05 . Memory (MB): peak = 496.742 ; gain = 202.762
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:05 ; elapsed = 00:00:05 . Memory (MB): peak = 496.742 ; gain = 202.762
+---------------------------------------------------------------------------------
+INFO: [Device 21-403] Loading part xc7z020clg484-1
+INFO: [Project 1-570] Preparing netlist for logic optimization
+
+Processing XDC Constraints
+Initializing timing engine
+Parsing XDC File [c:/Users/richa/gitrepo/RC2014_fpga/zedboard/RC2014_fpga/RC2014_fpga.srcs/sources_1/ip/SCM_V100_S3_SCS3_32K/SCM_V100_S3_SCS3_32K/SCM_V100_S3_SCS3_32K_in_context.xdc] for cell 'rom/scm.rom32k'
+Finished Parsing XDC File [c:/Users/richa/gitrepo/RC2014_fpga/zedboard/RC2014_fpga/RC2014_fpga.srcs/sources_1/ip/SCM_V100_S3_SCS3_32K/SCM_V100_S3_SCS3_32K/SCM_V100_S3_SCS3_32K_in_context.xdc] for cell 'rom/scm.rom32k'
+Parsing XDC File [C:/Users/richa/gitrepo/RC2014_fpga/zedboard/RC2014_fpga/RC2014_fpga.srcs/constrs_1/new/RC2014_fpga.xdc]
+Finished Parsing XDC File [C:/Users/richa/gitrepo/RC2014_fpga/zedboard/RC2014_fpga/RC2014_fpga.srcs/constrs_1/new/RC2014_fpga.xdc]
+INFO: [Project 1-236] Implementation specific constraints were found while reading constraint file [C:/Users/richa/gitrepo/RC2014_fpga/zedboard/RC2014_fpga/RC2014_fpga.srcs/constrs_1/new/RC2014_fpga.xdc]. These constraints will be ignored for synthesis but will be used in implementation. Impacted constraints are listed in the file [.Xil/RC2014_fpga_propImpl.xdc].
+Resolution: To avoid this warning, move constraints listed in [.Xil/RC2014_fpga_propImpl.xdc] to another XDC file and exclude this new file from synthesis with the used_in_synthesis property (File Properties dialog in GUI) and re-run elaboration/synthesis.
+Parsing XDC File [C:/Users/richa/gitrepo/RC2014_fpga/zedboard/RC2014_fpga/RC2014_fpga.runs/synth_1/dont_touch.xdc]
+Finished Parsing XDC File [C:/Users/richa/gitrepo/RC2014_fpga/zedboard/RC2014_fpga/RC2014_fpga.runs/synth_1/dont_touch.xdc]
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.001 . Memory (MB): peak = 847.082 ; gain = 0.000
+Completed Processing XDC Constraints
+
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 847.082 ; gain = 0.000
+INFO: [Project 1-111] Unisim Transformation Summary:
+No Unisim elements were transformed.
+
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.001 . Memory (MB): peak = 847.082 ; gain = 0.000
+Constraint Validation Runtime : Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.012 . Memory (MB): peak = 847.082 ; gain = 0.000
+---------------------------------------------------------------------------------
+Finished Constraint Validation : Time (s): cpu = 00:00:12 ; elapsed = 00:00:13 . Memory (MB): peak = 847.082 ; gain = 553.102
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Loading Part and Timing Information
+---------------------------------------------------------------------------------
+Loading part: xc7z020clg484-1
+---------------------------------------------------------------------------------
+Finished Loading Part and Timing Information : Time (s): cpu = 00:00:12 ; elapsed = 00:00:13 . Memory (MB): peak = 847.082 ; gain = 553.102
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Applying 'set_property' XDC Constraints
+---------------------------------------------------------------------------------
+Applied set_property DONT_TOUCH = true for rom/\scm.rom32k . (constraint file  auto generated constraint, line ).
+---------------------------------------------------------------------------------
+Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:12 ; elapsed = 00:00:13 . Memory (MB): peak = 847.082 ; gain = 553.102
+---------------------------------------------------------------------------------
+INFO: [Synth 8-5587] ROM size for "MCycles" is below threshold of ROM address width. It will be mapped to LUTs
+INFO: [Synth 8-5546] ROM "MCycles" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "TStates" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "Prefix" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5544] ROM "LDZ" won't be mapped to Block RAM because address size (3) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "Inc_PC" won't be mapped to Block RAM because address size (3) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "NoRead" won't be mapped to Block RAM because address size (3) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "Inc_PC" won't be mapped to Block RAM because address size (3) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "Read_To_Reg" won't be mapped to Block RAM because address size (3) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "IncDec_16" won't be mapped to Block RAM because address size (3) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "IncDec_16" won't be mapped to Block RAM because address size (3) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "Read_To_Reg" won't be mapped to Block RAM because address size (3) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "Write" won't be mapped to Block RAM because address size (3) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "Read_To_Reg" won't be mapped to Block RAM because address size (3) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "Read_To_Reg" won't be mapped to Block RAM because address size (3) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "Read_To_Reg" won't be mapped to Block RAM because address size (3) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "Read_To_Reg" won't be mapped to Block RAM because address size (3) smaller than threshold (5)
+INFO: [Synth 8-5546] ROM "Read_To_Acc" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5544] ROM "I_RLD" won't be mapped to Block RAM because address size (3) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "Jump" won't be mapped to Block RAM because address size (3) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "Set_BusA_To" won't be mapped to Block RAM because address size (3) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "Set_BusA_To" won't be mapped to Block RAM because address size (3) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "Set_BusA_To" won't be mapped to Block RAM because address size (3) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "Set_BusA_To" won't be mapped to Block RAM because address size (3) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "Set_BusB_To" won't be mapped to Block RAM because address size (3) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "Set_BusB_To" won't be mapped to Block RAM because address size (3) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "Set_BusB_To" won't be mapped to Block RAM because address size (3) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "Set_BusB_To" won't be mapped to Block RAM because address size (3) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "Set_BusB_To" won't be mapped to Block RAM because address size (3) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "Set_BusB_To" won't be mapped to Block RAM because address size (3) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "Set_BusB_To" won't be mapped to Block RAM because address size (3) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "Set_Addr_To" won't be mapped to Block RAM because address size (3) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "Set_Addr_To" won't be mapped to Block RAM because address size (3) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "Set_Addr_To" won't be mapped to Block RAM because address size (3) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "Set_Addr_To" won't be mapped to Block RAM because address size (3) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "Set_Addr_To" won't be mapped to Block RAM because address size (3) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "Set_Addr_To" won't be mapped to Block RAM because address size (3) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "Set_Addr_To" won't be mapped to Block RAM because address size (3) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "Set_Addr_To" won't be mapped to Block RAM because address size (3) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "Set_Addr_To" won't be mapped to Block RAM because address size (3) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "Set_Addr_To" won't be mapped to Block RAM because address size (3) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "Set_Addr_To" won't be mapped to Block RAM because address size (3) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "Write" won't be mapped to Block RAM because address size (3) smaller than threshold (5)
+INFO: [Synth 8-5546] ROM "JumpXY" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5544] ROM "NoRead" won't be mapped to Block RAM because address size (3) smaller than threshold (5)
+INFO: [Synth 8-5546] ROM "LDSPHL" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "Special_LD" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "ExchangeDH" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "ExchangeRp" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "ExchangeAF" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "ExchangeRS" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5544] ROM "I_DJNZ" won't be mapped to Block RAM because address size (3) smaller than threshold (5)
+INFO: [Synth 8-5546] ROM "I_CPL" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "I_CCF" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "I_SCF" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "SetDI" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "SetEI" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "IMode" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "Halt" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5544] ROM "Write" won't be mapped to Block RAM because address size (3) smaller than threshold (5)
+INFO: [Synth 8-5546] ROM "F_Out" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "F_Out" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "F_Out" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5818] HDL ADVISOR - The operator resource <adder> is shared. To prevent sharing consider applying a KEEP on the output of the operator [C:/Users/richa/gitrepo/RC2014_fpga/rtl/T80/T80.vhd:572]
+INFO: [Synth 8-5544] ROM "ISet" won't be mapped to Block RAM because address size (2) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "XY_State" won't be mapped to Block RAM because address size (2) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "XY_Ind" won't be mapped to Block RAM because address size (3) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "SP" won't be mapped to Block RAM because address size (3) smaller than threshold (5)
+INFO: [Synth 8-5546] ROM "IncDecZ" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5544] ROM "BusA" won't be mapped to Block RAM because address size (4) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "Auto_Wait" won't be mapped to Block RAM because address size (3) smaller than threshold (5)
+INFO: [Synth 8-5546] ROM "F" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5544] ROM "ISet" won't be mapped to Block RAM because address size (1) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "XY_State" won't be mapped to Block RAM because address size (2) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "XY_Ind" won't be mapped to Block RAM because address size (1) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "SP" won't be mapped to Block RAM because address size (3) smaller than threshold (5)
+INFO: [Synth 8-5546] ROM "IncDecZ" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5544] ROM "BusA" won't be mapped to Block RAM because address size (4) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "Auto_Wait" won't be mapped to Block RAM because address size (3) smaller than threshold (5)
+INFO: [Synth 8-5546] ROM "F" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5544] ROM "XY_State" won't be mapped to Block RAM because address size (1) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "F" won't be mapped to Block RAM because address size (1) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "I" won't be mapped to Block RAM because address size (2) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "RegAddrA_r" won't be mapped to Block RAM because address size (1) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "RegAddrB_r" won't be mapped to Block RAM because address size (1) smaller than threshold (5)
+INFO: [Synth 8-5546] ROM "nPage" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-802] inferred FSM for state register 'DCDState_reg' in module 'acia6850'
+INFO: [Synth 8-802] inferred FSM for state register 'RxState_reg' in module 'acia6850'
+INFO: [Synth 8-802] inferred FSM for state register 'TxState_reg' in module 'acia6850'
+INFO: [Synth 8-5544] ROM "FErr" won't be mapped to Block RAM because address size (2) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "RxParity" won't be mapped to Block RAM because address size (2) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "RxAck" won't be mapped to Block RAM because address size (2) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "RxState" won't be mapped to Block RAM because address size (1) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "TxState" won't be mapped to Block RAM because address size (1) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "TxState" won't be mapped to Block RAM because address size (1) smaller than threshold (5)
+---------------------------------------------------------------------------------------------------
+                   State |                     New Encoding |                Previous Encoding 
+---------------------------------------------------------------------------------------------------
+            txstate_idle |                              000 |                              000
+           txstate_start |                              001 |                              001
+            txstate_data |                              010 |                              010
+          txstate_parity |                              011 |                              011
+            txstate_stop |                              100 |                              100
+---------------------------------------------------------------------------------------------------
+INFO: [Synth 8-3354] encoded FSM with state register 'TxState_reg' using encoding 'sequential' in module 'acia6850'
+---------------------------------------------------------------------------------------------------
+                   State |                     New Encoding |                Previous Encoding 
+---------------------------------------------------------------------------------------------------
+          dcd_state_idle |                              001 |                               00
+           dcd_state_int |                              010 |                               01
+         dcd_state_reset |                              100 |                               10
+---------------------------------------------------------------------------------------------------
+INFO: [Synth 8-3354] encoded FSM with state register 'DCDState_reg' using encoding 'one-hot' in module 'acia6850'
+---------------------------------------------------------------------------------------------------
+                   State |                     New Encoding |                Previous Encoding 
+---------------------------------------------------------------------------------------------------
+            rxstate_wait |                               00 |                               00
+            rxstate_data |                               01 |                               01
+          rxstate_parity |                               10 |                               10
+            rxstate_stop |                               11 |                               11
+---------------------------------------------------------------------------------------------------
+INFO: [Synth 8-3354] encoded FSM with state register 'RxState_reg' using encoding 'sequential' in module 'acia6850'
+---------------------------------------------------------------------------------
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:16 ; elapsed = 00:00:17 . Memory (MB): peak = 847.082 ; gain = 553.102
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+---------------------------------------------------------------------------------
+Start RTL Component Statistics 
+---------------------------------------------------------------------------------
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input     16 Bit       Adders := 7     
+	   2 Input      9 Bit       Adders := 2     
+	   3 Input      9 Bit       Adders := 1     
+	   2 Input      8 Bit       Adders := 1     
+	   2 Input      7 Bit       Adders := 1     
+	   2 Input      6 Bit       Adders := 3     
+	   2 Input      5 Bit       Adders := 2     
+	   2 Input      4 Bit       Adders := 2     
+	   2 Input      3 Bit       Adders := 9     
++---XORs : 
+	   2 Input      8 Bit         XORs := 1     
+	   2 Input      1 Bit         XORs := 5     
+	   8 Input      1 Bit         XORs := 5     
++---Registers : 
+	               32 Bit    Registers := 5     
+	               16 Bit    Registers := 5     
+	                8 Bit    Registers := 17    
+	                6 Bit    Registers := 2     
+	                5 Bit    Registers := 1     
+	                4 Bit    Registers := 2     
+	                3 Bit    Registers := 9     
+	                2 Bit    Registers := 3     
+	                1 Bit    Registers := 60    
++---RAMs : 
+	             512K Bit         RAMs := 1     
+	               64 Bit         RAMs := 2     
++---Muxes : 
+	   2 Input     32 Bit        Muxes := 5     
+	   6 Input     16 Bit        Muxes := 1     
+	   2 Input     16 Bit        Muxes := 16    
+	   2 Input      9 Bit        Muxes := 2     
+	   8 Input      8 Bit        Muxes := 1     
+	   5 Input      8 Bit        Muxes := 3     
+	   2 Input      8 Bit        Muxes := 57    
+	   6 Input      8 Bit        Muxes := 4     
+	   4 Input      8 Bit        Muxes := 4     
+	   2 Input      7 Bit        Muxes := 1     
+	   2 Input      6 Bit        Muxes := 11    
+	   2 Input      5 Bit        Muxes := 2     
+	   2 Input      4 Bit        Muxes := 55    
+	   4 Input      4 Bit        Muxes := 14    
+	   6 Input      4 Bit        Muxes := 4     
+	   8 Input      4 Bit        Muxes := 3     
+	   5 Input      4 Bit        Muxes := 8     
+	  59 Input      4 Bit        Muxes := 4     
+	   9 Input      4 Bit        Muxes := 3     
+	   3 Input      4 Bit        Muxes := 5     
+	  23 Input      4 Bit        Muxes := 3     
+	   3 Input      3 Bit        Muxes := 10    
+	   2 Input      3 Bit        Muxes := 49    
+	   5 Input      3 Bit        Muxes := 17    
+	  59 Input      3 Bit        Muxes := 2     
+	  25 Input      3 Bit        Muxes := 3     
+	   4 Input      3 Bit        Muxes := 16    
+	  23 Input      3 Bit        Muxes := 3     
+	   6 Input      3 Bit        Muxes := 2     
+	   8 Input      3 Bit        Muxes := 3     
+	   2 Input      2 Bit        Muxes := 15    
+	   4 Input      2 Bit        Muxes := 7     
+	   3 Input      2 Bit        Muxes := 1     
+	   8 Input      2 Bit        Muxes := 1     
+	  59 Input      2 Bit        Muxes := 1     
+	  61 Input      2 Bit        Muxes := 1     
+	  25 Input      2 Bit        Muxes := 1     
+	   2 Input      1 Bit        Muxes := 209   
+	   4 Input      1 Bit        Muxes := 32    
+	   5 Input      1 Bit        Muxes := 20    
+	   6 Input      1 Bit        Muxes := 9     
+	  59 Input      1 Bit        Muxes := 17    
+	  23 Input      1 Bit        Muxes := 16    
+	   8 Input      1 Bit        Muxes := 3     
+	   3 Input      1 Bit        Muxes := 5     
+	  25 Input      1 Bit        Muxes := 1     
+	  61 Input      1 Bit        Muxes := 12    
+	   7 Input      1 Bit        Muxes := 1     
+---------------------------------------------------------------------------------
+Finished RTL Component Statistics 
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start RTL Hierarchical Component Statistics 
+---------------------------------------------------------------------------------
+Hierarchical RTL Component report 
+Module RC2014_fpga 
+Detailed RTL Component Info : 
++---Muxes : 
+	   2 Input      8 Bit        Muxes := 3     
+	   5 Input      8 Bit        Muxes := 1     
+Module fracn20 
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input      5 Bit       Adders := 1     
+	   2 Input      4 Bit       Adders := 2     
+	   2 Input      3 Bit       Adders := 3     
++---Registers : 
+	               32 Bit    Registers := 5     
+	                4 Bit    Registers := 1     
+	                1 Bit    Registers := 3     
++---Muxes : 
+	   2 Input     32 Bit        Muxes := 5     
+	   2 Input      6 Bit        Muxes := 10    
+	   2 Input      4 Bit        Muxes := 1     
+	   2 Input      2 Bit        Muxes := 5     
+	   2 Input      1 Bit        Muxes := 15    
+Module T80_MCode 
+Detailed RTL Component Info : 
++---Muxes : 
+	   2 Input      4 Bit        Muxes := 50    
+	   4 Input      4 Bit        Muxes := 14    
+	   6 Input      4 Bit        Muxes := 4     
+	   8 Input      4 Bit        Muxes := 3     
+	   5 Input      4 Bit        Muxes := 8     
+	  59 Input      4 Bit        Muxes := 4     
+	   9 Input      4 Bit        Muxes := 3     
+	   3 Input      4 Bit        Muxes := 5     
+	  23 Input      4 Bit        Muxes := 3     
+	   3 Input      3 Bit        Muxes := 10    
+	   2 Input      3 Bit        Muxes := 36    
+	   5 Input      3 Bit        Muxes := 15    
+	  59 Input      3 Bit        Muxes := 2     
+	  25 Input      3 Bit        Muxes := 3     
+	   4 Input      3 Bit        Muxes := 15    
+	  23 Input      3 Bit        Muxes := 3     
+	   6 Input      3 Bit        Muxes := 2     
+	   8 Input      3 Bit        Muxes := 3     
+	   4 Input      2 Bit        Muxes := 5     
+	   2 Input      2 Bit        Muxes := 1     
+	   3 Input      2 Bit        Muxes := 1     
+	   8 Input      2 Bit        Muxes := 1     
+	  59 Input      2 Bit        Muxes := 1     
+	  61 Input      2 Bit        Muxes := 1     
+	  25 Input      2 Bit        Muxes := 1     
+	   2 Input      1 Bit        Muxes := 70    
+	   4 Input      1 Bit        Muxes := 11    
+	   5 Input      1 Bit        Muxes := 11    
+	   6 Input      1 Bit        Muxes := 7     
+	  59 Input      1 Bit        Muxes := 17    
+	  23 Input      1 Bit        Muxes := 16    
+	   8 Input      1 Bit        Muxes := 2     
+	   3 Input      1 Bit        Muxes := 2     
+	  25 Input      1 Bit        Muxes := 1     
+	  61 Input      1 Bit        Muxes := 12    
+Module T80_ALU 
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input      9 Bit       Adders := 2     
+	   3 Input      9 Bit       Adders := 1     
+	   2 Input      8 Bit       Adders := 1     
+	   2 Input      6 Bit       Adders := 1     
+	   2 Input      5 Bit       Adders := 1     
+	   2 Input      3 Bit       Adders := 1     
++---XORs : 
+	   2 Input      8 Bit         XORs := 1     
+	   2 Input      1 Bit         XORs := 2     
+	   8 Input      1 Bit         XORs := 4     
++---Muxes : 
+	   2 Input      9 Bit        Muxes := 2     
+	   8 Input      8 Bit        Muxes := 1     
+	   5 Input      8 Bit        Muxes := 1     
+	   2 Input      8 Bit        Muxes := 6     
+	   2 Input      4 Bit        Muxes := 2     
+	   2 Input      3 Bit        Muxes := 1     
+	   2 Input      1 Bit        Muxes := 9     
+	   8 Input      1 Bit        Muxes := 1     
+Module T80_Reg 
+Detailed RTL Component Info : 
++---RAMs : 
+	               64 Bit         RAMs := 2     
+Module T80 
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input     16 Bit       Adders := 7     
+	   2 Input      7 Bit       Adders := 1     
+	   2 Input      3 Bit       Adders := 3     
++---XORs : 
+	   8 Input      1 Bit         XORs := 1     
++---Registers : 
+	               16 Bit    Registers := 4     
+	                8 Bit    Registers := 10    
+	                5 Bit    Registers := 1     
+	                4 Bit    Registers := 1     
+	                3 Bit    Registers := 7     
+	                2 Bit    Registers := 3     
+	                1 Bit    Registers := 23    
++---Muxes : 
+	   6 Input     16 Bit        Muxes := 1     
+	   2 Input     16 Bit        Muxes := 16    
+	   2 Input      8 Bit        Muxes := 47    
+	   6 Input      8 Bit        Muxes := 4     
+	   4 Input      8 Bit        Muxes := 3     
+	   2 Input      7 Bit        Muxes := 1     
+	   2 Input      6 Bit        Muxes := 1     
+	   2 Input      5 Bit        Muxes := 2     
+	   2 Input      4 Bit        Muxes := 2     
+	   2 Input      3 Bit        Muxes := 9     
+	   4 Input      2 Bit        Muxes := 1     
+	   2 Input      2 Bit        Muxes := 7     
+	   2 Input      1 Bit        Muxes := 96    
+	   4 Input      1 Bit        Muxes := 8     
+	   5 Input      1 Bit        Muxes := 2     
+	   6 Input      1 Bit        Muxes := 2     
+	   7 Input      1 Bit        Muxes := 1     
+Module T80s 
+Detailed RTL Component Info : 
++---Registers : 
+	                8 Bit    Registers := 1     
+	                1 Bit    Registers := 4     
++---Muxes : 
+	   2 Input      1 Bit        Muxes := 11    
+Module single_port_ram 
+Detailed RTL Component Info : 
++---Registers : 
+	               16 Bit    Registers := 1     
++---RAMs : 
+	             512K Bit         RAMs := 1     
+Module ROM_Page_Select 
+Detailed RTL Component Info : 
++---Registers : 
+	                1 Bit    Registers := 1     
++---Muxes : 
+	   2 Input      1 Bit        Muxes := 1     
+Module acia6850 
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input      6 Bit       Adders := 2     
+	   2 Input      3 Bit       Adders := 2     
++---XORs : 
+	   2 Input      1 Bit         XORs := 3     
++---Registers : 
+	                8 Bit    Registers := 6     
+	                6 Bit    Registers := 2     
+	                3 Bit    Registers := 2     
+	                1 Bit    Registers := 29    
++---Muxes : 
+	   5 Input      8 Bit        Muxes := 1     
+	   4 Input      8 Bit        Muxes := 1     
+	   2 Input      8 Bit        Muxes := 1     
+	   5 Input      3 Bit        Muxes := 2     
+	   2 Input      3 Bit        Muxes := 3     
+	   4 Input      3 Bit        Muxes := 1     
+	   4 Input      2 Bit        Muxes := 1     
+	   2 Input      2 Bit        Muxes := 2     
+	   4 Input      1 Bit        Muxes := 13    
+	   2 Input      1 Bit        Muxes := 7     
+	   5 Input      1 Bit        Muxes := 7     
+	   3 Input      1 Bit        Muxes := 3     
+---------------------------------------------------------------------------------
+Finished RTL Hierarchical Component Statistics
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Part Resource Summary
+---------------------------------------------------------------------------------
+Part Resources:
+DSPs: 220 (col length:60)
+BRAMs: 280 (col length: RAMB18 60 RAMB36 30)
+---------------------------------------------------------------------------------
+Finished Part Resource Summary
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Cross Boundary and Area Optimization
+---------------------------------------------------------------------------------
+Warning: Parallel synthesis criteria is not met 
+INFO: [Synth 8-5546] ROM "MCycles" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "F_Out" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "F_Out" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "F_Out" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5544] ROM "Auto_Wait" won't be mapped to Block RAM because address size (3) smaller than threshold (5)
+INFO: [Synth 8-5546] ROM "IncDecZ" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "F" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "rom/nPage" won't be mapped to RAM because it is too sparse
+WARNING: [Synth 8-3917] design RC2014_fpga has port rom_page_LED[7] driven by constant 0
+WARNING: [Synth 8-3917] design RC2014_fpga has port rom_page_LED[6] driven by constant 0
+WARNING: [Synth 8-3917] design RC2014_fpga has port rom_page_LED[5] driven by constant 0
+WARNING: [Synth 8-3917] design RC2014_fpga has port rom_page_LED[4] driven by constant 0
+WARNING: [Synth 8-3917] design RC2014_fpga has port rom_page_LED[3] driven by constant 0
+WARNING: [Synth 8-3917] design RC2014_fpga has port rom_page_LED[2] driven by constant 0
+WARNING: [Synth 8-3917] design RC2014_fpga has port rom_page_LED[1] driven by constant 0
+WARNING: [Synth 8-3917] design RC2014_fpga has port rom_page_LED[0] driven by constant 1
+WARNING: [Synth 8-3331] design T80_MCode has unconnected port F[5]
+WARNING: [Synth 8-3331] design T80_MCode has unconnected port F[4]
+WARNING: [Synth 8-3331] design T80_MCode has unconnected port F[3]
+WARNING: [Synth 8-3331] design T80_MCode has unconnected port F[1]
+WARNING: [Synth 8-3331] design RC2014_fpga has unconnected port TX2
+WARNING: [Synth 8-3331] design RC2014_fpga has unconnected port nINT
+WARNING: [Synth 8-3331] design RC2014_fpga has unconnected port nRST2
+WARNING: [Synth 8-3331] design RC2014_fpga has unconnected port clk2
+WARNING: [Synth 8-3331] design RC2014_fpga has unconnected port RX2
+WARNING: [Synth 8-3331] design RC2014_fpga has unconnected port rom_page_select[2]
+WARNING: [Synth 8-3331] design RC2014_fpga has unconnected port rom_page_select[1]
+WARNING: [Synth 8-3331] design RC2014_fpga has unconnected port rom_page_select[0]
+RAM Pipeline Warning: Read Address Register Found For RAM ram64k/ram_reg. We will not be able to pipeline it. This may degrade performance. 
+RAM Pipeline Warning: Read Address Register Found For RAM ram64k/ram_reg. We will not be able to pipeline it. This may degrade performance. 
+RAM Pipeline Warning: Read Address Register Found For RAM ram64k/ram_reg. We will not be able to pipeline it. This may degrade performance. 
+INFO: [Synth 8-3886] merging instance 'uart/RxClkDel_reg' (FDR_1) to 'uart/TxClkDel_reg'
+INFO: [Synth 8-3886] merging instance 'uart/DCDDel_reg' (FDR_1) to 'uart/DCDEdge_reg'
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\uart/DCDEdge_reg )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\uart/StatReg_reg[3] )
+INFO: [Synth 8-3886] merging instance 'uart/StatReg_reg[3]' (FD_1) to 'uart/StatReg_reg[2]'
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\uart/StatReg_reg[2] )
+WARNING: [Synth 8-3332] Sequential element (uart/FSM_onehot_DCDState_reg[2]) is unused and will be removed from module RC2014_fpga.
+WARNING: [Synth 8-3332] Sequential element (uart/FSM_onehot_DCDState_reg[1]) is unused and will be removed from module RC2014_fpga.
+WARNING: [Synth 8-3332] Sequential element (uart/FSM_onehot_DCDState_reg[0]) is unused and will be removed from module RC2014_fpga.
+---------------------------------------------------------------------------------
+Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:28 ; elapsed = 00:00:30 . Memory (MB): peak = 847.082 ; gain = 553.102
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start ROM, RAM, DSP and Shift Register Reporting
+---------------------------------------------------------------------------------
+
+Block RAM: Preliminary Mapping  Report (see note below)
++-----------------+------------+------------------------+---+---+------------------------+---+---+------------------+--------+--------+
+|Module Name      | RTL Object | PORT A (Depth x Width) | W | R | PORT B (Depth x Width) | W | R | Ports driving FF | RAMB18 | RAMB36 | 
++-----------------+------------+------------------------+---+---+------------------------+---+---+------------------+--------+--------+
+|single_port_ram: | ram_reg    | 64 K x 8(WRITE_FIRST)  | W | R |                        |   |   | Port A           | 0      | 16     | 
++-----------------+------------+------------------------+---+---+------------------------+---+---+------------------+--------+--------+
+
+Note: The table above is a preliminary report that shows the Block RAMs at the current stage of the synthesis flow. Some Block RAMs may be reimplemented as non Block RAM primitives later in the synthesis flow. Multiple instantiated Block RAMs are reported only once. 
+
+Distributed RAM: Preliminary Mapping  Report (see note below)
++------------+----------------+-----------+----------------------+--------------+
+|Module Name | RTL Object     | Inference | Size (Depth x Width) | Primitives   | 
++------------+----------------+-----------+----------------------+--------------+
+|\cpu/u0     | Regs/RegsH_reg | Implied   | 8 x 8                | RAM32M x 4   | 
+|\cpu/u0     | Regs/RegsL_reg | Implied   | 8 x 8                | RAM32M x 4   | 
++------------+----------------+-----------+----------------------+--------------+
+
+Note: The table above is a preliminary report that shows the Distributed RAMs at the current stage of the synthesis flow. Some Distributed RAMs may be reimplemented as non Distributed RAM primitives later in the synthesis flow. Multiple instantiated RAMs are reported only once.
+---------------------------------------------------------------------------------
+Finished ROM, RAM, DSP and Shift Register Reporting
+---------------------------------------------------------------------------------
+INFO: [Synth 8-6837] The timing for the instance i_8/ram64k/ram_reg_1_0 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
+INFO: [Synth 8-6837] The timing for the instance i_8/ram64k/ram_reg_1_1 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
+INFO: [Synth 8-6837] The timing for the instance i_8/ram64k/ram_reg_1_2 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
+INFO: [Synth 8-6837] The timing for the instance i_8/ram64k/ram_reg_1_3 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
+INFO: [Synth 8-6837] The timing for the instance i_8/ram64k/ram_reg_1_4 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
+INFO: [Synth 8-6837] The timing for the instance i_8/ram64k/ram_reg_1_5 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
+INFO: [Synth 8-6837] The timing for the instance i_8/ram64k/ram_reg_1_6 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
+INFO: [Synth 8-6837] The timing for the instance i_8/ram64k/ram_reg_1_7 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+---------------------------------------------------------------------------------
+Start Applying XDC Timing Constraints
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:35 ; elapsed = 00:00:37 . Memory (MB): peak = 847.082 ; gain = 553.102
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Timing Optimization
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Timing Optimization : Time (s): cpu = 00:00:36 ; elapsed = 00:00:37 . Memory (MB): peak = 847.082 ; gain = 553.102
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start ROM, RAM, DSP and Shift Register Reporting
+---------------------------------------------------------------------------------
+
+Block RAM: Final Mapping  Report
++-----------------+------------+------------------------+---+---+------------------------+---+---+------------------+--------+--------+
+|Module Name      | RTL Object | PORT A (Depth x Width) | W | R | PORT B (Depth x Width) | W | R | Ports driving FF | RAMB18 | RAMB36 | 
++-----------------+------------+------------------------+---+---+------------------------+---+---+------------------+--------+--------+
+|single_port_ram: | ram_reg    | 64 K x 8(WRITE_FIRST)  | W | R |                        |   |   | Port A           | 0      | 16     | 
++-----------------+------------+------------------------+---+---+------------------------+---+---+------------------+--------+--------+
+
+
+Distributed RAM: Final Mapping  Report
++------------+----------------+-----------+----------------------+--------------+
+|Module Name | RTL Object     | Inference | Size (Depth x Width) | Primitives   | 
++------------+----------------+-----------+----------------------+--------------+
+|\cpu/u0     | Regs/RegsH_reg | Implied   | 8 x 8                | RAM32M x 4   | 
+|\cpu/u0     | Regs/RegsL_reg | Implied   | 8 x 8                | RAM32M x 4   | 
++------------+----------------+-----------+----------------------+--------------+
+
+---------------------------------------------------------------------------------
+Finished ROM, RAM, DSP and Shift Register Reporting
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+---------------------------------------------------------------------------------
+Start Technology Mapping
+---------------------------------------------------------------------------------
+INFO: [Synth 8-6837] The timing for the instance ram64k/ram_reg_1_0 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
+INFO: [Synth 8-6837] The timing for the instance ram64k/ram_reg_1_1 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
+INFO: [Synth 8-6837] The timing for the instance ram64k/ram_reg_1_2 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
+INFO: [Synth 8-6837] The timing for the instance ram64k/ram_reg_1_3 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
+INFO: [Synth 8-6837] The timing for the instance ram64k/ram_reg_1_4 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
+INFO: [Synth 8-6837] The timing for the instance ram64k/ram_reg_1_5 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
+INFO: [Synth 8-6837] The timing for the instance ram64k/ram_reg_1_6 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
+INFO: [Synth 8-6837] The timing for the instance ram64k/ram_reg_1_7 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
+---------------------------------------------------------------------------------
+Finished Technology Mapping : Time (s): cpu = 00:00:36 ; elapsed = 00:00:38 . Memory (MB): peak = 906.605 ; gain = 612.625
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+---------------------------------------------------------------------------------
+Start IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Flattening Before IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Flattening Before IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Final Netlist Cleanup
+---------------------------------------------------------------------------------
+INFO: [Synth 8-6064] Net RAM_WE is driving 64 big block pins (URAM, BRAM and DSP loads). Created 7 replicas of its driver. 
+---------------------------------------------------------------------------------
+Finished Final Netlist Cleanup
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished IO Insertion : Time (s): cpu = 00:00:37 ; elapsed = 00:00:39 . Memory (MB): peak = 906.605 ; gain = 612.625
+---------------------------------------------------------------------------------
+
+Report Check Netlist: 
++------+------------------+-------+---------+-------+------------------+
+|      |Item              |Errors |Warnings |Status |Description       |
++------+------------------+-------+---------+-------+------------------+
+|1     |multi_driven_nets |      0|        0|Passed |Multi driven nets |
++------+------------------+-------+---------+-------+------------------+
+---------------------------------------------------------------------------------
+Start Renaming Generated Instances
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Instances : Time (s): cpu = 00:00:37 ; elapsed = 00:00:39 . Memory (MB): peak = 906.605 ; gain = 612.625
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+---------------------------------------------------------------------------------
+Start Rebuilding User Hierarchy
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:37 ; elapsed = 00:00:39 . Memory (MB): peak = 906.605 ; gain = 612.625
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Ports
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Ports : Time (s): cpu = 00:00:37 ; elapsed = 00:00:39 . Memory (MB): peak = 906.605 ; gain = 612.625
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Handling Custom Attributes
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:37 ; elapsed = 00:00:39 . Memory (MB): peak = 906.605 ; gain = 612.625
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Nets
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Nets : Time (s): cpu = 00:00:37 ; elapsed = 00:00:39 . Memory (MB): peak = 906.605 ; gain = 612.625
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Writing Synthesis Report
+---------------------------------------------------------------------------------
+
+Report BlackBoxes: 
++------+---------------------+----------+
+|      |BlackBox name        |Instances |
++------+---------------------+----------+
+|1     |SCM_V100_S3_SCS3_32K |         1|
++------+---------------------+----------+
+
+Report Cell Usage: 
++------+----------------------------+------+
+|      |Cell                        |Count |
++------+----------------------------+------+
+|1     |SCM_V100_S3_SCS3_32K_bbox_0 |     1|
+|2     |BUFG                        |     2|
+|3     |CARRY4                      |    38|
+|4     |LUT1                        |    37|
+|5     |LUT2                        |   164|
+|6     |LUT3                        |   219|
+|7     |LUT4                        |   134|
+|8     |LUT5                        |   202|
+|9     |LUT6                        |   680|
+|10    |MUXF7                       |    15|
+|11    |RAM32M                      |     8|
+|12    |RAMB36E1                    |     8|
+|13    |RAMB36E1_1                  |     8|
+|14    |FDCE                        |   135|
+|15    |FDPE                        |    55|
+|16    |FDRE                        |   161|
+|17    |FDSE                        |     3|
+|18    |IBUF                        |     6|
+|19    |IOBUF                       |     8|
+|20    |OBUF                        |    34|
+|21    |OBUFT                       |     1|
++------+----------------------------+------+
+
+Report Instance Areas: 
++------+-----------+----------------+------+
+|      |Instance   |Module          |Cells |
++------+-----------+----------------+------+
+|1     |top        |                |  1926|
+|2     |  cpu      |T80s            |  1596|
+|3     |    u0     |T80             |  1572|
+|4     |      Regs |T80_Reg         |   491|
+|5     |  ctc_clk  |fracn20         |    60|
+|6     |  ram64k   |single_port_ram |    16|
+|7     |  rom      |ROM_Page_Select |    18|
+|8     |  uart     |acia6850        |   177|
++------+-----------+----------------+------+
+---------------------------------------------------------------------------------
+Finished Writing Synthesis Report : Time (s): cpu = 00:00:37 ; elapsed = 00:00:39 . Memory (MB): peak = 906.605 ; gain = 612.625
+---------------------------------------------------------------------------------
+Synthesis finished with 0 errors, 0 critical warnings and 23 warnings.
+Synthesis Optimization Runtime : Time (s): cpu = 00:00:28 ; elapsed = 00:00:33 . Memory (MB): peak = 906.605 ; gain = 262.285
+Synthesis Optimization Complete : Time (s): cpu = 00:00:38 ; elapsed = 00:00:39 . Memory (MB): peak = 906.605 ; gain = 612.625
+INFO: [Project 1-571] Translating synthesized netlist
+INFO: [Netlist 29-17] Analyzing 85 Unisim elements for replacement
+INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
+INFO: [Project 1-570] Preparing netlist for logic optimization
+INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 906.605 ; gain = 0.000
+INFO: [Project 1-111] Unisim Transformation Summary:
+  A total of 16 instances were transformed.
+  IOBUF => IOBUF (IBUF, OBUFT): 8 instances
+  RAM32M => RAM32M (RAMD32, RAMD32, RAMD32, RAMD32, RAMD32, RAMD32, RAMS32, RAMS32): 8 instances
+
+INFO: [Common 17-83] Releasing license: Synthesis
+169 Infos, 48 Warnings, 0 Critical Warnings and 0 Errors encountered.
+synth_design completed successfully
+synth_design: Time (s): cpu = 00:00:40 ; elapsed = 00:00:42 . Memory (MB): peak = 906.605 ; gain = 620.363
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 906.605 ; gain = 0.000
+WARNING: [Constraints 18-5210] No constraints selected for write.
+Resolution: This message can indicate that there are no constraints for the design, or it can indicate that the used_in flags are set such that the constraints are ignored. This later case is used when running synth_design to not write synthesis constraints to the resulting checkpoint. Instead, project constraints are read when the synthesized design is opened.
+INFO: [Common 17-1381] The checkpoint 'C:/Users/richa/gitrepo/RC2014_fpga/zedboard/RC2014_fpga/RC2014_fpga.runs/synth_1/RC2014_fpga.dcp' has been generated.
+INFO: [runtcl-4] Executing : report_utilization -file RC2014_fpga_utilization_synth.rpt -pb RC2014_fpga_utilization_synth.pb
+INFO: [Common 17-206] Exiting Vivado at Wed Mar 13 23:25:57 2019...

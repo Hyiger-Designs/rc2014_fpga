@@ -1,0 +1,8 @@
+<?xml version="1.0"?>
+<Runs Version="1" Minor="0">
+	<Run Id="CPM_BASIC_synth_1" LaunchDir="C:/Users/richa/gitrepo/RC2014_fpga/zedboard/RC2014_fpga/RC2014_fpga.runs/CPM_BASIC_synth_1" FlowId="Vivado_Synthesis" FromStepId="vivado" ToStepId="vivado"/>
+	<Parameters>
+		<Parameter Name="runs.monitorLSFJobs" Val="true" Type="bool"/>
+	</Parameters>
+</Runs>
+

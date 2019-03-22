@@ -1,0 +1,107 @@
+Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.
+----------------------------------------------------------------------------------------
+| Tool Version : Vivado v.2018.3 (win64) Build 2405991 Thu Dec  6 23:38:27 MST 2018
+| Date         : Wed Mar 13 23:26:39 2019
+| Host         : richards-pc running 64-bit major release  (build 9200)
+| Command      : report_control_sets -verbose -file RC2014_fpga_control_sets_placed.rpt
+| Design       : RC2014_fpga
+| Device       : xc7z020
+----------------------------------------------------------------------------------------
+
+Control Set Information
+
+Table of Contents
+-----------------
+1. Summary
+2. Histogram
+3. Flip-Flop Distribution
+4. Detailed Control Set Information
+
+1. Summary
+----------
+
++----------------------------------------------------------+-------+
+|                          Status                          | Count |
++----------------------------------------------------------+-------+
+| Number of unique control sets                            |    35 |
+| Unused register locations in slices containing registers |    60 |
++----------------------------------------------------------+-------+
+
+
+2. Histogram
+------------
+
++--------+--------------+
+| Fanout | Control Sets |
++--------+--------------+
+|      1 |            2 |
+|      4 |            3 |
+|      5 |            1 |
+|      6 |            2 |
+|      7 |            1 |
+|      8 |           14 |
+|     10 |            1 |
+|     14 |            1 |
+|    16+ |           10 |
++--------+--------------+
+
+
+3. Flip-Flop Distribution
+-------------------------
+
++--------------+-----------------------+------------------------+-----------------+--------------+
+| Clock Enable | Synchronous Set/Reset | Asynchronous Set/Reset | Total Registers | Total Slices |
++--------------+-----------------------+------------------------+-----------------+--------------+
+| No           | No                    | No                     |              57 |           25 |
+| No           | No                    | Yes                    |              50 |           28 |
+| No           | Yes                   | No                     |              18 |            6 |
+| Yes          | No                    | No                     |              41 |           22 |
+| Yes          | No                    | Yes                    |             160 |           65 |
+| Yes          | Yes                   | No                     |              62 |           13 |
++--------------+-----------------------+------------------------+-----------------+--------------+
+
+
+4. Detailed Control Set Information
+-----------------------------------
+
++----------------+---------------------------------------+--------------------------+------------------+----------------+
+|  Clock Signal  |             Enable Signal             |     Set/Reset Signal     | Slice Load Count | Bel Load Count |
++----------------+---------------------------------------+--------------------------+------------------+----------------+
+|  cpu/UART_nWR  |                                       | cpu/nRST                 |                1 |              1 |
+|  CPU_clk_BUFG  | cpu/u0/M1_n2_in                       | cpu/nRST                 |                1 |              1 |
+| ~clk_IBUF_BUFG | uart/TxBitCount[2]_i_1_n_0            | uart/ac_rst              |                2 |              4 |
+|  clk_IBUF_BUFG | ctc_clk/carry[4]                      |                          |                1 |              4 |
+| ~clk_IBUF_BUFG | uart/RxBitCount[2]_i_1_n_0            | uart/ac_rst              |                2 |              4 |
+|  CPU_clk_BUFG  |                                       |                          |                4 |              5 |
+| ~clk_IBUF_BUFG | uart/RxClkEdge                        | uart/RxClkCnt[5]_i_1_n_0 |                1 |              6 |
+| ~clk_IBUF_BUFG | uart/TxClkEdge                        | uart/ac_rst              |                1 |              6 |
+|  CPU_clk_BUFG  | cpu/u0/R[6]_i_1_n_0                   | cpu/nRST                 |                3 |              7 |
+|  CPU_clk_BUFG  | cpu/u0/BusA[7]_i_1_n_0                |                          |                6 |              8 |
+|  CPU_clk_BUFG  | cpu/u0/DO[7]_i_1_n_0                  | cpu/nRST                 |                2 |              8 |
+|  CPU_clk_BUFG  | cpu/u0/I                              | cpu/nRST                 |                6 |              8 |
+|  CPU_clk_BUFG  | cpu/u0/IR                             | cpu/nRST                 |                2 |              8 |
+|  CPU_clk_BUFG  | cpu/u0/SP[15]_i_1_n_0                 | cpu/nRST                 |                3 |              8 |
+|  CPU_clk_BUFG  | cpu/u0/SP[7]_i_1_n_0                  | cpu/nRST                 |                3 |              8 |
+|  CPU_clk_BUFG  | cpu/u0/TmpAddr[15]_i_1_n_0            | cpu/nRST                 |                5 |              8 |
+|  CPU_clk_BUFG  | cpu/u0/TmpAddr[7]_i_1_n_0             | cpu/nRST                 |                4 |              8 |
+| ~clk_IBUF_BUFG | uart/TxShiftReg[7]_i_1_n_0            | uart/ac_rst              |                1 |              8 |
+|  CPU_clk_BUFG  | cpu/u0/TState_reg[0]_0[0]             | cpu/nRST                 |                2 |              8 |
+| ~clk_IBUF_BUFG | cpu/u0/WR_n_reg[0]                    | cpu/nRST                 |                2 |              8 |
+| ~clk_IBUF_BUFG | cpu/u0/WR_n_reg_2[0]                  | cpu/nRST                 |                1 |              8 |
+| ~clk_IBUF_BUFG | uart/RxShiftReg[7]_i_1_n_0            | uart/ac_rst              |                1 |              8 |
+|  CPU_clk_BUFG  | cpu/u0/ACC[7]_i_1_n_0                 | cpu/nRST                 |                1 |              8 |
+| ~clk_IBUF_BUFG | uart/FErr_i_1_n_0                     | uart/ac_rst              |                2 |             10 |
+| ~clk_IBUF_BUFG |                                       |                          |                7 |             14 |
+|  CPU_clk_BUFG  | cpu/u0/PC                             | cpu/nRST                 |                4 |             16 |
+|  CPU_clk_BUFG  | cpu/u0/Ap                             | cpu/nRST                 |                8 |             16 |
+|  CPU_clk_BUFG  | cpu/u0/E[0]                           | cpu/nRST                 |               11 |             16 |
+| ~clk_IBUF_BUFG |                                       | uart/ac_rst              |                6 |             18 |
+|  CPU_clk_BUFG  | cpu/u0/E[0]                           |                          |               15 |             29 |
+|  CPU_clk_BUFG  | cpu/u0/Regs/RegsH_reg_0_7_0_1_i_1_n_0 |                          |                4 |             32 |
+|  CPU_clk_BUFG  | cpu/u0/Regs/RegsL_reg_0_7_0_1_i_1_n_0 |                          |                4 |             32 |
+|  CPU_clk_BUFG  | cpu/u0/A[15]_i_1_n_0                  | cpu/nRST                 |               10 |             32 |
+|  clk_IBUF_BUFG |                                       |                          |               14 |             38 |
+|  CPU_clk_BUFG  |                                       | cpu/nRST                 |               27 |             49 |
++----------------+---------------------------------------+--------------------------+------------------+----------------+
+
+
