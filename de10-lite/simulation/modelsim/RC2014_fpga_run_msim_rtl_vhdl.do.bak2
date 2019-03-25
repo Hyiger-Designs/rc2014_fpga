@@ -1,0 +1,63 @@
+transcript on
+if ![file isdirectory vhdl_libs] {
+	file mkdir vhdl_libs
+}
+
+vlib vhdl_libs/altera
+vmap altera ./vhdl_libs/altera
+vcom -93 -work altera {c:/intelfpga_lite/18.1/quartus/eda/sim_lib/altera_syn_attributes.vhd}
+vcom -93 -work altera {c:/intelfpga_lite/18.1/quartus/eda/sim_lib/altera_standard_functions.vhd}
+vcom -93 -work altera {c:/intelfpga_lite/18.1/quartus/eda/sim_lib/alt_dspbuilder_package.vhd}
+vcom -93 -work altera {c:/intelfpga_lite/18.1/quartus/eda/sim_lib/altera_europa_support_lib.vhd}
+vcom -93 -work altera {c:/intelfpga_lite/18.1/quartus/eda/sim_lib/altera_primitives_components.vhd}
+vcom -93 -work altera {c:/intelfpga_lite/18.1/quartus/eda/sim_lib/altera_primitives.vhd}
+
+vlib vhdl_libs/lpm
+vmap lpm ./vhdl_libs/lpm
+vcom -93 -work lpm {c:/intelfpga_lite/18.1/quartus/eda/sim_lib/220pack.vhd}
+vcom -93 -work lpm {c:/intelfpga_lite/18.1/quartus/eda/sim_lib/220model.vhd}
+
+vlib vhdl_libs/sgate
+vmap sgate ./vhdl_libs/sgate
+vcom -93 -work sgate {c:/intelfpga_lite/18.1/quartus/eda/sim_lib/sgate_pack.vhd}
+vcom -93 -work sgate {c:/intelfpga_lite/18.1/quartus/eda/sim_lib/sgate.vhd}
+
+vlib vhdl_libs/altera_mf
+vmap altera_mf ./vhdl_libs/altera_mf
+vcom -93 -work altera_mf {c:/intelfpga_lite/18.1/quartus/eda/sim_lib/altera_mf_components.vhd}
+vcom -93 -work altera_mf {c:/intelfpga_lite/18.1/quartus/eda/sim_lib/altera_mf.vhd}
+
+vlib vhdl_libs/altera_lnsim
+vmap altera_lnsim ./vhdl_libs/altera_lnsim
+vlog -sv -work altera_lnsim {c:/intelfpga_lite/18.1/quartus/eda/sim_lib/mentor/altera_lnsim_for_vhdl.sv}
+vcom -93 -work altera_lnsim {c:/intelfpga_lite/18.1/quartus/eda/sim_lib/altera_lnsim_components.vhd}
+
+vlib vhdl_libs/fiftyfivenm
+vmap fiftyfivenm ./vhdl_libs/fiftyfivenm
+vlog -vlog01compat -work fiftyfivenm {c:/intelfpga_lite/18.1/quartus/eda/sim_lib/mentor/fiftyfivenm_atoms_ncrypt.v}
+vcom -93 -work fiftyfivenm {c:/intelfpga_lite/18.1/quartus/eda/sim_lib/fiftyfivenm_atoms.vhd}
+vcom -93 -work fiftyfivenm {c:/intelfpga_lite/18.1/quartus/eda/sim_lib/fiftyfivenm_components.vhd}
+
+if {[file exists rtl_work]} {
+	vdel -lib rtl_work -all
+}
+vlib rtl_work
+vmap work rtl_work
+
+vlog -vlog01compat -work work +incdir+C:/Users/richa/gitrepo/RC2014_fpga/rtl/tv80 {C:/Users/richa/gitrepo/RC2014_fpga/rtl/tv80/tv80s.v}
+vlog -vlog01compat -work work +incdir+C:/Users/richa/gitrepo/RC2014_fpga/rtl/tv80 {C:/Users/richa/gitrepo/RC2014_fpga/rtl/tv80/tv80_reg.v}
+vlog -vlog01compat -work work +incdir+C:/Users/richa/gitrepo/RC2014_fpga/rtl/tv80 {C:/Users/richa/gitrepo/RC2014_fpga/rtl/tv80/tv80_mcode.v}
+vlog -vlog01compat -work work +incdir+C:/Users/richa/gitrepo/RC2014_fpga/rtl/tv80 {C:/Users/richa/gitrepo/RC2014_fpga/rtl/tv80/tv80_alu.v}
+vlog -vlog01compat -work work +incdir+C:/Users/richa/gitrepo/RC2014_fpga/rtl/tv80 {C:/Users/richa/gitrepo/RC2014_fpga/rtl/tv80/tv80_core.v}
+vcom -93 -work work {C:/Users/richa/gitrepo/RC2014_fpga/rtl/decoder_3x8.vhd}
+vcom -93 -work work {C:/Users/richa/gitrepo/RC2014_fpga/rtl/T80/T80_Pack.vhd}
+vcom -93 -work work {C:/Users/richa/gitrepo/RC2014_fpga/rtl/single_port_ram.vhd}
+vcom -93 -work work {C:/Users/richa/gitrepo/RC2014_fpga/rtl/frac20.vhd}
+vcom -93 -work work {C:/Users/richa/gitrepo/RC2014_fpga/rtl/acia6850.vhd}
+vcom -93 -work work {C:/Users/richa/gitrepo/RC2014_fpga/rtl/sd_controller.vhd}
+vcom -93 -work work {C:/Users/richa/gitrepo/RC2014_fpga/de10-lite/CPM_BASIC_LITE.vhd}
+vcom -93 -work work {C:/Users/richa/gitrepo/RC2014_fpga/de10-lite/CPM_BASIC.vhd}
+vcom -93 -work work {C:/Users/richa/gitrepo/RC2014_fpga/rtl/ROM_Page_Select.vhd}
+vcom -93 -work work {C:/Users/richa/gitrepo/RC2014_fpga/rtl/T80/T80s.vhd}
+vcom -93 -work work {C:/Users/richa/gitrepo/RC2014_fpga/rtl/RC2014_fpga.vhd}
+

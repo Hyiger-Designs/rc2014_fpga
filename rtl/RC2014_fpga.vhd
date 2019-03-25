@@ -14,7 +14,7 @@ use ieee.numeric_std.all;
 
 entity RC2014_fpga is
 	generic(
-		cpu : natural := 1;     -- 0 = t80, 1 = tv80
+		cpu : natural := 0;     -- 0 = t80, 1 = tv80
 		rom : natural := 0		-- 0 = CP/M Monitor, 1 = SCM, 2 = R0001009
 	);
 	port(
@@ -33,15 +33,15 @@ entity RC2014_fpga is
 		RX              : in    std_logic; -- 36
 		-- PRO_BUS
 		nRFSH           : out   std_logic; -- 19
-		nRST2           : in    std_logic; -- 20
-		clk2            : in    std_logic; -- 21
+--		nRST2           : in    std_logic; -- 20
+--		clk2            : in    std_logic; -- 21
 		nBUSAK          : out   std_logic; -- 22
 		nHALT           : out   std_logic; -- 23
 		nBUSRQ          : in    std_logic; -- 24
 		nWAIT           : in    std_logic; -- 25
 		nNMI            : in    std_logic; -- 26
-		TX2             : out   std_logic; -- 35
-		RX2             : in    std_logic; -- 36
+--		TX2             : out   std_logic; -- 35
+--		RX2             : in    std_logic; -- 36
 
 		-- FPGA Board specific pins
 
@@ -105,6 +105,7 @@ architecture struct of RC2014_fpga is
 	
 	--signal OE : std_logic_vector(7 downto 0);
 	--signal D               :  std_logic_vector(7 downto 0);
+	signal reset : std_logic := '0';
 
 	component tv80s
 		generic(
@@ -134,47 +135,29 @@ architecture struct of RC2014_fpga is
 	end component;
 
 begin
+	reset <= not nRST;
 
-	-- CPU clock at 7.3728 Mhz (for 115200 Baud UART support /64)
-	-- Uses a fractional divider instead of vendor specific PLL
-	clk_7_328mhz : entity work.fracn20
-		generic map(
-			input_frequency  => BRD_FREQUENCY,
-			output_frequency => CPU_FREQUENCY
-		)
-		port map(
-			clock     => clk,
-			output_50 => CPU_clk
+	cpm_basic_rom: if rom = 0 generate
+		clocks_inst : entity work.clocks PORT MAP (
+			areset	 => reset,
+			inclk0	 => clk,
+			c0	 => CPU_clk,
+			c1	 => UART_clk,
+			c2	 => SD_clk
 		);
-
-	-- If using the CP/M Monitor (CPM_BASIC) set the UART to 1.8432Mhz
-	u_clk : if rom = 0 generate
-		clk_1_8432mhz : entity work.fracn20
-			generic map(
-				input_frequency  => BRD_FREQUENCY,
-				output_frequency => UART_FREQUENCY
-			)
-			port map(
-				clock     => clk,
-				output_50 => UART_clk
-			);
-	end generate u_clk;
+	end generate cpm_basic_rom;
 
 	-- Otherwise UART is set to 7.3728Mhz
 	c_clk : if rom /= 0 generate
+		clocks_inst : entity work.clocks PORT MAP (
+			areset	 => reset,
+			inclk0	 => clk,
+			c0	 => CPU_clk,
+			c2	 => SD_clk
+		);
 		UART_clk <= CPU_clk;
 	end generate c_clk;
 
-	-- Clock for SD Card
-	clk1mhz : entity work.fracn20
-		generic map(
-			input_frequency  => BRD_FREQUENCY,
-			output_frequency => SD_FREQUENCY
-		)
-		port map(
-			clock     => clk,
-			output_50 => SD_clk
-		);
 
 	-- T80 CPU
 	t80s : if cpu = 0 generate

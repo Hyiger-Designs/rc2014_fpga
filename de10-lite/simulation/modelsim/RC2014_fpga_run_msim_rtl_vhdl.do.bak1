@@ -1,0 +1,24 @@
+transcript on
+if {[file exists rtl_work]} {
+	vdel -lib rtl_work -all
+}
+vlib rtl_work
+vmap work rtl_work
+
+vlog -vlog01compat -work work +incdir+C:/Users/richa/gitrepo/RC2014_fpga/rtl/tv80 {C:/Users/richa/gitrepo/RC2014_fpga/rtl/tv80/tv80s.v}
+vlog -vlog01compat -work work +incdir+C:/Users/richa/gitrepo/RC2014_fpga/rtl/tv80 {C:/Users/richa/gitrepo/RC2014_fpga/rtl/tv80/tv80_reg.v}
+vlog -vlog01compat -work work +incdir+C:/Users/richa/gitrepo/RC2014_fpga/rtl/tv80 {C:/Users/richa/gitrepo/RC2014_fpga/rtl/tv80/tv80_mcode.v}
+vlog -vlog01compat -work work +incdir+C:/Users/richa/gitrepo/RC2014_fpga/rtl/tv80 {C:/Users/richa/gitrepo/RC2014_fpga/rtl/tv80/tv80_alu.v}
+vlog -vlog01compat -work work +incdir+C:/Users/richa/gitrepo/RC2014_fpga/rtl/tv80 {C:/Users/richa/gitrepo/RC2014_fpga/rtl/tv80/tv80_core.v}
+vcom -93 -work work {C:/Users/richa/gitrepo/RC2014_fpga/rtl/decoder_3x8.vhd}
+vcom -93 -work work {C:/Users/richa/gitrepo/RC2014_fpga/rtl/T80/T80_Pack.vhd}
+vcom -93 -work work {C:/Users/richa/gitrepo/RC2014_fpga/rtl/single_port_ram.vhd}
+vcom -93 -work work {C:/Users/richa/gitrepo/RC2014_fpga/rtl/frac20.vhd}
+vcom -93 -work work {C:/Users/richa/gitrepo/RC2014_fpga/rtl/acia6850.vhd}
+vcom -93 -work work {C:/Users/richa/gitrepo/RC2014_fpga/rtl/sd_controller.vhd}
+vcom -93 -work work {C:/Users/richa/gitrepo/RC2014_fpga/de10-lite/CPM_BASIC_LITE.vhd}
+vcom -93 -work work {C:/Users/richa/gitrepo/RC2014_fpga/de10-lite/CPM_BASIC.vhd}
+vcom -93 -work work {C:/Users/richa/gitrepo/RC2014_fpga/rtl/ROM_Page_Select.vhd}
+vcom -93 -work work {C:/Users/richa/gitrepo/RC2014_fpga/rtl/T80/T80s.vhd}
+vcom -93 -work work {C:/Users/richa/gitrepo/RC2014_fpga/rtl/RC2014_fpga.vhd}
+

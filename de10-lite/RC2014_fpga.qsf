@@ -18,7 +18,7 @@
 #
 # Quartus Prime
 # Version 18.1.0 Build 625 09/12/2018 SJ Lite Edition
-# Date created = 17:52:28  March 13, 2019
+# Date created = 19:47:24  March 21, 2019
 #
 # -------------------------------------------------------------------------- #
 #
@@ -42,6 +42,7 @@
 set_global_assignment -name LAST_QUARTUS_VERSION "18.1.0 Lite Edition"
 set_global_assignment -name PROJECT_CREATION_TIME_DATE "18:33:33 MARCH 07,2019"
 set_global_assignment -name PROJECT_OUTPUT_DIRECTORY output_files
+set_global_assignment -name SMART_RECOMPILE OFF
 
 # Pin & Location Assignments
 # ==========================
@@ -85,6 +86,8 @@ set_location_assignment PIN_V5 -to RTS
 set_location_assignment PIN_AA7 -to nRFSH
 set_location_assignment PIN_AA6 -to nRST2
 set_location_assignment PIN_AA5 -to clk2
+set_location_assignment PIN_W9 -to TX
+set_location_assignment PIN_W8 -to RX
 
 # Classic Timing Assignments
 # ==========================
@@ -98,6 +101,9 @@ set_global_assignment -name DEVICE_FILTER_PACKAGE FBGA
 set_global_assignment -name DEVICE_FILTER_PIN_COUNT 484
 set_global_assignment -name DEVICE_FILTER_SPEED_GRADE 7
 set_global_assignment -name TOP_LEVEL_ENTITY RC2014_fpga
+set_global_assignment -name CYCLONEII_OPTIMIZATION_TECHNIQUE SPEED
+set_global_assignment -name ADV_NETLIST_OPT_SYNTH_WYSIWYG_REMAP ON
+set_global_assignment -name MUX_RESTRUCTURE OFF
 
 # Fitter Assignments
 # ==================
@@ -109,6 +115,15 @@ set_global_assignment -name OPTIMIZE_MULTI_CORNER_TIMING ON
 set_global_assignment -name WEAK_PULL_UP_RESISTOR OFF
 set_global_assignment -name RESERVE_ALL_UNUSED_PINS "AS OUTPUT DRIVING GROUND"
 set_global_assignment -name STRATIX_DEVICE_IO_STANDARD "3.3-V LVTTL"
+set_global_assignment -name PHYSICAL_SYNTHESIS_COMBO_LOGIC ON
+set_global_assignment -name PHYSICAL_SYNTHESIS_REGISTER_DUPLICATION ON
+set_global_assignment -name PHYSICAL_SYNTHESIS_REGISTER_RETIMING ON
+set_global_assignment -name ROUTER_LCELL_INSERTION_AND_LOGIC_DUPLICATION ON
+set_global_assignment -name ROUTER_TIMING_OPTIMIZATION_LEVEL MAXIMUM
+set_global_assignment -name QII_AUTO_PACKED_REGISTERS NORMAL
+set_global_assignment -name FITTER_EFFORT "STANDARD FIT"
+set_global_assignment -name ROUTER_CLOCKING_TOPOLOGY_ANALYSIS ON
+set_global_assignment -name PHYSICAL_SYNTHESIS_ASYNCHRONOUS_SIGNAL_PIPELINING ON
 
 # Assembler Assignments
 # =====================
@@ -134,27 +149,23 @@ set_global_assignment -name OUTPUT_IO_TIMING_FAR_END_VMEAS "HALF SIGNAL SWING" -
 
 	# Fitter Assignments
 	# ==================
-	set_instance_assignment -name WEAK_PULL_UP_RESISTOR ON -to nINT
-	set_instance_assignment -name WEAK_PULL_UP_RESISTOR ON -to nBUSRQ
-	set_instance_assignment -name WEAK_PULL_UP_RESISTOR ON -to nNMI
-	set_instance_assignment -name WEAK_PULL_UP_RESISTOR ON -to nWAIT
-	set_instance_assignment -name WEAK_PULL_UP_RESISTOR ON -to nRST
-	set_instance_assignment -name WEAK_PULL_UP_RESISTOR ON -to RX
 
 	# start DESIGN_PARTITION(Top)
 	# ---------------------------
 
 		# Incremental Compilation Assignments
 		# ===================================
-		set_global_assignment -name PARTITION_NETLIST_TYPE SOURCE -section_id Top
-		set_global_assignment -name PARTITION_FITTER_PRESERVATION_LEVEL PLACEMENT_AND_ROUTING -section_id Top
-		set_global_assignment -name PARTITION_COLOR 16764057 -section_id Top
 
 	# end DESIGN_PARTITION(Top)
 	# -------------------------
 
 # end ENTITY(RC2014_fpga)
 # -----------------------
+set_global_assignment -name VHDL_FILE ../test/StimLog.vhd
+set_global_assignment -name VHDL_FILE ../test/SRAM.vhd
+set_global_assignment -name VHDL_FILE ../test/RC2014_TB.vhd
+set_global_assignment -name VHDL_FILE ../test/AsyncStim.vhd
+set_global_assignment -name VHDL_FILE ../test/AsyncLog.vhd
 set_global_assignment -name VHDL_FILE SCM_V100_S3_SCS3_32K.vhd
 set_global_assignment -name VHDL_FILE R0001009.vhd
 set_global_assignment -name VHDL_FILE CPM_BASIC.vhd
@@ -186,20 +197,28 @@ set_global_assignment -name VHDL_FILE ../rtl/sd_controller.vhd
 set_global_assignment -name QIP_FILE R0001009_LITE.qip
 set_global_assignment -name QIP_FILE SCM_V100_S3_SCS3_32K_LITE.qip
 set_global_assignment -name QIP_FILE CPM_BASIC_LITE.qip
-set_global_assignment -name SMART_RECOMPILE ON
-set_global_assignment -name CYCLONEII_OPTIMIZATION_TECHNIQUE SPEED
-set_global_assignment -name PHYSICAL_SYNTHESIS_COMBO_LOGIC ON
-set_global_assignment -name PHYSICAL_SYNTHESIS_REGISTER_DUPLICATION ON
-set_global_assignment -name PHYSICAL_SYNTHESIS_REGISTER_RETIMING ON
-set_global_assignment -name ROUTER_LCELL_INSERTION_AND_LOGIC_DUPLICATION ON
-set_global_assignment -name ROUTER_TIMING_OPTIMIZATION_LEVEL MAXIMUM
-set_global_assignment -name QII_AUTO_PACKED_REGISTERS NORMAL
-set_global_assignment -name FITTER_EFFORT "STANDARD FIT"
-set_global_assignment -name ADV_NETLIST_OPT_SYNTH_WYSIWYG_REMAP ON
-set_global_assignment -name MUX_RESTRUCTURE OFF
-set_global_assignment -name ROUTER_CLOCKING_TOPOLOGY_ANALYSIS ON
-set_global_assignment -name PHYSICAL_SYNTHESIS_ASYNCHRONOUS_SIGNAL_PIPELINING ON
-set_location_assignment PIN_W9 -to TX
-set_location_assignment PIN_W8 -to RX
+set_global_assignment -name TIMING_ANALYZER_MULTICORNER_ANALYSIS ON
+set_global_assignment -name EDA_SIMULATION_TOOL "ModelSim-Altera (VHDL)"
+set_global_assignment -name EDA_TIME_SCALE "1 ps" -section_id eda_simulation
+set_global_assignment -name EDA_OUTPUT_DATA_FORMAT VHDL -section_id eda_simulation
+set_global_assignment -name QIP_FILE clocks.qip
+set_instance_assignment -name WEAK_PULL_UP_RESISTOR ON -to nINT
+set_instance_assignment -name WEAK_PULL_UP_RESISTOR ON -to nBUSRQ
+set_instance_assignment -name WEAK_PULL_UP_RESISTOR ON -to nNMI
+set_instance_assignment -name WEAK_PULL_UP_RESISTOR ON -to nWAIT
+set_instance_assignment -name WEAK_PULL_UP_RESISTOR ON -to nRST
+set_instance_assignment -name WEAK_PULL_UP_RESISTOR ON -to RX
 set_instance_assignment -name IO_STANDARD "3.3 V SCHMITT TRIGGER" -to nRST
+set_global_assignment -name EDA_TEST_BENCH_ENABLE_STATUS TEST_BENCH_MODE -section_id eda_simulation
+set_global_assignment -name EDA_NATIVELINK_SIMULATION_TEST_BENCH RC2014_TB -section_id eda_simulation
+set_global_assignment -name EDA_TEST_BENCH_NAME RC2014_TB -section_id eda_simulation
+set_global_assignment -name EDA_DESIGN_INSTANCE_NAME NA -section_id RC2014_TB
+set_global_assignment -name EDA_TEST_BENCH_MODULE_NAME RC2014_TB -section_id RC2014_TB
+set_global_assignment -name PARTITION_NETLIST_TYPE SOURCE -section_id Top
+set_global_assignment -name PARTITION_FITTER_PRESERVATION_LEVEL PLACEMENT_AND_ROUTING -section_id Top
+set_global_assignment -name PARTITION_COLOR 16764057 -section_id Top
+set_global_assignment -name EDA_TEST_BENCH_FILE ../test/RC2014_TB.vhd -section_id RC2014_TB
+set_global_assignment -name EDA_TEST_BENCH_FILE ../test/AsyncLog.vhd -section_id RC2014_TB
+set_global_assignment -name EDA_TEST_BENCH_FILE ../test/AsyncStim.vhd -section_id RC2014_TB
+set_global_assignment -name EDA_TEST_BENCH_FILE ../test/StimLog.vhd -section_id RC2014_TB
 set_instance_assignment -name PARTITION_HIERARCHY root_partition -to | -section_id Top
