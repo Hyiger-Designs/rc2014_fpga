@@ -10,89 +10,89 @@
 # Copying C:/intelFPGA_lite/18.1/modelsim_ase/win32aloem/../modelsim.ini to modelsim.ini
 # Modifying modelsim.ini
 # 
-# vlog -vlog01compat -work work +incdir+C:/Users/richa/gitrepo/RC2014_fpga/de10-lite/db {C:/Users/richa/gitrepo/RC2014_fpga/de10-lite/db/clocks_altpll.v}
+# vlog -vlog01compat -work work +incdir+C:/Users/rlewis/gitrepo/RC2014_fpga/de10-lite/db {C:/Users/rlewis/gitrepo/RC2014_fpga/de10-lite/db/clocks_altpll.v}
 # Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
-# Start time: 13:47:18 on Mar 23,2019
-# vlog -reportprogress 300 -vlog01compat -work work "+incdir+C:/Users/richa/gitrepo/RC2014_fpga/de10-lite/db" C:/Users/richa/gitrepo/RC2014_fpga/de10-lite/db/clocks_altpll.v 
+# Start time: 17:16:18 on Mar 25,2019
+# vlog -reportprogress 300 -vlog01compat -work work "+incdir+C:/Users/rlewis/gitrepo/RC2014_fpga/de10-lite/db" C:/Users/rlewis/gitrepo/RC2014_fpga/de10-lite/db/clocks_altpll.v 
 # -- Compiling module clocks_altpll
 # 
 # Top level modules:
 # 	clocks_altpll
-# End time: 13:47:18 on Mar 23,2019, Elapsed time: 0:00:00
+# End time: 17:16:19 on Mar 25,2019, Elapsed time: 0:00:01
 # Errors: 0, Warnings: 0
-# vcom -93 -work work {C:/Users/richa/gitrepo/RC2014_fpga/rtl/decoder_3x8.vhd}
+# vcom -93 -work work {C:/Users/rlewis/gitrepo/RC2014_fpga/rtl/decoder_3x8.vhd}
 # Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  5 2016
-# Start time: 13:47:19 on Mar 23,2019
-# vcom -reportprogress 300 -93 -work work C:/Users/richa/gitrepo/RC2014_fpga/rtl/decoder_3x8.vhd 
+# Start time: 17:16:19 on Mar 25,2019
+# vcom -reportprogress 300 -93 -work work C:/Users/rlewis/gitrepo/RC2014_fpga/rtl/decoder_3x8.vhd 
 # -- Loading package STANDARD
 # -- Loading package TEXTIO
 # -- Loading package std_logic_1164
 # -- Compiling entity decoder_3x8
 # -- Compiling architecture rtl of decoder_3x8
-# End time: 13:47:19 on Mar 23,2019, Elapsed time: 0:00:00
+# End time: 17:16:19 on Mar 25,2019, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
-# vcom -93 -work work {C:/Users/richa/gitrepo/RC2014_fpga/rtl/T80/T80_Reg.vhd}
+# vcom -93 -work work {C:/Users/rlewis/gitrepo/RC2014_fpga/rtl/T80/T80_Reg.vhd}
 # Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  5 2016
-# Start time: 13:47:19 on Mar 23,2019
-# vcom -reportprogress 300 -93 -work work C:/Users/richa/gitrepo/RC2014_fpga/rtl/T80/T80_Reg.vhd 
+# Start time: 17:16:19 on Mar 25,2019
+# vcom -reportprogress 300 -93 -work work C:/Users/rlewis/gitrepo/RC2014_fpga/rtl/T80/T80_Reg.vhd 
 # -- Loading package STANDARD
 # -- Loading package TEXTIO
 # -- Loading package std_logic_1164
 # -- Loading package NUMERIC_STD
 # -- Compiling entity T80_Reg
 # -- Compiling architecture rtl of T80_Reg
-# End time: 13:47:19 on Mar 23,2019, Elapsed time: 0:00:00
+# End time: 17:16:19 on Mar 25,2019, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
-# vcom -93 -work work {C:/Users/richa/gitrepo/RC2014_fpga/rtl/T80/T80_Pack.vhd}
+# vcom -93 -work work {C:/Users/rlewis/gitrepo/RC2014_fpga/rtl/T80/T80_Pack.vhd}
 # Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  5 2016
-# Start time: 13:47:19 on Mar 23,2019
-# vcom -reportprogress 300 -93 -work work C:/Users/richa/gitrepo/RC2014_fpga/rtl/T80/T80_Pack.vhd 
+# Start time: 17:16:19 on Mar 25,2019
+# vcom -reportprogress 300 -93 -work work C:/Users/rlewis/gitrepo/RC2014_fpga/rtl/T80/T80_Pack.vhd 
 # -- Loading package STANDARD
 # -- Loading package TEXTIO
 # -- Loading package std_logic_1164
 # -- Compiling package T80_Pack
-# End time: 13:47:19 on Mar 23,2019, Elapsed time: 0:00:00
+# End time: 17:16:19 on Mar 25,2019, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
-# vcom -93 -work work {C:/Users/richa/gitrepo/RC2014_fpga/rtl/T80/T80_MCode.vhd}
+# vcom -93 -work work {C:/Users/rlewis/gitrepo/RC2014_fpga/rtl/T80/T80_MCode.vhd}
 # Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  5 2016
-# Start time: 13:47:19 on Mar 23,2019
-# vcom -reportprogress 300 -93 -work work C:/Users/richa/gitrepo/RC2014_fpga/rtl/T80/T80_MCode.vhd 
+# Start time: 17:16:19 on Mar 25,2019
+# vcom -reportprogress 300 -93 -work work C:/Users/rlewis/gitrepo/RC2014_fpga/rtl/T80/T80_MCode.vhd 
 # -- Loading package STANDARD
 # -- Loading package TEXTIO
 # -- Loading package std_logic_1164
 # -- Loading package NUMERIC_STD
 # -- Compiling entity T80_MCode
 # -- Compiling architecture rtl of T80_MCode
-# End time: 13:47:19 on Mar 23,2019, Elapsed time: 0:00:00
+# End time: 17:16:19 on Mar 25,2019, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
-# vcom -93 -work work {C:/Users/richa/gitrepo/RC2014_fpga/rtl/T80/T80_ALU.vhd}
+# vcom -93 -work work {C:/Users/rlewis/gitrepo/RC2014_fpga/rtl/T80/T80_ALU.vhd}
 # Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  5 2016
-# Start time: 13:47:19 on Mar 23,2019
-# vcom -reportprogress 300 -93 -work work C:/Users/richa/gitrepo/RC2014_fpga/rtl/T80/T80_ALU.vhd 
+# Start time: 17:16:19 on Mar 25,2019
+# vcom -reportprogress 300 -93 -work work C:/Users/rlewis/gitrepo/RC2014_fpga/rtl/T80/T80_ALU.vhd 
 # -- Loading package STANDARD
 # -- Loading package TEXTIO
 # -- Loading package std_logic_1164
 # -- Loading package NUMERIC_STD
 # -- Compiling entity T80_ALU
 # -- Compiling architecture rtl of T80_ALU
-# End time: 13:47:19 on Mar 23,2019, Elapsed time: 0:00:00
+# End time: 17:16:19 on Mar 25,2019, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
-# vcom -93 -work work {C:/Users/richa/gitrepo/RC2014_fpga/rtl/single_port_ram.vhd}
+# vcom -93 -work work {C:/Users/rlewis/gitrepo/RC2014_fpga/rtl/single_port_ram.vhd}
 # Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  5 2016
-# Start time: 13:47:19 on Mar 23,2019
-# vcom -reportprogress 300 -93 -work work C:/Users/richa/gitrepo/RC2014_fpga/rtl/single_port_ram.vhd 
+# Start time: 17:16:19 on Mar 25,2019
+# vcom -reportprogress 300 -93 -work work C:/Users/rlewis/gitrepo/RC2014_fpga/rtl/single_port_ram.vhd 
 # -- Loading package STANDARD
 # -- Loading package TEXTIO
 # -- Loading package std_logic_1164
 # -- Loading package NUMERIC_STD
 # -- Compiling entity single_port_ram
 # -- Compiling architecture RTL of single_port_ram
-# End time: 13:47:19 on Mar 23,2019, Elapsed time: 0:00:00
+# End time: 17:16:19 on Mar 25,2019, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
-# vcom -93 -work work {C:/Users/richa/gitrepo/RC2014_fpga/rtl/acia6850.vhd}
+# vcom -93 -work work {C:/Users/rlewis/gitrepo/RC2014_fpga/rtl/acia6850.vhd}
 # Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  5 2016
-# Start time: 13:47:19 on Mar 23,2019
-# vcom -reportprogress 300 -93 -work work C:/Users/richa/gitrepo/RC2014_fpga/rtl/acia6850.vhd 
+# Start time: 17:16:19 on Mar 25,2019
+# vcom -reportprogress 300 -93 -work work C:/Users/rlewis/gitrepo/RC2014_fpga/rtl/acia6850.vhd 
 # -- Loading package STANDARD
 # -- Loading package TEXTIO
 # -- Loading package std_logic_1164
@@ -101,47 +101,47 @@
 # -- Loading package STD_LOGIC_UNSIGNED
 # -- Compiling entity acia6850
 # -- Compiling architecture rtl of acia6850
-# End time: 13:47:19 on Mar 23,2019, Elapsed time: 0:00:00
+# End time: 17:16:19 on Mar 25,2019, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
-# vcom -93 -work work {C:/Users/richa/gitrepo/RC2014_fpga/rtl/sd_controller.vhd}
+# vcom -93 -work work {C:/Users/rlewis/gitrepo/RC2014_fpga/rtl/sd_controller.vhd}
 # Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  5 2016
-# Start time: 13:47:19 on Mar 23,2019
-# vcom -reportprogress 300 -93 -work work C:/Users/richa/gitrepo/RC2014_fpga/rtl/sd_controller.vhd 
+# Start time: 17:16:19 on Mar 25,2019
+# vcom -reportprogress 300 -93 -work work C:/Users/rlewis/gitrepo/RC2014_fpga/rtl/sd_controller.vhd 
 # -- Loading package STANDARD
 # -- Loading package TEXTIO
 # -- Loading package std_logic_1164
 # -- Loading package NUMERIC_STD
 # -- Compiling entity sd_controller
 # -- Compiling architecture rtl of sd_controller
-# End time: 13:47:19 on Mar 23,2019, Elapsed time: 0:00:00
+# End time: 17:16:19 on Mar 25,2019, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
-# vcom -93 -work work {C:/Users/richa/gitrepo/RC2014_fpga/de10-lite/CPM_BASIC_LITE.vhd}
+# vcom -93 -work work {C:/Users/rlewis/gitrepo/RC2014_fpga/de10-lite/CPM_BASIC_LITE.vhd}
 # Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  5 2016
-# Start time: 13:47:19 on Mar 23,2019
-# vcom -reportprogress 300 -93 -work work C:/Users/richa/gitrepo/RC2014_fpga/de10-lite/CPM_BASIC_LITE.vhd 
+# Start time: 17:16:19 on Mar 25,2019
+# vcom -reportprogress 300 -93 -work work C:/Users/rlewis/gitrepo/RC2014_fpga/de10-lite/CPM_BASIC_LITE.vhd 
 # -- Loading package STANDARD
 # -- Loading package TEXTIO
 # -- Loading package std_logic_1164
 # -- Loading package altera_mf_components
 # -- Compiling entity CPM_BASIC_LITE
 # -- Compiling architecture SYN of cpm_basic_lite
-# End time: 13:47:19 on Mar 23,2019, Elapsed time: 0:00:00
+# End time: 17:16:19 on Mar 25,2019, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
-# vcom -93 -work work {C:/Users/richa/gitrepo/RC2014_fpga/de10-lite/clocks.vhd}
+# vcom -93 -work work {C:/Users/rlewis/gitrepo/RC2014_fpga/de10-lite/clocks.vhd}
 # Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  5 2016
-# Start time: 13:47:19 on Mar 23,2019
-# vcom -reportprogress 300 -93 -work work C:/Users/richa/gitrepo/RC2014_fpga/de10-lite/clocks.vhd 
+# Start time: 17:16:19 on Mar 25,2019
+# vcom -reportprogress 300 -93 -work work C:/Users/rlewis/gitrepo/RC2014_fpga/de10-lite/clocks.vhd 
 # -- Loading package STANDARD
 # -- Loading package TEXTIO
 # -- Loading package std_logic_1164
 # -- Compiling entity clocks
 # -- Compiling architecture SYN of clocks
-# End time: 13:47:19 on Mar 23,2019, Elapsed time: 0:00:00
+# End time: 17:16:19 on Mar 25,2019, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
-# vcom -93 -work work {C:/Users/richa/gitrepo/RC2014_fpga/de10-lite/CPM_BASIC.vhd}
+# vcom -93 -work work {C:/Users/rlewis/gitrepo/RC2014_fpga/de10-lite/CPM_BASIC.vhd}
 # Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  5 2016
-# Start time: 13:47:19 on Mar 23,2019
-# vcom -reportprogress 300 -93 -work work C:/Users/richa/gitrepo/RC2014_fpga/de10-lite/CPM_BASIC.vhd 
+# Start time: 17:16:19 on Mar 25,2019
+# vcom -reportprogress 300 -93 -work work C:/Users/rlewis/gitrepo/RC2014_fpga/de10-lite/CPM_BASIC.vhd 
 # -- Loading package STANDARD
 # -- Loading package TEXTIO
 # -- Loading package std_logic_1164
@@ -150,12 +150,12 @@
 # -- Compiling architecture RTL of CPM_BASIC
 # -- Loading package altera_mf_components
 # -- Loading entity CPM_BASIC_LITE
-# End time: 13:47:20 on Mar 23,2019, Elapsed time: 0:00:01
+# End time: 17:16:20 on Mar 25,2019, Elapsed time: 0:00:01
 # Errors: 0, Warnings: 0
-# vcom -93 -work work {C:/Users/richa/gitrepo/RC2014_fpga/rtl/ROM_Page_Select.vhd}
+# vcom -93 -work work {C:/Users/rlewis/gitrepo/RC2014_fpga/rtl/ROM_Page_Select.vhd}
 # Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  5 2016
-# Start time: 13:47:20 on Mar 23,2019
-# vcom -reportprogress 300 -93 -work work C:/Users/richa/gitrepo/RC2014_fpga/rtl/ROM_Page_Select.vhd 
+# Start time: 17:16:20 on Mar 25,2019
+# vcom -reportprogress 300 -93 -work work C:/Users/rlewis/gitrepo/RC2014_fpga/rtl/ROM_Page_Select.vhd 
 # -- Loading package STANDARD
 # -- Loading package TEXTIO
 # -- Loading package std_logic_1164
@@ -163,12 +163,12 @@
 # -- Compiling entity ROM_Page_Select
 # -- Compiling architecture RTL of ROM_Page_Select
 # -- Loading entity decoder_3x8
-# End time: 13:47:20 on Mar 23,2019, Elapsed time: 0:00:00
+# End time: 17:16:20 on Mar 25,2019, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
-# vcom -93 -work work {C:/Users/richa/gitrepo/RC2014_fpga/rtl/T80/T80s.vhd}
+# vcom -93 -work work {C:/Users/rlewis/gitrepo/RC2014_fpga/rtl/T80/T80s.vhd}
 # Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  5 2016
-# Start time: 13:47:20 on Mar 23,2019
-# vcom -reportprogress 300 -93 -work work C:/Users/richa/gitrepo/RC2014_fpga/rtl/T80/T80s.vhd 
+# Start time: 17:16:20 on Mar 25,2019
+# vcom -reportprogress 300 -93 -work work C:/Users/rlewis/gitrepo/RC2014_fpga/rtl/T80/T80s.vhd 
 # -- Loading package STANDARD
 # -- Loading package TEXTIO
 # -- Loading package std_logic_1164
@@ -176,12 +176,12 @@
 # -- Loading package T80_Pack
 # -- Compiling entity T80s
 # -- Compiling architecture rtl of T80s
-# End time: 13:47:20 on Mar 23,2019, Elapsed time: 0:00:00
+# End time: 17:16:20 on Mar 25,2019, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
-# vcom -93 -work work {C:/Users/richa/gitrepo/RC2014_fpga/rtl/T80/T80.vhd}
+# vcom -93 -work work {C:/Users/rlewis/gitrepo/RC2014_fpga/rtl/T80/T80.vhd}
 # Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  5 2016
-# Start time: 13:47:20 on Mar 23,2019
-# vcom -reportprogress 300 -93 -work work C:/Users/richa/gitrepo/RC2014_fpga/rtl/T80/T80.vhd 
+# Start time: 17:16:20 on Mar 25,2019
+# vcom -reportprogress 300 -93 -work work C:/Users/rlewis/gitrepo/RC2014_fpga/rtl/T80/T80.vhd 
 # -- Loading package STANDARD
 # -- Loading package TEXTIO
 # -- Loading package std_logic_1164
@@ -189,12 +189,12 @@
 # -- Loading package T80_Pack
 # -- Compiling entity T80
 # -- Compiling architecture rtl of T80
-# End time: 13:47:20 on Mar 23,2019, Elapsed time: 0:00:00
+# End time: 17:16:20 on Mar 25,2019, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
-# vcom -93 -work work {C:/Users/richa/gitrepo/RC2014_fpga/rtl/RC2014_fpga.vhd}
+# vcom -93 -work work {C:/Users/rlewis/gitrepo/RC2014_fpga/rtl/RC2014_fpga.vhd}
 # Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  5 2016
-# Start time: 13:47:20 on Mar 23,2019
-# vcom -reportprogress 300 -93 -work work C:/Users/richa/gitrepo/RC2014_fpga/rtl/RC2014_fpga.vhd 
+# Start time: 17:16:20 on Mar 25,2019
+# vcom -reportprogress 300 -93 -work work C:/Users/rlewis/gitrepo/RC2014_fpga/rtl/RC2014_fpga.vhd 
 # -- Loading package STANDARD
 # -- Loading package TEXTIO
 # -- Loading package std_logic_1164
@@ -210,242 +210,13 @@
 # -- Loading package STD_LOGIC_UNSIGNED
 # -- Loading entity acia6850
 # -- Loading entity sd_controller
-# End time: 13:47:20 on Mar 23,2019, Elapsed time: 0:00:00
+# End time: 17:16:20 on Mar 25,2019, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # 
-# vcom -93 -work work {C:/Users/richa/gitrepo/RC2014_fpga/de10-lite/../test/RC2014_TB.vhd}
+# vcom -93 -work work {C:/Users/rlewis/gitrepo/RC2014_fpga/de10-lite/../test/RC2014_TB.vhd}
 # Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  5 2016
-# Start time: 13:47:20 on Mar 23,2019
-# vcom -reportprogress 300 -93 -work work C:/Users/richa/gitrepo/RC2014_fpga/de10-lite/../test/RC2014_TB.vhd 
-# -- Loading package STANDARD
-# -- Loading package TEXTIO
-# -- Loading package std_logic_1164
-# ** Error: C:/Users/richa/gitrepo/RC2014_fpga/de10-lite/../test/RC2014_TB.vhd(3): (vcom-1136) Unknown identifier "StimLog".
-# ** Error: C:/Users/richa/gitrepo/RC2014_fpga/de10-lite/../test/RC2014_TB.vhd(5): VHDL Compiler exiting
-# End time: 13:47:20 on Mar 23,2019, Elapsed time: 0:00:00
-# Errors: 2, Warnings: 0
-# ** Error: C:/intelFPGA_lite/18.1/modelsim_ase/win32aloem/vcom failed.
-# Error in macro ./RC2014_fpga_run_msim_rtl_vhdl.do line 25
-# C:/intelFPGA_lite/18.1/modelsim_ase/win32aloem/vcom failed.
-#     while executing
-# "vcom -93 -work work {C:/Users/richa/gitrepo/RC2014_fpga/de10-lite/../test/RC2014_TB.vhd}"
-do RC2014_fpga_run_msim_rtl_vhdl.do
-# if {[file exists rtl_work]} {
-# 	vdel -lib rtl_work -all
-# }
-# vlib rtl_work
-# vmap work rtl_work
-# Model Technology ModelSim - Intel FPGA Edition vmap 10.5b Lib Mapping Utility 2016.10 Oct  5 2016
-# vmap work rtl_work 
-# Modifying modelsim.ini
-# 
-# vlog -vlog01compat -work work +incdir+C:/Users/richa/gitrepo/RC2014_fpga/de10-lite/db {C:/Users/richa/gitrepo/RC2014_fpga/de10-lite/db/clocks_altpll.v}
-# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
-# Start time: 13:48:05 on Mar 23,2019
-# vlog -reportprogress 300 -vlog01compat -work work "+incdir+C:/Users/richa/gitrepo/RC2014_fpga/de10-lite/db" C:/Users/richa/gitrepo/RC2014_fpga/de10-lite/db/clocks_altpll.v 
-# -- Compiling module clocks_altpll
-# 
-# Top level modules:
-# 	clocks_altpll
-# End time: 13:48:05 on Mar 23,2019, Elapsed time: 0:00:00
-# Errors: 0, Warnings: 0
-# vcom -93 -work work {C:/Users/richa/gitrepo/RC2014_fpga/rtl/decoder_3x8.vhd}
-# Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  5 2016
-# Start time: 13:48:05 on Mar 23,2019
-# vcom -reportprogress 300 -93 -work work C:/Users/richa/gitrepo/RC2014_fpga/rtl/decoder_3x8.vhd 
-# -- Loading package STANDARD
-# -- Loading package TEXTIO
-# -- Loading package std_logic_1164
-# -- Compiling entity decoder_3x8
-# -- Compiling architecture rtl of decoder_3x8
-# End time: 13:48:05 on Mar 23,2019, Elapsed time: 0:00:00
-# Errors: 0, Warnings: 0
-# vcom -93 -work work {C:/Users/richa/gitrepo/RC2014_fpga/rtl/T80/T80_Reg.vhd}
-# Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  5 2016
-# Start time: 13:48:05 on Mar 23,2019
-# vcom -reportprogress 300 -93 -work work C:/Users/richa/gitrepo/RC2014_fpga/rtl/T80/T80_Reg.vhd 
-# -- Loading package STANDARD
-# -- Loading package TEXTIO
-# -- Loading package std_logic_1164
-# -- Loading package NUMERIC_STD
-# -- Compiling entity T80_Reg
-# -- Compiling architecture rtl of T80_Reg
-# End time: 13:48:05 on Mar 23,2019, Elapsed time: 0:00:00
-# Errors: 0, Warnings: 0
-# vcom -93 -work work {C:/Users/richa/gitrepo/RC2014_fpga/rtl/T80/T80_Pack.vhd}
-# Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  5 2016
-# Start time: 13:48:05 on Mar 23,2019
-# vcom -reportprogress 300 -93 -work work C:/Users/richa/gitrepo/RC2014_fpga/rtl/T80/T80_Pack.vhd 
-# -- Loading package STANDARD
-# -- Loading package TEXTIO
-# -- Loading package std_logic_1164
-# -- Compiling package T80_Pack
-# End time: 13:48:05 on Mar 23,2019, Elapsed time: 0:00:00
-# Errors: 0, Warnings: 0
-# vcom -93 -work work {C:/Users/richa/gitrepo/RC2014_fpga/rtl/T80/T80_MCode.vhd}
-# Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  5 2016
-# Start time: 13:48:06 on Mar 23,2019
-# vcom -reportprogress 300 -93 -work work C:/Users/richa/gitrepo/RC2014_fpga/rtl/T80/T80_MCode.vhd 
-# -- Loading package STANDARD
-# -- Loading package TEXTIO
-# -- Loading package std_logic_1164
-# -- Loading package NUMERIC_STD
-# -- Compiling entity T80_MCode
-# -- Compiling architecture rtl of T80_MCode
-# End time: 13:48:06 on Mar 23,2019, Elapsed time: 0:00:00
-# Errors: 0, Warnings: 0
-# vcom -93 -work work {C:/Users/richa/gitrepo/RC2014_fpga/rtl/T80/T80_ALU.vhd}
-# Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  5 2016
-# Start time: 13:48:06 on Mar 23,2019
-# vcom -reportprogress 300 -93 -work work C:/Users/richa/gitrepo/RC2014_fpga/rtl/T80/T80_ALU.vhd 
-# -- Loading package STANDARD
-# -- Loading package TEXTIO
-# -- Loading package std_logic_1164
-# -- Loading package NUMERIC_STD
-# -- Compiling entity T80_ALU
-# -- Compiling architecture rtl of T80_ALU
-# End time: 13:48:06 on Mar 23,2019, Elapsed time: 0:00:00
-# Errors: 0, Warnings: 0
-# vcom -93 -work work {C:/Users/richa/gitrepo/RC2014_fpga/rtl/single_port_ram.vhd}
-# Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  5 2016
-# Start time: 13:48:06 on Mar 23,2019
-# vcom -reportprogress 300 -93 -work work C:/Users/richa/gitrepo/RC2014_fpga/rtl/single_port_ram.vhd 
-# -- Loading package STANDARD
-# -- Loading package TEXTIO
-# -- Loading package std_logic_1164
-# -- Loading package NUMERIC_STD
-# -- Compiling entity single_port_ram
-# -- Compiling architecture RTL of single_port_ram
-# End time: 13:48:06 on Mar 23,2019, Elapsed time: 0:00:00
-# Errors: 0, Warnings: 0
-# vcom -93 -work work {C:/Users/richa/gitrepo/RC2014_fpga/rtl/acia6850.vhd}
-# Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  5 2016
-# Start time: 13:48:06 on Mar 23,2019
-# vcom -reportprogress 300 -93 -work work C:/Users/richa/gitrepo/RC2014_fpga/rtl/acia6850.vhd 
-# -- Loading package STANDARD
-# -- Loading package TEXTIO
-# -- Loading package std_logic_1164
-# -- Loading package NUMERIC_STD
-# -- Loading package std_logic_arith
-# -- Loading package STD_LOGIC_UNSIGNED
-# -- Compiling entity acia6850
-# -- Compiling architecture rtl of acia6850
-# End time: 13:48:06 on Mar 23,2019, Elapsed time: 0:00:00
-# Errors: 0, Warnings: 0
-# vcom -93 -work work {C:/Users/richa/gitrepo/RC2014_fpga/rtl/sd_controller.vhd}
-# Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  5 2016
-# Start time: 13:48:06 on Mar 23,2019
-# vcom -reportprogress 300 -93 -work work C:/Users/richa/gitrepo/RC2014_fpga/rtl/sd_controller.vhd 
-# -- Loading package STANDARD
-# -- Loading package TEXTIO
-# -- Loading package std_logic_1164
-# -- Loading package NUMERIC_STD
-# -- Compiling entity sd_controller
-# -- Compiling architecture rtl of sd_controller
-# End time: 13:48:06 on Mar 23,2019, Elapsed time: 0:00:00
-# Errors: 0, Warnings: 0
-# vcom -93 -work work {C:/Users/richa/gitrepo/RC2014_fpga/de10-lite/CPM_BASIC_LITE.vhd}
-# Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  5 2016
-# Start time: 13:48:06 on Mar 23,2019
-# vcom -reportprogress 300 -93 -work work C:/Users/richa/gitrepo/RC2014_fpga/de10-lite/CPM_BASIC_LITE.vhd 
-# -- Loading package STANDARD
-# -- Loading package TEXTIO
-# -- Loading package std_logic_1164
-# -- Loading package altera_mf_components
-# -- Compiling entity CPM_BASIC_LITE
-# -- Compiling architecture SYN of cpm_basic_lite
-# End time: 13:48:06 on Mar 23,2019, Elapsed time: 0:00:00
-# Errors: 0, Warnings: 0
-# vcom -93 -work work {C:/Users/richa/gitrepo/RC2014_fpga/de10-lite/clocks.vhd}
-# Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  5 2016
-# Start time: 13:48:06 on Mar 23,2019
-# vcom -reportprogress 300 -93 -work work C:/Users/richa/gitrepo/RC2014_fpga/de10-lite/clocks.vhd 
-# -- Loading package STANDARD
-# -- Loading package TEXTIO
-# -- Loading package std_logic_1164
-# -- Compiling entity clocks
-# -- Compiling architecture SYN of clocks
-# End time: 13:48:06 on Mar 23,2019, Elapsed time: 0:00:00
-# Errors: 0, Warnings: 0
-# vcom -93 -work work {C:/Users/richa/gitrepo/RC2014_fpga/de10-lite/CPM_BASIC.vhd}
-# Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  5 2016
-# Start time: 13:48:06 on Mar 23,2019
-# vcom -reportprogress 300 -93 -work work C:/Users/richa/gitrepo/RC2014_fpga/de10-lite/CPM_BASIC.vhd 
-# -- Loading package STANDARD
-# -- Loading package TEXTIO
-# -- Loading package std_logic_1164
-# -- Loading package NUMERIC_STD
-# -- Compiling entity CPM_BASIC
-# -- Compiling architecture RTL of CPM_BASIC
-# -- Loading package altera_mf_components
-# -- Loading entity CPM_BASIC_LITE
-# End time: 13:48:06 on Mar 23,2019, Elapsed time: 0:00:00
-# Errors: 0, Warnings: 0
-# vcom -93 -work work {C:/Users/richa/gitrepo/RC2014_fpga/rtl/ROM_Page_Select.vhd}
-# Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  5 2016
-# Start time: 13:48:06 on Mar 23,2019
-# vcom -reportprogress 300 -93 -work work C:/Users/richa/gitrepo/RC2014_fpga/rtl/ROM_Page_Select.vhd 
-# -- Loading package STANDARD
-# -- Loading package TEXTIO
-# -- Loading package std_logic_1164
-# -- Loading package NUMERIC_STD
-# -- Compiling entity ROM_Page_Select
-# -- Compiling architecture RTL of ROM_Page_Select
-# -- Loading entity decoder_3x8
-# End time: 13:48:06 on Mar 23,2019, Elapsed time: 0:00:00
-# Errors: 0, Warnings: 0
-# vcom -93 -work work {C:/Users/richa/gitrepo/RC2014_fpga/rtl/T80/T80s.vhd}
-# Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  5 2016
-# Start time: 13:48:06 on Mar 23,2019
-# vcom -reportprogress 300 -93 -work work C:/Users/richa/gitrepo/RC2014_fpga/rtl/T80/T80s.vhd 
-# -- Loading package STANDARD
-# -- Loading package TEXTIO
-# -- Loading package std_logic_1164
-# -- Loading package NUMERIC_STD
-# -- Loading package T80_Pack
-# -- Compiling entity T80s
-# -- Compiling architecture rtl of T80s
-# End time: 13:48:06 on Mar 23,2019, Elapsed time: 0:00:00
-# Errors: 0, Warnings: 0
-# vcom -93 -work work {C:/Users/richa/gitrepo/RC2014_fpga/rtl/T80/T80.vhd}
-# Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  5 2016
-# Start time: 13:48:06 on Mar 23,2019
-# vcom -reportprogress 300 -93 -work work C:/Users/richa/gitrepo/RC2014_fpga/rtl/T80/T80.vhd 
-# -- Loading package STANDARD
-# -- Loading package TEXTIO
-# -- Loading package std_logic_1164
-# -- Loading package NUMERIC_STD
-# -- Loading package T80_Pack
-# -- Compiling entity T80
-# -- Compiling architecture rtl of T80
-# End time: 13:48:06 on Mar 23,2019, Elapsed time: 0:00:00
-# Errors: 0, Warnings: 0
-# vcom -93 -work work {C:/Users/richa/gitrepo/RC2014_fpga/rtl/RC2014_fpga.vhd}
-# Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  5 2016
-# Start time: 13:48:06 on Mar 23,2019
-# vcom -reportprogress 300 -93 -work work C:/Users/richa/gitrepo/RC2014_fpga/rtl/RC2014_fpga.vhd 
-# -- Loading package STANDARD
-# -- Loading package TEXTIO
-# -- Loading package std_logic_1164
-# -- Loading package NUMERIC_STD
-# -- Compiling entity RC2014_fpga
-# -- Compiling architecture struct of RC2014_fpga
-# -- Loading entity clocks
-# -- Loading package T80_Pack
-# -- Loading entity T80s
-# -- Loading entity single_port_ram
-# -- Loading entity ROM_Page_Select
-# -- Loading package std_logic_arith
-# -- Loading package STD_LOGIC_UNSIGNED
-# -- Loading entity acia6850
-# -- Loading entity sd_controller
-# End time: 13:48:07 on Mar 23,2019, Elapsed time: 0:00:01
-# Errors: 0, Warnings: 0
-# 
-# vcom -93 -work work {C:/Users/richa/gitrepo/RC2014_fpga/de10-lite/../test/RC2014_TB.vhd}
-# Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  5 2016
-# Start time: 13:48:07 on Mar 23,2019
-# vcom -reportprogress 300 -93 -work work C:/Users/richa/gitrepo/RC2014_fpga/de10-lite/../test/RC2014_TB.vhd 
+# Start time: 17:16:20 on Mar 25,2019
+# vcom -reportprogress 300 -93 -work work C:/Users/rlewis/gitrepo/RC2014_fpga/de10-lite/../test/RC2014_TB.vhd 
 # -- Loading package STANDARD
 # -- Loading package TEXTIO
 # -- Loading package std_logic_1164
@@ -453,748 +224,46 @@ do RC2014_fpga_run_msim_rtl_vhdl.do
 # -- Compiling architecture behaviour of RC2014_TB
 # -- Loading package NUMERIC_STD
 # -- Loading entity RC2014_fpga
-# ** Error (suppressible): C:/Users/richa/gitrepo/RC2014_fpga/de10-lite/../test/RC2014_TB.vhd(36): (vcom-1141) Identifier "AsyncStim" does not identify a component declaration.
-# ** Error (suppressible): C:/Users/richa/gitrepo/RC2014_fpga/de10-lite/../test/RC2014_TB.vhd(39): (vcom-1141) Identifier "AsyncLog" does not identify a component declaration.
-# ** Error: C:/Users/richa/gitrepo/RC2014_fpga/de10-lite/../test/RC2014_TB.vhd(47): VHDL Compiler exiting
-# End time: 13:48:07 on Mar 23,2019, Elapsed time: 0:00:00
-# Errors: 3, Warnings: 0
-# ** Error: C:/intelFPGA_lite/18.1/modelsim_ase/win32aloem/vcom failed.
-# Error in macro ./RC2014_fpga_run_msim_rtl_vhdl.do line 25
-# C:/intelFPGA_lite/18.1/modelsim_ase/win32aloem/vcom failed.
-#     while executing
-# "vcom -93 -work work {C:/Users/richa/gitrepo/RC2014_fpga/de10-lite/../test/RC2014_TB.vhd}"
-do RC2014_fpga_run_msim_rtl_vhdl.do
-# if {[file exists rtl_work]} {
-# 	vdel -lib rtl_work -all
-# }
-# vlib rtl_work
-# vmap work rtl_work
-# Model Technology ModelSim - Intel FPGA Edition vmap 10.5b Lib Mapping Utility 2016.10 Oct  5 2016
-# vmap work rtl_work 
-# Modifying modelsim.ini
-# 
-# vlog -vlog01compat -work work +incdir+C:/Users/richa/gitrepo/RC2014_fpga/de10-lite/db {C:/Users/richa/gitrepo/RC2014_fpga/de10-lite/db/clocks_altpll.v}
-# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
-# Start time: 13:50:01 on Mar 23,2019
-# vlog -reportprogress 300 -vlog01compat -work work "+incdir+C:/Users/richa/gitrepo/RC2014_fpga/de10-lite/db" C:/Users/richa/gitrepo/RC2014_fpga/de10-lite/db/clocks_altpll.v 
-# -- Compiling module clocks_altpll
-# 
-# Top level modules:
-# 	clocks_altpll
-# End time: 13:50:01 on Mar 23,2019, Elapsed time: 0:00:00
+# End time: 17:16:20 on Mar 25,2019, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
-# vcom -93 -work work {C:/Users/richa/gitrepo/RC2014_fpga/rtl/decoder_3x8.vhd}
+# vcom -93 -work work {C:/Users/rlewis/gitrepo/RC2014_fpga/de10-lite/../test/AsyncLog.vhd}
 # Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  5 2016
-# Start time: 13:50:01 on Mar 23,2019
-# vcom -reportprogress 300 -93 -work work C:/Users/richa/gitrepo/RC2014_fpga/rtl/decoder_3x8.vhd 
-# -- Loading package STANDARD
-# -- Loading package TEXTIO
-# -- Loading package std_logic_1164
-# -- Compiling entity decoder_3x8
-# -- Compiling architecture rtl of decoder_3x8
-# End time: 13:50:01 on Mar 23,2019, Elapsed time: 0:00:00
-# Errors: 0, Warnings: 0
-# vcom -93 -work work {C:/Users/richa/gitrepo/RC2014_fpga/rtl/T80/T80_Reg.vhd}
-# Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  5 2016
-# Start time: 13:50:01 on Mar 23,2019
-# vcom -reportprogress 300 -93 -work work C:/Users/richa/gitrepo/RC2014_fpga/rtl/T80/T80_Reg.vhd 
-# -- Loading package STANDARD
-# -- Loading package TEXTIO
-# -- Loading package std_logic_1164
-# -- Loading package NUMERIC_STD
-# -- Compiling entity T80_Reg
-# -- Compiling architecture rtl of T80_Reg
-# End time: 13:50:01 on Mar 23,2019, Elapsed time: 0:00:00
-# Errors: 0, Warnings: 0
-# vcom -93 -work work {C:/Users/richa/gitrepo/RC2014_fpga/rtl/T80/T80_Pack.vhd}
-# Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  5 2016
-# Start time: 13:50:01 on Mar 23,2019
-# vcom -reportprogress 300 -93 -work work C:/Users/richa/gitrepo/RC2014_fpga/rtl/T80/T80_Pack.vhd 
-# -- Loading package STANDARD
-# -- Loading package TEXTIO
-# -- Loading package std_logic_1164
-# -- Compiling package T80_Pack
-# End time: 13:50:01 on Mar 23,2019, Elapsed time: 0:00:00
-# Errors: 0, Warnings: 0
-# vcom -93 -work work {C:/Users/richa/gitrepo/RC2014_fpga/rtl/T80/T80_MCode.vhd}
-# Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  5 2016
-# Start time: 13:50:01 on Mar 23,2019
-# vcom -reportprogress 300 -93 -work work C:/Users/richa/gitrepo/RC2014_fpga/rtl/T80/T80_MCode.vhd 
-# -- Loading package STANDARD
-# -- Loading package TEXTIO
-# -- Loading package std_logic_1164
-# -- Loading package NUMERIC_STD
-# -- Compiling entity T80_MCode
-# -- Compiling architecture rtl of T80_MCode
-# End time: 13:50:01 on Mar 23,2019, Elapsed time: 0:00:00
-# Errors: 0, Warnings: 0
-# vcom -93 -work work {C:/Users/richa/gitrepo/RC2014_fpga/rtl/T80/T80_ALU.vhd}
-# Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  5 2016
-# Start time: 13:50:01 on Mar 23,2019
-# vcom -reportprogress 300 -93 -work work C:/Users/richa/gitrepo/RC2014_fpga/rtl/T80/T80_ALU.vhd 
-# -- Loading package STANDARD
-# -- Loading package TEXTIO
-# -- Loading package std_logic_1164
-# -- Loading package NUMERIC_STD
-# -- Compiling entity T80_ALU
-# -- Compiling architecture rtl of T80_ALU
-# End time: 13:50:01 on Mar 23,2019, Elapsed time: 0:00:00
-# Errors: 0, Warnings: 0
-# vcom -93 -work work {C:/Users/richa/gitrepo/RC2014_fpga/rtl/single_port_ram.vhd}
-# Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  5 2016
-# Start time: 13:50:01 on Mar 23,2019
-# vcom -reportprogress 300 -93 -work work C:/Users/richa/gitrepo/RC2014_fpga/rtl/single_port_ram.vhd 
-# -- Loading package STANDARD
-# -- Loading package TEXTIO
-# -- Loading package std_logic_1164
-# -- Loading package NUMERIC_STD
-# -- Compiling entity single_port_ram
-# -- Compiling architecture RTL of single_port_ram
-# End time: 13:50:01 on Mar 23,2019, Elapsed time: 0:00:00
-# Errors: 0, Warnings: 0
-# vcom -93 -work work {C:/Users/richa/gitrepo/RC2014_fpga/rtl/acia6850.vhd}
-# Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  5 2016
-# Start time: 13:50:01 on Mar 23,2019
-# vcom -reportprogress 300 -93 -work work C:/Users/richa/gitrepo/RC2014_fpga/rtl/acia6850.vhd 
-# -- Loading package STANDARD
-# -- Loading package TEXTIO
-# -- Loading package std_logic_1164
-# -- Loading package NUMERIC_STD
-# -- Loading package std_logic_arith
-# -- Loading package STD_LOGIC_UNSIGNED
-# -- Compiling entity acia6850
-# -- Compiling architecture rtl of acia6850
-# End time: 13:50:01 on Mar 23,2019, Elapsed time: 0:00:00
-# Errors: 0, Warnings: 0
-# vcom -93 -work work {C:/Users/richa/gitrepo/RC2014_fpga/rtl/sd_controller.vhd}
-# Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  5 2016
-# Start time: 13:50:01 on Mar 23,2019
-# vcom -reportprogress 300 -93 -work work C:/Users/richa/gitrepo/RC2014_fpga/rtl/sd_controller.vhd 
-# -- Loading package STANDARD
-# -- Loading package TEXTIO
-# -- Loading package std_logic_1164
-# -- Loading package NUMERIC_STD
-# -- Compiling entity sd_controller
-# -- Compiling architecture rtl of sd_controller
-# End time: 13:50:01 on Mar 23,2019, Elapsed time: 0:00:00
-# Errors: 0, Warnings: 0
-# vcom -93 -work work {C:/Users/richa/gitrepo/RC2014_fpga/de10-lite/CPM_BASIC_LITE.vhd}
-# Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  5 2016
-# Start time: 13:50:01 on Mar 23,2019
-# vcom -reportprogress 300 -93 -work work C:/Users/richa/gitrepo/RC2014_fpga/de10-lite/CPM_BASIC_LITE.vhd 
-# -- Loading package STANDARD
-# -- Loading package TEXTIO
-# -- Loading package std_logic_1164
-# -- Loading package altera_mf_components
-# -- Compiling entity CPM_BASIC_LITE
-# -- Compiling architecture SYN of cpm_basic_lite
-# End time: 13:50:02 on Mar 23,2019, Elapsed time: 0:00:01
-# Errors: 0, Warnings: 0
-# vcom -93 -work work {C:/Users/richa/gitrepo/RC2014_fpga/de10-lite/clocks.vhd}
-# Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  5 2016
-# Start time: 13:50:02 on Mar 23,2019
-# vcom -reportprogress 300 -93 -work work C:/Users/richa/gitrepo/RC2014_fpga/de10-lite/clocks.vhd 
-# -- Loading package STANDARD
-# -- Loading package TEXTIO
-# -- Loading package std_logic_1164
-# -- Compiling entity clocks
-# -- Compiling architecture SYN of clocks
-# End time: 13:50:02 on Mar 23,2019, Elapsed time: 0:00:00
-# Errors: 0, Warnings: 0
-# vcom -93 -work work {C:/Users/richa/gitrepo/RC2014_fpga/de10-lite/CPM_BASIC.vhd}
-# Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  5 2016
-# Start time: 13:50:02 on Mar 23,2019
-# vcom -reportprogress 300 -93 -work work C:/Users/richa/gitrepo/RC2014_fpga/de10-lite/CPM_BASIC.vhd 
-# -- Loading package STANDARD
-# -- Loading package TEXTIO
-# -- Loading package std_logic_1164
-# -- Loading package NUMERIC_STD
-# -- Compiling entity CPM_BASIC
-# -- Compiling architecture RTL of CPM_BASIC
-# -- Loading package altera_mf_components
-# -- Loading entity CPM_BASIC_LITE
-# End time: 13:50:02 on Mar 23,2019, Elapsed time: 0:00:00
-# Errors: 0, Warnings: 0
-# vcom -93 -work work {C:/Users/richa/gitrepo/RC2014_fpga/rtl/ROM_Page_Select.vhd}
-# Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  5 2016
-# Start time: 13:50:02 on Mar 23,2019
-# vcom -reportprogress 300 -93 -work work C:/Users/richa/gitrepo/RC2014_fpga/rtl/ROM_Page_Select.vhd 
-# -- Loading package STANDARD
-# -- Loading package TEXTIO
-# -- Loading package std_logic_1164
-# -- Loading package NUMERIC_STD
-# -- Compiling entity ROM_Page_Select
-# -- Compiling architecture RTL of ROM_Page_Select
-# -- Loading entity decoder_3x8
-# End time: 13:50:02 on Mar 23,2019, Elapsed time: 0:00:00
-# Errors: 0, Warnings: 0
-# vcom -93 -work work {C:/Users/richa/gitrepo/RC2014_fpga/rtl/T80/T80s.vhd}
-# Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  5 2016
-# Start time: 13:50:02 on Mar 23,2019
-# vcom -reportprogress 300 -93 -work work C:/Users/richa/gitrepo/RC2014_fpga/rtl/T80/T80s.vhd 
-# -- Loading package STANDARD
-# -- Loading package TEXTIO
-# -- Loading package std_logic_1164
-# -- Loading package NUMERIC_STD
-# -- Loading package T80_Pack
-# -- Compiling entity T80s
-# -- Compiling architecture rtl of T80s
-# End time: 13:50:02 on Mar 23,2019, Elapsed time: 0:00:00
-# Errors: 0, Warnings: 0
-# vcom -93 -work work {C:/Users/richa/gitrepo/RC2014_fpga/rtl/T80/T80.vhd}
-# Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  5 2016
-# Start time: 13:50:02 on Mar 23,2019
-# vcom -reportprogress 300 -93 -work work C:/Users/richa/gitrepo/RC2014_fpga/rtl/T80/T80.vhd 
-# -- Loading package STANDARD
-# -- Loading package TEXTIO
-# -- Loading package std_logic_1164
-# -- Loading package NUMERIC_STD
-# -- Loading package T80_Pack
-# -- Compiling entity T80
-# -- Compiling architecture rtl of T80
-# End time: 13:50:02 on Mar 23,2019, Elapsed time: 0:00:00
-# Errors: 0, Warnings: 0
-# vcom -93 -work work {C:/Users/richa/gitrepo/RC2014_fpga/rtl/RC2014_fpga.vhd}
-# Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  5 2016
-# Start time: 13:50:02 on Mar 23,2019
-# vcom -reportprogress 300 -93 -work work C:/Users/richa/gitrepo/RC2014_fpga/rtl/RC2014_fpga.vhd 
-# -- Loading package STANDARD
-# -- Loading package TEXTIO
-# -- Loading package std_logic_1164
-# -- Loading package NUMERIC_STD
-# -- Compiling entity RC2014_fpga
-# -- Compiling architecture struct of RC2014_fpga
-# -- Loading entity clocks
-# -- Loading package T80_Pack
-# -- Loading entity T80s
-# -- Loading entity single_port_ram
-# -- Loading entity ROM_Page_Select
-# -- Loading package std_logic_arith
-# -- Loading package STD_LOGIC_UNSIGNED
-# -- Loading entity acia6850
-# -- Loading entity sd_controller
-# End time: 13:50:02 on Mar 23,2019, Elapsed time: 0:00:00
-# Errors: 0, Warnings: 0
-# 
-# vcom -93 -work work {C:/Users/richa/gitrepo/RC2014_fpga/de10-lite/../test/RC2014_TB.vhd}
-# Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  5 2016
-# Start time: 13:50:02 on Mar 23,2019
-# vcom -reportprogress 300 -93 -work work C:/Users/richa/gitrepo/RC2014_fpga/de10-lite/../test/RC2014_TB.vhd 
-# -- Loading package STANDARD
-# -- Loading package TEXTIO
-# -- Loading package std_logic_1164
-# -- Compiling entity RC2014_TB
-# -- Compiling architecture behaviour of RC2014_TB
-# ** Error: C:/Users/richa/gitrepo/RC2014_fpga/de10-lite/../test/RC2014_TB.vhd(30): near "AsyncStim": (vcom-1576) expecting COMPONENT.
-# -- Loading package NUMERIC_STD
-# -- Loading entity RC2014_fpga
-# ** Error: C:/Users/richa/gitrepo/RC2014_fpga/de10-lite/../test/RC2014_TB.vhd(50): (vcom-1027) Number of positional association elements (1) exceeds number of formals (0).
-# ** Error (suppressible): C:/Users/richa/gitrepo/RC2014_fpga/de10-lite/../test/RC2014_TB.vhd(52): (vcom-1141) Identifier "AsyncLog" does not identify a component declaration.
-# ** Error: C:/Users/richa/gitrepo/RC2014_fpga/de10-lite/../test/RC2014_TB.vhd(60): VHDL Compiler exiting
-# End time: 13:50:02 on Mar 23,2019, Elapsed time: 0:00:00
-# Errors: 4, Warnings: 0
-# ** Error: C:/intelFPGA_lite/18.1/modelsim_ase/win32aloem/vcom failed.
-# Error in macro ./RC2014_fpga_run_msim_rtl_vhdl.do line 25
-# C:/intelFPGA_lite/18.1/modelsim_ase/win32aloem/vcom failed.
-#     while executing
-# "vcom -93 -work work {C:/Users/richa/gitrepo/RC2014_fpga/de10-lite/../test/RC2014_TB.vhd}"
-do RC2014_fpga_run_msim_rtl_vhdl.do
-# if {[file exists rtl_work]} {
-# 	vdel -lib rtl_work -all
-# }
-# vlib rtl_work
-# vmap work rtl_work
-# Model Technology ModelSim - Intel FPGA Edition vmap 10.5b Lib Mapping Utility 2016.10 Oct  5 2016
-# vmap work rtl_work 
-# Modifying modelsim.ini
-# 
-# vlog -vlog01compat -work work +incdir+C:/Users/richa/gitrepo/RC2014_fpga/de10-lite/db {C:/Users/richa/gitrepo/RC2014_fpga/de10-lite/db/clocks_altpll.v}
-# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
-# Start time: 13:50:33 on Mar 23,2019
-# vlog -reportprogress 300 -vlog01compat -work work "+incdir+C:/Users/richa/gitrepo/RC2014_fpga/de10-lite/db" C:/Users/richa/gitrepo/RC2014_fpga/de10-lite/db/clocks_altpll.v 
-# -- Compiling module clocks_altpll
-# 
-# Top level modules:
-# 	clocks_altpll
-# End time: 13:50:33 on Mar 23,2019, Elapsed time: 0:00:00
-# Errors: 0, Warnings: 0
-# vcom -93 -work work {C:/Users/richa/gitrepo/RC2014_fpga/rtl/decoder_3x8.vhd}
-# Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  5 2016
-# Start time: 13:50:33 on Mar 23,2019
-# vcom -reportprogress 300 -93 -work work C:/Users/richa/gitrepo/RC2014_fpga/rtl/decoder_3x8.vhd 
-# -- Loading package STANDARD
-# -- Loading package TEXTIO
-# -- Loading package std_logic_1164
-# -- Compiling entity decoder_3x8
-# -- Compiling architecture rtl of decoder_3x8
-# End time: 13:50:33 on Mar 23,2019, Elapsed time: 0:00:00
-# Errors: 0, Warnings: 0
-# vcom -93 -work work {C:/Users/richa/gitrepo/RC2014_fpga/rtl/T80/T80_Reg.vhd}
-# Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  5 2016
-# Start time: 13:50:33 on Mar 23,2019
-# vcom -reportprogress 300 -93 -work work C:/Users/richa/gitrepo/RC2014_fpga/rtl/T80/T80_Reg.vhd 
-# -- Loading package STANDARD
-# -- Loading package TEXTIO
-# -- Loading package std_logic_1164
-# -- Loading package NUMERIC_STD
-# -- Compiling entity T80_Reg
-# -- Compiling architecture rtl of T80_Reg
-# End time: 13:50:33 on Mar 23,2019, Elapsed time: 0:00:00
-# Errors: 0, Warnings: 0
-# vcom -93 -work work {C:/Users/richa/gitrepo/RC2014_fpga/rtl/T80/T80_Pack.vhd}
-# Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  5 2016
-# Start time: 13:50:33 on Mar 23,2019
-# vcom -reportprogress 300 -93 -work work C:/Users/richa/gitrepo/RC2014_fpga/rtl/T80/T80_Pack.vhd 
-# -- Loading package STANDARD
-# -- Loading package TEXTIO
-# -- Loading package std_logic_1164
-# -- Compiling package T80_Pack
-# End time: 13:50:34 on Mar 23,2019, Elapsed time: 0:00:01
-# Errors: 0, Warnings: 0
-# vcom -93 -work work {C:/Users/richa/gitrepo/RC2014_fpga/rtl/T80/T80_MCode.vhd}
-# Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  5 2016
-# Start time: 13:50:34 on Mar 23,2019
-# vcom -reportprogress 300 -93 -work work C:/Users/richa/gitrepo/RC2014_fpga/rtl/T80/T80_MCode.vhd 
-# -- Loading package STANDARD
-# -- Loading package TEXTIO
-# -- Loading package std_logic_1164
-# -- Loading package NUMERIC_STD
-# -- Compiling entity T80_MCode
-# -- Compiling architecture rtl of T80_MCode
-# End time: 13:50:34 on Mar 23,2019, Elapsed time: 0:00:00
-# Errors: 0, Warnings: 0
-# vcom -93 -work work {C:/Users/richa/gitrepo/RC2014_fpga/rtl/T80/T80_ALU.vhd}
-# Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  5 2016
-# Start time: 13:50:34 on Mar 23,2019
-# vcom -reportprogress 300 -93 -work work C:/Users/richa/gitrepo/RC2014_fpga/rtl/T80/T80_ALU.vhd 
-# -- Loading package STANDARD
-# -- Loading package TEXTIO
-# -- Loading package std_logic_1164
-# -- Loading package NUMERIC_STD
-# -- Compiling entity T80_ALU
-# -- Compiling architecture rtl of T80_ALU
-# End time: 13:50:34 on Mar 23,2019, Elapsed time: 0:00:00
-# Errors: 0, Warnings: 0
-# vcom -93 -work work {C:/Users/richa/gitrepo/RC2014_fpga/rtl/single_port_ram.vhd}
-# Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  5 2016
-# Start time: 13:50:34 on Mar 23,2019
-# vcom -reportprogress 300 -93 -work work C:/Users/richa/gitrepo/RC2014_fpga/rtl/single_port_ram.vhd 
-# -- Loading package STANDARD
-# -- Loading package TEXTIO
-# -- Loading package std_logic_1164
-# -- Loading package NUMERIC_STD
-# -- Compiling entity single_port_ram
-# -- Compiling architecture RTL of single_port_ram
-# End time: 13:50:34 on Mar 23,2019, Elapsed time: 0:00:00
-# Errors: 0, Warnings: 0
-# vcom -93 -work work {C:/Users/richa/gitrepo/RC2014_fpga/rtl/acia6850.vhd}
-# Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  5 2016
-# Start time: 13:50:34 on Mar 23,2019
-# vcom -reportprogress 300 -93 -work work C:/Users/richa/gitrepo/RC2014_fpga/rtl/acia6850.vhd 
-# -- Loading package STANDARD
-# -- Loading package TEXTIO
-# -- Loading package std_logic_1164
-# -- Loading package NUMERIC_STD
-# -- Loading package std_logic_arith
-# -- Loading package STD_LOGIC_UNSIGNED
-# -- Compiling entity acia6850
-# -- Compiling architecture rtl of acia6850
-# End time: 13:50:34 on Mar 23,2019, Elapsed time: 0:00:00
-# Errors: 0, Warnings: 0
-# vcom -93 -work work {C:/Users/richa/gitrepo/RC2014_fpga/rtl/sd_controller.vhd}
-# Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  5 2016
-# Start time: 13:50:34 on Mar 23,2019
-# vcom -reportprogress 300 -93 -work work C:/Users/richa/gitrepo/RC2014_fpga/rtl/sd_controller.vhd 
-# -- Loading package STANDARD
-# -- Loading package TEXTIO
-# -- Loading package std_logic_1164
-# -- Loading package NUMERIC_STD
-# -- Compiling entity sd_controller
-# -- Compiling architecture rtl of sd_controller
-# End time: 13:50:34 on Mar 23,2019, Elapsed time: 0:00:00
-# Errors: 0, Warnings: 0
-# vcom -93 -work work {C:/Users/richa/gitrepo/RC2014_fpga/de10-lite/CPM_BASIC_LITE.vhd}
-# Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  5 2016
-# Start time: 13:50:34 on Mar 23,2019
-# vcom -reportprogress 300 -93 -work work C:/Users/richa/gitrepo/RC2014_fpga/de10-lite/CPM_BASIC_LITE.vhd 
-# -- Loading package STANDARD
-# -- Loading package TEXTIO
-# -- Loading package std_logic_1164
-# -- Loading package altera_mf_components
-# -- Compiling entity CPM_BASIC_LITE
-# -- Compiling architecture SYN of cpm_basic_lite
-# End time: 13:50:34 on Mar 23,2019, Elapsed time: 0:00:00
-# Errors: 0, Warnings: 0
-# vcom -93 -work work {C:/Users/richa/gitrepo/RC2014_fpga/de10-lite/clocks.vhd}
-# Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  5 2016
-# Start time: 13:50:34 on Mar 23,2019
-# vcom -reportprogress 300 -93 -work work C:/Users/richa/gitrepo/RC2014_fpga/de10-lite/clocks.vhd 
-# -- Loading package STANDARD
-# -- Loading package TEXTIO
-# -- Loading package std_logic_1164
-# -- Compiling entity clocks
-# -- Compiling architecture SYN of clocks
-# End time: 13:50:34 on Mar 23,2019, Elapsed time: 0:00:00
-# Errors: 0, Warnings: 0
-# vcom -93 -work work {C:/Users/richa/gitrepo/RC2014_fpga/de10-lite/CPM_BASIC.vhd}
-# Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  5 2016
-# Start time: 13:50:34 on Mar 23,2019
-# vcom -reportprogress 300 -93 -work work C:/Users/richa/gitrepo/RC2014_fpga/de10-lite/CPM_BASIC.vhd 
-# -- Loading package STANDARD
-# -- Loading package TEXTIO
-# -- Loading package std_logic_1164
-# -- Loading package NUMERIC_STD
-# -- Compiling entity CPM_BASIC
-# -- Compiling architecture RTL of CPM_BASIC
-# -- Loading package altera_mf_components
-# -- Loading entity CPM_BASIC_LITE
-# End time: 13:50:34 on Mar 23,2019, Elapsed time: 0:00:00
-# Errors: 0, Warnings: 0
-# vcom -93 -work work {C:/Users/richa/gitrepo/RC2014_fpga/rtl/ROM_Page_Select.vhd}
-# Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  5 2016
-# Start time: 13:50:34 on Mar 23,2019
-# vcom -reportprogress 300 -93 -work work C:/Users/richa/gitrepo/RC2014_fpga/rtl/ROM_Page_Select.vhd 
-# -- Loading package STANDARD
-# -- Loading package TEXTIO
-# -- Loading package std_logic_1164
-# -- Loading package NUMERIC_STD
-# -- Compiling entity ROM_Page_Select
-# -- Compiling architecture RTL of ROM_Page_Select
-# -- Loading entity decoder_3x8
-# End time: 13:50:34 on Mar 23,2019, Elapsed time: 0:00:00
-# Errors: 0, Warnings: 0
-# vcom -93 -work work {C:/Users/richa/gitrepo/RC2014_fpga/rtl/T80/T80s.vhd}
-# Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  5 2016
-# Start time: 13:50:34 on Mar 23,2019
-# vcom -reportprogress 300 -93 -work work C:/Users/richa/gitrepo/RC2014_fpga/rtl/T80/T80s.vhd 
-# -- Loading package STANDARD
-# -- Loading package TEXTIO
-# -- Loading package std_logic_1164
-# -- Loading package NUMERIC_STD
-# -- Loading package T80_Pack
-# -- Compiling entity T80s
-# -- Compiling architecture rtl of T80s
-# End time: 13:50:34 on Mar 23,2019, Elapsed time: 0:00:00
-# Errors: 0, Warnings: 0
-# vcom -93 -work work {C:/Users/richa/gitrepo/RC2014_fpga/rtl/T80/T80.vhd}
-# Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  5 2016
-# Start time: 13:50:34 on Mar 23,2019
-# vcom -reportprogress 300 -93 -work work C:/Users/richa/gitrepo/RC2014_fpga/rtl/T80/T80.vhd 
-# -- Loading package STANDARD
-# -- Loading package TEXTIO
-# -- Loading package std_logic_1164
-# -- Loading package NUMERIC_STD
-# -- Loading package T80_Pack
-# -- Compiling entity T80
-# -- Compiling architecture rtl of T80
-# End time: 13:50:34 on Mar 23,2019, Elapsed time: 0:00:00
-# Errors: 0, Warnings: 0
-# vcom -93 -work work {C:/Users/richa/gitrepo/RC2014_fpga/rtl/RC2014_fpga.vhd}
-# Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  5 2016
-# Start time: 13:50:35 on Mar 23,2019
-# vcom -reportprogress 300 -93 -work work C:/Users/richa/gitrepo/RC2014_fpga/rtl/RC2014_fpga.vhd 
-# -- Loading package STANDARD
-# -- Loading package TEXTIO
-# -- Loading package std_logic_1164
-# -- Loading package NUMERIC_STD
-# -- Compiling entity RC2014_fpga
-# -- Compiling architecture struct of RC2014_fpga
-# -- Loading entity clocks
-# -- Loading package T80_Pack
-# -- Loading entity T80s
-# -- Loading entity single_port_ram
-# -- Loading entity ROM_Page_Select
-# -- Loading package std_logic_arith
-# -- Loading package STD_LOGIC_UNSIGNED
-# -- Loading entity acia6850
-# -- Loading entity sd_controller
-# End time: 13:50:35 on Mar 23,2019, Elapsed time: 0:00:00
-# Errors: 0, Warnings: 0
-# 
-# vcom -93 -work work {C:/Users/richa/gitrepo/RC2014_fpga/de10-lite/../test/RC2014_TB.vhd}
-# Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  5 2016
-# Start time: 13:50:35 on Mar 23,2019
-# vcom -reportprogress 300 -93 -work work C:/Users/richa/gitrepo/RC2014_fpga/de10-lite/../test/RC2014_TB.vhd 
-# -- Loading package STANDARD
-# -- Loading package TEXTIO
-# -- Loading package std_logic_1164
-# -- Compiling entity RC2014_TB
-# -- Compiling architecture behaviour of RC2014_TB
-# -- Loading package NUMERIC_STD
-# -- Loading entity RC2014_fpga
-# ** Error (suppressible): C:/Users/richa/gitrepo/RC2014_fpga/de10-lite/../test/RC2014_TB.vhd(52): (vcom-1141) Identifier "AsyncLog" does not identify a component declaration.
-# ** Error: C:/Users/richa/gitrepo/RC2014_fpga/de10-lite/../test/RC2014_TB.vhd(60): VHDL Compiler exiting
-# End time: 13:50:35 on Mar 23,2019, Elapsed time: 0:00:00
-# Errors: 2, Warnings: 0
-# ** Error: C:/intelFPGA_lite/18.1/modelsim_ase/win32aloem/vcom failed.
-# Error in macro ./RC2014_fpga_run_msim_rtl_vhdl.do line 25
-# C:/intelFPGA_lite/18.1/modelsim_ase/win32aloem/vcom failed.
-#     while executing
-# "vcom -93 -work work {C:/Users/richa/gitrepo/RC2014_fpga/de10-lite/../test/RC2014_TB.vhd}"
-do RC2014_fpga_run_msim_rtl_vhdl.do
-# if {[file exists rtl_work]} {
-# 	vdel -lib rtl_work -all
-# }
-# vlib rtl_work
-# vmap work rtl_work
-# Model Technology ModelSim - Intel FPGA Edition vmap 10.5b Lib Mapping Utility 2016.10 Oct  5 2016
-# vmap work rtl_work 
-# Modifying modelsim.ini
-# 
-# vlog -vlog01compat -work work +incdir+C:/Users/richa/gitrepo/RC2014_fpga/de10-lite/db {C:/Users/richa/gitrepo/RC2014_fpga/de10-lite/db/clocks_altpll.v}
-# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
-# Start time: 13:51:21 on Mar 23,2019
-# vlog -reportprogress 300 -vlog01compat -work work "+incdir+C:/Users/richa/gitrepo/RC2014_fpga/de10-lite/db" C:/Users/richa/gitrepo/RC2014_fpga/de10-lite/db/clocks_altpll.v 
-# -- Compiling module clocks_altpll
-# 
-# Top level modules:
-# 	clocks_altpll
-# End time: 13:51:21 on Mar 23,2019, Elapsed time: 0:00:00
-# Errors: 0, Warnings: 0
-# vcom -93 -work work {C:/Users/richa/gitrepo/RC2014_fpga/rtl/decoder_3x8.vhd}
-# Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  5 2016
-# Start time: 13:51:21 on Mar 23,2019
-# vcom -reportprogress 300 -93 -work work C:/Users/richa/gitrepo/RC2014_fpga/rtl/decoder_3x8.vhd 
-# -- Loading package STANDARD
-# -- Loading package TEXTIO
-# -- Loading package std_logic_1164
-# -- Compiling entity decoder_3x8
-# -- Compiling architecture rtl of decoder_3x8
-# End time: 13:51:21 on Mar 23,2019, Elapsed time: 0:00:00
-# Errors: 0, Warnings: 0
-# vcom -93 -work work {C:/Users/richa/gitrepo/RC2014_fpga/rtl/T80/T80_Reg.vhd}
-# Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  5 2016
-# Start time: 13:51:21 on Mar 23,2019
-# vcom -reportprogress 300 -93 -work work C:/Users/richa/gitrepo/RC2014_fpga/rtl/T80/T80_Reg.vhd 
-# -- Loading package STANDARD
-# -- Loading package TEXTIO
-# -- Loading package std_logic_1164
-# -- Loading package NUMERIC_STD
-# -- Compiling entity T80_Reg
-# -- Compiling architecture rtl of T80_Reg
-# End time: 13:51:22 on Mar 23,2019, Elapsed time: 0:00:01
-# Errors: 0, Warnings: 0
-# vcom -93 -work work {C:/Users/richa/gitrepo/RC2014_fpga/rtl/T80/T80_Pack.vhd}
-# Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  5 2016
-# Start time: 13:51:22 on Mar 23,2019
-# vcom -reportprogress 300 -93 -work work C:/Users/richa/gitrepo/RC2014_fpga/rtl/T80/T80_Pack.vhd 
-# -- Loading package STANDARD
-# -- Loading package TEXTIO
-# -- Loading package std_logic_1164
-# -- Compiling package T80_Pack
-# End time: 13:51:22 on Mar 23,2019, Elapsed time: 0:00:00
-# Errors: 0, Warnings: 0
-# vcom -93 -work work {C:/Users/richa/gitrepo/RC2014_fpga/rtl/T80/T80_MCode.vhd}
-# Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  5 2016
-# Start time: 13:51:22 on Mar 23,2019
-# vcom -reportprogress 300 -93 -work work C:/Users/richa/gitrepo/RC2014_fpga/rtl/T80/T80_MCode.vhd 
-# -- Loading package STANDARD
-# -- Loading package TEXTIO
-# -- Loading package std_logic_1164
-# -- Loading package NUMERIC_STD
-# -- Compiling entity T80_MCode
-# -- Compiling architecture rtl of T80_MCode
-# End time: 13:51:22 on Mar 23,2019, Elapsed time: 0:00:00
-# Errors: 0, Warnings: 0
-# vcom -93 -work work {C:/Users/richa/gitrepo/RC2014_fpga/rtl/T80/T80_ALU.vhd}
-# Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  5 2016
-# Start time: 13:51:22 on Mar 23,2019
-# vcom -reportprogress 300 -93 -work work C:/Users/richa/gitrepo/RC2014_fpga/rtl/T80/T80_ALU.vhd 
-# -- Loading package STANDARD
-# -- Loading package TEXTIO
-# -- Loading package std_logic_1164
-# -- Loading package NUMERIC_STD
-# -- Compiling entity T80_ALU
-# -- Compiling architecture rtl of T80_ALU
-# End time: 13:51:22 on Mar 23,2019, Elapsed time: 0:00:00
-# Errors: 0, Warnings: 0
-# vcom -93 -work work {C:/Users/richa/gitrepo/RC2014_fpga/rtl/single_port_ram.vhd}
-# Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  5 2016
-# Start time: 13:51:22 on Mar 23,2019
-# vcom -reportprogress 300 -93 -work work C:/Users/richa/gitrepo/RC2014_fpga/rtl/single_port_ram.vhd 
-# -- Loading package STANDARD
-# -- Loading package TEXTIO
-# -- Loading package std_logic_1164
-# -- Loading package NUMERIC_STD
-# -- Compiling entity single_port_ram
-# -- Compiling architecture RTL of single_port_ram
-# End time: 13:51:22 on Mar 23,2019, Elapsed time: 0:00:00
-# Errors: 0, Warnings: 0
-# vcom -93 -work work {C:/Users/richa/gitrepo/RC2014_fpga/rtl/acia6850.vhd}
-# Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  5 2016
-# Start time: 13:51:22 on Mar 23,2019
-# vcom -reportprogress 300 -93 -work work C:/Users/richa/gitrepo/RC2014_fpga/rtl/acia6850.vhd 
-# -- Loading package STANDARD
-# -- Loading package TEXTIO
-# -- Loading package std_logic_1164
-# -- Loading package NUMERIC_STD
-# -- Loading package std_logic_arith
-# -- Loading package STD_LOGIC_UNSIGNED
-# -- Compiling entity acia6850
-# -- Compiling architecture rtl of acia6850
-# End time: 13:51:22 on Mar 23,2019, Elapsed time: 0:00:00
-# Errors: 0, Warnings: 0
-# vcom -93 -work work {C:/Users/richa/gitrepo/RC2014_fpga/rtl/sd_controller.vhd}
-# Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  5 2016
-# Start time: 13:51:22 on Mar 23,2019
-# vcom -reportprogress 300 -93 -work work C:/Users/richa/gitrepo/RC2014_fpga/rtl/sd_controller.vhd 
-# -- Loading package STANDARD
-# -- Loading package TEXTIO
-# -- Loading package std_logic_1164
-# -- Loading package NUMERIC_STD
-# -- Compiling entity sd_controller
-# -- Compiling architecture rtl of sd_controller
-# End time: 13:51:22 on Mar 23,2019, Elapsed time: 0:00:00
-# Errors: 0, Warnings: 0
-# vcom -93 -work work {C:/Users/richa/gitrepo/RC2014_fpga/de10-lite/CPM_BASIC_LITE.vhd}
-# Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  5 2016
-# Start time: 13:51:22 on Mar 23,2019
-# vcom -reportprogress 300 -93 -work work C:/Users/richa/gitrepo/RC2014_fpga/de10-lite/CPM_BASIC_LITE.vhd 
-# -- Loading package STANDARD
-# -- Loading package TEXTIO
-# -- Loading package std_logic_1164
-# -- Loading package altera_mf_components
-# -- Compiling entity CPM_BASIC_LITE
-# -- Compiling architecture SYN of cpm_basic_lite
-# End time: 13:51:22 on Mar 23,2019, Elapsed time: 0:00:00
-# Errors: 0, Warnings: 0
-# vcom -93 -work work {C:/Users/richa/gitrepo/RC2014_fpga/de10-lite/clocks.vhd}
-# Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  5 2016
-# Start time: 13:51:22 on Mar 23,2019
-# vcom -reportprogress 300 -93 -work work C:/Users/richa/gitrepo/RC2014_fpga/de10-lite/clocks.vhd 
-# -- Loading package STANDARD
-# -- Loading package TEXTIO
-# -- Loading package std_logic_1164
-# -- Compiling entity clocks
-# -- Compiling architecture SYN of clocks
-# End time: 13:51:22 on Mar 23,2019, Elapsed time: 0:00:00
-# Errors: 0, Warnings: 0
-# vcom -93 -work work {C:/Users/richa/gitrepo/RC2014_fpga/de10-lite/CPM_BASIC.vhd}
-# Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  5 2016
-# Start time: 13:51:22 on Mar 23,2019
-# vcom -reportprogress 300 -93 -work work C:/Users/richa/gitrepo/RC2014_fpga/de10-lite/CPM_BASIC.vhd 
-# -- Loading package STANDARD
-# -- Loading package TEXTIO
-# -- Loading package std_logic_1164
-# -- Loading package NUMERIC_STD
-# -- Compiling entity CPM_BASIC
-# -- Compiling architecture RTL of CPM_BASIC
-# -- Loading package altera_mf_components
-# -- Loading entity CPM_BASIC_LITE
-# End time: 13:51:22 on Mar 23,2019, Elapsed time: 0:00:00
-# Errors: 0, Warnings: 0
-# vcom -93 -work work {C:/Users/richa/gitrepo/RC2014_fpga/rtl/ROM_Page_Select.vhd}
-# Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  5 2016
-# Start time: 13:51:22 on Mar 23,2019
-# vcom -reportprogress 300 -93 -work work C:/Users/richa/gitrepo/RC2014_fpga/rtl/ROM_Page_Select.vhd 
-# -- Loading package STANDARD
-# -- Loading package TEXTIO
-# -- Loading package std_logic_1164
-# -- Loading package NUMERIC_STD
-# -- Compiling entity ROM_Page_Select
-# -- Compiling architecture RTL of ROM_Page_Select
-# -- Loading entity decoder_3x8
-# End time: 13:51:22 on Mar 23,2019, Elapsed time: 0:00:00
-# Errors: 0, Warnings: 0
-# vcom -93 -work work {C:/Users/richa/gitrepo/RC2014_fpga/rtl/T80/T80s.vhd}
-# Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  5 2016
-# Start time: 13:51:22 on Mar 23,2019
-# vcom -reportprogress 300 -93 -work work C:/Users/richa/gitrepo/RC2014_fpga/rtl/T80/T80s.vhd 
-# -- Loading package STANDARD
-# -- Loading package TEXTIO
-# -- Loading package std_logic_1164
-# -- Loading package NUMERIC_STD
-# -- Loading package T80_Pack
-# -- Compiling entity T80s
-# -- Compiling architecture rtl of T80s
-# End time: 13:51:22 on Mar 23,2019, Elapsed time: 0:00:00
-# Errors: 0, Warnings: 0
-# vcom -93 -work work {C:/Users/richa/gitrepo/RC2014_fpga/rtl/T80/T80.vhd}
-# Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  5 2016
-# Start time: 13:51:22 on Mar 23,2019
-# vcom -reportprogress 300 -93 -work work C:/Users/richa/gitrepo/RC2014_fpga/rtl/T80/T80.vhd 
-# -- Loading package STANDARD
-# -- Loading package TEXTIO
-# -- Loading package std_logic_1164
-# -- Loading package NUMERIC_STD
-# -- Loading package T80_Pack
-# -- Compiling entity T80
-# -- Compiling architecture rtl of T80
-# End time: 13:51:23 on Mar 23,2019, Elapsed time: 0:00:01
-# Errors: 0, Warnings: 0
-# vcom -93 -work work {C:/Users/richa/gitrepo/RC2014_fpga/rtl/RC2014_fpga.vhd}
-# Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  5 2016
-# Start time: 13:51:23 on Mar 23,2019
-# vcom -reportprogress 300 -93 -work work C:/Users/richa/gitrepo/RC2014_fpga/rtl/RC2014_fpga.vhd 
-# -- Loading package STANDARD
-# -- Loading package TEXTIO
-# -- Loading package std_logic_1164
-# -- Loading package NUMERIC_STD
-# -- Compiling entity RC2014_fpga
-# -- Compiling architecture struct of RC2014_fpga
-# -- Loading entity clocks
-# -- Loading package T80_Pack
-# -- Loading entity T80s
-# -- Loading entity single_port_ram
-# -- Loading entity ROM_Page_Select
-# -- Loading package std_logic_arith
-# -- Loading package STD_LOGIC_UNSIGNED
-# -- Loading entity acia6850
-# -- Loading entity sd_controller
-# End time: 13:51:23 on Mar 23,2019, Elapsed time: 0:00:00
-# Errors: 0, Warnings: 0
-# 
-# vcom -93 -work work {C:/Users/richa/gitrepo/RC2014_fpga/de10-lite/../test/RC2014_TB.vhd}
-# Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  5 2016
-# Start time: 13:51:23 on Mar 23,2019
-# vcom -reportprogress 300 -93 -work work C:/Users/richa/gitrepo/RC2014_fpga/de10-lite/../test/RC2014_TB.vhd 
-# -- Loading package STANDARD
-# -- Loading package TEXTIO
-# -- Loading package std_logic_1164
-# -- Compiling entity RC2014_TB
-# -- Compiling architecture behaviour of RC2014_TB
-# -- Loading package NUMERIC_STD
-# -- Loading entity RC2014_fpga
-# End time: 13:51:23 on Mar 23,2019, Elapsed time: 0:00:00
-# Errors: 0, Warnings: 0
-# vcom -93 -work work {C:/Users/richa/gitrepo/RC2014_fpga/de10-lite/../test/AsyncLog.vhd}
-# Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  5 2016
-# Start time: 13:51:23 on Mar 23,2019
-# vcom -reportprogress 300 -93 -work work C:/Users/richa/gitrepo/RC2014_fpga/de10-lite/../test/AsyncLog.vhd 
+# Start time: 17:16:20 on Mar 25,2019
+# vcom -reportprogress 300 -93 -work work C:/Users/rlewis/gitrepo/RC2014_fpga/de10-lite/../test/AsyncLog.vhd 
 # -- Loading package STANDARD
 # -- Loading package TEXTIO
 # -- Loading package std_logic_1164
 # -- Loading package NUMERIC_STD
 # -- Compiling entity AsyncLog
 # -- Compiling architecture behaviour of AsyncLog
-# End time: 13:51:23 on Mar 23,2019, Elapsed time: 0:00:00
+# End time: 17:16:20 on Mar 25,2019, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
-# vcom -93 -work work {C:/Users/richa/gitrepo/RC2014_fpga/de10-lite/../test/AsyncStim.vhd}
+# vcom -93 -work work {C:/Users/rlewis/gitrepo/RC2014_fpga/de10-lite/../test/AsyncStim.vhd}
 # Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  5 2016
-# Start time: 13:51:23 on Mar 23,2019
-# vcom -reportprogress 300 -93 -work work C:/Users/richa/gitrepo/RC2014_fpga/de10-lite/../test/AsyncStim.vhd 
+# Start time: 17:16:20 on Mar 25,2019
+# vcom -reportprogress 300 -93 -work work C:/Users/rlewis/gitrepo/RC2014_fpga/de10-lite/../test/AsyncStim.vhd 
 # -- Loading package STANDARD
 # -- Loading package TEXTIO
 # -- Loading package std_logic_1164
 # -- Loading package NUMERIC_STD
 # -- Compiling entity AsyncStim
 # -- Compiling architecture behaviour of AsyncStim
-# End time: 13:51:23 on Mar 23,2019, Elapsed time: 0:00:00
+# End time: 17:16:20 on Mar 25,2019, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
-# vcom -93 -work work {C:/Users/richa/gitrepo/RC2014_fpga/de10-lite/../test/StimLog.vhd}
+# vcom -93 -work work {C:/Users/rlewis/gitrepo/RC2014_fpga/de10-lite/../test/StimLog.vhd}
 # Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  5 2016
-# Start time: 13:51:23 on Mar 23,2019
-# vcom -reportprogress 300 -93 -work work C:/Users/richa/gitrepo/RC2014_fpga/de10-lite/../test/StimLog.vhd 
+# Start time: 17:16:20 on Mar 25,2019
+# vcom -reportprogress 300 -93 -work work C:/Users/rlewis/gitrepo/RC2014_fpga/de10-lite/../test/StimLog.vhd 
 # -- Loading package STANDARD
 # -- Loading package TEXTIO
 # -- Loading package std_logic_1164
 # -- Compiling package StimLog
-# End time: 13:51:23 on Mar 23,2019, Elapsed time: 0:00:00
+# End time: 17:16:20 on Mar 25,2019, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # 
 # vsim -t 1ps -L altera -L lpm -L sgate -L altera_mf -L altera_lnsim -L fiftyfivenm -L rtl_work -L work -voptargs="+acc"  RC2014_TB
 # vsim -t 1ps -L altera -L lpm -L sgate -L altera_mf -L altera_lnsim -L fiftyfivenm -L rtl_work -L work -voptargs=""+acc"" RC2014_TB 
-# Start time: 13:51:23 on Mar 23,2019
+# Start time: 17:16:20 on Mar 25,2019
 # Loading std.standard
 # Loading std.textio(body)
 # Loading ieee.std_logic_1164(body)
@@ -1234,6 +303,11 @@ do RC2014_fpga_run_msim_rtl_vhdl.do
 # Expect performance to be adversely affected.
 # 
 # add wave *
+# ** Warning: (vsim-WLF-5000) WLF file currently in use: vsim.wlf
+#           File in use by: richa  Hostname: RICHARDS-PC  ProcessID: 14360
+#           Attempting to use alternate WLF file "./wlftnm5aq1".
+# ** Warning: (vsim-WLF-5001) Could not open WLF file: vsim.wlf
+#           Using alternate file: ./wlftnm5aq1
 # view structure
 # .main_pane.structure.interior.cs.body.struct
 # view signals
@@ -1281,325 +355,78 @@ do RC2014_fpga_run_msim_rtl_vhdl.do
 #    Time: 0 ps  Iteration: 4  Instance: /rc2014_tb/ni/cpm_basic_rom/clocks_inst/altpll_component/CYCLONEIII_ALTPLL/M5
 # ** Note: MAX 10 PLL locked to incoming clock
 #    Time: 1090 ns  Iteration: 3  Instance: /rc2014_tb/ni/cpm_basic_rom/clocks_inst/altpll_component/CYCLONEIII_ALTPLL/M5
-# Break key hit
-# Break in ForLoop loop at C:/intelFPGA_lite/18.1/modelsim_ase/win32aloem/../altera/vhdl/src/altera_mf/altera_mf.vhd line 13651
+restart
+# ** Warning: (vsim-7) Failed to open VHDL file "RX_Cmd.txt" in rb mode.
+# No such file or directory. (errno = ENOENT)
+#    Time: 0 ps  Iteration: 0  Instance: /rc2014_tb/as1
+# Load canceled
+run
+# GetModuleFileName: The specified module could not be found.
+# 
+# 
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 0 ps  Iteration: 0  Instance: /rc2014_tb/ni/ram64k
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 0 ps  Iteration: 0  Instance: /rc2014_tb/ni/t80s/cpu/u0/Regs
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 0 ps  Iteration: 0  Instance: /rc2014_tb/ni/t80s/cpu/u0/Regs
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 0 ps  Iteration: 0  Instance: /rc2014_tb/ni/t80s/cpu/u0/Regs
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 0 ps  Iteration: 0  Instance: /rc2014_tb/ni/t80s/cpu/u0/Regs
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 0 ps  Iteration: 0  Instance: /rc2014_tb/ni/t80s/cpu/u0/Regs
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 0 ps  Iteration: 0  Instance: /rc2014_tb/ni/t80s/cpu/u0/Regs
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 0 ps  Iteration: 0  Instance: /rc2014_tb/ni/t80s/cpu/u0
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 0 ps  Iteration: 0  Instance: /rc2014_tb/ni/t80s/cpu/u0
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 0 ps  Iteration: 0  Instance: /rc2014_tb/ni/t80s/cpu/u0
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 0 ps  Iteration: 0  Instance: /rc2014_tb/ni/t80s/cpu/u0
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 0 ps  Iteration: 0  Instance: /rc2014_tb/ni/t80s/cpu/u0
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 0 ps  Iteration: 0  Instance: /rc2014_tb/ni/t80s/cpu/u0
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 0 ps  Iteration: 1  Instance: /rc2014_tb/ni/t80s/cpu/u0
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 0 ps  Iteration: 1  Instance: /rc2014_tb/ni/t80s/cpu/u0
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 0 ps  Iteration: 1  Instance: /rc2014_tb/ni/t80s/cpu/u0
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 0 ps  Iteration: 1  Instance: /rc2014_tb/ni/t80s/cpu/u0
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 0 ps  Iteration: 1  Instance: /rc2014_tb/ni/t80s/cpu/u0
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 0 ps  Iteration: 1  Instance: /rc2014_tb/ni/t80s/cpu/u0
+# ** Note: MAX 10 PLL was reset
+#    Time: 0 ps  Iteration: 4  Instance: /rc2014_tb/ni/cpm_basic_rom/clocks_inst/altpll_component/CYCLONEIII_ALTPLL/M5
+# ** Note: MAX 10 PLL locked to incoming clock
+#    Time: 1090 ns  Iteration: 3  Instance: /rc2014_tb/ni/cpm_basic_rom/clocks_inst/altpll_component/CYCLONEIII_ALTPLL/M5
 add wave -position insertpoint  \
 sim:/rc2014_tb/ni/A
 add wave -position insertpoint  \
 sim:/rc2014_tb/ni/D
 add wave -position insertpoint  \
+sim:/rc2014_tb/ni/nMREQ
+add wave -position insertpoint  \
 sim:/rc2014_tb/ni/nIORQ
+add wave -position insertpoint  \
+sim:/rc2014_tb/ni/nWR
+add wave -position insertpoint  \
+sim:/rc2014_tb/ni/nRD
+add wave -position insertpoint  \
+sim:/rc2014_tb/ni/IO_nWR
+add wave -position insertpoint  \
+sim:/rc2014_tb/ni/IO_nRD
+restart -f
 run
-do RC2014_fpga_run_msim_rtl_vhdl.do
-# if {[file exists rtl_work]} {
-# 	vdel -lib rtl_work -all
-# }
-# vlib rtl_work
-# vmap work rtl_work
-# Model Technology ModelSim - Intel FPGA Edition vmap 10.5b Lib Mapping Utility 2016.10 Oct  5 2016
-# vmap work rtl_work 
-# Modifying modelsim.ini
+# GetModuleFileName: The specified module could not be found.
 # 
-# vlog -vlog01compat -work work +incdir+C:/Users/richa/gitrepo/RC2014_fpga/de10-lite/db {C:/Users/richa/gitrepo/RC2014_fpga/de10-lite/db/clocks_altpll.v}
-# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
-# Start time: 13:55:21 on Mar 23,2019
-# vlog -reportprogress 300 -vlog01compat -work work "+incdir+C:/Users/richa/gitrepo/RC2014_fpga/de10-lite/db" C:/Users/richa/gitrepo/RC2014_fpga/de10-lite/db/clocks_altpll.v 
-# -- Compiling module clocks_altpll
 # 
-# Top level modules:
-# 	clocks_altpll
-# End time: 13:55:21 on Mar 23,2019, Elapsed time: 0:00:00
-# Errors: 0, Warnings: 0
-# vcom -93 -work work {C:/Users/richa/gitrepo/RC2014_fpga/rtl/decoder_3x8.vhd}
-# Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  5 2016
-# Start time: 13:55:21 on Mar 23,2019
-# vcom -reportprogress 300 -93 -work work C:/Users/richa/gitrepo/RC2014_fpga/rtl/decoder_3x8.vhd 
-# -- Loading package STANDARD
-# -- Loading package TEXTIO
-# -- Loading package std_logic_1164
-# -- Compiling entity decoder_3x8
-# -- Compiling architecture rtl of decoder_3x8
-# End time: 13:55:21 on Mar 23,2019, Elapsed time: 0:00:00
-# Errors: 0, Warnings: 0
-# vcom -93 -work work {C:/Users/richa/gitrepo/RC2014_fpga/rtl/T80/T80_Reg.vhd}
-# Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  5 2016
-# Start time: 13:55:21 on Mar 23,2019
-# vcom -reportprogress 300 -93 -work work C:/Users/richa/gitrepo/RC2014_fpga/rtl/T80/T80_Reg.vhd 
-# -- Loading package STANDARD
-# -- Loading package TEXTIO
-# -- Loading package std_logic_1164
-# -- Loading package NUMERIC_STD
-# -- Compiling entity T80_Reg
-# -- Compiling architecture rtl of T80_Reg
-# End time: 13:55:21 on Mar 23,2019, Elapsed time: 0:00:00
-# Errors: 0, Warnings: 0
-# vcom -93 -work work {C:/Users/richa/gitrepo/RC2014_fpga/rtl/T80/T80_Pack.vhd}
-# Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  5 2016
-# Start time: 13:55:21 on Mar 23,2019
-# vcom -reportprogress 300 -93 -work work C:/Users/richa/gitrepo/RC2014_fpga/rtl/T80/T80_Pack.vhd 
-# -- Loading package STANDARD
-# -- Loading package TEXTIO
-# -- Loading package std_logic_1164
-# -- Compiling package T80_Pack
-# End time: 13:55:21 on Mar 23,2019, Elapsed time: 0:00:00
-# Errors: 0, Warnings: 0
-# vcom -93 -work work {C:/Users/richa/gitrepo/RC2014_fpga/rtl/T80/T80_MCode.vhd}
-# Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  5 2016
-# Start time: 13:55:21 on Mar 23,2019
-# vcom -reportprogress 300 -93 -work work C:/Users/richa/gitrepo/RC2014_fpga/rtl/T80/T80_MCode.vhd 
-# -- Loading package STANDARD
-# -- Loading package TEXTIO
-# -- Loading package std_logic_1164
-# -- Loading package NUMERIC_STD
-# -- Compiling entity T80_MCode
-# -- Compiling architecture rtl of T80_MCode
-# End time: 13:55:21 on Mar 23,2019, Elapsed time: 0:00:00
-# Errors: 0, Warnings: 0
-# vcom -93 -work work {C:/Users/richa/gitrepo/RC2014_fpga/rtl/T80/T80_ALU.vhd}
-# Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  5 2016
-# Start time: 13:55:21 on Mar 23,2019
-# vcom -reportprogress 300 -93 -work work C:/Users/richa/gitrepo/RC2014_fpga/rtl/T80/T80_ALU.vhd 
-# -- Loading package STANDARD
-# -- Loading package TEXTIO
-# -- Loading package std_logic_1164
-# -- Loading package NUMERIC_STD
-# -- Compiling entity T80_ALU
-# -- Compiling architecture rtl of T80_ALU
-# End time: 13:55:21 on Mar 23,2019, Elapsed time: 0:00:00
-# Errors: 0, Warnings: 0
-# vcom -93 -work work {C:/Users/richa/gitrepo/RC2014_fpga/rtl/single_port_ram.vhd}
-# Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  5 2016
-# Start time: 13:55:21 on Mar 23,2019
-# vcom -reportprogress 300 -93 -work work C:/Users/richa/gitrepo/RC2014_fpga/rtl/single_port_ram.vhd 
-# -- Loading package STANDARD
-# -- Loading package TEXTIO
-# -- Loading package std_logic_1164
-# -- Loading package NUMERIC_STD
-# -- Compiling entity single_port_ram
-# -- Compiling architecture RTL of single_port_ram
-# End time: 13:55:21 on Mar 23,2019, Elapsed time: 0:00:00
-# Errors: 0, Warnings: 0
-# vcom -93 -work work {C:/Users/richa/gitrepo/RC2014_fpga/rtl/acia6850.vhd}
-# Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  5 2016
-# Start time: 13:55:21 on Mar 23,2019
-# vcom -reportprogress 300 -93 -work work C:/Users/richa/gitrepo/RC2014_fpga/rtl/acia6850.vhd 
-# -- Loading package STANDARD
-# -- Loading package TEXTIO
-# -- Loading package std_logic_1164
-# -- Loading package NUMERIC_STD
-# -- Loading package std_logic_arith
-# -- Loading package STD_LOGIC_UNSIGNED
-# -- Compiling entity acia6850
-# -- Compiling architecture rtl of acia6850
-# End time: 13:55:21 on Mar 23,2019, Elapsed time: 0:00:00
-# Errors: 0, Warnings: 0
-# vcom -93 -work work {C:/Users/richa/gitrepo/RC2014_fpga/rtl/sd_controller.vhd}
-# Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  5 2016
-# Start time: 13:55:21 on Mar 23,2019
-# vcom -reportprogress 300 -93 -work work C:/Users/richa/gitrepo/RC2014_fpga/rtl/sd_controller.vhd 
-# -- Loading package STANDARD
-# -- Loading package TEXTIO
-# -- Loading package std_logic_1164
-# -- Loading package NUMERIC_STD
-# -- Compiling entity sd_controller
-# -- Compiling architecture rtl of sd_controller
-# End time: 13:55:21 on Mar 23,2019, Elapsed time: 0:00:00
-# Errors: 0, Warnings: 0
-# vcom -93 -work work {C:/Users/richa/gitrepo/RC2014_fpga/de10-lite/CPM_BASIC_LITE.vhd}
-# Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  5 2016
-# Start time: 13:55:21 on Mar 23,2019
-# vcom -reportprogress 300 -93 -work work C:/Users/richa/gitrepo/RC2014_fpga/de10-lite/CPM_BASIC_LITE.vhd 
-# -- Loading package STANDARD
-# -- Loading package TEXTIO
-# -- Loading package std_logic_1164
-# -- Loading package altera_mf_components
-# -- Compiling entity CPM_BASIC_LITE
-# -- Compiling architecture SYN of cpm_basic_lite
-# End time: 13:55:22 on Mar 23,2019, Elapsed time: 0:00:01
-# Errors: 0, Warnings: 0
-# vcom -93 -work work {C:/Users/richa/gitrepo/RC2014_fpga/de10-lite/clocks.vhd}
-# Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  5 2016
-# Start time: 13:55:22 on Mar 23,2019
-# vcom -reportprogress 300 -93 -work work C:/Users/richa/gitrepo/RC2014_fpga/de10-lite/clocks.vhd 
-# -- Loading package STANDARD
-# -- Loading package TEXTIO
-# -- Loading package std_logic_1164
-# -- Compiling entity clocks
-# -- Compiling architecture SYN of clocks
-# End time: 13:55:22 on Mar 23,2019, Elapsed time: 0:00:00
-# Errors: 0, Warnings: 0
-# vcom -93 -work work {C:/Users/richa/gitrepo/RC2014_fpga/de10-lite/CPM_BASIC.vhd}
-# Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  5 2016
-# Start time: 13:55:22 on Mar 23,2019
-# vcom -reportprogress 300 -93 -work work C:/Users/richa/gitrepo/RC2014_fpga/de10-lite/CPM_BASIC.vhd 
-# -- Loading package STANDARD
-# -- Loading package TEXTIO
-# -- Loading package std_logic_1164
-# -- Loading package NUMERIC_STD
-# -- Compiling entity CPM_BASIC
-# -- Compiling architecture RTL of CPM_BASIC
-# -- Loading package altera_mf_components
-# -- Loading entity CPM_BASIC_LITE
-# End time: 13:55:22 on Mar 23,2019, Elapsed time: 0:00:00
-# Errors: 0, Warnings: 0
-# vcom -93 -work work {C:/Users/richa/gitrepo/RC2014_fpga/rtl/ROM_Page_Select.vhd}
-# Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  5 2016
-# Start time: 13:55:22 on Mar 23,2019
-# vcom -reportprogress 300 -93 -work work C:/Users/richa/gitrepo/RC2014_fpga/rtl/ROM_Page_Select.vhd 
-# -- Loading package STANDARD
-# -- Loading package TEXTIO
-# -- Loading package std_logic_1164
-# -- Loading package NUMERIC_STD
-# -- Compiling entity ROM_Page_Select
-# -- Compiling architecture RTL of ROM_Page_Select
-# -- Loading entity decoder_3x8
-# End time: 13:55:22 on Mar 23,2019, Elapsed time: 0:00:00
-# Errors: 0, Warnings: 0
-# vcom -93 -work work {C:/Users/richa/gitrepo/RC2014_fpga/rtl/T80/T80s.vhd}
-# Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  5 2016
-# Start time: 13:55:22 on Mar 23,2019
-# vcom -reportprogress 300 -93 -work work C:/Users/richa/gitrepo/RC2014_fpga/rtl/T80/T80s.vhd 
-# -- Loading package STANDARD
-# -- Loading package TEXTIO
-# -- Loading package std_logic_1164
-# -- Loading package NUMERIC_STD
-# -- Loading package T80_Pack
-# -- Compiling entity T80s
-# -- Compiling architecture rtl of T80s
-# End time: 13:55:22 on Mar 23,2019, Elapsed time: 0:00:00
-# Errors: 0, Warnings: 0
-# vcom -93 -work work {C:/Users/richa/gitrepo/RC2014_fpga/rtl/T80/T80.vhd}
-# Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  5 2016
-# Start time: 13:55:22 on Mar 23,2019
-# vcom -reportprogress 300 -93 -work work C:/Users/richa/gitrepo/RC2014_fpga/rtl/T80/T80.vhd 
-# -- Loading package STANDARD
-# -- Loading package TEXTIO
-# -- Loading package std_logic_1164
-# -- Loading package NUMERIC_STD
-# -- Loading package T80_Pack
-# -- Compiling entity T80
-# -- Compiling architecture rtl of T80
-# End time: 13:55:22 on Mar 23,2019, Elapsed time: 0:00:00
-# Errors: 0, Warnings: 0
-# vcom -93 -work work {C:/Users/richa/gitrepo/RC2014_fpga/rtl/RC2014_fpga.vhd}
-# Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  5 2016
-# Start time: 13:55:22 on Mar 23,2019
-# vcom -reportprogress 300 -93 -work work C:/Users/richa/gitrepo/RC2014_fpga/rtl/RC2014_fpga.vhd 
-# -- Loading package STANDARD
-# -- Loading package TEXTIO
-# -- Loading package std_logic_1164
-# -- Loading package NUMERIC_STD
-# -- Compiling entity RC2014_fpga
-# -- Compiling architecture struct of RC2014_fpga
-# -- Loading entity clocks
-# -- Loading package T80_Pack
-# -- Loading entity T80s
-# -- Loading entity single_port_ram
-# -- Loading entity ROM_Page_Select
-# -- Loading package std_logic_arith
-# -- Loading package STD_LOGIC_UNSIGNED
-# -- Loading entity acia6850
-# -- Loading entity sd_controller
-# End time: 13:55:22 on Mar 23,2019, Elapsed time: 0:00:00
-# Errors: 0, Warnings: 0
-# 
-# vcom -93 -work work {C:/Users/richa/gitrepo/RC2014_fpga/de10-lite/../test/RC2014_TB.vhd}
-# Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  5 2016
-# Start time: 13:55:22 on Mar 23,2019
-# vcom -reportprogress 300 -93 -work work C:/Users/richa/gitrepo/RC2014_fpga/de10-lite/../test/RC2014_TB.vhd 
-# -- Loading package STANDARD
-# -- Loading package TEXTIO
-# -- Loading package std_logic_1164
-# -- Compiling entity RC2014_TB
-# -- Compiling architecture behaviour of RC2014_TB
-# -- Loading package NUMERIC_STD
-# -- Loading entity RC2014_fpga
-# End time: 13:55:22 on Mar 23,2019, Elapsed time: 0:00:00
-# Errors: 0, Warnings: 0
-# vcom -93 -work work {C:/Users/richa/gitrepo/RC2014_fpga/de10-lite/../test/AsyncLog.vhd}
-# Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  5 2016
-# Start time: 13:55:22 on Mar 23,2019
-# vcom -reportprogress 300 -93 -work work C:/Users/richa/gitrepo/RC2014_fpga/de10-lite/../test/AsyncLog.vhd 
-# -- Loading package STANDARD
-# -- Loading package TEXTIO
-# -- Loading package std_logic_1164
-# -- Loading package NUMERIC_STD
-# -- Compiling entity AsyncLog
-# -- Compiling architecture behaviour of AsyncLog
-# End time: 13:55:22 on Mar 23,2019, Elapsed time: 0:00:00
-# Errors: 0, Warnings: 0
-# vcom -93 -work work {C:/Users/richa/gitrepo/RC2014_fpga/de10-lite/../test/AsyncStim.vhd}
-# Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  5 2016
-# Start time: 13:55:22 on Mar 23,2019
-# vcom -reportprogress 300 -93 -work work C:/Users/richa/gitrepo/RC2014_fpga/de10-lite/../test/AsyncStim.vhd 
-# -- Loading package STANDARD
-# -- Loading package TEXTIO
-# -- Loading package std_logic_1164
-# -- Loading package NUMERIC_STD
-# -- Compiling entity AsyncStim
-# -- Compiling architecture behaviour of AsyncStim
-# End time: 13:55:22 on Mar 23,2019, Elapsed time: 0:00:00
-# Errors: 0, Warnings: 0
-# vcom -93 -work work {C:/Users/richa/gitrepo/RC2014_fpga/de10-lite/../test/StimLog.vhd}
-# Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  5 2016
-# Start time: 13:55:22 on Mar 23,2019
-# vcom -reportprogress 300 -93 -work work C:/Users/richa/gitrepo/RC2014_fpga/de10-lite/../test/StimLog.vhd 
-# -- Loading package STANDARD
-# -- Loading package TEXTIO
-# -- Loading package std_logic_1164
-# -- Compiling package StimLog
-# End time: 13:55:22 on Mar 23,2019, Elapsed time: 0:00:00
-# Errors: 0, Warnings: 0
-# 
-# vsim -t 1ps -L altera -L lpm -L sgate -L altera_mf -L altera_lnsim -L fiftyfivenm -L rtl_work -L work -voptargs="+acc"  RC2014_TB
-# End time: 13:55:24 on Mar 23,2019, Elapsed time: 0:04:01
-# Errors: 0, Warnings: 21
-# vsim -t 1ps -L altera -L lpm -L sgate -L altera_mf -L altera_lnsim -L fiftyfivenm -L rtl_work -L work -voptargs=""+acc"" RC2014_TB 
-# Start time: 13:55:24 on Mar 23,2019
-# Loading std.standard
-# Loading std.textio(body)
-# Loading ieee.std_logic_1164(body)
-# Loading ieee.numeric_std(body)
-# Loading work.rc2014_tb(behaviour)
-# Loading work.t80_pack
-# Loading ieee.std_logic_arith(body)
-# Loading ieee.std_logic_unsigned(body)
-# Loading work.rc2014_fpga(struct)
-# Loading work.clocks(syn)
-# Loading altera_mf.altera_device_families(body)
-# Loading altera_mf.mf_pllpack(body)
-# Loading altera_mf.altpll(behavior)
-# Loading altera_mf.mf_cycloneiii_pll(vital_pll)
-# Loading altera_mf.mf_cda_mn_cntr(behave)
-# Loading altera_mf.mf_cda_scale_cntr(behave)
-# Loading work.t80s(rtl)
-# Loading work.t80(rtl)
-# Loading work.t80_mcode(rtl)
-# Loading work.t80_alu(rtl)
-# Loading work.t80_reg(rtl)
-# Loading work.single_port_ram(rtl)
-# Loading work.rom_page_select(rtl)
-# Loading altera_mf.altera_mf_components
-# Loading work.cpm_basic(rtl)
-# Loading work.cpm_basic_lite(syn)
-# Loading altera_mf.altera_common_conversion(body)
-# Loading altera_mf.altsyncram(translated)
-# Loading work.acia6850(rtl)
-# Loading work.sd_controller(rtl)
-# Loading work.asyncstim(behaviour)
-# ** Warning: (vsim-7) Failed to open VHDL file "RX_Cmd.txt" in rb mode.
-# No such file or directory. (errno = ENOENT)
-#    Time: 0 ps  Iteration: 0  Instance: /rc2014_tb/as1
-# Loading work.asynclog(behaviour)
-# ** Warning: Design size of 22179 statements exceeds ModelSim-Intel FPGA Starter Edition recommended capacity.
-# Expect performance to be adversely affected.
-# 
-# add wave *
-# view structure
-# .main_pane.structure.interior.cs.body.struct
-# view signals
-# .main_pane.objects.interior.cs.body.tree
-# run -all
 # ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
 #    Time: 0 ps  Iteration: 0  Instance: /rc2014_tb/ni/ram64k
 # ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
@@ -1642,3 +469,110 @@ do RC2014_fpga_run_msim_rtl_vhdl.do
 #    Time: 0 ps  Iteration: 4  Instance: /rc2014_tb/ni/cpm_basic_rom/clocks_inst/altpll_component/CYCLONEIII_ALTPLL/M5
 # ** Note: MAX 10 PLL locked to incoming clock
 #    Time: 1090 ns  Iteration: 3  Instance: /rc2014_tb/ni/cpm_basic_rom/clocks_inst/altpll_component/CYCLONEIII_ALTPLL/M5
+add wave -position insertpoint  \
+sim:/rc2014_tb/ni/CPU_clk
+restart -f
+run
+# GetModuleFileName: The specified module could not be found.
+# 
+# 
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 0 ps  Iteration: 0  Instance: /rc2014_tb/ni/ram64k
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 0 ps  Iteration: 0  Instance: /rc2014_tb/ni/t80s/cpu/u0/Regs
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 0 ps  Iteration: 0  Instance: /rc2014_tb/ni/t80s/cpu/u0/Regs
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 0 ps  Iteration: 0  Instance: /rc2014_tb/ni/t80s/cpu/u0/Regs
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 0 ps  Iteration: 0  Instance: /rc2014_tb/ni/t80s/cpu/u0/Regs
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 0 ps  Iteration: 0  Instance: /rc2014_tb/ni/t80s/cpu/u0/Regs
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 0 ps  Iteration: 0  Instance: /rc2014_tb/ni/t80s/cpu/u0/Regs
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 0 ps  Iteration: 0  Instance: /rc2014_tb/ni/t80s/cpu/u0
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 0 ps  Iteration: 0  Instance: /rc2014_tb/ni/t80s/cpu/u0
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 0 ps  Iteration: 0  Instance: /rc2014_tb/ni/t80s/cpu/u0
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 0 ps  Iteration: 0  Instance: /rc2014_tb/ni/t80s/cpu/u0
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 0 ps  Iteration: 0  Instance: /rc2014_tb/ni/t80s/cpu/u0
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 0 ps  Iteration: 0  Instance: /rc2014_tb/ni/t80s/cpu/u0
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 0 ps  Iteration: 1  Instance: /rc2014_tb/ni/t80s/cpu/u0
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 0 ps  Iteration: 1  Instance: /rc2014_tb/ni/t80s/cpu/u0
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 0 ps  Iteration: 1  Instance: /rc2014_tb/ni/t80s/cpu/u0
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 0 ps  Iteration: 1  Instance: /rc2014_tb/ni/t80s/cpu/u0
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 0 ps  Iteration: 1  Instance: /rc2014_tb/ni/t80s/cpu/u0
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 0 ps  Iteration: 1  Instance: /rc2014_tb/ni/t80s/cpu/u0
+# ** Note: MAX 10 PLL was reset
+#    Time: 0 ps  Iteration: 4  Instance: /rc2014_tb/ni/cpm_basic_rom/clocks_inst/altpll_component/CYCLONEIII_ALTPLL/M5
+# ** Note: MAX 10 PLL locked to incoming clock
+#    Time: 1090 ns  Iteration: 3  Instance: /rc2014_tb/ni/cpm_basic_rom/clocks_inst/altpll_component/CYCLONEIII_ALTPLL/M5
+add wave -position insertpoint  \
+sim:/rc2014_tb/ni/CPU_D_I
+add wave -position insertpoint  \
+sim:/rc2014_tb/ni/CPU_D_O
+add wave -position insertpoint  \
+sim:/rc2014_tb/ni/TX \
+sim:/rc2014_tb/ni/RX
+add wave -position insertpoint  \
+sim:/rc2014_tb/ni/D
+restart -f
+run
+# GetModuleFileName: The specified module could not be found.
+# 
+# 
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 0 ps  Iteration: 0  Instance: /rc2014_tb/ni/ram64k
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 0 ps  Iteration: 0  Instance: /rc2014_tb/ni/t80s/cpu/u0/Regs
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 0 ps  Iteration: 0  Instance: /rc2014_tb/ni/t80s/cpu/u0/Regs
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 0 ps  Iteration: 0  Instance: /rc2014_tb/ni/t80s/cpu/u0/Regs
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 0 ps  Iteration: 0  Instance: /rc2014_tb/ni/t80s/cpu/u0/Regs
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 0 ps  Iteration: 0  Instance: /rc2014_tb/ni/t80s/cpu/u0/Regs
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 0 ps  Iteration: 0  Instance: /rc2014_tb/ni/t80s/cpu/u0/Regs
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 0 ps  Iteration: 0  Instance: /rc2014_tb/ni/t80s/cpu/u0
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 0 ps  Iteration: 0  Instance: /rc2014_tb/ni/t80s/cpu/u0
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 0 ps  Iteration: 0  Instance: /rc2014_tb/ni/t80s/cpu/u0
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 0 ps  Iteration: 0  Instance: /rc2014_tb/ni/t80s/cpu/u0
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 0 ps  Iteration: 0  Instance: /rc2014_tb/ni/t80s/cpu/u0
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 0 ps  Iteration: 0  Instance: /rc2014_tb/ni/t80s/cpu/u0
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 0 ps  Iteration: 1  Instance: /rc2014_tb/ni/t80s/cpu/u0
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 0 ps  Iteration: 1  Instance: /rc2014_tb/ni/t80s/cpu/u0
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 0 ps  Iteration: 1  Instance: /rc2014_tb/ni/t80s/cpu/u0
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 0 ps  Iteration: 1  Instance: /rc2014_tb/ni/t80s/cpu/u0
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 0 ps  Iteration: 1  Instance: /rc2014_tb/ni/t80s/cpu/u0
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 0 ps  Iteration: 1  Instance: /rc2014_tb/ni/t80s/cpu/u0
+# ** Note: MAX 10 PLL was reset
+#    Time: 0 ps  Iteration: 4  Instance: /rc2014_tb/ni/cpm_basic_rom/clocks_inst/altpll_component/CYCLONEIII_ALTPLL/M5
+# ** Note: MAX 10 PLL locked to incoming clock
+#    Time: 1090 ns  Iteration: 3  Instance: /rc2014_tb/ni/cpm_basic_rom/clocks_inst/altpll_component/CYCLONEIII_ALTPLL/M5
+# End time: 17:41:32 on Mar 25,2019, Elapsed time: 0:25:12
+# Errors: 1, Warnings: 100

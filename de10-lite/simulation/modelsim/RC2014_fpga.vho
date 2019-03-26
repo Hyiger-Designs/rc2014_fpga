@@ -16,7 +16,7 @@
 -- PROGRAM "Quartus Prime"
 -- VERSION "Version 18.1.0 Build 625 09/12/2018 SJ Lite Edition"
 
--- DATE "03/23/2019 13:39:05"
+-- DATE "03/25/2019 16:56:35"
 
 -- 
 -- Device: Altera 10M50DAF484C7G Package FBGA484
@@ -3813,10 +3813,6 @@ SIGNAL \uart1|TxReg\ : std_logic_vector(7 DOWNTO 0);
 SIGNAL \sd1|recv_data\ : std_logic_vector(7 DOWNTO 0);
 SIGNAL \uart1|RxShiftReg\ : std_logic_vector(7 DOWNTO 0);
 SIGNAL \t80s:cpu|u0|ALT_INV_ISet\ : std_logic_vector(1 DOWNTO 1);
-SIGNAL \sd1|ALT_INV_process_6~0_combout\ : std_logic;
-SIGNAL \sd1|ALT_INV_state.receive_byte~q\ : std_logic;
-SIGNAL \uart1|ALT_INV_ac_rst~q\ : std_logic;
-SIGNAL \t80s:cpu|u0|ALT_INV_process_0~4_combout\ : std_logic;
 SIGNAL \sd1|ALT_INV_sdCS~q\ : std_logic;
 SIGNAL \t80s:cpu|u0|ALT_INV_Halt_FF~q\ : std_logic;
 SIGNAL \t80s:cpu|u0|ALT_INV_BusAck~q\ : std_logic;
@@ -3826,6 +3822,10 @@ SIGNAL \t80s:cpu|ALT_INV_RD_n~q\ : std_logic;
 SIGNAL \t80s:cpu|ALT_INV_WR_n~q\ : std_logic;
 SIGNAL \t80s:cpu|ALT_INV_MREQ_n~q\ : std_logic;
 SIGNAL \t80s:cpu|u0|ALT_INV_M1_n~q\ : std_logic;
+SIGNAL \t80s:cpu|u0|ALT_INV_process_0~4_combout\ : std_logic;
+SIGNAL \sd1|ALT_INV_process_6~0_combout\ : std_logic;
+SIGNAL \sd1|ALT_INV_state.receive_byte~q\ : std_logic;
+SIGNAL \uart1|ALT_INV_ac_rst~q\ : std_logic;
 SIGNAL \ALT_INV_clk~inputclkctrl_outclk\ : std_logic;
 SIGNAL \sd1|ALT_INV_block_read~1clkctrl_outclk\ : std_logic;
 SIGNAL \ALT_INV_nRST~input_o\ : std_logic;
@@ -4374,10 +4374,6 @@ ww_devpor <= devpor;
 
 \cpm_basic_rom:clocks_inst|altpll_component|auto_generated|wire_pll1_clk[1]~clkctrl_INCLK_bus\ <= (vcc & vcc & vcc & \cpm_basic_rom:clocks_inst|altpll_component|auto_generated|wire_pll1_clk\(1));
 \t80s:cpu|u0|ALT_INV_ISet\(1) <= NOT \t80s:cpu|u0|ISet\(1);
-\sd1|ALT_INV_process_6~0_combout\ <= NOT \sd1|process_6~0_combout\;
-\sd1|ALT_INV_state.receive_byte~q\ <= NOT \sd1|state.receive_byte~q\;
-\uart1|ALT_INV_ac_rst~q\ <= NOT \uart1|ac_rst~q\;
-\t80s:cpu|u0|ALT_INV_process_0~4_combout\ <= NOT \t80s:cpu|u0|process_0~4_combout\;
 \sd1|ALT_INV_sdCS~q\ <= NOT \sd1|sdCS~q\;
 \t80s:cpu|u0|ALT_INV_Halt_FF~q\ <= NOT \t80s:cpu|u0|Halt_FF~q\;
 \t80s:cpu|u0|ALT_INV_BusAck~q\ <= NOT \t80s:cpu|u0|BusAck~q\;
@@ -4387,6 +4383,10 @@ ww_devpor <= devpor;
 \t80s:cpu|ALT_INV_WR_n~q\ <= NOT \t80s:cpu|WR_n~q\;
 \t80s:cpu|ALT_INV_MREQ_n~q\ <= NOT \t80s:cpu|MREQ_n~q\;
 \t80s:cpu|u0|ALT_INV_M1_n~q\ <= NOT \t80s:cpu|u0|M1_n~q\;
+\t80s:cpu|u0|ALT_INV_process_0~4_combout\ <= NOT \t80s:cpu|u0|process_0~4_combout\;
+\sd1|ALT_INV_process_6~0_combout\ <= NOT \sd1|process_6~0_combout\;
+\sd1|ALT_INV_state.receive_byte~q\ <= NOT \sd1|state.receive_byte~q\;
+\uart1|ALT_INV_ac_rst~q\ <= NOT \uart1|ac_rst~q\;
 \ALT_INV_clk~inputclkctrl_outclk\ <= NOT \clk~inputclkctrl_outclk\;
 \sd1|ALT_INV_block_read~1clkctrl_outclk\ <= NOT \sd1|block_read~1clkctrl_outclk\;
 \ALT_INV_nRST~input_o\ <= NOT \nRST~input_o\;
@@ -31166,9 +31166,9 @@ GENERIC MAP (
 	mem_init0 => X"76268AE005A46163C5014600BD15EAE86A880218AE808002F03A7385888491023FA3CBC13DEFC00000200C6000AA208CC09000006000000164B1406855015541045155104222008000000000000000703C0040400000000000000000000000000000000000000288AA4A20082E2BFE0FF7FEFFC7F41C1FF42A88A3B73515601239C501E8F54047D0A8DE4BC11203F87FFFF80F83FFE1FFE07FF7FE3FFF7DEFFE43EFF4F7FE3BD0473C0FB7F8F5176CF0046945297F6BB542A6DB5011D3F853C129020852040816A3D38E95551081205A016D22DFAC82A8292227942698D210A87E9AB05048B15D0B1550750EA0F248EAA57450A2D0001C47116C686968000201",
 	data_interleave_offset_in_bits => 1,
 	data_interleave_width_in_bits => 1,
-	init_file => "C:/Users/richa/gitrepo/RC2014_fpga/roms/CPM_BASIC.HEX",
+	init_file => "C:/Users/rlewis/gitrepo/RC2014_fpga/roms/CPM_BASIC.HEX",
 	init_file_layout => "port_a",
-	logical_ram_name => "ROM_Page_Select:rom_select|CPM_BASIC:\cpm:rom8k|CPM_BASIC_LITE:rom8k|altsyncram:altsyncram_component|altsyncram_qfu3:auto_generated|ALTSYNCRAM",
+	logical_ram_name => "ROM_Page_Select:rom_select|CPM_BASIC:\cpm:rom8k|CPM_BASIC_LITE:rom8k|altsyncram:altsyncram_component|altsyncram_9ku3:auto_generated|ALTSYNCRAM",
 	operation_mode => "rom",
 	port_a_address_clear => "none",
 	port_a_address_width => 13,
@@ -35417,9 +35417,9 @@ GENERIC MAP (
 	mem_init0 => X"E26C1C6C80B8ECC537CDC84919A29324E0D1262514C0000026695500929E5B066F5A83E199F18492002AE6A06C08C25DDACFFFFF9FFFFED92CB4044100440104555414EFBDDDFF7FFFFFFFFFFFFFFF8FC3FFBFBFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF80AAA828A88800BBF0FFB013FE43BE21EF8B0D1B5B43060B320EE59975941896026E4424E148923FC7F7FB7F7C3EFF0F6F07BB81F3F7BBEF03C3C13CB78013DEFB8DB0FCB077AFE45B411CBE8423A200003100000802DFC2DE4FC9139F92A44AA64488244CCC9DDB917045D28A13691091DB99CD7926D1E77ECB2E1A20B20520985201940280A092622306756A88E79B9EE7046CECC43010103",
 	data_interleave_offset_in_bits => 1,
 	data_interleave_width_in_bits => 1,
-	init_file => "C:/Users/richa/gitrepo/RC2014_fpga/roms/CPM_BASIC.HEX",
+	init_file => "C:/Users/rlewis/gitrepo/RC2014_fpga/roms/CPM_BASIC.HEX",
 	init_file_layout => "port_a",
-	logical_ram_name => "ROM_Page_Select:rom_select|CPM_BASIC:\cpm:rom8k|CPM_BASIC_LITE:rom8k|altsyncram:altsyncram_component|altsyncram_qfu3:auto_generated|ALTSYNCRAM",
+	logical_ram_name => "ROM_Page_Select:rom_select|CPM_BASIC:\cpm:rom8k|CPM_BASIC_LITE:rom8k|altsyncram:altsyncram_component|altsyncram_9ku3:auto_generated|ALTSYNCRAM",
 	operation_mode => "rom",
 	port_a_address_clear => "none",
 	port_a_address_width => 13,
@@ -36716,9 +36716,9 @@ GENERIC MAP (
 	mem_init0 => X"20D0D04B89A2879D4C3A9FDD58AA2EA7E647FFF95176492531D1F2E30EF0D65E6A12C2079883A008006A99DF9717C299C915E42CA1689207FDFEBA83AEC0A2BFAF9AE8650594840AE889324D04C00E757C1D454101846CC005F247819826E5240220CA21860A92160A1B7D7481F92D329A529559010660115045107573EAB3EA93C286A9493D292B6020120C0A4C59B60424102D0927826DF9A21EC832E635FFC100EC3201E2C43208F412263322839C65CE318C7C61224300001987F0CF70DCF5B1696B62D58A570EBA64C88B4D987201CB439FBFB15B1D9B3AD3FF6BCE56CDFA7926097A1615A161CB016020AFFEAFF4FD46889B6D8CA3264AEEE64A020000",
 	data_interleave_offset_in_bits => 1,
 	data_interleave_width_in_bits => 1,
-	init_file => "C:/Users/richa/gitrepo/RC2014_fpga/roms/CPM_BASIC.HEX",
+	init_file => "C:/Users/rlewis/gitrepo/RC2014_fpga/roms/CPM_BASIC.HEX",
 	init_file_layout => "port_a",
-	logical_ram_name => "ROM_Page_Select:rom_select|CPM_BASIC:\cpm:rom8k|CPM_BASIC_LITE:rom8k|altsyncram:altsyncram_component|altsyncram_qfu3:auto_generated|ALTSYNCRAM",
+	logical_ram_name => "ROM_Page_Select:rom_select|CPM_BASIC:\cpm:rom8k|CPM_BASIC_LITE:rom8k|altsyncram:altsyncram_component|altsyncram_9ku3:auto_generated|ALTSYNCRAM",
 	operation_mode => "rom",
 	port_a_address_clear => "none",
 	port_a_address_width => 13,
@@ -46723,9 +46723,9 @@ GENERIC MAP (
 	mem_init0 => X"49E10110824F51E5705FE6635AEEA9E8E561263E74D249650D8EFB88E0937045815290829091A0040A60CEE80C4C20D5D1247D2F39FBD6456F06A6D7EEA7A8BCAE8AC5BA7F2A05AFA76D623F04A91B7769BE878FC58D3D8D66ED4DE2EBCFFDB5CBB56FF574B6FF575D1D7F34E0A18F1E8820284B98003A63356159B43060B0281D27C4FCC949B00ACA41900D0C07D8F66A3601252C4392E4F9B21F6A697CB5FCBF1ACC720067C032885C982673029411C589C2149A05400301249483F1AD71C938901A712040A4CF5954C5DDDA999315FC51F8A12DB0DB04999492BC5DC230EC2279A28B781218C12189412821877A36644650A4851401C03244040442000004",
 	data_interleave_offset_in_bits => 1,
 	data_interleave_width_in_bits => 1,
-	init_file => "C:/Users/richa/gitrepo/RC2014_fpga/roms/CPM_BASIC.HEX",
+	init_file => "C:/Users/rlewis/gitrepo/RC2014_fpga/roms/CPM_BASIC.HEX",
 	init_file_layout => "port_a",
-	logical_ram_name => "ROM_Page_Select:rom_select|CPM_BASIC:\cpm:rom8k|CPM_BASIC_LITE:rom8k|altsyncram:altsyncram_component|altsyncram_qfu3:auto_generated|ALTSYNCRAM",
+	logical_ram_name => "ROM_Page_Select:rom_select|CPM_BASIC:\cpm:rom8k|CPM_BASIC_LITE:rom8k|altsyncram:altsyncram_component|altsyncram_9ku3:auto_generated|ALTSYNCRAM",
 	operation_mode => "rom",
 	port_a_address_clear => "none",
 	port_a_address_width => 13,
@@ -50225,9 +50225,9 @@ GENERIC MAP (
 	mem_init0 => X"2D85919F7BF59D38CE5139BA38686E1F6236DADE4216D92C9E8F728B5DE5381B78F3826591E3C4960022EE0E2AA8C0D5524E56D8263EFE4303655C13EDAF5B4304CCA80291417158A8892F19DC9ECB9D745C2F2559628EA29CC1B49D9A08E54E376B5B020403D5FFD395C203D3C11827E1210A772AA2468A841600D8334CF7D3DDFD1AF933F000BC15E3D43381E80D1F0921368BC39556397B281F9D080421FF3C00853800966A98DBA2593339424D95574A19CADC622CE661B25545D58A54F2B82CBDF058B14607C5960444420003B5FED17DA16480C805A884B0F4D9CAF7E0E23A059208D4590D45928550BA83EA232EEE5CAC97DD690A0049C8C849030303",
 	data_interleave_offset_in_bits => 1,
 	data_interleave_width_in_bits => 1,
-	init_file => "C:/Users/richa/gitrepo/RC2014_fpga/roms/CPM_BASIC.HEX",
+	init_file => "C:/Users/rlewis/gitrepo/RC2014_fpga/roms/CPM_BASIC.HEX",
 	init_file_layout => "port_a",
-	logical_ram_name => "ROM_Page_Select:rom_select|CPM_BASIC:\cpm:rom8k|CPM_BASIC_LITE:rom8k|altsyncram:altsyncram_component|altsyncram_qfu3:auto_generated|ALTSYNCRAM",
+	logical_ram_name => "ROM_Page_Select:rom_select|CPM_BASIC:\cpm:rom8k|CPM_BASIC_LITE:rom8k|altsyncram:altsyncram_component|altsyncram_9ku3:auto_generated|ALTSYNCRAM",
 	operation_mode => "rom",
 	port_a_address_clear => "none",
 	port_a_address_width => 13,
@@ -54378,9 +54378,9 @@ GENERIC MAP (
 	mem_init0 => X"AA6D1D0C82BCECEC739CD8DB19A2B14CE0D16420144000000261CD02921E5B06710E000000038496002B53D9D5D182111A480000000000020900104154541105545456208444491211124924924924F4FC488A8908422210902121044488A4482102912242224AA208080AA28A280000000000000000000190C3B14930203320D24C968181DB69026C080E918960000000000000000000000000000000000000000000000000000000000000003E43BE30DFF8C63A2000011000008000000004AC916B5922548C640904448889CC9D140454A8A136B10B12111CD392751AD6A5B261A28920D2088D200900201F09262230675EB88AEBF8FE3047C7C441010107",
 	data_interleave_offset_in_bits => 1,
 	data_interleave_width_in_bits => 1,
-	init_file => "C:/Users/richa/gitrepo/RC2014_fpga/roms/CPM_BASIC.HEX",
+	init_file => "C:/Users/rlewis/gitrepo/RC2014_fpga/roms/CPM_BASIC.HEX",
 	init_file_layout => "port_a",
-	logical_ram_name => "ROM_Page_Select:rom_select|CPM_BASIC:\cpm:rom8k|CPM_BASIC_LITE:rom8k|altsyncram:altsyncram_component|altsyncram_qfu3:auto_generated|ALTSYNCRAM",
+	logical_ram_name => "ROM_Page_Select:rom_select|CPM_BASIC:\cpm:rom8k|CPM_BASIC_LITE:rom8k|altsyncram:altsyncram_component|altsyncram_9ku3:auto_generated|ALTSYNCRAM",
 	operation_mode => "rom",
 	port_a_address_clear => "none",
 	port_a_address_width => 13,
@@ -55325,9 +55325,9 @@ GENERIC MAP (
 	mem_init0 => X"D0022E084C146C6B979456989A25CEA079124B5C2EB2596664D3EE84208000001802C0400165C0000A623F5DF5DF2099921109D2449029BDFFD1452BA9AF0C4410714008A011117110144CC0FB1790F842E0988C5021913ADA09901404491ACBAC5A3482389907DFD5DFFFF5577AB00942782382A88E04B02F04446EEC13A9143B0405C8D05282F0A97873A00A4120082A1476C2C6015400001800110208000200E00240011402089002425140904594154A4D6B5B5BB30892DB59200800490070205A60408122B950F285115241215E057A0AE02480880F200694271ED694C97A9804804A95506955021542ABD248A224E64488D041394E546CC0C06A020205",
 	data_interleave_offset_in_bits => 1,
 	data_interleave_width_in_bits => 1,
-	init_file => "C:/Users/richa/gitrepo/RC2014_fpga/roms/CPM_BASIC.HEX",
+	init_file => "C:/Users/rlewis/gitrepo/RC2014_fpga/roms/CPM_BASIC.HEX",
 	init_file_layout => "port_a",
-	logical_ram_name => "ROM_Page_Select:rom_select|CPM_BASIC:\cpm:rom8k|CPM_BASIC_LITE:rom8k|altsyncram:altsyncram_component|altsyncram_qfu3:auto_generated|ALTSYNCRAM",
+	logical_ram_name => "ROM_Page_Select:rom_select|CPM_BASIC:\cpm:rom8k|CPM_BASIC_LITE:rom8k|altsyncram:altsyncram_component|altsyncram_9ku3:auto_generated|ALTSYNCRAM",
 	operation_mode => "rom",
 	port_a_address_clear => "none",
 	port_a_address_width => 13,
@@ -57729,9 +57729,9 @@ GENERIC MAP (
 	mem_init0 => X"B37E2E58E4CF78F679CCE5679CB6B650D85BAD75B44924926A3E5964DC1F5D67B3A54B838895249E003AC4A9ECC322444AD86ADCA4ECC933C2D3D0BA132B6EE69227986308887A146EE29F383C63A5A4AD522916BB5AC6473563BA6FB9392D714FACAB4D93448812206E343972112F13BA3B0D6A13C038D39A4F979FFC73AC270AE4BC72AF6B27427BC67E629BE69CDB55A7B7052FD3B2348312014E51526400C1018D32006E6F328A59CA06337CDD0C3087E8D23200020905040392355974CC53F796A7F7EFD76CED476AEEE9BDBA03F805D01E4153953FFFF8279AD5B1A84F10E59E6920862888609FE2FC0B1D370058A3264C0F7DF8FE3A07C7CC01030103",
 	data_interleave_offset_in_bits => 1,
 	data_interleave_width_in_bits => 1,
-	init_file => "C:/Users/richa/gitrepo/RC2014_fpga/roms/CPM_BASIC.HEX",
+	init_file => "C:/Users/rlewis/gitrepo/RC2014_fpga/roms/CPM_BASIC.HEX",
 	init_file_layout => "port_a",
-	logical_ram_name => "ROM_Page_Select:rom_select|CPM_BASIC:\cpm:rom8k|CPM_BASIC_LITE:rom8k|altsyncram:altsyncram_component|altsyncram_qfu3:auto_generated|ALTSYNCRAM",
+	logical_ram_name => "ROM_Page_Select:rom_select|CPM_BASIC:\cpm:rom8k|CPM_BASIC_LITE:rom8k|altsyncram:altsyncram_component|altsyncram_9ku3:auto_generated|ALTSYNCRAM",
 	operation_mode => "rom",
 	port_a_address_clear => "none",
 	port_a_address_width => 13,
