@@ -15,7 +15,7 @@ use ieee.numeric_std.all;
 entity RC2014_fpga is
 	generic(
 		cpu : natural := 0;     -- 0 = t80, 1 = tv80
-		rom : natural := 0		-- 0 = CP/M Monitor, 1 = SCM, 2 = R0001009
+		rom : natural := 1		-- 0 = CP/M Monitor, 1 = SCM, 2 = R0001009
 	);
 	port(
 		-- Z80_BUS
@@ -211,14 +211,13 @@ begin
 				dout    => CPU_D_O
 			);
 	end generate tv80;
-
-
+	
 	D <= UART_D when UART_nCS = '0'
-		else SD_D when SD_nCS = '0'
-		else ROM_D when ROM_nCS = '0'
-		else RAM_D when RAM_nCS = '0'
-		else CPU_D_O when CPU_nWR = '0'
-		else (others => 'Z');
+			else SD_D when SD_nCS = '0'
+			else ROM_D when ROM_nCS = '0'
+			else RAM_D when RAM_nCS = '0'
+			else CPU_D_O when CPU_nWR = '0'
+			else (others => 'Z');
 
 	CPU_D_I <= D;
 

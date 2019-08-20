@@ -163,7 +163,7 @@ BEGIN
 		clk2_duty_cycle => 50,
 		clk2_multiply_by => 1,
 		clk2_phase_shift => "0",
-		compensate_clock => "CLK0",
+		compensate_clock => "CLK2",
 		inclk0_input_frequency => 20000,
 		intended_device_family => "MAX 10",
 		lpm_hint => "CBX_MODULE_PREFIX=clocks",
@@ -239,7 +239,7 @@ END SYN;
 -- Retrieval info: PRIVATE: CNX_NO_COMPENSATE_RADIO STRING "0"
 -- Retrieval info: PRIVATE: CREATE_CLKBAD_CHECK STRING "0"
 -- Retrieval info: PRIVATE: CREATE_INCLK1_CHECK STRING "0"
--- Retrieval info: PRIVATE: CUR_DEDICATED_CLK STRING "c0"
+-- Retrieval info: PRIVATE: CUR_DEDICATED_CLK STRING "c2"
 -- Retrieval info: PRIVATE: CUR_FBIN_CLK STRING "c0"
 -- Retrieval info: PRIVATE: DEVICE_SPEED_GRADE STRING "7"
 -- Retrieval info: PRIVATE: DIV_FACTOR0 NUMERIC "1"
@@ -350,7 +350,7 @@ END SYN;
 -- Retrieval info: CONSTANT: CLK2_DUTY_CYCLE NUMERIC "50"
 -- Retrieval info: CONSTANT: CLK2_MULTIPLY_BY NUMERIC "1"
 -- Retrieval info: CONSTANT: CLK2_PHASE_SHIFT STRING "0"
--- Retrieval info: CONSTANT: COMPENSATE_CLOCK STRING "CLK0"
+-- Retrieval info: CONSTANT: COMPENSATE_CLOCK STRING "CLK2"
 -- Retrieval info: CONSTANT: INCLK0_INPUT_FREQUENCY NUMERIC "20000"
 -- Retrieval info: CONSTANT: INTENDED_DEVICE_FAMILY STRING "MAX 10"
 -- Retrieval info: CONSTANT: LPM_TYPE STRING "altpll"
@@ -416,6 +416,6 @@ END SYN;
 -- Retrieval info: GEN_FILE: TYPE_NORMAL clocks.inc FALSE
 -- Retrieval info: GEN_FILE: TYPE_NORMAL clocks.cmp TRUE
 -- Retrieval info: GEN_FILE: TYPE_NORMAL clocks.bsf FALSE
--- Retrieval info: GEN_FILE: TYPE_NORMAL clocks_inst.vhd TRUE
+-- Retrieval info: GEN_FILE: TYPE_NORMAL clocks_inst.vhd FALSE
 -- Retrieval info: LIB_FILE: altera_mf
 -- Retrieval info: CBX_MODULE_PREFIX: ON

@@ -61,7 +61,7 @@ BEGIN
 		address_aclr_a => "NONE",
 		clock_enable_input_a => "BYPASS",
 		clock_enable_output_a => "BYPASS",
-		init_file => "C:/Users/rlewis/gitrepo/RC2014_fpga/roms/CPM_BASIC.HEX",
+		init_file => "C:/Users/richa/gitrepo/RC2014_fpga/roms/CPM_BASIC.HEX",
 		intended_device_family => "MAX 10",
 		lpm_hint => "ENABLE_RUNTIME_MOD=NO",
 		lpm_type => "altsyncram",
@@ -103,7 +103,7 @@ END SYN;
 -- Retrieval info: PRIVATE: JTAG_ENABLED NUMERIC "0"
 -- Retrieval info: PRIVATE: JTAG_ID STRING "NONE"
 -- Retrieval info: PRIVATE: MAXIMUM_DEPTH NUMERIC "0"
--- Retrieval info: PRIVATE: MIFfilename STRING "C:/Users/rlewis/gitrepo/RC2014_fpga/roms/CPM_BASIC.HEX"
+-- Retrieval info: PRIVATE: MIFfilename STRING "C:/Users/richa/gitrepo/RC2014_fpga/roms/CPM_BASIC.HEX"
 -- Retrieval info: PRIVATE: NUMWORDS_A NUMERIC "8192"
 -- Retrieval info: PRIVATE: RAM_BLOCK_TYPE NUMERIC "0"
 -- Retrieval info: PRIVATE: RegAddr NUMERIC "1"
@@ -118,7 +118,7 @@ END SYN;
 -- Retrieval info: CONSTANT: ADDRESS_ACLR_A STRING "NONE"
 -- Retrieval info: CONSTANT: CLOCK_ENABLE_INPUT_A STRING "BYPASS"
 -- Retrieval info: CONSTANT: CLOCK_ENABLE_OUTPUT_A STRING "BYPASS"
--- Retrieval info: CONSTANT: INIT_FILE STRING "C:/Users/rlewis/gitrepo/RC2014_fpga/roms/CPM_BASIC.HEX"
+-- Retrieval info: CONSTANT: INIT_FILE STRING "C:/Users/richa/gitrepo/RC2014_fpga/roms/CPM_BASIC.HEX"
 -- Retrieval info: CONSTANT: INTENDED_DEVICE_FAMILY STRING "MAX 10"
 -- Retrieval info: CONSTANT: LPM_HINT STRING "ENABLE_RUNTIME_MOD=NO"
 -- Retrieval info: CONSTANT: LPM_TYPE STRING "altsyncram"

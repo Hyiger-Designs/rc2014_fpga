@@ -1,98 +1,892 @@
-# Reading C:/intelFPGA_lite/18.1/modelsim_ase/tcl/vsim/pref.tcl
+# Reading C:/modeltech64_10.7/tcl/vsim/pref.tcl
+# //  ModelSim SE-64 10.7 Dec  7 2017
+# //
+# //  Copyright 1991-2017 Mentor Graphics Corporation
+# //  All Rights Reserved.
+# //
+# //  ModelSim SE-64 and its associated documentation contain trade
+# //  secrets and commercial or financial information that are the property of
+# //  Mentor Graphics Corporation and are privileged, confidential,
+# //  and exempt from disclosure under the Freedom of Information Act,
+# //  5 U.S.C. Section 552. Furthermore, this information
+# //  is prohibited from disclosure under the Trade Secrets Act,
+# //  18 U.S.C. Section 1905.
+# //
 # do RC2014_fpga_run_msim_rtl_vhdl.do
+# if ![file isdirectory vhdl_libs] {
+# 	file mkdir vhdl_libs
+# }
+# 
+# vlib vhdl_libs/altera
+# ** Warning: (vlib-34) Library already exists at "vhdl_libs/altera".
+# vmap altera ./vhdl_libs/altera
+# Model Technology ModelSim SE-64 vmap 10.7 Lib Mapping Utility 2017.12 Dec  7 2017
+# vmap altera ./vhdl_libs/altera 
+# Modifying C:/modeltech64_10.7/win64/../modelsim.ini
+# vcom -93 -work altera {c:/intelfpga_lite/18.1/quartus/eda/sim_lib/altera_syn_attributes.vhd}
+# Model Technology ModelSim SE-64 vcom 10.7 Compiler 2017.12 Dec  7 2017
+# Start time: 22:54:37 on Mar 25,2019
+# vcom -reportprogress 300 -93 -work altera c:/intelfpga_lite/18.1/quartus/eda/sim_lib/altera_syn_attributes.vhd 
+# -- Loading package STANDARD
+# -- Compiling package altera_syn_attributes
+# End time: 22:54:37 on Mar 25,2019, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vcom -93 -work altera {c:/intelfpga_lite/18.1/quartus/eda/sim_lib/altera_standard_functions.vhd}
+# Model Technology ModelSim SE-64 vcom 10.7 Compiler 2017.12 Dec  7 2017
+# Start time: 22:54:37 on Mar 25,2019
+# vcom -reportprogress 300 -93 -work altera c:/intelfpga_lite/18.1/quartus/eda/sim_lib/altera_standard_functions.vhd 
+# -- Loading package STANDARD
+# -- Compiling package altera_standard_functions
+# -- Compiling package body altera_standard_functions
+# -- Loading package altera_standard_functions
+# End time: 22:54:37 on Mar 25,2019, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vcom -93 -work altera {c:/intelfpga_lite/18.1/quartus/eda/sim_lib/alt_dspbuilder_package.vhd}
+# Model Technology ModelSim SE-64 vcom 10.7 Compiler 2017.12 Dec  7 2017
+# Start time: 22:54:37 on Mar 25,2019
+# vcom -reportprogress 300 -93 -work altera c:/intelfpga_lite/18.1/quartus/eda/sim_lib/alt_dspbuilder_package.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package std_logic_arith
+# -- Compiling package alt_dspbuilder_package
+# -- Compiling package body alt_dspbuilder_package
+# -- Loading package alt_dspbuilder_package
+# End time: 22:54:37 on Mar 25,2019, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vcom -93 -work altera {c:/intelfpga_lite/18.1/quartus/eda/sim_lib/altera_europa_support_lib.vhd}
+# Model Technology ModelSim SE-64 vcom 10.7 Compiler 2017.12 Dec  7 2017
+# Start time: 22:54:37 on Mar 25,2019
+# vcom -reportprogress 300 -93 -work altera c:/intelfpga_lite/18.1/quartus/eda/sim_lib/altera_europa_support_lib.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Loading package std_logic_arith
+# -- Loading package STD_LOGIC_UNSIGNED
+# -- Compiling package altera_europa_support_lib
+# -- Compiling package body altera_europa_support_lib
+# -- Loading package altera_europa_support_lib
+# End time: 22:54:37 on Mar 25,2019, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vcom -93 -work altera {c:/intelfpga_lite/18.1/quartus/eda/sim_lib/altera_primitives_components.vhd}
+# Model Technology ModelSim SE-64 vcom 10.7 Compiler 2017.12 Dec  7 2017
+# Start time: 22:54:37 on Mar 25,2019
+# vcom -reportprogress 300 -93 -work altera c:/intelfpga_lite/18.1/quartus/eda/sim_lib/altera_primitives_components.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package VITAL_Timing
+# -- Loading package VITAL_Primitives
+# -- Compiling package dffeas_pack
+# -- Loading package dffeas_pack
+# -- Compiling package altera_primitives_components
+# End time: 22:54:37 on Mar 25,2019, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vcom -93 -work altera {c:/intelfpga_lite/18.1/quartus/eda/sim_lib/altera_primitives.vhd}
+# Model Technology ModelSim SE-64 vcom 10.7 Compiler 2017.12 Dec  7 2017
+# Start time: 22:54:37 on Mar 25,2019
+# vcom -reportprogress 300 -93 -work altera c:/intelfpga_lite/18.1/quartus/eda/sim_lib/altera_primitives.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Compiling entity GLOBAL
+# -- Compiling architecture BEHAVIOR of GLOBAL
+# -- Compiling entity CARRY
+# -- Compiling architecture BEHAVIOR of CARRY
+# -- Compiling entity CASCADE
+# -- Compiling architecture BEHAVIOR of CASCADE
+# -- Compiling entity CARRY_SUM
+# -- Compiling architecture BEHAVIOR of CARRY_SUM
+# -- Compiling entity EXP
+# -- Compiling architecture BEHAVIOR of EXP
+# -- Compiling entity SOFT
+# -- Compiling architecture BEHAVIOR of SOFT
+# -- Compiling entity OPNDRN
+# -- Compiling architecture BEHAVIOR of OPNDRN
+# -- Compiling entity ROW_GLOBAL
+# -- Compiling architecture BEHAVIOR of ROW_GLOBAL
+# -- Compiling entity TRI
+# -- Compiling architecture BEHAVIOR of TRI
+# -- Compiling entity LUT_INPUT
+# -- Compiling architecture BEHAVIOR of LUT_INPUT
+# -- Compiling entity LUT_OUTPUT
+# -- Compiling architecture BEHAVIOR of LUT_OUTPUT
+# -- Compiling entity latch
+# -- Compiling architecture BEHAVIOR of latch
+# -- Compiling entity dlatch
+# -- Compiling architecture BEHAVIOR of dlatch
+# -- Compiling entity PRIM_GDFF
+# -- Compiling architecture BEHAVIOR of PRIM_GDFF
+# -- Loading entity PRIM_GDFF
+# -- Compiling entity DFF
+# -- Compiling architecture BEHAVIOR of DFF
+# -- Compiling entity DFFE
+# -- Compiling architecture BEHAVIOR of DFFE
+# -- Compiling entity DFFEA
+# -- Compiling architecture BEHAVIOR of DFFEA
+# -- Loading package VITAL_Timing
+# -- Loading package VITAL_Primitives
+# -- Loading package dffeas_pack
+# -- Compiling entity DFFEAS
+# -- Compiling architecture vital_dffeas of dffeas
+# -- Compiling entity PRIM_GTFF
+# -- Compiling architecture BEHAVIOR of PRIM_GTFF
+# -- Loading entity PRIM_GTFF
+# -- Compiling entity TFF
+# -- Compiling architecture BEHAVIOR of TFF
+# -- Compiling entity TFFE
+# -- Compiling architecture BEHAVIOR of TFFE
+# -- Compiling entity PRIM_GJKFF
+# -- Compiling architecture BEHAVIOR of PRIM_GJKFF
+# -- Loading entity PRIM_GJKFF
+# -- Compiling entity JKFF
+# -- Compiling architecture BEHAVIOR of JKFF
+# -- Compiling entity JKFFE
+# -- Compiling architecture BEHAVIOR of JKFFE
+# -- Compiling entity PRIM_GSRFF
+# -- Compiling architecture BEHAVIOR of PRIM_GSRFF
+# -- Loading entity PRIM_GSRFF
+# -- Compiling entity SRFF
+# -- Compiling architecture BEHAVIOR of SRFF
+# -- Compiling entity SRFFE
+# -- Compiling architecture BEHAVIOR of SRFFE
+# -- Compiling entity clklock
+# -- Compiling architecture behavior of clklock
+# -- Compiling entity alt_inbuf
+# -- Compiling architecture BEHAVIOR of alt_inbuf
+# -- Compiling entity alt_outbuf
+# -- Compiling architecture BEHAVIOR of alt_outbuf
+# -- Compiling entity alt_outbuf_tri
+# -- Compiling architecture BEHAVIOR of alt_outbuf_tri
+# -- Compiling entity alt_iobuf
+# -- Compiling architecture BEHAVIOR of alt_iobuf
+# -- Compiling entity alt_inbuf_diff
+# -- Compiling architecture BEHAVIOR of alt_inbuf_diff
+# -- Compiling entity alt_outbuf_diff
+# -- Compiling architecture BEHAVIOR of alt_outbuf_diff
+# -- Compiling entity alt_outbuf_tri_diff
+# -- Compiling architecture BEHAVIOR of alt_outbuf_tri_diff
+# -- Compiling entity alt_iobuf_diff
+# -- Compiling architecture BEHAVIOR of alt_iobuf_diff
+# -- Compiling entity alt_bidir_diff
+# -- Compiling architecture BEHAVIOR of alt_bidir_diff
+# -- Compiling entity alt_bidir_buf
+# -- Compiling architecture BEHAVIOR of alt_bidir_buf
+# End time: 22:54:38 on Mar 25,2019, Elapsed time: 0:00:01
+# Errors: 0, Warnings: 0
+# 
+# vlib vhdl_libs/lpm
+# ** Warning: (vlib-34) Library already exists at "vhdl_libs/lpm".
+# vmap lpm ./vhdl_libs/lpm
+# Model Technology ModelSim SE-64 vmap 10.7 Lib Mapping Utility 2017.12 Dec  7 2017
+# vmap lpm ./vhdl_libs/lpm 
+# Modifying C:/modeltech64_10.7/win64/../modelsim.ini
+# vcom -93 -work lpm {c:/intelfpga_lite/18.1/quartus/eda/sim_lib/220pack.vhd}
+# Model Technology ModelSim SE-64 vcom 10.7 Compiler 2017.12 Dec  7 2017
+# Start time: 22:54:38 on Mar 25,2019
+# vcom -reportprogress 300 -93 -work lpm c:/intelfpga_lite/18.1/quartus/eda/sim_lib/220pack.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Compiling package LPM_COMPONENTS
+# End time: 22:54:38 on Mar 25,2019, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vcom -93 -work lpm {c:/intelfpga_lite/18.1/quartus/eda/sim_lib/220model.vhd}
+# Model Technology ModelSim SE-64 vcom 10.7 Compiler 2017.12 Dec  7 2017
+# Start time: 22:54:38 on Mar 25,2019
+# vcom -reportprogress 300 -93 -work lpm c:/intelfpga_lite/18.1/quartus/eda/sim_lib/220model.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Compiling package LPM_COMMON_CONVERSION
+# -- Compiling package body LPM_COMMON_CONVERSION
+# -- Loading package LPM_COMMON_CONVERSION
+# -- Compiling package LPM_HINT_EVALUATION
+# -- Compiling package body LPM_HINT_EVALUATION
+# -- Loading package LPM_HINT_EVALUATION
+# -- Compiling package LPM_DEVICE_FAMILIES
+# -- Compiling package body LPM_DEVICE_FAMILIES
+# -- Loading package LPM_DEVICE_FAMILIES
+# -- Loading package std_logic_arith
+# -- Loading package STD_LOGIC_UNSIGNED
+# -- Loading package LPM_COMPONENTS
+# -- Compiling entity LPM_CONSTANT
+# -- Compiling architecture LPM_SYN of LPM_CONSTANT
+# -- Compiling entity LPM_INV
+# -- Compiling architecture LPM_SYN of LPM_INV
+# -- Compiling entity lpm_and
+# -- Compiling architecture LPM_SYN of lpm_and
+# -- Compiling entity LPM_OR
+# -- Compiling architecture LPM_SYN of LPM_OR
+# -- Compiling entity LPM_XOR
+# -- Compiling architecture LPM_SYN of LPM_XOR
+# -- Compiling entity LPM_BUSTRI
+# -- Compiling architecture LPM_SYN of LPM_BUSTRI
+# -- Compiling entity LPM_MUX
+# -- Compiling architecture LPM_SYN of LPM_MUX
+# -- Compiling entity LPM_DECODE
+# -- Compiling architecture LPM_SYN of LPM_DECODE
+# -- Compiling entity LPM_CLSHIFT
+# -- Compiling architecture LPM_SYN of LPM_CLSHIFT
+# -- Loading package STD_LOGIC_SIGNED
+# -- Compiling entity LPM_ADD_SUB_SIGNED
+# -- Compiling architecture LPM_SYN of LPM_ADD_SUB_SIGNED
+# -- Compiling entity LPM_ADD_SUB_UNSIGNED
+# -- Compiling architecture LPM_SYN of LPM_ADD_SUB_UNSIGNED
+# -- Loading entity LPM_ADD_SUB_SIGNED
+# -- Loading entity LPM_ADD_SUB_UNSIGNED
+# -- Compiling entity LPM_ADD_SUB
+# -- Compiling architecture LPM_SYN of LPM_ADD_SUB
+# -- Compiling entity LPM_COMPARE_SIGNED
+# -- Compiling architecture LPM_SYN of LPM_COMPARE_SIGNED
+# -- Compiling entity LPM_COMPARE_UNSIGNED
+# -- Compiling architecture LPM_SYN of LPM_COMPARE_UNSIGNED
+# -- Loading entity LPM_COMPARE_SIGNED
+# -- Loading entity LPM_COMPARE_UNSIGNED
+# -- Compiling entity LPM_COMPARE
+# -- Compiling architecture LPM_SYN of LPM_COMPARE
+# -- Loading package LPM_HINT_EVALUATION
+# -- Compiling entity LPM_MULT
+# -- Compiling architecture LPM_SYN of LPM_MULT
+# -- Compiling entity LPM_DIVIDE
+# -- Compiling architecture behave of lpm_divide
+# -- Compiling entity lpm_abs
+# -- Compiling architecture LPM_SYN of LPM_ABS
+# -- Loading package LPM_COMMON_CONVERSION
+# -- Compiling entity LPM_COUNTER
+# -- Compiling architecture LPM_SYN of LPM_COUNTER
+# -- Compiling entity LPM_LATCH
+# -- Compiling architecture LPM_SYN of LPM_LATCH
+# -- Compiling entity LPM_FF
+# -- Compiling architecture LPM_SYN of LPM_FF
+# -- Compiling entity LPM_SHIFTREG
+# -- Compiling architecture LPM_SYN of LPM_SHIFTREG
+# -- Loading package LPM_DEVICE_FAMILIES
+# -- Compiling entity LPM_RAM_DQ
+# -- Compiling architecture LPM_SYN of lpm_ram_dq
+# -- Compiling entity LPM_RAM_DP
+# -- Compiling architecture LPM_SYN of LPM_RAM_DP
+# -- Compiling entity LPM_RAM_IO
+# -- Compiling architecture LPM_SYN of lpm_ram_io
+# -- Compiling entity LPM_ROM
+# -- Compiling architecture LPM_SYN of lpm_rom
+# -- Compiling entity LPM_FIFO
+# -- Compiling architecture behavior of LPM_FIFO
+# -- Compiling entity LPM_FIFO_DC_DFFPIPE
+# -- Compiling architecture behavior of LPM_FIFO_DC_DFFPIPE
+# -- Compiling entity LPM_FIFO_DC_FEFIFO
+# -- Compiling architecture behavior of LPM_FIFO_DC_FEFIFO
+# -- Loading entity LPM_FIFO_DC_FEFIFO
+# -- Loading entity LPM_FIFO_DC_DFFPIPE
+# -- Compiling entity LPM_FIFO_DC_ASYNC
+# -- Compiling architecture behavior of LPM_FIFO_DC_ASYNC
+# -- Loading entity LPM_FIFO_DC_ASYNC
+# -- Compiling entity LPM_FIFO_DC
+# -- Compiling architecture behavior of LPM_FIFO_DC
+# -- Compiling entity LPM_INpad
+# -- Compiling architecture LPM_SYN of LPM_INpad
+# -- Compiling entity LPM_OUTpad
+# -- Compiling architecture LPM_SYN of LPM_OUTpad
+# -- Compiling entity LPM_BIpad
+# -- Compiling architecture LPM_SYN of LPM_BIpad
+# End time: 22:54:38 on Mar 25,2019, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# 
+# vlib vhdl_libs/sgate
+# ** Warning: (vlib-34) Library already exists at "vhdl_libs/sgate".
+# vmap sgate ./vhdl_libs/sgate
+# Model Technology ModelSim SE-64 vmap 10.7 Lib Mapping Utility 2017.12 Dec  7 2017
+# vmap sgate ./vhdl_libs/sgate 
+# Modifying C:/modeltech64_10.7/win64/../modelsim.ini
+# vcom -93 -work sgate {c:/intelfpga_lite/18.1/quartus/eda/sim_lib/sgate_pack.vhd}
+# Model Technology ModelSim SE-64 vcom 10.7 Compiler 2017.12 Dec  7 2017
+# Start time: 22:54:38 on Mar 25,2019
+# vcom -reportprogress 300 -93 -work sgate c:/intelfpga_lite/18.1/quartus/eda/sim_lib/sgate_pack.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Compiling package sgate_pack
+# -- Compiling package body sgate_pack
+# -- Loading package sgate_pack
+# End time: 22:54:38 on Mar 25,2019, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vcom -93 -work sgate {c:/intelfpga_lite/18.1/quartus/eda/sim_lib/sgate.vhd}
+# Model Technology ModelSim SE-64 vcom 10.7 Compiler 2017.12 Dec  7 2017
+# Start time: 22:54:38 on Mar 25,2019
+# vcom -reportprogress 300 -93 -work sgate c:/intelfpga_lite/18.1/quartus/eda/sim_lib/sgate.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package std_logic_arith
+# -- Loading package STD_LOGIC_SIGNED
+# -- Compiling entity oper_add
+# -- Compiling architecture sim_arch of oper_add
+# -- Compiling entity oper_addsub
+# -- Compiling architecture sim_arch of oper_addsub
+# -- Compiling entity mux21
+# -- Compiling architecture sim_arch of mux21
+# -- Compiling entity io_buf_tri
+# -- Compiling architecture sim_arch of io_buf_tri
+# -- Compiling entity io_buf_opdrn
+# -- Compiling architecture sim_arch of io_buf_opdrn
+# -- Compiling entity tri_bus
+# -- Compiling architecture sim_arch of tri_bus
+# -- Compiling entity oper_mult
+# -- Compiling architecture sim_arch of oper_mult
+# -- Loading package LPM_COMPONENTS
+# -- Compiling entity oper_div
+# -- Compiling architecture sim_arch of oper_div
+# -- Compiling entity oper_mod
+# -- Compiling architecture sim_arch of oper_mod
+# -- Loading package STD_LOGIC_UNSIGNED
+# -- Compiling entity oper_left_shift
+# -- Compiling architecture sim_arch of oper_left_shift
+# -- Compiling entity oper_right_shift
+# -- Compiling architecture sim_arch of oper_right_shift
+# -- Compiling entity oper_rotate_left
+# -- Compiling architecture sim_arch of oper_rotate_left
+# -- Compiling entity oper_rotate_right
+# -- Compiling architecture sim_arch of oper_rotate_right
+# -- Compiling entity oper_less_than
+# -- Compiling architecture sim_arch of oper_less_than
+# -- Loading package sgate_pack
+# -- Compiling entity oper_mux
+# -- Compiling architecture sim_arch of oper_mux
+# -- Compiling entity oper_selector
+# -- Compiling architecture sim_arch of oper_selector
+# -- Compiling entity oper_prio_selector
+# -- Compiling architecture sim_arch of oper_prio_selector
+# -- Compiling entity oper_decoder
+# -- Compiling architecture sim_arch of oper_decoder
+# -- Compiling entity oper_bus_mux
+# -- Compiling architecture sim_arch of oper_bus_mux
+# -- Compiling entity oper_latch
+# -- Compiling architecture sim_arch of oper_latch
+# End time: 22:54:38 on Mar 25,2019, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# 
+# vlib vhdl_libs/altera_mf
+# ** Warning: (vlib-34) Library already exists at "vhdl_libs/altera_mf".
+# vmap altera_mf ./vhdl_libs/altera_mf
+# Model Technology ModelSim SE-64 vmap 10.7 Lib Mapping Utility 2017.12 Dec  7 2017
+# vmap altera_mf ./vhdl_libs/altera_mf 
+# Modifying C:/modeltech64_10.7/win64/../modelsim.ini
+# vcom -93 -work altera_mf {c:/intelfpga_lite/18.1/quartus/eda/sim_lib/altera_mf_components.vhd}
+# Model Technology ModelSim SE-64 vcom 10.7 Compiler 2017.12 Dec  7 2017
+# Start time: 22:54:39 on Mar 25,2019
+# vcom -reportprogress 300 -93 -work altera_mf c:/intelfpga_lite/18.1/quartus/eda/sim_lib/altera_mf_components.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Compiling package altera_mf_components
+# End time: 22:54:39 on Mar 25,2019, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vcom -93 -work altera_mf {c:/intelfpga_lite/18.1/quartus/eda/sim_lib/altera_mf.vhd}
+# Model Technology ModelSim SE-64 vcom 10.7 Compiler 2017.12 Dec  7 2017
+# Start time: 22:54:39 on Mar 25,2019
+# vcom -reportprogress 300 -93 -work altera_mf c:/intelfpga_lite/18.1/quartus/eda/sim_lib/altera_mf.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Compiling entity LCELL
+# -- Compiling architecture BEHAVIOR of LCELL
+# -- Compiling package ALTERA_COMMON_CONVERSION
+# -- Compiling package body ALTERA_COMMON_CONVERSION
+# -- Loading package ALTERA_COMMON_CONVERSION
+# -- Compiling package ALTERA_MF_HINT_EVALUATION
+# -- Compiling package body ALTERA_MF_HINT_EVALUATION
+# -- Loading package ALTERA_MF_HINT_EVALUATION
+# -- Compiling package ALTERA_DEVICE_FAMILIES
+# -- Compiling package body ALTERA_DEVICE_FAMILIES
+# -- Loading package ALTERA_DEVICE_FAMILIES
+# -- Compiling package MF_pllpack
+# -- Compiling package body MF_pllpack
+# -- Loading package MF_pllpack
+# -- Compiling entity DFFP
+# -- Compiling architecture behave of DFFP
+# -- Compiling entity pll_iobuf
+# -- Compiling architecture BEHAVIOR of pll_iobuf
+# -- Compiling entity MF_m_cntr
+# -- Compiling architecture behave of MF_m_cntr
+# -- Compiling entity MF_n_cntr
+# -- Compiling architecture behave of MF_n_cntr
+# -- Compiling entity stx_scale_cntr
+# -- Compiling architecture behave of stx_scale_cntr
+# -- Compiling entity MF_pll_reg
+# -- Compiling architecture behave of MF_pll_reg
+# -- Loading package MF_pllpack
+# -- Loading entity MF_m_cntr
+# -- Loading entity MF_n_cntr
+# -- Loading entity stx_scale_cntr
+# -- Loading entity DFFP
+# -- Loading entity MF_pll_reg
+# -- Compiling entity MF_stratix_pll
+# -- Compiling architecture vital_pll of MF_stratix_pll
+# -- Compiling entity arm_m_cntr
+# -- Compiling architecture behave of arm_m_cntr
+# -- Compiling entity arm_n_cntr
+# -- Compiling architecture behave of arm_n_cntr
+# -- Compiling entity arm_scale_cntr
+# -- Compiling architecture behave of arm_scale_cntr
+# -- Loading entity arm_m_cntr
+# -- Loading entity arm_n_cntr
+# -- Loading entity arm_scale_cntr
+# -- Compiling entity MF_stratixii_pll
+# -- Compiling architecture vital_pll of MF_stratixii_pll
+# -- Loading package std_logic_arith
+# -- Loading package STD_LOGIC_UNSIGNED
+# -- Compiling entity MF_ttn_mn_cntr
+# -- Compiling architecture behave of MF_ttn_mn_cntr
+# -- Compiling entity MF_ttn_scale_cntr
+# -- Compiling architecture behave of MF_ttn_scale_cntr
+# -- Loading entity MF_ttn_mn_cntr
+# -- Loading entity MF_ttn_scale_cntr
+# -- Compiling entity MF_stratixiii_pll
+# -- Compiling architecture vital_pll of MF_stratixiii_pll
+# -- Compiling entity MF_cda_mn_cntr
+# -- Compiling architecture behave of MF_cda_mn_cntr
+# -- Compiling entity MF_cda_scale_cntr
+# -- Compiling architecture behave of MF_cda_scale_cntr
+# -- Loading entity MF_cda_mn_cntr
+# -- Loading entity MF_cda_scale_cntr
+# -- Compiling entity MF_cycloneiii_pll
+# -- Compiling architecture vital_pll of MF_cycloneiii_pll
+# -- Compiling entity MF_stingray_mn_cntr
+# -- Compiling architecture behave of MF_stingray_mn_cntr
+# -- Compiling entity MF_stingray_post_divider
+# -- Compiling architecture behave of MF_stingray_post_divider
+# -- Compiling entity MF_stingray_scale_cntr
+# -- Compiling architecture behave of MF_stingray_scale_cntr
+# -- Loading entity MF_stingray_mn_cntr
+# -- Loading entity MF_stingray_scale_cntr
+# -- Compiling entity MF_cycloneiiigl_pll
+# -- Compiling architecture vital_pll of MF_cycloneiiigl_pll
+# -- Loading package ALTERA_DEVICE_FAMILIES
+# -- Loading entity MF_stratix_pll
+# -- Loading entity MF_stratixii_pll
+# -- Loading entity MF_stratixiii_pll
+# -- Loading entity MF_cycloneiii_pll
+# -- Loading entity MF_cycloneiiigl_pll
+# -- Loading entity pll_iobuf
+# -- Compiling entity altpll
+# -- Compiling architecture behavior of altpll
+# -- Compiling entity altaccumulate
+# -- Compiling architecture behaviour of altaccumulate
+# -- Compiling entity altmult_accum
+# -- Compiling architecture behaviour of altmult_accum
+# -- Compiling entity altmult_add
+# -- Compiling architecture behaviour of altmult_add
+# -- Loading package ALTERA_COMMON_CONVERSION
+# -- Compiling entity altfp_mult
+# -- Compiling architecture behavior of altfp_mult
+# -- Compiling entity altsqrt
+# -- Compiling architecture behavior of altsqrt
+# -- Compiling entity altclklock
+# -- Compiling architecture behavior of altclklock
+# -- Compiling entity altddio_in
+# -- Compiling architecture behave of altddio_in
+# -- Compiling entity altddio_out
+# -- Compiling architecture behave of altddio_out
+# -- Loading entity altddio_in
+# -- Loading entity altddio_out
+# -- Compiling entity altddio_bidir
+# -- Compiling architecture struct of altddio_bidir
+# -- Compiling entity stratixii_lvds_rx
+# -- Compiling architecture behavior of stratixii_lvds_rx
+# -- Compiling entity flexible_lvds_rx
+# -- Compiling architecture behavior of flexible_lvds_rx
+# -- Compiling entity stratixiii_lvds_rx_dpa
+# -- Compiling architecture behavior of stratixiii_lvds_rx_dpa
+# -- Compiling entity stratixv_local_clk_divider
+# -- Compiling architecture behavior of stratixv_local_clk_divider
+# -- Loading entity stratixiii_lvds_rx_dpa
+# -- Loading entity stratixv_local_clk_divider
+# -- Compiling entity stratixiii_lvds_rx_channel
+# -- Compiling architecture behavior of stratixiii_lvds_rx_channel
+# -- Loading entity stratixiii_lvds_rx_channel
+# -- Compiling entity stratixiii_lvds_rx
+# -- Compiling architecture behavior of stratixiii_lvds_rx
+# -- Loading entity stratixii_lvds_rx
+# -- Loading entity flexible_lvds_rx
+# -- Loading entity stratixiii_lvds_rx
+# -- Compiling entity altlvds_rx
+# -- Compiling architecture behavior of altlvds_rx
+# -- Compiling entity stratix_tx_outclk
+# -- Compiling architecture behavior of stratix_tx_outclk
+# -- Compiling entity stratixii_tx_outclk
+# -- Compiling architecture behavior of stratixii_tx_outclk
+# -- Compiling entity flexible_lvds_tx
+# -- Compiling architecture behavior of flexible_lvds_tx
+# -- Loading entity stratix_tx_outclk
+# -- Loading entity stratixii_tx_outclk
+# -- Loading entity flexible_lvds_tx
+# -- Compiling entity altlvds_tx
+# -- Compiling architecture behavior of altlvds_tx
+# -- Compiling entity altdpram
+# -- Compiling architecture behavior of altdpram
+# -- Compiling entity altsyncram
+# -- Compiling architecture translated of altsyncram
+# -- Loading entity altsyncram
+# -- Loading package ALTERA_MF_HINT_EVALUATION
+# -- Compiling entity alt3pram
+# -- Compiling architecture behavior of alt3pram
+# -- Loading package altera_mf_components
+# -- Compiling entity parallel_add
+# -- Compiling architecture behaviour of parallel_add
+# -- Compiling entity SCFIFO
+# -- Compiling architecture behavior of SCFIFO
+# -- Compiling entity DCFIFO_DFFPIPE
+# -- Compiling architecture behavior of DCFIFO_DFFPIPE
+# -- Compiling entity DCFIFO_FEFIFO
+# -- Compiling architecture behavior of DCFIFO_FEFIFO
+# -- Loading entity DCFIFO_FEFIFO
+# -- Loading entity DCFIFO_DFFPIPE
+# -- Compiling entity DCFIFO_ASYNC
+# -- Compiling architecture behavior of DCFIFO_ASYNC
+# -- Compiling entity DCFIFO_SYNC
+# -- Compiling architecture behavior of DCFIFO_SYNC
+# -- Compiling entity DCFIFO_LOW_LATENCY
+# -- Compiling architecture behavior of DCFIFO_LOW_LATENCY
+# -- Loading entity DCFIFO_ASYNC
+# -- Loading entity DCFIFO_SYNC
+# -- Loading entity DCFIFO_LOW_LATENCY
+# -- Compiling entity DCFIFO_MIXED_WIDTHS
+# -- Compiling architecture behavior of DCFIFO_MIXED_WIDTHS
+# -- Loading entity DCFIFO_MIXED_WIDTHS
+# -- Compiling entity DCFIFO
+# -- Compiling architecture behavior of DCFIFO
+# -- Compiling entity altshift_taps
+# -- Compiling architecture behavioural of altshift_taps
+# -- Compiling entity A_GRAYCOUNTER
+# -- Compiling architecture behavior of A_GRAYCOUNTER
+# -- Compiling entity altsquare
+# -- Compiling architecture altsquare_syn of altsquare
+# -- Compiling entity altera_std_synchronizer
+# -- Compiling architecture behavioral of altera_std_synchronizer
+# -- Compiling entity altera_std_synchronizer_bundle
+# -- Compiling architecture behavioral of altera_std_synchronizer_bundle
+# -- Compiling entity alt_cal
+# -- Compiling architecture RTL of alt_cal
+# -- Compiling entity alt_cal_mm
+# -- Compiling architecture RTL of alt_cal_mm
+# -- Compiling entity alt_cal_c3gxb
+# -- Compiling architecture RTL of alt_cal_c3gxb
+# -- Compiling entity alt_cal_sv
+# -- Compiling architecture RTL of alt_cal_sv
+# -- Compiling entity alt_cal_av
+# -- Compiling architecture RTL of alt_cal_av
+# -- Compiling package alt_aeq_s4_func
+# -- Compiling package body alt_aeq_s4_func
+# -- Loading package alt_aeq_s4_func
+# -- Loading package alt_aeq_s4_func
+# -- Compiling entity alt_aeq_s4
+# -- Compiling architecture trans of alt_aeq_s4
+# -- Compiling package alt_eyemon_func
+# -- Compiling package body alt_eyemon_func
+# -- Loading package alt_eyemon_func
+# -- Loading package alt_eyemon_func
+# -- Compiling entity alt_eyemon
+# -- Compiling architecture trans of alt_eyemon
+# -- Compiling package alt_dfe_func
+# -- Compiling package body alt_dfe_func
+# -- Loading package alt_dfe_func
+# -- Loading package alt_dfe_func
+# -- Compiling entity alt_dfe
+# -- Compiling architecture trans of alt_dfe
+# -- Compiling package SLD_NODE
+# -- Compiling package body SLD_NODE
+# -- Loading package SLD_NODE
+# -- Loading package SLD_NODE
+# -- Compiling entity signal_gen
+# -- Compiling architecture simModel of signal_gen
+# -- Compiling entity jtag_tap_controller
+# -- Compiling architecture FSM of jtag_tap_controller
+# -- Compiling entity dummy_hub
+# -- Compiling architecture behavior of dummy_hub
+# -- Loading entity signal_gen
+# -- Loading entity jtag_tap_controller
+# -- Loading entity dummy_hub
+# -- Compiling entity sld_virtual_jtag
+# -- Compiling architecture structural of sld_virtual_jtag
+# -- Compiling entity sld_signaltap
+# -- Compiling architecture sim_sld_signaltap of sld_signaltap
+# -- Compiling entity altstratixii_oct
+# -- Compiling architecture sim_altstratixii_oct of altstratixii_oct
+# -- Compiling entity altparallel_flash_loader
+# -- Compiling architecture sim_altparallel_flash_loader of altparallel_flash_loader
+# -- Compiling entity altserial_flash_loader
+# -- Compiling architecture sim_altserial_flash_loader of altserial_flash_loader
+# -- Compiling entity alt_fault_injection
+# -- Compiling architecture sim_alt_fault_injection of alt_fault_injection
+# -- Compiling entity sld_virtual_jtag_basic
+# -- Compiling architecture sim_sld_virtual_jtag_basic of sld_virtual_jtag_basic
+# -- Compiling entity altsource_probe
+# -- Compiling architecture sim_altsource_probe of altsource_probe
+# End time: 22:54:40 on Mar 25,2019, Elapsed time: 0:00:01
+# Errors: 0, Warnings: 0
+# 
+# vlib vhdl_libs/altera_lnsim
+# ** Warning: (vlib-34) Library already exists at "vhdl_libs/altera_lnsim".
+# vmap altera_lnsim ./vhdl_libs/altera_lnsim
+# Model Technology ModelSim SE-64 vmap 10.7 Lib Mapping Utility 2017.12 Dec  7 2017
+# vmap altera_lnsim ./vhdl_libs/altera_lnsim 
+# Modifying C:/modeltech64_10.7/win64/../modelsim.ini
+# vlog -sv -work altera_lnsim {c:/intelfpga_lite/18.1/quartus/eda/sim_lib/mentor/altera_lnsim_for_vhdl.sv}
+# Model Technology ModelSim SE-64 vlog 10.7 Compiler 2017.12 Dec  7 2017
+# Start time: 22:54:40 on Mar 25,2019
+# vlog -reportprogress 300 -sv -work altera_lnsim c:/intelfpga_lite/18.1/quartus/eda/sim_lib/mentor/altera_lnsim_for_vhdl.sv 
+# 
+# Top level modules:
+# End time: 22:54:41 on Mar 25,2019, Elapsed time: 0:00:01
+# Errors: 0, Warnings: 0
+# vcom -93 -work altera_lnsim {c:/intelfpga_lite/18.1/quartus/eda/sim_lib/altera_lnsim_components.vhd}
+# Model Technology ModelSim SE-64 vcom 10.7 Compiler 2017.12 Dec  7 2017
+# Start time: 22:54:41 on Mar 25,2019
+# vcom -reportprogress 300 -93 -work altera_lnsim c:/intelfpga_lite/18.1/quartus/eda/sim_lib/altera_lnsim_components.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Compiling package altera_lnsim_components
+# End time: 22:54:41 on Mar 25,2019, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# 
+# vlib vhdl_libs/fiftyfivenm
+# ** Warning: (vlib-34) Library already exists at "vhdl_libs/fiftyfivenm".
+# vmap fiftyfivenm ./vhdl_libs/fiftyfivenm
+# Model Technology ModelSim SE-64 vmap 10.7 Lib Mapping Utility 2017.12 Dec  7 2017
+# vmap fiftyfivenm ./vhdl_libs/fiftyfivenm 
+# Modifying C:/modeltech64_10.7/win64/../modelsim.ini
+# vlog -vlog01compat -work fiftyfivenm {c:/intelfpga_lite/18.1/quartus/eda/sim_lib/mentor/fiftyfivenm_atoms_ncrypt.v}
+# Model Technology ModelSim SE-64 vlog 10.7 Compiler 2017.12 Dec  7 2017
+# Start time: 22:54:41 on Mar 25,2019
+# vlog -reportprogress 300 -vlog01compat -work fiftyfivenm c:/intelfpga_lite/18.1/quartus/eda/sim_lib/mentor/fiftyfivenm_atoms_ncrypt.v 
+# 
+# Top level modules:
+# End time: 22:54:43 on Mar 25,2019, Elapsed time: 0:00:02
+# Errors: 0, Warnings: 0
+# vcom -93 -work fiftyfivenm {c:/intelfpga_lite/18.1/quartus/eda/sim_lib/fiftyfivenm_atoms.vhd}
+# Model Technology ModelSim SE-64 vcom 10.7 Compiler 2017.12 Dec  7 2017
+# Start time: 22:54:43 on Mar 25,2019
+# vcom -reportprogress 300 -93 -work fiftyfivenm c:/intelfpga_lite/18.1/quartus/eda/sim_lib/fiftyfivenm_atoms.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package VITAL_Timing
+# -- Loading package VITAL_Primitives
+# -- Compiling package fiftyfivenm_atom_pack
+# -- Compiling package body fiftyfivenm_atom_pack
+# -- Loading package fiftyfivenm_atom_pack
+# -- Compiling package fiftyfivenm_pllpack
+# -- Compiling package body fiftyfivenm_pllpack
+# -- Loading package fiftyfivenm_pllpack
+# -- Loading package fiftyfivenm_atom_pack
+# -- Compiling entity fiftyfivenm_dffe
+# -- Compiling architecture behave of fiftyfivenm_dffe
+# -- Compiling entity fiftyfivenm_mux21
+# -- Compiling architecture AltVITAL of fiftyfivenm_mux21
+# -- Compiling entity fiftyfivenm_mux41
+# -- Compiling architecture AltVITAL of fiftyfivenm_mux41
+# -- Compiling entity fiftyfivenm_and1
+# -- Compiling architecture AltVITAL of fiftyfivenm_and1
+# -- Compiling entity fiftyfivenm_lcell_comb
+# -- Compiling architecture vital_lcell_comb of fiftyfivenm_lcell_comb
+# -- Compiling entity fiftyfivenm_routing_wire
+# ** Warning: c:/intelfpga_lite/18.1/quartus/eda/sim_lib/fiftyfivenm_atoms.vhd(1676): (vcom-1288) VITAL timing generic "tpd_datainglitch_dataout" port specification "datainglitch" does not denote a port.
+# (1076.4 section 4.3.2.1.3)
+# -- Compiling architecture behave of fiftyfivenm_routing_wire
+# -- Loading entity fiftyfivenm_and1
+# -- Compiling entity fiftyfivenm_ff
+# -- Compiling architecture vital_lcell_ff of fiftyfivenm_ff
+# -- Compiling entity fiftyfivenm_ram_register
+# -- Compiling architecture reg_arch of fiftyfivenm_ram_register
+# -- Compiling entity fiftyfivenm_ram_pulse_generator
+# -- Compiling architecture pgen_arch of fiftyfivenm_ram_pulse_generator
+# -- Loading entity fiftyfivenm_ram_register
+# -- Loading entity fiftyfivenm_ram_pulse_generator
+# -- Compiling entity fiftyfivenm_ram_block
+# -- Compiling architecture block_arch of fiftyfivenm_ram_block
+# -- Compiling entity fiftyfivenm_mac_data_reg
+# -- Compiling architecture vital_fiftyfivenm_mac_data_reg of fiftyfivenm_mac_data_reg
+# -- Compiling entity fiftyfivenm_mac_sign_reg
+# -- Compiling architecture fiftyfivenm_mac_sign_reg of fiftyfivenm_mac_sign_reg
+# -- Loading package std_logic_arith
+# -- Loading package STD_LOGIC_UNSIGNED
+# -- Compiling entity fiftyfivenm_mac_mult_internal
+# -- Compiling architecture vital_fiftyfivenm_mac_mult_internal of fiftyfivenm_mac_mult_internal
+# -- Loading entity fiftyfivenm_mac_data_reg
+# -- Loading entity fiftyfivenm_mac_sign_reg
+# -- Loading entity fiftyfivenm_mac_mult_internal
+# -- Compiling entity fiftyfivenm_mac_mult
+# -- Compiling architecture vital_fiftyfivenm_mac_mult of fiftyfivenm_mac_mult
+# -- Compiling entity fiftyfivenm_mac_out
+# -- Compiling architecture vital_fiftyfivenm_mac_out of fiftyfivenm_mac_out
+# -- Compiling entity fiftyfivenm_pseudo_diff_out
+# -- Compiling architecture arch of fiftyfivenm_pseudo_diff_out
+# -- Compiling entity fiftyfivenm_io_pad
+# -- Compiling architecture arch of fiftyfivenm_io_pad
+# -- Compiling entity fiftyfivenm_mn_cntr
+# -- Compiling architecture behave of fiftyfivenm_mn_cntr
+# -- Compiling entity fiftyfivenm_scale_cntr
+# -- Compiling architecture behave of fiftyfivenm_scale_cntr
+# -- Compiling entity fiftyfivenm_pll_reg
+# -- Compiling architecture behave of fiftyfivenm_pll_reg
+# -- Loading package fiftyfivenm_pllpack
+# -- Loading entity fiftyfivenm_mn_cntr
+# -- Loading entity fiftyfivenm_scale_cntr
+# -- Loading entity fiftyfivenm_dffe
+# -- Loading entity fiftyfivenm_pll_reg
+# -- Compiling entity fiftyfivenm_pll
+# -- Compiling architecture vital_pll of fiftyfivenm_pll
+# -- Compiling entity fiftyfivenm_ena_reg
+# -- Compiling architecture behave of fiftyfivenm_ena_reg
+# -- Loading entity fiftyfivenm_ena_reg
+# -- Compiling entity fiftyfivenm_clkctrl
+# -- Compiling architecture vital_clkctrl of fiftyfivenm_clkctrl
+# -- Compiling entity fiftyfivenm_io_latch
+# -- Compiling architecture behavior of fiftyfivenm_io_latch
+# -- Compiling entity fiftyfivenm_phy_clkbuf
+# -- Compiling architecture behavior of fiftyfivenm_phy_clkbuf
+# -- Compiling entity fiftyfivenm_io_clock_divider
+# -- Compiling architecture behavior of fiftyfivenm_io_clock_divider
+# -- Compiling entity fiftyfivenm_io_ibuf
+# -- Compiling architecture behavior of fiftyfivenm_io_ibuf
+# -- Compiling entity fiftyfivenm_io_obuf
+# -- Compiling architecture behavior of fiftyfivenm_io_obuf
+# -- Compiling entity fiftyfivenm_ddio_out
+# -- Compiling architecture behavior of fiftyfivenm_ddio_out
+# -- Compiling entity fiftyfivenm_ddio_oe
+# -- Compiling architecture behavior of fiftyfivenm_ddio_oe
+# -- Compiling entity fiftyfivenm_ddio_in
+# -- Compiling architecture behavior of fiftyfivenm_ddio_in
+# -- Compiling entity fiftyfivenm_unvm
+# -- Compiling architecture behavior of fiftyfivenm_unvm
+# -- Compiling entity fiftyfivenm_asmiblock
+# -- Compiling architecture behavior of fiftyfivenm_asmiblock
+# -- Compiling entity fiftyfivenm_chipidblock
+# -- Compiling architecture behavior of fiftyfivenm_chipidblock
+# -- Compiling entity fiftyfivenm_oscillator
+# -- Compiling architecture behavior of fiftyfivenm_oscillator
+# -- Compiling entity fiftyfivenm_controller
+# -- Compiling architecture behavior of fiftyfivenm_controller
+# -- Compiling entity fiftyfivenm_crcblock
+# -- Compiling architecture behavior of fiftyfivenm_crcblock
+# -- Compiling entity fiftyfivenm_rublock
+# -- Compiling architecture behavior of fiftyfivenm_rublock
+# -- Compiling entity fiftyfivenm_jtag
+# -- Compiling architecture behavior of fiftyfivenm_jtag
+# -- Compiling entity fiftyfivenm_adcblock
+# -- Compiling architecture behavior of fiftyfivenm_adcblock
+# -- Compiling entity fiftyfivenm_phase_detector
+# -- Compiling architecture behavior of fiftyfivenm_phase_detector
+# End time: 22:54:43 on Mar 25,2019, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 1
+# vcom -93 -work fiftyfivenm {c:/intelfpga_lite/18.1/quartus/eda/sim_lib/fiftyfivenm_components.vhd}
+# Model Technology ModelSim SE-64 vcom 10.7 Compiler 2017.12 Dec  7 2017
+# Start time: 22:54:43 on Mar 25,2019
+# vcom -reportprogress 300 -93 -work fiftyfivenm c:/intelfpga_lite/18.1/quartus/eda/sim_lib/fiftyfivenm_components.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package VITAL_Timing
+# -- Loading package VITAL_Primitives
+# -- Loading package fiftyfivenm_atom_pack
+# -- Compiling package fiftyfivenm_components
+# End time: 22:54:43 on Mar 25,2019, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# 
 # if {[file exists rtl_work]} {
 # 	vdel -lib rtl_work -all
 # }
 # vlib rtl_work
 # vmap work rtl_work
-# Model Technology ModelSim - Intel FPGA Edition vmap 10.5b Lib Mapping Utility 2016.10 Oct  5 2016
+# Model Technology ModelSim SE-64 vmap 10.7 Lib Mapping Utility 2017.12 Dec  7 2017
 # vmap work rtl_work 
-# Copying C:/intelFPGA_lite/18.1/modelsim_ase/win32aloem/../modelsim.ini to modelsim.ini
-# Modifying modelsim.ini
+# Modifying C:/modeltech64_10.7/win64/../modelsim.ini
 # 
-# vlog -vlog01compat -work work +incdir+C:/Users/rlewis/gitrepo/RC2014_fpga/de10-lite/db {C:/Users/rlewis/gitrepo/RC2014_fpga/de10-lite/db/clocks_altpll.v}
-# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
-# Start time: 17:16:18 on Mar 25,2019
-# vlog -reportprogress 300 -vlog01compat -work work "+incdir+C:/Users/rlewis/gitrepo/RC2014_fpga/de10-lite/db" C:/Users/rlewis/gitrepo/RC2014_fpga/de10-lite/db/clocks_altpll.v 
+# vlog -vlog01compat -work work +incdir+C:/Users/richa/gitrepo/RC2014_fpga/de10-lite/db {C:/Users/richa/gitrepo/RC2014_fpga/de10-lite/db/clocks_altpll.v}
+# Model Technology ModelSim SE-64 vlog 10.7 Compiler 2017.12 Dec  7 2017
+# Start time: 22:54:44 on Mar 25,2019
+# vlog -reportprogress 300 -vlog01compat -work work "+incdir+C:/Users/richa/gitrepo/RC2014_fpga/de10-lite/db" C:/Users/richa/gitrepo/RC2014_fpga/de10-lite/db/clocks_altpll.v 
 # -- Compiling module clocks_altpll
 # 
 # Top level modules:
 # 	clocks_altpll
-# End time: 17:16:19 on Mar 25,2019, Elapsed time: 0:00:01
+# End time: 22:54:44 on Mar 25,2019, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
-# vcom -93 -work work {C:/Users/rlewis/gitrepo/RC2014_fpga/rtl/decoder_3x8.vhd}
-# Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  5 2016
-# Start time: 17:16:19 on Mar 25,2019
-# vcom -reportprogress 300 -93 -work work C:/Users/rlewis/gitrepo/RC2014_fpga/rtl/decoder_3x8.vhd 
+# vcom -93 -work work {C:/Users/richa/gitrepo/RC2014_fpga/rtl/decoder_3x8.vhd}
+# Model Technology ModelSim SE-64 vcom 10.7 Compiler 2017.12 Dec  7 2017
+# Start time: 22:54:44 on Mar 25,2019
+# vcom -reportprogress 300 -93 -work work C:/Users/richa/gitrepo/RC2014_fpga/rtl/decoder_3x8.vhd 
 # -- Loading package STANDARD
 # -- Loading package TEXTIO
 # -- Loading package std_logic_1164
 # -- Compiling entity decoder_3x8
 # -- Compiling architecture rtl of decoder_3x8
-# End time: 17:16:19 on Mar 25,2019, Elapsed time: 0:00:00
+# End time: 22:54:44 on Mar 25,2019, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
-# vcom -93 -work work {C:/Users/rlewis/gitrepo/RC2014_fpga/rtl/T80/T80_Reg.vhd}
-# Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  5 2016
-# Start time: 17:16:19 on Mar 25,2019
-# vcom -reportprogress 300 -93 -work work C:/Users/rlewis/gitrepo/RC2014_fpga/rtl/T80/T80_Reg.vhd 
+# vcom -93 -work work {C:/Users/richa/gitrepo/RC2014_fpga/rtl/T80/T80_Reg.vhd}
+# Model Technology ModelSim SE-64 vcom 10.7 Compiler 2017.12 Dec  7 2017
+# Start time: 22:54:44 on Mar 25,2019
+# vcom -reportprogress 300 -93 -work work C:/Users/richa/gitrepo/RC2014_fpga/rtl/T80/T80_Reg.vhd 
 # -- Loading package STANDARD
 # -- Loading package TEXTIO
 # -- Loading package std_logic_1164
 # -- Loading package NUMERIC_STD
 # -- Compiling entity T80_Reg
 # -- Compiling architecture rtl of T80_Reg
-# End time: 17:16:19 on Mar 25,2019, Elapsed time: 0:00:00
+# End time: 22:54:44 on Mar 25,2019, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
-# vcom -93 -work work {C:/Users/rlewis/gitrepo/RC2014_fpga/rtl/T80/T80_Pack.vhd}
-# Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  5 2016
-# Start time: 17:16:19 on Mar 25,2019
-# vcom -reportprogress 300 -93 -work work C:/Users/rlewis/gitrepo/RC2014_fpga/rtl/T80/T80_Pack.vhd 
+# vcom -93 -work work {C:/Users/richa/gitrepo/RC2014_fpga/rtl/T80/T80_Pack.vhd}
+# Model Technology ModelSim SE-64 vcom 10.7 Compiler 2017.12 Dec  7 2017
+# Start time: 22:54:44 on Mar 25,2019
+# vcom -reportprogress 300 -93 -work work C:/Users/richa/gitrepo/RC2014_fpga/rtl/T80/T80_Pack.vhd 
 # -- Loading package STANDARD
 # -- Loading package TEXTIO
 # -- Loading package std_logic_1164
 # -- Compiling package T80_Pack
-# End time: 17:16:19 on Mar 25,2019, Elapsed time: 0:00:00
+# End time: 22:54:44 on Mar 25,2019, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
-# vcom -93 -work work {C:/Users/rlewis/gitrepo/RC2014_fpga/rtl/T80/T80_MCode.vhd}
-# Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  5 2016
-# Start time: 17:16:19 on Mar 25,2019
-# vcom -reportprogress 300 -93 -work work C:/Users/rlewis/gitrepo/RC2014_fpga/rtl/T80/T80_MCode.vhd 
+# vcom -93 -work work {C:/Users/richa/gitrepo/RC2014_fpga/rtl/T80/T80_MCode.vhd}
+# Model Technology ModelSim SE-64 vcom 10.7 Compiler 2017.12 Dec  7 2017
+# Start time: 22:54:44 on Mar 25,2019
+# vcom -reportprogress 300 -93 -work work C:/Users/richa/gitrepo/RC2014_fpga/rtl/T80/T80_MCode.vhd 
 # -- Loading package STANDARD
 # -- Loading package TEXTIO
 # -- Loading package std_logic_1164
 # -- Loading package NUMERIC_STD
 # -- Compiling entity T80_MCode
 # -- Compiling architecture rtl of T80_MCode
-# End time: 17:16:19 on Mar 25,2019, Elapsed time: 0:00:00
+# End time: 22:54:44 on Mar 25,2019, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
-# vcom -93 -work work {C:/Users/rlewis/gitrepo/RC2014_fpga/rtl/T80/T80_ALU.vhd}
-# Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  5 2016
-# Start time: 17:16:19 on Mar 25,2019
-# vcom -reportprogress 300 -93 -work work C:/Users/rlewis/gitrepo/RC2014_fpga/rtl/T80/T80_ALU.vhd 
+# vcom -93 -work work {C:/Users/richa/gitrepo/RC2014_fpga/rtl/T80/T80_ALU.vhd}
+# Model Technology ModelSim SE-64 vcom 10.7 Compiler 2017.12 Dec  7 2017
+# Start time: 22:54:44 on Mar 25,2019
+# vcom -reportprogress 300 -93 -work work C:/Users/richa/gitrepo/RC2014_fpga/rtl/T80/T80_ALU.vhd 
 # -- Loading package STANDARD
 # -- Loading package TEXTIO
 # -- Loading package std_logic_1164
 # -- Loading package NUMERIC_STD
 # -- Compiling entity T80_ALU
 # -- Compiling architecture rtl of T80_ALU
-# End time: 17:16:19 on Mar 25,2019, Elapsed time: 0:00:00
+# End time: 22:54:44 on Mar 25,2019, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
-# vcom -93 -work work {C:/Users/rlewis/gitrepo/RC2014_fpga/rtl/single_port_ram.vhd}
-# Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  5 2016
-# Start time: 17:16:19 on Mar 25,2019
-# vcom -reportprogress 300 -93 -work work C:/Users/rlewis/gitrepo/RC2014_fpga/rtl/single_port_ram.vhd 
+# vcom -93 -work work {C:/Users/richa/gitrepo/RC2014_fpga/rtl/single_port_ram.vhd}
+# Model Technology ModelSim SE-64 vcom 10.7 Compiler 2017.12 Dec  7 2017
+# Start time: 22:54:44 on Mar 25,2019
+# vcom -reportprogress 300 -93 -work work C:/Users/richa/gitrepo/RC2014_fpga/rtl/single_port_ram.vhd 
 # -- Loading package STANDARD
 # -- Loading package TEXTIO
 # -- Loading package std_logic_1164
 # -- Loading package NUMERIC_STD
 # -- Compiling entity single_port_ram
 # -- Compiling architecture RTL of single_port_ram
-# End time: 17:16:19 on Mar 25,2019, Elapsed time: 0:00:00
+# End time: 22:54:44 on Mar 25,2019, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
-# vcom -93 -work work {C:/Users/rlewis/gitrepo/RC2014_fpga/rtl/acia6850.vhd}
-# Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  5 2016
-# Start time: 17:16:19 on Mar 25,2019
-# vcom -reportprogress 300 -93 -work work C:/Users/rlewis/gitrepo/RC2014_fpga/rtl/acia6850.vhd 
+# vcom -93 -work work {C:/Users/richa/gitrepo/RC2014_fpga/rtl/acia6850.vhd}
+# Model Technology ModelSim SE-64 vcom 10.7 Compiler 2017.12 Dec  7 2017
+# Start time: 22:54:44 on Mar 25,2019
+# vcom -reportprogress 300 -93 -work work C:/Users/richa/gitrepo/RC2014_fpga/rtl/acia6850.vhd 
 # -- Loading package STANDARD
 # -- Loading package TEXTIO
 # -- Loading package std_logic_1164
@@ -101,47 +895,47 @@
 # -- Loading package STD_LOGIC_UNSIGNED
 # -- Compiling entity acia6850
 # -- Compiling architecture rtl of acia6850
-# End time: 17:16:19 on Mar 25,2019, Elapsed time: 0:00:00
+# End time: 22:54:44 on Mar 25,2019, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
-# vcom -93 -work work {C:/Users/rlewis/gitrepo/RC2014_fpga/rtl/sd_controller.vhd}
-# Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  5 2016
-# Start time: 17:16:19 on Mar 25,2019
-# vcom -reportprogress 300 -93 -work work C:/Users/rlewis/gitrepo/RC2014_fpga/rtl/sd_controller.vhd 
+# vcom -93 -work work {C:/Users/richa/gitrepo/RC2014_fpga/rtl/sd_controller.vhd}
+# Model Technology ModelSim SE-64 vcom 10.7 Compiler 2017.12 Dec  7 2017
+# Start time: 22:54:44 on Mar 25,2019
+# vcom -reportprogress 300 -93 -work work C:/Users/richa/gitrepo/RC2014_fpga/rtl/sd_controller.vhd 
 # -- Loading package STANDARD
 # -- Loading package TEXTIO
 # -- Loading package std_logic_1164
 # -- Loading package NUMERIC_STD
 # -- Compiling entity sd_controller
 # -- Compiling architecture rtl of sd_controller
-# End time: 17:16:19 on Mar 25,2019, Elapsed time: 0:00:00
+# End time: 22:54:44 on Mar 25,2019, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
-# vcom -93 -work work {C:/Users/rlewis/gitrepo/RC2014_fpga/de10-lite/CPM_BASIC_LITE.vhd}
-# Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  5 2016
-# Start time: 17:16:19 on Mar 25,2019
-# vcom -reportprogress 300 -93 -work work C:/Users/rlewis/gitrepo/RC2014_fpga/de10-lite/CPM_BASIC_LITE.vhd 
+# vcom -93 -work work {C:/Users/richa/gitrepo/RC2014_fpga/de10-lite/CPM_BASIC_LITE.vhd}
+# Model Technology ModelSim SE-64 vcom 10.7 Compiler 2017.12 Dec  7 2017
+# Start time: 22:54:44 on Mar 25,2019
+# vcom -reportprogress 300 -93 -work work C:/Users/richa/gitrepo/RC2014_fpga/de10-lite/CPM_BASIC_LITE.vhd 
 # -- Loading package STANDARD
 # -- Loading package TEXTIO
 # -- Loading package std_logic_1164
 # -- Loading package altera_mf_components
 # -- Compiling entity CPM_BASIC_LITE
 # -- Compiling architecture SYN of cpm_basic_lite
-# End time: 17:16:19 on Mar 25,2019, Elapsed time: 0:00:00
+# End time: 22:54:45 on Mar 25,2019, Elapsed time: 0:00:01
 # Errors: 0, Warnings: 0
-# vcom -93 -work work {C:/Users/rlewis/gitrepo/RC2014_fpga/de10-lite/clocks.vhd}
-# Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  5 2016
-# Start time: 17:16:19 on Mar 25,2019
-# vcom -reportprogress 300 -93 -work work C:/Users/rlewis/gitrepo/RC2014_fpga/de10-lite/clocks.vhd 
+# vcom -93 -work work {C:/Users/richa/gitrepo/RC2014_fpga/de10-lite/clocks.vhd}
+# Model Technology ModelSim SE-64 vcom 10.7 Compiler 2017.12 Dec  7 2017
+# Start time: 22:54:45 on Mar 25,2019
+# vcom -reportprogress 300 -93 -work work C:/Users/richa/gitrepo/RC2014_fpga/de10-lite/clocks.vhd 
 # -- Loading package STANDARD
 # -- Loading package TEXTIO
 # -- Loading package std_logic_1164
 # -- Compiling entity clocks
 # -- Compiling architecture SYN of clocks
-# End time: 17:16:19 on Mar 25,2019, Elapsed time: 0:00:00
+# End time: 22:54:45 on Mar 25,2019, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
-# vcom -93 -work work {C:/Users/rlewis/gitrepo/RC2014_fpga/de10-lite/CPM_BASIC.vhd}
-# Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  5 2016
-# Start time: 17:16:19 on Mar 25,2019
-# vcom -reportprogress 300 -93 -work work C:/Users/rlewis/gitrepo/RC2014_fpga/de10-lite/CPM_BASIC.vhd 
+# vcom -93 -work work {C:/Users/richa/gitrepo/RC2014_fpga/de10-lite/CPM_BASIC.vhd}
+# Model Technology ModelSim SE-64 vcom 10.7 Compiler 2017.12 Dec  7 2017
+# Start time: 22:54:45 on Mar 25,2019
+# vcom -reportprogress 300 -93 -work work C:/Users/richa/gitrepo/RC2014_fpga/de10-lite/CPM_BASIC.vhd 
 # -- Loading package STANDARD
 # -- Loading package TEXTIO
 # -- Loading package std_logic_1164
@@ -150,12 +944,12 @@
 # -- Compiling architecture RTL of CPM_BASIC
 # -- Loading package altera_mf_components
 # -- Loading entity CPM_BASIC_LITE
-# End time: 17:16:20 on Mar 25,2019, Elapsed time: 0:00:01
+# End time: 22:54:45 on Mar 25,2019, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
-# vcom -93 -work work {C:/Users/rlewis/gitrepo/RC2014_fpga/rtl/ROM_Page_Select.vhd}
-# Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  5 2016
-# Start time: 17:16:20 on Mar 25,2019
-# vcom -reportprogress 300 -93 -work work C:/Users/rlewis/gitrepo/RC2014_fpga/rtl/ROM_Page_Select.vhd 
+# vcom -93 -work work {C:/Users/richa/gitrepo/RC2014_fpga/rtl/ROM_Page_Select.vhd}
+# Model Technology ModelSim SE-64 vcom 10.7 Compiler 2017.12 Dec  7 2017
+# Start time: 22:54:45 on Mar 25,2019
+# vcom -reportprogress 300 -93 -work work C:/Users/richa/gitrepo/RC2014_fpga/rtl/ROM_Page_Select.vhd 
 # -- Loading package STANDARD
 # -- Loading package TEXTIO
 # -- Loading package std_logic_1164
@@ -163,12 +957,12 @@
 # -- Compiling entity ROM_Page_Select
 # -- Compiling architecture RTL of ROM_Page_Select
 # -- Loading entity decoder_3x8
-# End time: 17:16:20 on Mar 25,2019, Elapsed time: 0:00:00
+# End time: 22:54:45 on Mar 25,2019, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
-# vcom -93 -work work {C:/Users/rlewis/gitrepo/RC2014_fpga/rtl/T80/T80s.vhd}
-# Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  5 2016
-# Start time: 17:16:20 on Mar 25,2019
-# vcom -reportprogress 300 -93 -work work C:/Users/rlewis/gitrepo/RC2014_fpga/rtl/T80/T80s.vhd 
+# vcom -93 -work work {C:/Users/richa/gitrepo/RC2014_fpga/rtl/T80/T80s.vhd}
+# Model Technology ModelSim SE-64 vcom 10.7 Compiler 2017.12 Dec  7 2017
+# Start time: 22:54:45 on Mar 25,2019
+# vcom -reportprogress 300 -93 -work work C:/Users/richa/gitrepo/RC2014_fpga/rtl/T80/T80s.vhd 
 # -- Loading package STANDARD
 # -- Loading package TEXTIO
 # -- Loading package std_logic_1164
@@ -176,12 +970,12 @@
 # -- Loading package T80_Pack
 # -- Compiling entity T80s
 # -- Compiling architecture rtl of T80s
-# End time: 17:16:20 on Mar 25,2019, Elapsed time: 0:00:00
+# End time: 22:54:45 on Mar 25,2019, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
-# vcom -93 -work work {C:/Users/rlewis/gitrepo/RC2014_fpga/rtl/T80/T80.vhd}
-# Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  5 2016
-# Start time: 17:16:20 on Mar 25,2019
-# vcom -reportprogress 300 -93 -work work C:/Users/rlewis/gitrepo/RC2014_fpga/rtl/T80/T80.vhd 
+# vcom -93 -work work {C:/Users/richa/gitrepo/RC2014_fpga/rtl/T80/T80.vhd}
+# Model Technology ModelSim SE-64 vcom 10.7 Compiler 2017.12 Dec  7 2017
+# Start time: 22:54:45 on Mar 25,2019
+# vcom -reportprogress 300 -93 -work work C:/Users/richa/gitrepo/RC2014_fpga/rtl/T80/T80.vhd 
 # -- Loading package STANDARD
 # -- Loading package TEXTIO
 # -- Loading package std_logic_1164
@@ -189,12 +983,12 @@
 # -- Loading package T80_Pack
 # -- Compiling entity T80
 # -- Compiling architecture rtl of T80
-# End time: 17:16:20 on Mar 25,2019, Elapsed time: 0:00:00
+# End time: 22:54:45 on Mar 25,2019, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
-# vcom -93 -work work {C:/Users/rlewis/gitrepo/RC2014_fpga/rtl/RC2014_fpga.vhd}
-# Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  5 2016
-# Start time: 17:16:20 on Mar 25,2019
-# vcom -reportprogress 300 -93 -work work C:/Users/rlewis/gitrepo/RC2014_fpga/rtl/RC2014_fpga.vhd 
+# vcom -93 -work work {C:/Users/richa/gitrepo/RC2014_fpga/rtl/RC2014_fpga.vhd}
+# Model Technology ModelSim SE-64 vcom 10.7 Compiler 2017.12 Dec  7 2017
+# Start time: 22:54:45 on Mar 25,2019
+# vcom -reportprogress 300 -93 -work work C:/Users/richa/gitrepo/RC2014_fpga/rtl/RC2014_fpga.vhd 
 # -- Loading package STANDARD
 # -- Loading package TEXTIO
 # -- Loading package std_logic_1164
@@ -210,13 +1004,13 @@
 # -- Loading package STD_LOGIC_UNSIGNED
 # -- Loading entity acia6850
 # -- Loading entity sd_controller
-# End time: 17:16:20 on Mar 25,2019, Elapsed time: 0:00:00
+# End time: 22:54:45 on Mar 25,2019, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # 
-# vcom -93 -work work {C:/Users/rlewis/gitrepo/RC2014_fpga/de10-lite/../test/RC2014_TB.vhd}
-# Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  5 2016
-# Start time: 17:16:20 on Mar 25,2019
-# vcom -reportprogress 300 -93 -work work C:/Users/rlewis/gitrepo/RC2014_fpga/de10-lite/../test/RC2014_TB.vhd 
+# vcom -93 -work work {C:/Users/richa/gitrepo/RC2014_fpga/de10-lite/../test/RC2014_TB.vhd}
+# Model Technology ModelSim SE-64 vcom 10.7 Compiler 2017.12 Dec  7 2017
+# Start time: 22:54:45 on Mar 25,2019
+# vcom -reportprogress 300 -93 -work work C:/Users/richa/gitrepo/RC2014_fpga/de10-lite/../test/RC2014_TB.vhd 
 # -- Loading package STANDARD
 # -- Loading package TEXTIO
 # -- Loading package std_logic_1164
@@ -224,90 +1018,88 @@
 # -- Compiling architecture behaviour of RC2014_TB
 # -- Loading package NUMERIC_STD
 # -- Loading entity RC2014_fpga
-# End time: 17:16:20 on Mar 25,2019, Elapsed time: 0:00:00
+# End time: 22:54:45 on Mar 25,2019, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
-# vcom -93 -work work {C:/Users/rlewis/gitrepo/RC2014_fpga/de10-lite/../test/AsyncLog.vhd}
-# Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  5 2016
-# Start time: 17:16:20 on Mar 25,2019
-# vcom -reportprogress 300 -93 -work work C:/Users/rlewis/gitrepo/RC2014_fpga/de10-lite/../test/AsyncLog.vhd 
+# vcom -93 -work work {C:/Users/richa/gitrepo/RC2014_fpga/de10-lite/../test/AsyncLog.vhd}
+# Model Technology ModelSim SE-64 vcom 10.7 Compiler 2017.12 Dec  7 2017
+# Start time: 22:54:45 on Mar 25,2019
+# vcom -reportprogress 300 -93 -work work C:/Users/richa/gitrepo/RC2014_fpga/de10-lite/../test/AsyncLog.vhd 
 # -- Loading package STANDARD
 # -- Loading package TEXTIO
 # -- Loading package std_logic_1164
 # -- Loading package NUMERIC_STD
 # -- Compiling entity AsyncLog
 # -- Compiling architecture behaviour of AsyncLog
-# End time: 17:16:20 on Mar 25,2019, Elapsed time: 0:00:00
+# End time: 22:54:45 on Mar 25,2019, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
-# vcom -93 -work work {C:/Users/rlewis/gitrepo/RC2014_fpga/de10-lite/../test/AsyncStim.vhd}
-# Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  5 2016
-# Start time: 17:16:20 on Mar 25,2019
-# vcom -reportprogress 300 -93 -work work C:/Users/rlewis/gitrepo/RC2014_fpga/de10-lite/../test/AsyncStim.vhd 
+# vcom -93 -work work {C:/Users/richa/gitrepo/RC2014_fpga/de10-lite/../test/AsyncStim.vhd}
+# Model Technology ModelSim SE-64 vcom 10.7 Compiler 2017.12 Dec  7 2017
+# Start time: 22:54:45 on Mar 25,2019
+# vcom -reportprogress 300 -93 -work work C:/Users/richa/gitrepo/RC2014_fpga/de10-lite/../test/AsyncStim.vhd 
 # -- Loading package STANDARD
 # -- Loading package TEXTIO
 # -- Loading package std_logic_1164
 # -- Loading package NUMERIC_STD
 # -- Compiling entity AsyncStim
 # -- Compiling architecture behaviour of AsyncStim
-# End time: 17:16:20 on Mar 25,2019, Elapsed time: 0:00:00
+# End time: 22:54:45 on Mar 25,2019, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
-# vcom -93 -work work {C:/Users/rlewis/gitrepo/RC2014_fpga/de10-lite/../test/StimLog.vhd}
-# Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  5 2016
-# Start time: 17:16:20 on Mar 25,2019
-# vcom -reportprogress 300 -93 -work work C:/Users/rlewis/gitrepo/RC2014_fpga/de10-lite/../test/StimLog.vhd 
+# vcom -93 -work work {C:/Users/richa/gitrepo/RC2014_fpga/de10-lite/../test/StimLog.vhd}
+# Model Technology ModelSim SE-64 vcom 10.7 Compiler 2017.12 Dec  7 2017
+# Start time: 22:54:45 on Mar 25,2019
+# vcom -reportprogress 300 -93 -work work C:/Users/richa/gitrepo/RC2014_fpga/de10-lite/../test/StimLog.vhd 
 # -- Loading package STANDARD
 # -- Loading package TEXTIO
 # -- Loading package std_logic_1164
 # -- Compiling package StimLog
-# End time: 17:16:20 on Mar 25,2019, Elapsed time: 0:00:00
+# End time: 22:54:46 on Mar 25,2019, Elapsed time: 0:00:01
 # Errors: 0, Warnings: 0
 # 
 # vsim -t 1ps -L altera -L lpm -L sgate -L altera_mf -L altera_lnsim -L fiftyfivenm -L rtl_work -L work -voptargs="+acc"  RC2014_TB
 # vsim -t 1ps -L altera -L lpm -L sgate -L altera_mf -L altera_lnsim -L fiftyfivenm -L rtl_work -L work -voptargs=""+acc"" RC2014_TB 
-# Start time: 17:16:20 on Mar 25,2019
+# Start time: 22:54:46 on Mar 25,2019
+# ** Note: (vsim-3812) Design is being optimized...
+# ** Note: (vopt-143) Recognized 3 FSMs in architecture body "acia6850(rtl)".
+# ** Note: (vopt-143) Recognized 1 FSM in architecture body "sd_controller(rtl)".
 # Loading std.standard
 # Loading std.textio(body)
 # Loading ieee.std_logic_1164(body)
 # Loading ieee.numeric_std(body)
-# Loading work.rc2014_tb(behaviour)
+# Loading work.rc2014_tb(behaviour)#1
 # Loading work.t80_pack
 # Loading ieee.std_logic_arith(body)
 # Loading ieee.std_logic_unsigned(body)
-# Loading work.rc2014_fpga(struct)
-# Loading work.clocks(syn)
+# Loading work.rc2014_fpga(struct)#1
+# Loading work.clocks(syn)#1
 # Loading altera_mf.altera_device_families(body)
 # Loading altera_mf.mf_pllpack(body)
-# Loading altera_mf.altpll(behavior)
-# Loading altera_mf.mf_cycloneiii_pll(vital_pll)
-# Loading altera_mf.mf_cda_mn_cntr(behave)
-# Loading altera_mf.mf_cda_scale_cntr(behave)
-# Loading work.t80s(rtl)
-# Loading work.t80(rtl)
-# Loading work.t80_mcode(rtl)
-# Loading work.t80_alu(rtl)
-# Loading work.t80_reg(rtl)
-# Loading work.single_port_ram(rtl)
-# Loading work.rom_page_select(rtl)
+# Loading altera_mf.altpll(behavior)#1
+# Loading altera_mf.mf_cycloneiii_pll(vital_pll)#1
+# Loading altera_mf.mf_cda_mn_cntr(behave)#1
+# Loading altera_mf.mf_cda_scale_cntr(behave)#1
+# Loading work.t80s(rtl)#1
+# Loading work.t80(rtl)#1
+# Loading work.t80_mcode(rtl)#1
+# Loading work.t80_alu(rtl)#1
+# Loading work.t80_reg(rtl)#1
+# Loading work.single_port_ram(rtl)#1
+# Loading work.rom_page_select(rtl)#1
 # Loading altera_mf.altera_mf_components
-# Loading work.cpm_basic(rtl)
-# Loading work.cpm_basic_lite(syn)
+# Loading work.cpm_basic(rtl)#1
+# Loading work.cpm_basic_lite(syn)#1
 # Loading altera_mf.altera_common_conversion(body)
-# Loading altera_mf.altsyncram(translated)
-# Loading work.acia6850(rtl)
-# Loading work.sd_controller(rtl)
-# Loading work.asyncstim(behaviour)
-# ** Warning: (vsim-7) Failed to open VHDL file "RX_Cmd.txt" in rb mode.
-# No such file or directory. (errno = ENOENT)
-#    Time: 0 ps  Iteration: 0  Instance: /rc2014_tb/as1
-# Loading work.asynclog(behaviour)
-# ** Warning: Design size of 22179 statements exceeds ModelSim-Intel FPGA Starter Edition recommended capacity.
-# Expect performance to be adversely affected.
+# Loading altera_mf.altsyncram(translated)#1
+# Loading work.acia6850(rtl)#1
+# Loading work.sd_controller(rtl)#1
+# Loading work.asyncstim(behaviour)#1
+# Loading work.asynclog(behaviour)#1
 # 
 # add wave *
 # ** Warning: (vsim-WLF-5000) WLF file currently in use: vsim.wlf
 #           File in use by: richa  Hostname: RICHARDS-PC  ProcessID: 14360
-#           Attempting to use alternate WLF file "./wlftnm5aq1".
+#           Attempting to use alternate WLF file "./wlftqvx0xa".
 # ** Warning: (vsim-WLF-5001) Could not open WLF file: vsim.wlf
-#           Using alternate file: ./wlftnm5aq1
+#           Using alternate file: ./wlftqvx0xa
 # view structure
 # .main_pane.structure.interior.cs.body.struct
 # view signals
@@ -355,78 +1147,9 @@
 #    Time: 0 ps  Iteration: 4  Instance: /rc2014_tb/ni/cpm_basic_rom/clocks_inst/altpll_component/CYCLONEIII_ALTPLL/M5
 # ** Note: MAX 10 PLL locked to incoming clock
 #    Time: 1090 ns  Iteration: 3  Instance: /rc2014_tb/ni/cpm_basic_rom/clocks_inst/altpll_component/CYCLONEIII_ALTPLL/M5
-restart
-# ** Warning: (vsim-7) Failed to open VHDL file "RX_Cmd.txt" in rb mode.
-# No such file or directory. (errno = ENOENT)
-#    Time: 0 ps  Iteration: 0  Instance: /rc2014_tb/as1
-# Load canceled
-run
-# GetModuleFileName: The specified module could not be found.
-# 
-# 
-# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
-#    Time: 0 ps  Iteration: 0  Instance: /rc2014_tb/ni/ram64k
-# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
-#    Time: 0 ps  Iteration: 0  Instance: /rc2014_tb/ni/t80s/cpu/u0/Regs
-# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
-#    Time: 0 ps  Iteration: 0  Instance: /rc2014_tb/ni/t80s/cpu/u0/Regs
-# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
-#    Time: 0 ps  Iteration: 0  Instance: /rc2014_tb/ni/t80s/cpu/u0/Regs
-# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
-#    Time: 0 ps  Iteration: 0  Instance: /rc2014_tb/ni/t80s/cpu/u0/Regs
-# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
-#    Time: 0 ps  Iteration: 0  Instance: /rc2014_tb/ni/t80s/cpu/u0/Regs
-# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
-#    Time: 0 ps  Iteration: 0  Instance: /rc2014_tb/ni/t80s/cpu/u0/Regs
-# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
-#    Time: 0 ps  Iteration: 0  Instance: /rc2014_tb/ni/t80s/cpu/u0
-# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
-#    Time: 0 ps  Iteration: 0  Instance: /rc2014_tb/ni/t80s/cpu/u0
-# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
-#    Time: 0 ps  Iteration: 0  Instance: /rc2014_tb/ni/t80s/cpu/u0
-# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
-#    Time: 0 ps  Iteration: 0  Instance: /rc2014_tb/ni/t80s/cpu/u0
-# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
-#    Time: 0 ps  Iteration: 0  Instance: /rc2014_tb/ni/t80s/cpu/u0
-# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
-#    Time: 0 ps  Iteration: 0  Instance: /rc2014_tb/ni/t80s/cpu/u0
-# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
-#    Time: 0 ps  Iteration: 1  Instance: /rc2014_tb/ni/t80s/cpu/u0
-# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
-#    Time: 0 ps  Iteration: 1  Instance: /rc2014_tb/ni/t80s/cpu/u0
-# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
-#    Time: 0 ps  Iteration: 1  Instance: /rc2014_tb/ni/t80s/cpu/u0
-# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
-#    Time: 0 ps  Iteration: 1  Instance: /rc2014_tb/ni/t80s/cpu/u0
-# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
-#    Time: 0 ps  Iteration: 1  Instance: /rc2014_tb/ni/t80s/cpu/u0
-# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
-#    Time: 0 ps  Iteration: 1  Instance: /rc2014_tb/ni/t80s/cpu/u0
-# ** Note: MAX 10 PLL was reset
-#    Time: 0 ps  Iteration: 4  Instance: /rc2014_tb/ni/cpm_basic_rom/clocks_inst/altpll_component/CYCLONEIII_ALTPLL/M5
-# ** Note: MAX 10 PLL locked to incoming clock
-#    Time: 1090 ns  Iteration: 3  Instance: /rc2014_tb/ni/cpm_basic_rom/clocks_inst/altpll_component/CYCLONEIII_ALTPLL/M5
-add wave -position insertpoint  \
-sim:/rc2014_tb/ni/A
-add wave -position insertpoint  \
-sim:/rc2014_tb/ni/D
-add wave -position insertpoint  \
-sim:/rc2014_tb/ni/nMREQ
-add wave -position insertpoint  \
-sim:/rc2014_tb/ni/nIORQ
-add wave -position insertpoint  \
-sim:/rc2014_tb/ni/nWR
-add wave -position insertpoint  \
-sim:/rc2014_tb/ni/nRD
-add wave -position insertpoint  \
-sim:/rc2014_tb/ni/IO_nWR
-add wave -position insertpoint  \
-sim:/rc2014_tb/ni/IO_nRD
 restart -f
+# ** Note: (vsim-8009) Loading existing optimized design _opt
 run
-# GetModuleFileName: The specified module could not be found.
-# 
-# 
 # ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
 #    Time: 0 ps  Iteration: 0  Instance: /rc2014_tb/ni/ram64k
 # ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
@@ -471,67 +1194,13 @@ run
 #    Time: 1090 ns  Iteration: 3  Instance: /rc2014_tb/ni/cpm_basic_rom/clocks_inst/altpll_component/CYCLONEIII_ALTPLL/M5
 add wave -position insertpoint  \
 sim:/rc2014_tb/ni/CPU_clk
-restart -f
-run
-# GetModuleFileName: The specified module could not be found.
-# 
-# 
-# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
-#    Time: 0 ps  Iteration: 0  Instance: /rc2014_tb/ni/ram64k
-# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
-#    Time: 0 ps  Iteration: 0  Instance: /rc2014_tb/ni/t80s/cpu/u0/Regs
-# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
-#    Time: 0 ps  Iteration: 0  Instance: /rc2014_tb/ni/t80s/cpu/u0/Regs
-# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
-#    Time: 0 ps  Iteration: 0  Instance: /rc2014_tb/ni/t80s/cpu/u0/Regs
-# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
-#    Time: 0 ps  Iteration: 0  Instance: /rc2014_tb/ni/t80s/cpu/u0/Regs
-# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
-#    Time: 0 ps  Iteration: 0  Instance: /rc2014_tb/ni/t80s/cpu/u0/Regs
-# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
-#    Time: 0 ps  Iteration: 0  Instance: /rc2014_tb/ni/t80s/cpu/u0/Regs
-# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
-#    Time: 0 ps  Iteration: 0  Instance: /rc2014_tb/ni/t80s/cpu/u0
-# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
-#    Time: 0 ps  Iteration: 0  Instance: /rc2014_tb/ni/t80s/cpu/u0
-# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
-#    Time: 0 ps  Iteration: 0  Instance: /rc2014_tb/ni/t80s/cpu/u0
-# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
-#    Time: 0 ps  Iteration: 0  Instance: /rc2014_tb/ni/t80s/cpu/u0
-# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
-#    Time: 0 ps  Iteration: 0  Instance: /rc2014_tb/ni/t80s/cpu/u0
-# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
-#    Time: 0 ps  Iteration: 0  Instance: /rc2014_tb/ni/t80s/cpu/u0
-# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
-#    Time: 0 ps  Iteration: 1  Instance: /rc2014_tb/ni/t80s/cpu/u0
-# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
-#    Time: 0 ps  Iteration: 1  Instance: /rc2014_tb/ni/t80s/cpu/u0
-# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
-#    Time: 0 ps  Iteration: 1  Instance: /rc2014_tb/ni/t80s/cpu/u0
-# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
-#    Time: 0 ps  Iteration: 1  Instance: /rc2014_tb/ni/t80s/cpu/u0
-# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
-#    Time: 0 ps  Iteration: 1  Instance: /rc2014_tb/ni/t80s/cpu/u0
-# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
-#    Time: 0 ps  Iteration: 1  Instance: /rc2014_tb/ni/t80s/cpu/u0
-# ** Note: MAX 10 PLL was reset
-#    Time: 0 ps  Iteration: 4  Instance: /rc2014_tb/ni/cpm_basic_rom/clocks_inst/altpll_component/CYCLONEIII_ALTPLL/M5
-# ** Note: MAX 10 PLL locked to incoming clock
-#    Time: 1090 ns  Iteration: 3  Instance: /rc2014_tb/ni/cpm_basic_rom/clocks_inst/altpll_component/CYCLONEIII_ALTPLL/M5
 add wave -position insertpoint  \
-sim:/rc2014_tb/ni/CPU_D_I
-add wave -position insertpoint  \
-sim:/rc2014_tb/ni/CPU_D_O
-add wave -position insertpoint  \
-sim:/rc2014_tb/ni/TX \
-sim:/rc2014_tb/ni/RX
+sim:/rc2014_tb/ni/CPU_A
 add wave -position insertpoint  \
 sim:/rc2014_tb/ni/D
 restart -f
+# ** Note: (vsim-8009) Loading existing optimized design _opt
 run
-# GetModuleFileName: The specified module could not be found.
-# 
-# 
 # ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
 #    Time: 0 ps  Iteration: 0  Instance: /rc2014_tb/ni/ram64k
 # ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
@@ -574,5 +1243,6 @@ run
 #    Time: 0 ps  Iteration: 4  Instance: /rc2014_tb/ni/cpm_basic_rom/clocks_inst/altpll_component/CYCLONEIII_ALTPLL/M5
 # ** Note: MAX 10 PLL locked to incoming clock
 #    Time: 1090 ns  Iteration: 3  Instance: /rc2014_tb/ni/cpm_basic_rom/clocks_inst/altpll_component/CYCLONEIII_ALTPLL/M5
-# End time: 17:41:32 on Mar 25,2019, Elapsed time: 0:25:12
-# Errors: 1, Warnings: 100
+# Causality operation skipped due to absence of debug database file
+# End time: 23:09:48 on Mar 25,2019, Elapsed time: 0:15:02
+# Errors: 0, Warnings: 20
