@@ -28,17 +28,17 @@ architecture RTL of ROM_Page_Select is
 
 	component CPM_BASIC
 		port(
-			a    : in  std_logic_vector(12 downto 0);
-			clk  : in  std_logic;
-			qspo : out std_logic_vector(7 downto 0)
+			address    : in  std_logic_vector(12 downto 0);
+			clock  : in  std_logic;
+			q : out std_logic_vector(7 downto 0)
 		);
 	end component;
 
 	component SCM_V100_S3_SCS3_32K
 		port(
-			clka  : in  std_logic;
-			addra : in  std_logic_vector(14 downto 0);
-			douta : out std_logic_vector(7 downto 0)
+			clock  : in  std_logic;
+			address : in  std_logic_vector(14 downto 0);
+			q : out std_logic_vector(7 downto 0)
 		);
 	end component;
 
@@ -56,9 +56,9 @@ begin
 	cpm : if rom = 0 generate
 		rom8k : CPM_BASIC
 			PORT MAP(
-				a    => A(12 downto 0),
-				clk  => clk,
-				qspo => D
+				address    => A(12 downto 0),
+				clock  => clk,
+				q => D
 			);
 
 		nCS <= '0' when A(15 downto 13) = "000" and nPage = '0' else '1';
@@ -70,9 +70,9 @@ begin
 	scm : if rom = 1 generate
 		rom32k : SCM_V100_S3_SCS3_32K
 			port map(
-				addra => A(14 downto 0),
-				clka  => clk,
-				douta => D
+				address => A(14 downto 0),
+				clock  => clk,
+				q => D
 			);
 		nCS      <= '0' when A(15) = '0' and nPage = '0' else '1';
 		page_LED <= (0 => '1', others => '0');

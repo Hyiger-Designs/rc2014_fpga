@@ -14,45 +14,45 @@ use ieee.numeric_std.all;
 
 entity RC2014_fpga is
 	generic(
-		cpu : natural := 1;     -- 0 = t80, 1 = tv80
+		cpu : natural := 0;     -- 0 = t80, 1 = tv80
 		rom : natural := 0		-- 0 = CP/M Monitor, 1 = SCM, 2 = R0001009
 	);
 	port(
 		-- Z80_BUS
-		A               : out   std_logic_vector(15 downto 0); -- 1 - 16
-		nM1             : out   std_logic; -- 19
+--		A               : out   std_logic_vector(15 downto 0); -- 1 - 16
+--		nM1             : out   std_logic; -- 19
 		nRST            : in    std_logic; -- 20
 		clk             : in    std_logic; -- 21
-		nINT            : in    std_logic; -- 22
-		nMREQ           : out   std_logic; -- 23
-		nWR             : out   std_logic; -- 24
-		nRD             : out   std_logic; -- 25
-		nIORQ           : out   std_logic; -- 26
-		D               : inout std_logic_vector(7 downto 0); -- 27 - 34
+--		nINT            : in    std_logic; -- 22
+--		nMREQ           : out   std_logic; -- 23
+--		nWR             : out   std_logic; -- 24
+--		nRD             : out   std_logic; -- 25
+--		nIORQ           : out   std_logic; -- 26
+--		D               : inout std_logic_vector(7 downto 0); -- 27 - 34
 		TX              : out   std_logic; -- 35
 		RX              : in    std_logic; -- 36
 		-- PRO_BUS
-		nRFSH           : out   std_logic; -- 19
-		nRST2           : in    std_logic; -- 20
-		clk2            : in    std_logic; -- 21
-		nBUSAK          : out   std_logic; -- 22
-		nHALT           : out   std_logic; -- 23
-		nBUSRQ          : in    std_logic; -- 24
-		nWAIT           : in    std_logic; -- 25
-		nNMI            : in    std_logic; -- 26
-		TX2             : out   std_logic; -- 35
-		RX2             : in    std_logic; -- 36
+--		nRFSH           : out   std_logic; -- 19
+--		nRST2           : in    std_logic; -- 20
+--		clk2            : in    std_logic; -- 21
+--		nBUSAK          : out   std_logic; -- 22
+--		nHALT           : out   std_logic; -- 23
+--		nBUSRQ          : in    std_logic; -- 24
+--		nWAIT           : in    std_logic; -- 25
+--		nNMI            : in    std_logic; -- 26
+--		TX2             : out   std_logic; -- 35
+--		RX2             : in    std_logic; -- 36
 
 		-- FPGA Board specific pins
 
 		rom_page_select : in    std_logic_vector(2 downto 0);
-		rom_page_LED    : out   std_logic_vector(7 downto 0);
-		RTS             : out   std_logic;
-		SD_MOSI         : out   std_logic;
-		SD_MISO         : in    std_logic;
-		SD_CS           : out   std_logic;
-		SD_SCLK         : out   std_logic;
-		SD_LED          : out   std_logic
+		rom_page_LED    : out   std_logic_vector(7 downto 0)
+--		RTS             : out   std_logic
+--		SD_MOSI         : out   std_logic;
+--		SD_MISO         : in    std_logic;
+--		SD_CS           : out   std_logic;
+--		SD_SCLK         : out   std_logic;
+--		SD_LED          : out   std_logic
 	);
 end RC2014_fpga;
 
@@ -67,9 +67,12 @@ architecture struct of RC2014_fpga is
 
 	signal CPU_A      : std_logic_vector(15 downto 0);
 	signal CPU_nM1    : std_logic;
-	signal CPU_nINT   : std_logic;
+	signal CPU_nINT   : std_logic := '1';
+	signal CPU_nNMI   : std_logic := '1';
+	signal CPU_nWAIT   : std_logic := '1';
 	signal CPU_nMREQ  : std_logic;
 	signal CPU_nIORQ  : std_logic;
+	signal CPU_nBUSRQ : std_logic := '1';
 	signal CPU_nRD    : std_logic;
 	signal CPU_nWR    : std_logic;
 	signal CPU_nRFSH  : std_logic;
@@ -77,7 +80,9 @@ architecture struct of RC2014_fpga is
 	signal CPU_nBUSAK : std_logic;
 	signal CPU_D_O    : std_logic_vector(7 downto 0);
 	signal CPU_D_I    : std_logic_vector(7 downto 0);
-
+	
+	signal D :  std_logic_vector(7 downto 0);
+	
 	signal ROM_D   : std_logic_vector(7 downto 0);
 	signal ROM_nCS : std_logic := '1';
 	signal Page    : std_logic := '0';
@@ -103,6 +108,7 @@ architecture struct of RC2014_fpga is
 	signal SD_nWR	 : std_logic;
 	signal SD_nRD	 : std_logic;
 	
+		signal RTS	 : std_logic;
 	--signal OE : std_logic_vector(7 downto 0);
 	--signal D               :  std_logic_vector(7 downto 0);
 
@@ -166,15 +172,15 @@ begin
 	end generate c_clk;
 
 	-- Clock for SD Card
-	clk1mhz : entity work.fracn20
-		generic map(
-			input_frequency  => BRD_FREQUENCY,
-			output_frequency => SD_FREQUENCY
-		)
-		port map(
-			clock     => clk,
-			output_50 => SD_clk
-		);
+--	clk1mhz : entity work.fracn20
+--		generic map(
+--			input_frequency  => BRD_FREQUENCY,
+--			output_frequency => SD_FREQUENCY
+--		)
+--		port map(
+--			clock     => clk,
+--			output_50 => SD_clk
+--		);
 
 	-- T80 CPU
 	t80s : if cpu = 0 generate
@@ -183,10 +189,10 @@ begin
 			port map(
 				reset_n => nRST,
 				clk_n   => CPU_clk,
-				wait_n  => nWAIT,
+				wait_n  => CPU_nWAIT,
 				int_n   => CPU_nINT,
-				nmi_n   => nNMI,
-				busrq_n => nBUSRQ,
+				nmi_n   => CPU_nNMI,
+				busrq_n => CPU_nBUSRQ,
 				M1_n    => CPU_nM1,
 				mreq_n  => CPU_nMREQ,
 				iorq_n  => CPU_nIORQ,
@@ -208,10 +214,10 @@ begin
 			port map(
 				reset_n => nRST,
 				clk     => CPU_clk,
-				wait_n  => nWAIT,
+				wait_n  => CPU_nWAIT,
 				int_n   => CPU_nINT,
-				nmi_n   => nNMI,
-				busrq_n => nBUSRQ,
+				nmi_n   => CPU_nNMI,
+				busrq_n => CPU_nBUSRQ,
 				M1_n    => CPU_nM1,
 				mreq_n  => CPU_nMREQ,
 				iorq_n  => CPU_nIORQ,
@@ -228,7 +234,7 @@ begin
 
 
 	D <= UART_D when UART_nCS = '0'
-		else SD_D when SD_nCS = '0'
+--		else SD_D when SD_nCS = '0'
 		else ROM_D when ROM_nCS = '0'
 		else RAM_D when RAM_nCS = '0'
 		else CPU_D_O when CPU_nWR = '0'
@@ -237,12 +243,13 @@ begin
 	CPU_D_I <= D;
 
 	RAM_WE <= not (RAM_nWR or RAM_nCS);
+	
 	-- 64K Generic (Non vendor specific Single Port RAM)
 	ram64k : entity work.single_port_ram
 		port map(
 			clock   => clk,
 			we      => RAM_WE,
-			address => CPU_A(15 downto 0),
+			address => CPU_A(13 downto 0),
 			data    => CPU_D_O,
 			q       => RAM_D
 		);
@@ -289,48 +296,50 @@ begin
 			RTS_n    => rts             -- Request To send
 		);
 
-	SD_nWR <= SD_nCS or IO_nRD;
-	SD_nRD <= SD_nCS or IO_nWR;
-		
-	sd1 : entity work.sd_controller
-		port map(
-			sdCS     => SD_CS,
-			sdMOSI   => SD_MOSI,
-			sdMISO   => SD_MISO,
-			sdSCLK   => SD_SCLK,
-			n_wr     => SD_nWR,
-			n_rd     => SD_nRD,
-			n_reset  => nRST,
-			dataIn   => CPU_D_O,
-			dataOut  => SD_D,
-			regAddr  => CPU_A(2 downto 0),
-			driveLED => SD_LED,
-			clk      => SD_clk          -- twice the spi clk
-		);
+--	SD_nWR <= SD_nCS or IO_nRD;
+--	SD_nRD <= SD_nCS or IO_nWR;
+--		
+--	sd1 : entity work.sd_controller
+--		port map(
+--			sdCS     => SD_CS,
+--			sdMOSI   => SD_MOSI,
+--			sdMISO   => SD_MISO,
+--			sdSCLK   => SD_SCLK,
+--			n_wr     => SD_nWR,
+--			n_rd     => SD_nRD,
+--			n_reset  => nRST,
+--			dataIn   => CPU_D_O,
+--			dataOut  => SD_D,
+--			regAddr  => CPU_A(2 downto 0),
+--			driveLED => SD_LED,
+--			clk      => SD_clk          -- twice the spi clk
+--		);
 
 	-- 8 Bytes $88-$8F 10001---
-	SD_nCS <= '0' when CPU_A(7 downto 3) = "10001" and (IO_nWR = '0' or IO_nRD = '0') else '1';
+--	SD_nCS <= '0' when CPU_A(7 downto 3) = "10001" and (IO_nWR = '0' or IO_nRD = '0') else '1';
 		
 	-- Serial Channel A - 2 Bytes $80-$81
 	UART_nCS <= '0' when CPU_A(7 downto 1) = "1000000" and (IO_nWR = '0' or IO_nRD = '0') else '1';
 
 	-- Control Bus
-
-	RAM_nCS <= not ROM_nCS;
+	-- 8K Ram
+	RAM_nCS <= '0' when CPU_A(15 downto 14) = "01" else '1';
+	--RAM_nCS <= not ROM_nCS;
+	
 	RAM_nRD <= CPU_nRD or CPU_nMREQ;
 	RAM_nWR <= CPU_nWR or CPU_nMREQ;
 
 	IO_nRD <= CPU_nRD or CPU_nIORQ;
 	IO_nWR <= CPU_nWR or CPU_nIORQ;
 
-	A      <= CPU_A;
-	nM1    <= CPU_nM1;
-	nMREQ  <= CPU_nMREQ;
-	nWR    <= CPU_nWR;
-	nRD    <= CPU_nRD;
-	nIORQ  <= CPU_nIORQ;
-	nBUSAK <= CPU_nBUSAK;
-	nHALT  <= CPU_nHALT;
-	nRFSH  <= CPU_nRFSH;
+--	A      <= CPU_A;
+--	nM1    <= CPU_nM1;
+--	nMREQ  <= CPU_nMREQ;
+--	nWR    <= CPU_nWR;
+--	nRD    <= CPU_nRD;
+--	nIORQ  <= CPU_nIORQ;
+--	nBUSAK <= CPU_nBUSAK;
+--	nHALT  <= CPU_nHALT;
+--	nRFSH  <= CPU_nRFSH;
 	
 end;
