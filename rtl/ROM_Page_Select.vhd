@@ -15,8 +15,7 @@ entity ROM_Page_Select is
 		A           : in  std_logic_vector(15 downto 0);
 		D           : out std_logic_vector(7 downto 0);
 		nCS         : out std_logic;
-		Page        : out std_logic;
-		page_LED    : out std_logic_vector(7 downto 0)
+		Page        : out std_logic
 	);
 
 end entity ROM_Page_Select;
@@ -63,7 +62,6 @@ begin
 
 		nCS <= '0' when A(15 downto 13) = "000" and nPage = '0' else '1';
 
-		page_LED <= not nPage_LED when nPage = '0' else (others => '0');
 	end generate cpm;
 
 	-- Select Steve cousins SCM S3
@@ -75,8 +73,6 @@ begin
 				douta => D
 			);
 		nCS      <= '0' when A(15) = '0' and nPage = '0' else '1';
-		page_LED <= (0 => '1', others => '0');
-
 	end generate scm;
 
 	-- Select RC2014 Paged Rom, currently hardwired to 8K Pages
@@ -95,15 +91,6 @@ begin
 
 		-- Start RAM above the 8K page
 		nCS <= '0' when A(15 downto 13) = "000" and nPage = '0' else '1';
-
-		-- LED's 1 - 8 denote which page was selected
-		led_select : entity work.decoder_3x8
-			port map(
-				i => page_select,
-				y => nPage_LED
-			);
-
-		page_LED <= not nPage_LED when nPage = '0' else (others => '0');
 	end generate rc2014;
 
 	-- Handle paging out ROM at port 0x38

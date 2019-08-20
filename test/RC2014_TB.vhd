@@ -46,7 +46,7 @@ begin
 
 	ni : entity work.RC2014_fpga
 		port map(
-			nRST => nRST,
+			nRESET => nRST,
 			clk => Clk,
 			nINT =>  '1',
 			nNMI => '1',

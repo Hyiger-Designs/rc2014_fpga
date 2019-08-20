@@ -39,7 +39,7 @@
 
 # Project-Wide Assignments
 # ========================
-set_global_assignment -name LAST_QUARTUS_VERSION "18.1.0 Lite Edition"
+set_global_assignment -name LAST_QUARTUS_VERSION "18.1.1 Lite Edition"
 set_global_assignment -name PROJECT_CREATION_TIME_DATE "18:33:33 MARCH 07,2019"
 set_global_assignment -name PROJECT_OUTPUT_DIRECTORY output_files
 set_global_assignment -name SMART_RECOMPILE OFF
@@ -70,22 +70,11 @@ set_location_assignment PIN_AB11 -to D[4]
 set_location_assignment PIN_AB10 -to D[5]
 set_location_assignment PIN_AA9 -to D[6]
 set_location_assignment PIN_AA8 -to D[7]
-set_location_assignment PIN_B8 -to nRST
-set_location_assignment PIN_D14 -to rom_page_LED[7]
-set_location_assignment PIN_E14 -to rom_page_LED[6]
-set_location_assignment PIN_C13 -to rom_page_LED[5]
-set_location_assignment PIN_D13 -to rom_page_LED[4]
-set_location_assignment PIN_B10 -to rom_page_LED[3]
-set_location_assignment PIN_A10 -to rom_page_LED[2]
-set_location_assignment PIN_A9 -to rom_page_LED[1]
-set_location_assignment PIN_A8 -to rom_page_LED[0]
 set_location_assignment PIN_C10 -to rom_page_select[0]
 set_location_assignment PIN_C11 -to rom_page_select[1]
 set_location_assignment PIN_D12 -to rom_page_select[2]
 set_location_assignment PIN_V5 -to RTS
 set_location_assignment PIN_AA7 -to nRFSH
-set_location_assignment PIN_AA6 -to nRST2
-set_location_assignment PIN_AA5 -to clk2
 set_location_assignment PIN_W9 -to TX
 set_location_assignment PIN_W8 -to RX
 
@@ -205,9 +194,7 @@ set_instance_assignment -name WEAK_PULL_UP_RESISTOR ON -to nINT
 set_instance_assignment -name WEAK_PULL_UP_RESISTOR ON -to nBUSRQ
 set_instance_assignment -name WEAK_PULL_UP_RESISTOR ON -to nNMI
 set_instance_assignment -name WEAK_PULL_UP_RESISTOR ON -to nWAIT
-set_instance_assignment -name WEAK_PULL_UP_RESISTOR ON -to nRST
 set_instance_assignment -name WEAK_PULL_UP_RESISTOR ON -to RX
-set_instance_assignment -name IO_STANDARD "3.3 V SCHMITT TRIGGER" -to nRST
 set_global_assignment -name EDA_TEST_BENCH_ENABLE_STATUS TEST_BENCH_MODE -section_id eda_simulation
 set_global_assignment -name EDA_NATIVELINK_SIMULATION_TEST_BENCH RC2014_TB -section_id eda_simulation
 set_global_assignment -name EDA_TEST_BENCH_NAME RC2014_TB -section_id eda_simulation
@@ -216,8 +203,19 @@ set_global_assignment -name EDA_TEST_BENCH_MODULE_NAME RC2014_TB -section_id RC2
 set_global_assignment -name PARTITION_NETLIST_TYPE SOURCE -section_id Top
 set_global_assignment -name PARTITION_FITTER_PRESERVATION_LEVEL PLACEMENT_AND_ROUTING -section_id Top
 set_global_assignment -name PARTITION_COLOR 16764057 -section_id Top
-set_instance_assignment -name PARTITION_HIERARCHY root_partition -to | -section_id Top
 set_global_assignment -name EDA_TEST_BENCH_FILE ../test/RC2014_TB.vhd -section_id RC2014_TB
 set_global_assignment -name EDA_TEST_BENCH_FILE ../test/AsyncLog.vhd -section_id RC2014_TB
 set_global_assignment -name EDA_TEST_BENCH_FILE ../test/AsyncStim.vhd -section_id RC2014_TB
 set_global_assignment -name EDA_TEST_BENCH_FILE ../test/StimLog.vhd -section_id RC2014_TB
+set_location_assignment PIN_D14 -to LED[7]
+set_location_assignment PIN_E14 -to LED[6]
+set_location_assignment PIN_A8 -to LED[0]
+set_location_assignment PIN_A9 -to LED[1]
+set_location_assignment PIN_A10 -to LED[2]
+set_location_assignment PIN_B10 -to LED[3]
+set_location_assignment PIN_D13 -to LED[4]
+set_location_assignment PIN_C13 -to LED[5]
+set_instance_assignment -name PARTITION_HIERARCHY root_partition -to | -section_id Top
+set_location_assignment PIN_B8 -to nRESET
+set_instance_assignment -name IO_STANDARD "3.3 V SCHMITT TRIGGER" -to nRESET
+set_global_assignment -name VHDL_FILE ../rtl/SDRAM_Controller.vhd

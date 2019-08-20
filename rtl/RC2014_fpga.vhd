@@ -21,7 +21,7 @@ entity RC2014_fpga is
 		-- Z80_BUS
 		A               : out   std_logic_vector(15 downto 0); -- 1 - 16
 		nM1             : out   std_logic; -- 19
-		nRST            : in    std_logic; -- 20
+		nRESET          : in    std_logic; -- 20
 		clk             : in    std_logic; -- 21
 		nINT            : in    std_logic; -- 22
 		nMREQ           : out   std_logic; -- 23
@@ -46,7 +46,10 @@ entity RC2014_fpga is
 		-- FPGA Board specific pins
 
 		rom_page_select : in    std_logic_vector(2 downto 0);
-		rom_page_LED    : out   std_logic_vector(7 downto 0);
+		rom_page_led	 : out   std_logic;
+		LED			    : out   std_logic_vector(7 downto 0);
+		
+		
 		RTS             : out   std_logic;
 		SD_MOSI         : out   std_logic;
 		SD_MISO         : in    std_logic;
@@ -135,7 +138,7 @@ architecture struct of RC2014_fpga is
 	end component;
 
 begin
-	reset <= not nRST;
+	reset <= not nRESET;
 
 	cpm_basic_rom: if rom = 0 generate
 		clocks_inst : entity work.clocks PORT MAP (
@@ -164,7 +167,7 @@ begin
 		cpu : entity work.t80s
 			generic map(mode => 1, t2write => 1, iowait => 0)
 			port map(
-				reset_n => nRST,
+				reset_n => nRESET,
 				clk_n   => CPU_clk,
 				wait_n  => nWAIT,
 				int_n   => CPU_nINT,
@@ -189,7 +192,7 @@ begin
 		cpu : tv80s
 			generic map(mode => 1, t2write => 1, iowait => 0)
 			port map(
-				reset_n => nRST,
+				reset_n => nRESET,
 				clk     => CPU_clk,
 				wait_n  => nWAIT,
 				int_n   => CPU_nINT,
@@ -239,17 +242,16 @@ begin
 		generic map(rom => rom)         -- Select SCM ROM
 		port map(
 			clk         => clk,
-			nReset      => nRST,
+			nReset      => nRESET,
 			page_select => rom_page_select,
 			nWR         => IO_nWR,
 			A           => CPU_A,
 			D           => ROM_D,
 			nCS         => ROM_nCS,
-			Page        => Page,
-			page_LED    => rom_page_LED
+			Page        => Page
 		);
 
-	UART_RST <= not nRST;
+	UART_RST <= not nRESET;
 	UART_CS  <= not UART_nCS;
 
 	uart1 : entity work.acia6850
@@ -283,7 +285,7 @@ begin
 			sdSCLK   => SD_SCLK,
 			n_wr     => SD_nWR,
 			n_rd     => SD_nRD,
-			n_reset  => nRST,
+			n_reset  => nRESET,
 			dataIn   => CPU_D_O,
 			dataOut  => SD_D,
 			regAddr  => CPU_A(2 downto 0),
@@ -291,12 +293,26 @@ begin
 			clk      => SD_clk          -- twice the spi clk
 		);
 
+	leds : process(nReset, clk)
+	begin
+		if (nReset = '0') then
+			LED <= (others => '0');
+		elsif (rising_edge(clk)) then
+			if IO_nWR = '0' and CPU_A(7 downto 0) = x"00" then
+				LED <= D;
+			end if;
+		end if;
+	end process;
+	
 	-- 8 Bytes $88-$8F 10001---
 	SD_nCS <= '0' when CPU_A(7 downto 3) = "10001" and (IO_nWR = '0' or IO_nRD = '0') else '1';
 		
 	-- Serial Channel A - 2 Bytes $80-$81
 	UART_nCS <= '0' when CPU_A(7 downto 1) = "1000000" and (IO_nWR = '0' or IO_nRD = '0') else '1';
 
+	
+	rom_page_led <= Page;
+	
 	-- Control Bus
 
 	RAM_nCS <= not ROM_nCS;
