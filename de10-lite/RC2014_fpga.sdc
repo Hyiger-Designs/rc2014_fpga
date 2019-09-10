@@ -49,8 +49,8 @@ derive_clock_uncertainty
 #**************************************************************
 # Set False Path
 #**************************************************************
-set_false_path -from [get_ports nRST]
-set_false_path -from [get_ports rom_page*]
+set_false_path -from [get_ports nRESET]
+set_false_path -from [get_ports LED*]
 
 #**************************************************************
 # Set Multicycle Path

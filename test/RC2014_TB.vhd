@@ -48,14 +48,9 @@ begin
 		port map(
 			nRESET => nRST,
 			clk => Clk,
-			nINT =>  '1',
-			nNMI => '1',
-			nWAIT =>  '1',
-			nBUSRQ => '1',
 			RX => RX,
 			TX => TX,
 			RTS => RTS,
-			rom_page_select => "000",
 			SD_MISO => '1'
 );
 
