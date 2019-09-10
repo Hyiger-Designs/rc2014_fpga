@@ -18,7 +18,6 @@ entity RC2014_fpga is
 		-- Z80_BUS
 		clk          : in    std_logic; -- 21
 		nRESET       : in    std_logic; -- 20
-		--nINT         : in    std_logic; -- 22
 
 		nM1          : out   std_logic; -- 19
 		nMREQ        : out   std_logic; -- 23
@@ -33,17 +32,6 @@ entity RC2014_fpga is
 		RTS          : out   std_logic;
 		TX           : out   std_logic; -- 35
 		RX           : in    std_logic; -- 36
-		-- PRO_BUS
-		--nRFSH        : out   std_logic; -- 19
-		--	nRST2           : in    std_logic; -- 20
-		--	clk2            : in    std_logic; -- 21
-		--nBUSAK       : out   std_logic; -- 22
-		--nHALT        : out   std_logic; -- 23
-		--nBUSRQ       : in    std_logic; -- 24
-		--nWAIT        : in    std_logic; -- 25
-		--nNMI         : in    std_logic; -- 26
-		--		TX2             : out   std_logic; -- 35
-		--		RX2             : in    std_logic; -- 36
 
 		-- FPGA Board specific pins
 		rom_page_led : out   std_logic;
@@ -178,6 +166,8 @@ begin
 			clka  => clk,
 			douta => ROM_D
 		);
+		
+	-- ROM located from 0000-7FFF
 	ROM_nCS <= '0' when CPU_A(15) = '0' and nPage = '0' else '1';
 
 	UART_RST <= not nRESET;
@@ -222,6 +212,13 @@ begin
 			clk      => SD_clk          -- twice the spi clk
 		);
 
+	-- Select SD Card 8 Bytes $88-$8F 10001---
+	SD_nCS <= '0' when CPU_A(7 downto 3) = "10001" and (IO_nWR = '0' or IO_nRD = '0') else '1';
+
+	-- Select Serial Channel A - 2 Bytes $80-$81
+	UART_nCS <= '0' when CPU_A(7 downto 1) = "1000000" and (IO_nWR = '0' or IO_nRD = '0') else '1';
+
+		-- Write to LED's at port 0
 	leds : process(nReset, clk)
 	begin
 		if (nReset = '0') then
@@ -232,20 +229,14 @@ begin
 			end if;
 		end if;
 	end process;
-
-	-- Select SD Card 8 Bytes $88-$8F 10001---
-	SD_nCS <= '0' when CPU_A(7 downto 3) = "10001" and (IO_nWR = '0' or IO_nRD = '0') else '1';
-
-	-- Select Serial Channel A - 2 Bytes $80-$81
-	UART_nCS <= '0' when CPU_A(7 downto 1) = "1000000" and (IO_nWR = '0' or IO_nRD = '0') else '1';
-
+	
 	-- Handle paging out ROM at port 0x38
-	process(nReset, IO_nWR)
+	process(nReset, clk)
 	begin
 		if (nReset = '0') then
 			nPage <= '0';
-		elsif (rising_edge(IO_nWR)) then
-			if CPU_A(7 downto 0) = x"38" then
+		elsif (rising_edge(clk)) then
+			if IO_nWR = '0' and CPU_A(7 downto 0) = x"38" then
 				nPage <= '1';
 			end if;
 		end if;
@@ -268,8 +259,5 @@ begin
 	nWR    <= CPU_nWR;
 	nRD    <= CPU_nRD;
 	nIORQ  <= CPU_nIORQ;
-	--nBUSAK <= CPU_nBUSAK;
-	--nHALT  <= CPU_nHALT;
-	--nRFSH  <= CPU_nRFSH;
 
 end;
