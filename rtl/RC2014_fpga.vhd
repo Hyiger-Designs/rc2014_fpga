@@ -36,7 +36,9 @@ entity RC2014_fpga is
 		-- FPGA Board specific pins
 		rom_page_led : out   std_logic;
 		LED          : out   std_logic_vector(7 downto 0);
-
+		step_pb		 : in std_logic;
+		mode_sw      : in std_logic;
+		
 		SD_MOSI      : out   std_logic;
 		SD_MISO      : in    std_logic;
 		SD_CS        : out   std_logic;
@@ -106,6 +108,17 @@ architecture struct of RC2014_fpga is
 begin
 	reset <= not nRESET;
 
+	stepper : ENTITY work.single_step
+		PORT MAP
+		(
+			clk	=> clk,
+			reset => reset,
+			step => step_pb,
+			nM1  => CPU_nM1,
+			mode => mode_sw,
+			nWait => CPU_nWAIT
+		);
+	
 	-- Otherwise UART is set to 7.3728Mhz
 	clocks_inst : entity work.clocks
 		PORT MAP(

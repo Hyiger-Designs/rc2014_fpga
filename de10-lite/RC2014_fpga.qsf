@@ -19,7 +19,7 @@
 #
 # Quartus Prime
 # Version 18.1.1 Build 646 04/11/2019 SJ Lite Edition
-# Date created = 17:35:33  September 09, 2019
+# Date created = 20:19:05  September 10, 2019
 #
 # -------------------------------------------------------------------------- #
 #
@@ -44,11 +44,8 @@ set_global_assignment -name LAST_QUARTUS_VERSION "18.1.1 Lite Edition"
 set_global_assignment -name PROJECT_CREATION_TIME_DATE "18:33:33 MARCH 07,2019"
 set_global_assignment -name PROJECT_OUTPUT_DIRECTORY output_files
 set_global_assignment -name SMART_RECOMPILE OFF
+set_global_assignment -name VHDL_FILE single_step.vhd
 set_global_assignment -name VHDL_FILE ../rtl/SDRAM_Controller.vhd
-set_global_assignment -name VHDL_FILE ../test/StimLog.vhd
-set_global_assignment -name VHDL_FILE ../test/RC2014_TB.vhd
-set_global_assignment -name VHDL_FILE ../test/AsyncStim.vhd
-set_global_assignment -name VHDL_FILE ../test/AsyncLog.vhd
 set_global_assignment -name VHDL_FILE SCM_V100_S3_SCS3_32K.vhd
 set_global_assignment -name VHDL_FILE R0001009.vhd
 set_global_assignment -name VHDL_FILE CPM_BASIC.vhd
@@ -72,6 +69,7 @@ set_global_assignment -name QIP_FILE R0001009_LITE.qip
 set_global_assignment -name QIP_FILE SCM_V100_S3_SCS3_32K_LITE.qip
 set_global_assignment -name QIP_FILE CPM_BASIC_LITE.qip
 set_global_assignment -name QIP_FILE clocks.qip
+set_global_assignment -name VHDL_FILE ../rtl/pulse_generator.vhd
 
 # Pin & Location Assignments
 # ==========================
@@ -123,6 +121,8 @@ set_location_assignment PIN_AA19 -to SD_MOSI
 set_location_assignment PIN_Y19 -to SD_MISO
 set_location_assignment PIN_AB19 -to SD_CS
 set_location_assignment PIN_A11 -to SD_LED
+set_location_assignment PIN_A7 -to step_pb
+set_location_assignment PIN_C10 -to mode_sw
 
 # Classic Timing Assignments
 # ==========================
@@ -226,6 +226,7 @@ set_global_assignment -name OUTPUT_IO_TIMING_FAR_END_VMEAS "HALF SIGNAL SWING" -
 	set_instance_assignment -name WEAK_PULL_UP_RESISTOR ON -to RX
 	set_instance_assignment -name GLOBAL_SIGNAL GLOBAL_CLOCK -to clk
 	set_instance_assignment -name IO_STANDARD "3.3 V SCHMITT TRIGGER" -to nRESET
+	set_instance_assignment -name IO_STANDARD "3.3 V SCHMITT TRIGGER" -to step_pb
 
 	# start DESIGN_PARTITION(Top)
 	# ---------------------------
