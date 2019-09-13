@@ -113,9 +113,9 @@ begin
 		(
 			clk	=> clk,
 			reset => reset,
-			step => step_pb,
+			step_pb => step_pb,
 			nM1  => CPU_nM1,
-			mode => mode_sw,
+			mode_sw => mode_sw,
 			nWait => CPU_nWAIT
 		);
 	
