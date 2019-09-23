@@ -44,27 +44,6 @@ set_global_assignment -name LAST_QUARTUS_VERSION "18.1.1 Lite Edition"
 set_global_assignment -name PROJECT_CREATION_TIME_DATE "18:33:33 MARCH 07,2019"
 set_global_assignment -name PROJECT_OUTPUT_DIRECTORY output_files
 set_global_assignment -name SMART_RECOMPILE OFF
-set_global_assignment -name VHDL_FILE ../rtl/single_step.vhd
-set_global_assignment -name VHDL_FILE ../rtl/SDRAM_Controller.vhd
-set_global_assignment -name VHDL_FILE SCM_V100_S3_SCS3_32K.vhd
-set_global_assignment -name SDC_FILE RC2014_fpga.sdc
-set_global_assignment -name VHDL_FILE ../rtl/T80/T80s.vhd
-set_global_assignment -name VHDL_FILE ../rtl/T80/T80_Reg.vhd
-set_global_assignment -name VHDL_FILE ../rtl/T80/T80_Pack.vhd
-set_global_assignment -name VHDL_FILE ../rtl/T80/T80_MCode.vhd
-set_global_assignment -name VHDL_FILE ../rtl/T80/T80_ALU.vhd
-set_global_assignment -name VHDL_FILE ../rtl/T80/T80.vhd
-set_global_assignment -name VHDL_FILE ../rtl/single_port_ram.vhd
-set_global_assignment -name VHDL_FILE ../rtl/RC2014_fpga.vhd
-set_global_assignment -name VHDL_FILE ../rtl/clock_div.vhd
-set_global_assignment -name VHDL_FILE ../rtl/acia6850.vhd
-set_global_assignment -name SOURCE_FILE RC2014_fpga.qsf
-set_global_assignment -name CDF_FILE output_files/RC2014_fpga.cdf
-set_global_assignment -name VHDL_FILE ../rtl/sd_controller.vhd
-set_global_assignment -name QIP_FILE SCM_V100_S3_SCS3_32K_LITE.qip
-set_global_assignment -name QIP_FILE clocks.qip
-set_global_assignment -name VHDL_FILE ../rtl/pulse_generator.vhd
-set_global_assignment -name VHDL_FILE ../test/single_step_tb.vhd
 
 # Pin & Location Assignments
 # ==========================
@@ -189,9 +168,9 @@ set_global_assignment -name OUTPUT_IO_TIMING_FAR_END_VMEAS "HALF SIGNAL SWING" -
 
 	# EDA Netlist Writer Assignments
 	# ==============================
-	set_global_assignment -name EDA_DESIGN_INSTANCE_NAME NA -section_id single_step
-	set_global_assignment -name EDA_TEST_BENCH_MODULE_NAME single_step_tb -section_id single_step
-	set_global_assignment -name EDA_TEST_BENCH_FILE ../test/single_step_tb.vhd -section_id single_step
+set_global_assignment -name EDA_DESIGN_INSTANCE_NAME NA -section_id single_step
+set_global_assignment -name EDA_TEST_BENCH_MODULE_NAME single_step_tb -section_id single_step
+set_global_assignment -name EDA_TEST_BENCH_FILE ../test/single_step_tb.vhd -section_id single_step
 
 # end EDA_TEST_BENCH_SETTINGS(single_step)
 # ----------------------------------------
@@ -201,11 +180,11 @@ set_global_assignment -name OUTPUT_IO_TIMING_FAR_END_VMEAS "HALF SIGNAL SWING" -
 
 	# EDA Netlist Writer Assignments
 	# ==============================
-	set_global_assignment -name EDA_TIME_SCALE "1 ps" -section_id eda_simulation
-	set_global_assignment -name EDA_OUTPUT_DATA_FORMAT VHDL -section_id eda_simulation
-	set_global_assignment -name EDA_TEST_BENCH_ENABLE_STATUS TEST_BENCH_MODE -section_id eda_simulation
-	set_global_assignment -name EDA_NATIVELINK_SIMULATION_TEST_BENCH single_step -section_id eda_simulation
-	set_global_assignment -name EDA_TEST_BENCH_NAME single_step -section_id eda_simulation
+set_global_assignment -name EDA_TIME_SCALE "1 ps" -section_id eda_simulation
+set_global_assignment -name EDA_OUTPUT_DATA_FORMAT VHDL -section_id eda_simulation
+set_global_assignment -name EDA_TEST_BENCH_ENABLE_STATUS TEST_BENCH_MODE -section_id eda_simulation
+set_global_assignment -name EDA_NATIVELINK_SIMULATION_TEST_BENCH single_step -section_id eda_simulation
+set_global_assignment -name EDA_TEST_BENCH_NAME single_step -section_id eda_simulation
 
 # end EDA_TOOL_SETTINGS(eda_simulation)
 # -------------------------------------
@@ -215,23 +194,95 @@ set_global_assignment -name OUTPUT_IO_TIMING_FAR_END_VMEAS "HALF SIGNAL SWING" -
 
 	# Fitter Assignments
 	# ==================
-	set_instance_assignment -name WEAK_PULL_UP_RESISTOR ON -to RX
-	set_instance_assignment -name GLOBAL_SIGNAL GLOBAL_CLOCK -to clk
-	set_instance_assignment -name IO_STANDARD "3.3 V SCHMITT TRIGGER" -to nRESET
-	set_instance_assignment -name IO_STANDARD "3.3 V SCHMITT TRIGGER" -to step_pb
+set_instance_assignment -name WEAK_PULL_UP_RESISTOR ON -to RX
+set_instance_assignment -name GLOBAL_SIGNAL GLOBAL_CLOCK -to clk
+set_instance_assignment -name IO_STANDARD "3.3 V SCHMITT TRIGGER" -to nRESET
+set_instance_assignment -name IO_STANDARD "3.3 V SCHMITT TRIGGER" -to step_pb
 
 	# start DESIGN_PARTITION(Top)
 	# ---------------------------
 
 		# Incremental Compilation Assignments
 		# ===================================
-		set_global_assignment -name PARTITION_NETLIST_TYPE SOURCE -section_id Top
-		set_global_assignment -name PARTITION_FITTER_PRESERVATION_LEVEL PLACEMENT_AND_ROUTING -section_id Top
-		set_global_assignment -name PARTITION_COLOR 16764057 -section_id Top
-		set_instance_assignment -name PARTITION_HIERARCHY root_partition -to | -section_id Top
+set_global_assignment -name PARTITION_NETLIST_TYPE SOURCE -section_id Top
+set_global_assignment -name PARTITION_FITTER_PRESERVATION_LEVEL PLACEMENT_AND_ROUTING -section_id Top
+set_global_assignment -name PARTITION_COLOR 16764057 -section_id Top
 
 	# end DESIGN_PARTITION(Top)
 	# -------------------------
 
 # end ENTITY(RC2014_fpga)
 # -----------------------
+
+set_location_assignment PIN_C14 -to HEX0[0]
+set_location_assignment PIN_E15 -to HEX0[1]
+set_location_assignment PIN_C15 -to HEX0[2]
+set_location_assignment PIN_C16 -to HEX0[3]
+set_location_assignment PIN_E16 -to HEX0[4]
+set_location_assignment PIN_D17 -to HEX0[5]
+set_location_assignment PIN_C17 -to HEX0[6]
+set_location_assignment PIN_D15 -to HEX0[7]
+set_location_assignment PIN_C18 -to HEX1[0]
+set_location_assignment PIN_D18 -to HEX1[1]
+set_location_assignment PIN_E18 -to HEX1[2]
+set_location_assignment PIN_B16 -to HEX1[3]
+set_location_assignment PIN_A17 -to HEX1[4]
+set_location_assignment PIN_A18 -to HEX1[5]
+set_location_assignment PIN_B17 -to HEX1[6]
+set_location_assignment PIN_A16 -to HEX1[7]
+set_location_assignment PIN_B20 -to HEX2[0]
+set_location_assignment PIN_A20 -to HEX2[1]
+set_location_assignment PIN_B19 -to HEX2[2]
+set_location_assignment PIN_A21 -to HEX2[3]
+set_location_assignment PIN_B21 -to HEX2[4]
+set_location_assignment PIN_C22 -to HEX2[5]
+set_location_assignment PIN_B22 -to HEX2[6]
+set_location_assignment PIN_A19 -to HEX2[7]
+set_location_assignment PIN_F21 -to HEX3[0]
+set_location_assignment PIN_E22 -to HEX3[1]
+set_location_assignment PIN_E21 -to HEX3[2]
+set_location_assignment PIN_C19 -to HEX3[3]
+set_location_assignment PIN_C20 -to HEX3[4]
+set_location_assignment PIN_D19 -to HEX3[5]
+set_location_assignment PIN_E17 -to HEX3[6]
+set_location_assignment PIN_D22 -to HEX3[7]
+set_location_assignment PIN_F18 -to HEX4[0]
+set_location_assignment PIN_E20 -to HEX4[1]
+set_location_assignment PIN_E19 -to HEX4[2]
+set_location_assignment PIN_J18 -to HEX4[3]
+set_location_assignment PIN_H19 -to HEX4[4]
+set_location_assignment PIN_F19 -to HEX4[5]
+set_location_assignment PIN_F20 -to HEX4[6]
+set_location_assignment PIN_F17 -to HEX4[7]
+set_location_assignment PIN_J20 -to HEX5[0]
+set_location_assignment PIN_K20 -to HEX5[1]
+set_location_assignment PIN_L18 -to HEX5[2]
+set_location_assignment PIN_N18 -to HEX5[3]
+set_location_assignment PIN_M20 -to HEX5[4]
+set_location_assignment PIN_N19 -to HEX5[5]
+set_location_assignment PIN_N20 -to HEX5[6]
+set_location_assignment PIN_L19 -to HEX5[7]
+
+set_global_assignment -name VHDL_FILE ../rtl/hex_to_sseg.vhd
+set_global_assignment -name VHDL_FILE ../rtl/single_step.vhd
+set_global_assignment -name VHDL_FILE ../rtl/SDRAM_Controller.vhd
+set_global_assignment -name VHDL_FILE SCM_V100_S3_SCS3_32K.vhd
+set_global_assignment -name SDC_FILE RC2014_fpga.sdc
+set_global_assignment -name VHDL_FILE ../rtl/T80/T80s.vhd
+set_global_assignment -name VHDL_FILE ../rtl/T80/T80_Reg.vhd
+set_global_assignment -name VHDL_FILE ../rtl/T80/T80_Pack.vhd
+set_global_assignment -name VHDL_FILE ../rtl/T80/T80_MCode.vhd
+set_global_assignment -name VHDL_FILE ../rtl/T80/T80_ALU.vhd
+set_global_assignment -name VHDL_FILE ../rtl/T80/T80.vhd
+set_global_assignment -name VHDL_FILE ../rtl/single_port_ram.vhd
+set_global_assignment -name VHDL_FILE ../rtl/RC2014_fpga.vhd
+set_global_assignment -name VHDL_FILE ../rtl/clock_div.vhd
+set_global_assignment -name VHDL_FILE ../rtl/acia6850.vhd
+set_global_assignment -name SOURCE_FILE RC2014_fpga.qsf
+set_global_assignment -name CDF_FILE output_files/RC2014_fpga.cdf
+set_global_assignment -name VHDL_FILE ../rtl/sd_controller.vhd
+set_global_assignment -name QIP_FILE SCM_V100_S3_SCS3_32K_LITE.qip
+set_global_assignment -name QIP_FILE clocks.qip
+set_global_assignment -name VHDL_FILE ../rtl/pulse_generator.vhd
+set_global_assignment -name VHDL_FILE ../test/single_step_tb.vhd
+set_instance_assignment -name PARTITION_HIERARCHY root_partition -to | -section_id Top

@@ -24,10 +24,10 @@ entity RC2014_fpga is
 		nWR          : out   std_logic; -- 24
 		nRD          : out   std_logic; -- 25
 		nIORQ        : out   std_logic; -- 26
-		
+
 		A            : out   std_logic_vector(15 downto 0); -- 1 - 16
 		D            : inout std_logic_vector(7 downto 0); -- 27 - 34
-		
+
 		-- UART/FTDI
 		RTS          : out   std_logic;
 		TX           : out   std_logic; -- 35
@@ -36,23 +36,30 @@ entity RC2014_fpga is
 		-- FPGA Board specific pins
 		rom_page_led : out   std_logic;
 		LED          : out   std_logic_vector(7 downto 0);
-		step_pb		 : in std_logic;
-		mode_sw      : in std_logic;
-		
+		step_pb      : in    std_logic;
+		mode_sw      : in    std_logic;
 		SD_MOSI      : out   std_logic;
 		SD_MISO      : in    std_logic;
 		SD_CS        : out   std_logic;
 		SD_SCLK      : out   std_logic;
-		SD_LED       : out   std_logic
+		SD_LED       : out   std_logic;
+		
+		-- 7 Segment Displays
+		HEX0         : out   std_logic_vector(7 downto 0);
+		HEX1         : out   std_logic_vector(7 downto 0);
+		HEX2         : out   std_logic_vector(7 downto 0);
+		HEX3         : out   std_logic_vector(7 downto 0);
+		HEX4         : out   std_logic_vector(7 downto 0);
+		HEX5         : out   std_logic_vector(7 downto 0)
 	);
 end RC2014_fpga;
 
 architecture struct of RC2014_fpga is
-	
+
 	-- Inputs
-	signal CPU_clk : std_logic;
+	signal CPU_clk    : std_logic;
 	signal CPU_nINT   : std_logic := '1';
-	signal CPU_nNMI	: std_logic := '1';
+	signal CPU_nNMI   : std_logic := '1';
 	signal CPU_nBUSRQ : std_logic := '1';
 	signal CPU_nWAIT  : std_logic := '1';
 	-- Outputs
@@ -64,11 +71,11 @@ architecture struct of RC2014_fpga is
 	signal CPU_nRFSH  : std_logic;
 	signal CPU_nHALT  : std_logic;
 	signal CPU_nBUSAK : std_logic;
-	
-	signal CPU_A      : std_logic_vector(15 downto 0);
+
+	signal CPU_A   : std_logic_vector(15 downto 0);
 	-- Tri-state
-	signal CPU_D_O    : std_logic_vector(7 downto 0);
-	signal CPU_D_I    : std_logic_vector(7 downto 0);
+	signal CPU_D_O : std_logic_vector(7 downto 0);
+	signal CPU_D_I : std_logic_vector(7 downto 0);
 
 	signal ROM_D   : std_logic_vector(7 downto 0);
 	signal ROM_nCS : std_logic := '1';
@@ -109,16 +116,29 @@ begin
 	reset <= not nRESET;
 
 	stepper : ENTITY work.single_step
-		PORT MAP
-		(
-			clk	=> clk,
-			reset => reset,
+		PORT MAP(
+			clk     => clk,
+			reset   => reset,
 			step_pb => step_pb,
-			nM1  => CPU_nM1,
+			nM1     => CPU_nM1,
 			mode_sw => mode_sw,
-			nWait => CPU_nWAIT
+			nWait   => CPU_nWAIT
 		);
-	
+
+	sseg_unit_0 : entity work.hex_to_sseg
+		port map(clk => clk, reset => reset, hex => CPU_D_O(3 downto 0), dp => '0', sseg_o => HEX0);
+	sseg_unit_1 : entity work.hex_to_sseg
+		port map(clk => clk, reset => reset, hex => CPU_D_O(7 downto 4), dp => '0', sseg_o => HEX1);
+
+	sseg_unit_2 : entity work.hex_to_sseg
+		port map(clk => clk, reset => reset, hex => CPU_A(3 downto 0), dp => '0', sseg_o => HEX2);
+	sseg_unit_3 : entity work.hex_to_sseg
+		port map(clk => clk, reset => reset, hex => CPU_A(7 downto 4), dp => '0', sseg_o => HEX3);
+	sseg_unit_4 : entity work.hex_to_sseg
+		port map(clk => clk, reset => reset, hex => CPU_A(11 downto 8), dp => '0', sseg_o => HEX4);
+	sseg_unit_5 : entity work.hex_to_sseg
+		port map(clk => clk, reset => reset, hex => CPU_A(15 downto 12), dp => '0', sseg_o => HEX5);
+
 	-- Otherwise UART is set to 7.3728Mhz
 	clocks_inst : entity work.clocks
 		PORT MAP(
@@ -179,7 +199,7 @@ begin
 			clka  => clk,
 			douta => ROM_D
 		);
-		
+
 	-- ROM located from 0000-7FFF
 	ROM_nCS <= '0' when CPU_A(15) = '0' and nPage = '0' else '1';
 
@@ -231,7 +251,7 @@ begin
 	-- Select Serial Channel A - 2 Bytes $80-$81
 	UART_nCS <= '0' when CPU_A(7 downto 1) = "1000000" and (IO_nWR = '0' or IO_nRD = '0') else '1';
 
-		-- Write to LED's at port 0
+	-- Write to LED's at port 0
 	leds : process(nReset, clk)
 	begin
 		if (nReset = '0') then
@@ -242,7 +262,7 @@ begin
 			end if;
 		end if;
 	end process;
-	
+
 	-- Handle paging out ROM at port 0x38
 	process(nReset, clk)
 	begin
@@ -266,11 +286,11 @@ begin
 	IO_nRD <= CPU_nRD or CPU_nIORQ;
 	IO_nWR <= CPU_nWR or CPU_nIORQ;
 
-	A      <= CPU_A;
-	nM1    <= CPU_nM1;
-	nMREQ  <= CPU_nMREQ;
-	nWR    <= CPU_nWR;
-	nRD    <= CPU_nRD;
-	nIORQ  <= CPU_nIORQ;
+	A     <= CPU_A;
+	nM1   <= CPU_nM1;
+	nMREQ <= CPU_nMREQ;
+	nWR   <= CPU_nWR;
+	nRD   <= CPU_nRD;
+	nIORQ <= CPU_nIORQ;
 
 end;
