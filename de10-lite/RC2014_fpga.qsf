@@ -19,7 +19,7 @@
 #
 # Quartus Prime
 # Version 18.1.1 Build 646 04/11/2019 SJ Lite Edition
-# Date created = 21:20:32  September 12, 2019
+# Date created = 23:14:19  September 22, 2019
 #
 # -------------------------------------------------------------------------- #
 #
@@ -44,13 +44,9 @@ set_global_assignment -name LAST_QUARTUS_VERSION "18.1.1 Lite Edition"
 set_global_assignment -name PROJECT_CREATION_TIME_DATE "18:33:33 MARCH 07,2019"
 set_global_assignment -name PROJECT_OUTPUT_DIRECTORY output_files
 set_global_assignment -name SMART_RECOMPILE OFF
-set_global_assignment -name VHDL_FILE single_step.vhd
+set_global_assignment -name VHDL_FILE ../rtl/single_step.vhd
 set_global_assignment -name VHDL_FILE ../rtl/SDRAM_Controller.vhd
 set_global_assignment -name VHDL_FILE SCM_V100_S3_SCS3_32K.vhd
-set_global_assignment -name VHDL_FILE R0001009.vhd
-set_global_assignment -name VHDL_FILE CPM_BASIC.vhd
-set_global_assignment -name VHDL_FILE ../rtl/ROM_Page_Select.vhd
-set_global_assignment -name VHDL_FILE ../rtl/decoder_3x8.vhd
 set_global_assignment -name SDC_FILE RC2014_fpga.sdc
 set_global_assignment -name VHDL_FILE ../rtl/T80/T80s.vhd
 set_global_assignment -name VHDL_FILE ../rtl/T80/T80_Reg.vhd
@@ -65,12 +61,9 @@ set_global_assignment -name VHDL_FILE ../rtl/acia6850.vhd
 set_global_assignment -name SOURCE_FILE RC2014_fpga.qsf
 set_global_assignment -name CDF_FILE output_files/RC2014_fpga.cdf
 set_global_assignment -name VHDL_FILE ../rtl/sd_controller.vhd
-set_global_assignment -name QIP_FILE R0001009_LITE.qip
 set_global_assignment -name QIP_FILE SCM_V100_S3_SCS3_32K_LITE.qip
-set_global_assignment -name QIP_FILE CPM_BASIC_LITE.qip
 set_global_assignment -name QIP_FILE clocks.qip
 set_global_assignment -name VHDL_FILE ../rtl/pulse_generator.vhd
-set_global_assignment -name BDF_FILE stepper.bdf
 set_global_assignment -name VHDL_FILE ../test/single_step_tb.vhd
 
 # Pin & Location Assignments
@@ -150,7 +143,7 @@ set_global_assignment -name STATE_MACHINE_PROCESSING "ONE-HOT"
 
 # Fitter Assignments
 # ==================
-set_global_assignment -name DEVICE 10M50DAF484C8GES
+set_global_assignment -name DEVICE 10M50DAF484C7G
 set_global_assignment -name INTERNAL_FLASH_UPDATE_MODE "SINGLE IMAGE WITH ERAM"
 set_global_assignment -name ERROR_CHECK_FREQUENCY_DIVISOR 2
 set_global_assignment -name OPTIMIZE_HOLD_TIMING "ALL PATHS"
@@ -191,14 +184,17 @@ set_global_assignment -name OUTPUT_IO_TIMING_NEAR_END_VMEAS "HALF VCCIO" -fall
 set_global_assignment -name OUTPUT_IO_TIMING_FAR_END_VMEAS "HALF SIGNAL SWING" -rise
 set_global_assignment -name OUTPUT_IO_TIMING_FAR_END_VMEAS "HALF SIGNAL SWING" -fall
 
-# start EDA_TEST_BENCH_SETTINGS(RC2014_TB)
-# ----------------------------------------
+# start EDA_TEST_BENCH_SETTINGS(single_step)
+# ------------------------------------------
 
 	# EDA Netlist Writer Assignments
 	# ==============================
+	set_global_assignment -name EDA_DESIGN_INSTANCE_NAME NA -section_id single_step
+	set_global_assignment -name EDA_TEST_BENCH_MODULE_NAME single_step_tb -section_id single_step
+	set_global_assignment -name EDA_TEST_BENCH_FILE ../test/single_step_tb.vhd -section_id single_step
 
-# end EDA_TEST_BENCH_SETTINGS(RC2014_TB)
-# --------------------------------------
+# end EDA_TEST_BENCH_SETTINGS(single_step)
+# ----------------------------------------
 
 # start EDA_TOOL_SETTINGS(eda_simulation)
 # ---------------------------------------
@@ -208,7 +204,8 @@ set_global_assignment -name OUTPUT_IO_TIMING_FAR_END_VMEAS "HALF SIGNAL SWING" -
 	set_global_assignment -name EDA_TIME_SCALE "1 ps" -section_id eda_simulation
 	set_global_assignment -name EDA_OUTPUT_DATA_FORMAT VHDL -section_id eda_simulation
 	set_global_assignment -name EDA_TEST_BENCH_ENABLE_STATUS TEST_BENCH_MODE -section_id eda_simulation
-set_global_assignment -name EDA_NATIVELINK_SIMULATION_TEST_BENCH single_step -section_id eda_simulation
+	set_global_assignment -name EDA_NATIVELINK_SIMULATION_TEST_BENCH single_step -section_id eda_simulation
+	set_global_assignment -name EDA_TEST_BENCH_NAME single_step -section_id eda_simulation
 
 # end EDA_TOOL_SETTINGS(eda_simulation)
 # -------------------------------------
@@ -238,7 +235,3 @@ set_global_assignment -name EDA_NATIVELINK_SIMULATION_TEST_BENCH single_step -se
 
 # end ENTITY(RC2014_fpga)
 # -----------------------
-set_global_assignment -name EDA_TEST_BENCH_NAME single_step -section_id eda_simulation
-set_global_assignment -name EDA_DESIGN_INSTANCE_NAME NA -section_id single_step
-set_global_assignment -name EDA_TEST_BENCH_MODULE_NAME single_step_tb -section_id single_step
-set_global_assignment -name EDA_TEST_BENCH_FILE ../test/single_step_tb.vhd -section_id single_step
