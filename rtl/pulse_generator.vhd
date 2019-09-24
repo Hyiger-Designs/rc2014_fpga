@@ -14,9 +14,9 @@ architecture STATE_MACHINE of pulse_generator is
 
 	type PULSEGEN_STATE_TYPE is (IDLE, GEN_PULSE_A, GEN_PULSE_B,END_PULSE, RETRIGGER); 
 	signal CURRENT_STATE, NEXT_STATE: PULSEGEN_STATE_TYPE;
-	signal COUNT : integer range 0 to 31;
+	signal COUNT : integer;
 	
-	constant WIDTH : integer range 0 to 31 := 4;
+	constant WIDTH : integer := 500000;
 	
 	begin
 	
