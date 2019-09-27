@@ -16,7 +16,7 @@ architecture STATE_MACHINE of pulse_generator is
 	signal CURRENT_STATE, NEXT_STATE: PULSEGEN_STATE_TYPE;
 	signal COUNT : integer;
 	
-	constant WIDTH : integer := 500000;
+	constant WIDTH : integer := 19;
 	
 	begin
 	

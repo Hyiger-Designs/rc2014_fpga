@@ -12,8 +12,9 @@ library ieee;
 use ieee.std_logic_1164.all;
 use ieee.numeric_std.all;
 
-entity RC2014_fpga is
+use work.user_types.all;
 
+entity RC2014_fpga is
 	port(
 		-- Z80_BUS
 		clk          : in    std_logic; -- 21
@@ -44,13 +45,10 @@ entity RC2014_fpga is
 		SD_SCLK      : out   std_logic;
 		SD_LED       : out   std_logic;
 		
+		HEX : out sseg
+		
 		-- 7 Segment Displays
-		HEX0         : out   std_logic_vector(7 downto 0);
-		HEX1         : out   std_logic_vector(7 downto 0);
-		HEX2         : out   std_logic_vector(7 downto 0);
-		HEX3         : out   std_logic_vector(7 downto 0);
-		HEX4         : out   std_logic_vector(7 downto 0);
-		HEX5         : out   std_logic_vector(7 downto 0)
+		--HEX0,HEX1,HEX2,HEX3,HEX4,HEX5 : out   std_logic_vector(7 downto 0)
 	);
 end RC2014_fpga;
 
@@ -111,6 +109,7 @@ architecture struct of RC2014_fpga is
 			douta : out std_logic_vector(7 downto 0)
 		);
 	end component;
+	
 
 begin
 	reset <= not nRESET;
@@ -125,19 +124,23 @@ begin
 			nWait   => CPU_nWAIT
 		);
 
+--	display_0 : entity work.display
+--		port map(clk => clk, reset => reset, A => CPU_A, D => CPU_D_O,
+--			hex0 => hex0, hex1 => hex1, hex2 => hex2, hex3 => hex3, hex4 => hex4, hex5 => hex5);
+		
 	sseg_unit_0 : entity work.hex_to_sseg
-		port map(clk => clk, reset => reset, hex => CPU_D_O(3 downto 0), dp => '0', sseg_o => HEX0);
+		port map(clk => clk, reset => reset, hex => CPU_D_O(3 downto 0), dp => '0', sseg_o => HEX(0));
 	sseg_unit_1 : entity work.hex_to_sseg
-		port map(clk => clk, reset => reset, hex => CPU_D_O(7 downto 4), dp => '0', sseg_o => HEX1);
+		port map(clk => clk, reset => reset, hex => CPU_D_O(7 downto 4), dp => '0', sseg_o => HEX(1));
 
 	sseg_unit_2 : entity work.hex_to_sseg
-		port map(clk => clk, reset => reset, hex => CPU_A(3 downto 0), dp => '0', sseg_o => HEX2);
+		port map(clk => clk, reset => reset, hex => CPU_A(3 downto 0), dp => '0', sseg_o => HEX(2));
 	sseg_unit_3 : entity work.hex_to_sseg
-		port map(clk => clk, reset => reset, hex => CPU_A(7 downto 4), dp => '0', sseg_o => HEX3);
+		port map(clk => clk, reset => reset, hex => CPU_A(7 downto 4), dp => '0', sseg_o => HEX(3));
 	sseg_unit_4 : entity work.hex_to_sseg
-		port map(clk => clk, reset => reset, hex => CPU_A(11 downto 8), dp => '0', sseg_o => HEX4);
+		port map(clk => clk, reset => reset, hex => CPU_A(11 downto 8), dp => '0', sseg_o => HEX(4));
 	sseg_unit_5 : entity work.hex_to_sseg
-		port map(clk => clk, reset => reset, hex => CPU_A(15 downto 12), dp => '0', sseg_o => HEX5);
+		port map(clk => clk, reset => reset, hex => CPU_A(15 downto 12), dp => '0', sseg_o => HEX(5));
 
 	-- Otherwise UART is set to 7.3728Mhz
 	clocks_inst : entity work.clocks
