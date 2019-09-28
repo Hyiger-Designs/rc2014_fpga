@@ -125,23 +125,18 @@ begin
 		);
 
 --	display_0 : entity work.display
---		port map(clk => clk, reset => reset, A => CPU_A, D => CPU_D_O,
---			hex0 => hex0, hex1 => hex1, hex2 => hex2, hex3 => hex3, hex4 => hex4, hex5 => hex5);
-		
-	sseg_unit_0 : entity work.hex_to_sseg
-		port map(clk => clk, reset => reset, hex => CPU_D_O(3 downto 0), dp => '0', sseg_o => HEX(0));
-	sseg_unit_1 : entity work.hex_to_sseg
-		port map(clk => clk, reset => reset, hex => CPU_D_O(7 downto 4), dp => '0', sseg_o => HEX(1));
+--		port map(clk => clk, reset => reset, A => CPU_A, D => CPU_D_O, hex => hex);
 
-	sseg_unit_2 : entity work.hex_to_sseg
-		port map(clk => clk, reset => reset, hex => CPU_A(3 downto 0), dp => '0', sseg_o => HEX(2));
-	sseg_unit_3 : entity work.hex_to_sseg
-		port map(clk => clk, reset => reset, hex => CPU_A(7 downto 4), dp => '0', sseg_o => HEX(3));
-	sseg_unit_4 : entity work.hex_to_sseg
-		port map(clk => clk, reset => reset, hex => CPU_A(11 downto 8), dp => '0', sseg_o => HEX(4));
-	sseg_unit_5 : entity work.hex_to_sseg
-		port map(clk => clk, reset => reset, hex => CPU_A(15 downto 12), dp => '0', sseg_o => HEX(5));
-
+	data_disp: for i in 0 to CPU_D_O'length / 4 - 1 generate
+		sseg_unit : entity work.hex_to_sseg
+			port map(clk => clk, reset => reset, hex => CPU_D_O(4 * (i + 1) - 1 downto 4 * i), dp => '0', sseg_o => HEX(i));
+	end generate data_disp;
+	
+	address_disp: for i in 0 to CPU_A'length / 4 - 1 generate
+		sseg_unit : entity work.hex_to_sseg
+			port map(clk => clk, reset => reset, hex => CPU_A(4 * (i + 1) - 1 downto 4 * i), dp => '0', sseg_o => HEX(i+2));
+	end generate address_disp;
+	
 	-- Otherwise UART is set to 7.3728Mhz
 	clocks_inst : entity work.clocks
 		PORT MAP(

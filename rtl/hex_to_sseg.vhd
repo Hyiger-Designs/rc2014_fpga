@@ -1,5 +1,6 @@
 library ieee;
 use ieee.std_logic_1164.all;
+
 entity hex_to_sseg is
 	port(
 		clk    : in  std_logic;
@@ -14,7 +15,7 @@ architecture arch of hex_to_sseg is
 	signal sseg : std_logic_vector(7 downto 0);
 begin
 
-	process(clk, reset, sseg)
+	process(clk, reset)
 	begin
 		if (reset = '1') then
 			sseg_o <= (others => '1');
