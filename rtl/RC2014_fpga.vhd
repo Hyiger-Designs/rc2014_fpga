@@ -20,11 +20,11 @@ entity RC2014_fpga is
 		clk          : in    std_logic; -- 21
 		nRESET       : in    std_logic; -- 20
 
-		nM1          : out   std_logic; -- 19
-		nMREQ        : out   std_logic; -- 23
+--		nM1          : out   std_logic; -- 19
+--		nMREQ        : out   std_logic; -- 23
 		nWR          : out   std_logic; -- 24
 		nRD          : out   std_logic; -- 25
-		nIORQ        : out   std_logic; -- 26
+--		nIORQ        : out   std_logic; -- 26
 
 		A            : out   std_logic_vector(15 downto 0); -- 1 - 16
 		D            : inout std_logic_vector(7 downto 0); -- 27 - 34
@@ -39,16 +39,12 @@ entity RC2014_fpga is
 		LED          : out   std_logic_vector(7 downto 0);
 		step_pb      : in    std_logic;
 		mode_sw      : in    std_logic;
-		SD_MOSI      : out   std_logic;
-		SD_MISO      : in    std_logic;
-		SD_CS        : out   std_logic;
-		SD_SCLK      : out   std_logic;
-		SD_LED       : out   std_logic;
-		
-		HEX : out sseg
-		
-		-- 7 Segment Displays
-		--HEX0,HEX1,HEX2,HEX3,HEX4,HEX5 : out   std_logic_vector(7 downto 0)
+--		SD_MOSI      : out   std_logic;
+--		SD_MISO      : in    std_logic;
+--		SD_CS        : out   std_logic;
+--		SD_SCLK      : out   std_logic;
+--		SD_LED       : out   std_logic;
+		HEX          : out   sseg
 	);
 end RC2014_fpga;
 
@@ -83,7 +79,9 @@ architecture struct of RC2014_fpga is
 	signal RAM_nWR : std_logic := '1';
 	signal RAM_nRD : std_logic := '1';
 	signal RAM_nCS : std_logic := '1';
-	signal RAM_WE  : std_logic;
+	signal RAM_WE  : std_logic := '0';
+	signal RAM_OE  : std_logic := '0';
+	signal RAM_CS  : std_logic := '0';
 
 	signal IO_nWR : std_logic := '1';
 	signal IO_nRD : std_logic := '1';
@@ -94,22 +92,13 @@ architecture struct of RC2014_fpga is
 	signal UART_RST : std_logic;
 	signal UART_CS  : std_logic;
 
-	signal SD_clk : std_logic;
-	signal SD_D   : std_logic_vector(7 downto 0);
-	signal SD_nCS : std_logic := '1';
-	signal SD_nWR : std_logic;
-	signal SD_nRD : std_logic;
+--	signal SD_clk : std_logic;
+--	signal SD_D   : std_logic_vector(7 downto 0);
+--	signal SD_nCS : std_logic := '1';
+--	signal SD_nWR : std_logic;
+--	signal SD_nRD : std_logic;
 
 	signal reset : std_logic := '0';
-
-	component SCM_V100_S3_SCS3_32K
-		port(
-			clka  : in  std_logic;
-			addra : in  std_logic_vector(14 downto 0);
-			douta : out std_logic_vector(7 downto 0)
-		);
-	end component;
-	
 
 begin
 	reset <= not nRESET;
@@ -124,28 +113,17 @@ begin
 			nWait   => CPU_nWAIT
 		);
 
---	display_0 : entity work.display
---		port map(clk => clk, reset => reset, A => CPU_A, D => CPU_D_O, hex => hex);
+	display_0 : entity work.display
+		port map(clk => clk, reset => reset, A => CPU_A, D => CPU_D_O, hex => hex);
 
-	data_disp: for i in 0 to CPU_D_O'length / 4 - 1 generate
-		sseg_unit : entity work.hex_to_sseg
-			port map(clk => clk, reset => reset, hex => CPU_D_O(4 * (i + 1) - 1 downto 4 * i), dp => '0', sseg_o => HEX(i));
-	end generate data_disp;
-	
-	address_disp: for i in 0 to CPU_A'length / 4 - 1 generate
-		sseg_unit : entity work.hex_to_sseg
-			port map(clk => clk, reset => reset, hex => CPU_A(4 * (i + 1) - 1 downto 4 * i), dp => '0', sseg_o => HEX(i+2));
-	end generate address_disp;
-	
-	-- Otherwise UART is set to 7.3728Mhz
+	-- CPU is 18mhz, UART is set to 7.3728Mhz
 	clocks_inst : entity work.clocks
 		PORT MAP(
 			areset => reset,
 			inclk0 => clk,
-			c0     => CPU_clk,
-			c2     => SD_clk
+			c0     => UART_clk,
+			c1     => CPU_clk
 		);
-	UART_clk <= CPU_clk;
 
 	-- T80 CPU
 	cpu : entity work.t80s
@@ -170,28 +148,29 @@ begin
 			do      => CPU_D_O
 		);
 
-	D <= UART_D when UART_nCS = '0'
-	     else SD_D when SD_nCS = '0'
-	     else ROM_D when ROM_nCS = '0'
-	     else RAM_D when RAM_nCS = '0'
-	     else CPU_D_O when CPU_nWR = '0'
-	     else (others => 'Z');
-
-	CPU_D_I <= D;
+	D <= CPU_D_O when RAM_nWR = '0' else (others => 'Z');
+	
+	CPU_D_I <= UART_D when UART_nCS = '0' 
+				  else ROM_D when ROM_nCS = '0'
+				  else RAM_D when RAM_nCS = '0'
+				  else D;
 
 	RAM_WE <= not (RAM_nWR or RAM_nCS);
+	RAM_OE <= not (RAM_nRD or RAM_nCS);
+	RAM_CS <= not RAM_nCS;
 
-	-- 64K Generic (Non vendor specific Single Port RAM)
-	ram64k : entity work.single_port_ram
-		port map(
+	ram64k : entity work.ram64k
+		PORT MAP(
+			address => CPU_A,
+			clken   => RAM_CS,
 			clock   => clk,
-			we      => RAM_WE,
-			address => CPU_A(15 downto 0),
 			data    => CPU_D_O,
+			rden    => RAM_OE,
+			wren    => RAM_WE,
 			q       => RAM_D
 		);
 
-	rom32k : SCM_V100_S3_SCS3_32K
+	rom32k : entity work.SCM_V100_S3_SCS3_32K
 		port map(
 			addra => CPU_A(14 downto 0),
 			clka  => clk,
@@ -224,27 +203,27 @@ begin
 			RTS_n    => rts             -- Request To send
 		);
 
-	SD_nWR <= SD_nCS or IO_nRD;
-	SD_nRD <= SD_nCS or IO_nWR;
-
-	sd1 : entity work.sd_controller
-		port map(
-			sdCS     => SD_CS,
-			sdMOSI   => SD_MOSI,
-			sdMISO   => SD_MISO,
-			sdSCLK   => SD_SCLK,
-			n_wr     => SD_nWR,
-			n_rd     => SD_nRD,
-			n_reset  => nRESET,
-			dataIn   => CPU_D_O,
-			dataOut  => SD_D,
-			regAddr  => CPU_A(2 downto 0),
-			driveLED => SD_LED,
-			clk      => SD_clk          -- twice the spi clk
-		);
+--	SD_nWR <= SD_nCS or IO_nRD;
+--	SD_nRD <= SD_nCS or IO_nWR;
+--
+--	sd1 : entity work.sd_controller
+--		port map(
+--			sdCS     => SD_CS,
+--			sdMOSI   => SD_MOSI,
+--			sdMISO   => SD_MISO,
+--			sdSCLK   => SD_SCLK,
+--			n_wr     => SD_nWR,
+--			n_rd     => SD_nRD,
+--			n_reset  => nRESET,
+--			dataIn   => CPU_D_O,
+--			dataOut  => SD_D,
+--			regAddr  => CPU_A(2 downto 0),
+--			driveLED => SD_LED,
+--			clk      => SD_clk          -- twice the spi clk
+--		);
 
 	-- Select SD Card 8 Bytes $88-$8F 10001---
-	SD_nCS <= '0' when CPU_A(7 downto 3) = "10001" and (IO_nWR = '0' or IO_nRD = '0') else '1';
+--	SD_nCS <= '0' when CPU_A(7 downto 3) = "10001" and (IO_nWR = '0' or IO_nRD = '0') else '1';
 
 	-- Select Serial Channel A - 2 Bytes $80-$81
 	UART_nCS <= '0' when CPU_A(7 downto 1) = "1000000" and (IO_nWR = '0' or IO_nRD = '0') else '1';
@@ -285,10 +264,10 @@ begin
 	IO_nWR <= CPU_nWR or CPU_nIORQ;
 
 	A     <= CPU_A;
-	nM1   <= CPU_nM1;
-	nMREQ <= CPU_nMREQ;
+--	nM1   <= CPU_nM1;
+--	nMREQ <= CPU_nMREQ;
 	nWR   <= CPU_nWR;
 	nRD   <= CPU_nRD;
-	nIORQ <= CPU_nIORQ;
+--	nIORQ <= CPU_nIORQ;
 
 end;

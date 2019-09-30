@@ -26,7 +26,7 @@ BEGIN
 	S <= '1';
 
 	mode <= mode_sw;
-	
+
 	m1_pulse_gen : entity work.pulse_generator
 		port map(
 			clk   => clk,
@@ -45,8 +45,7 @@ BEGIN
 			step <= D;
 		END IF;
 	END PROCESS;
-	
-	nWait <= NOT (mode AND not step);
 
+	nWait <= NOT (mode AND not step);
 
 END rtl;

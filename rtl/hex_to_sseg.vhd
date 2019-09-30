@@ -23,9 +23,9 @@ begin
 			sseg_o <= sseg;
 		end if;
 	end process;
-	
+
 	with hex select sseg(6 downto 0) <=
-		"1000000" when "0000",	
+		"1000000" when "0000",
 		"1111001" when "0001",	
 		"0100100" when "0010",	
 		"0110000" when "0011",	
@@ -41,7 +41,7 @@ begin
 		"0100001" when "1101",	
 		"0000110" when "1110",	
 		"0001110" when "1111";
-		
+
 	-- decimal point
 	sseg(7) <= not dp;
 end arch;
