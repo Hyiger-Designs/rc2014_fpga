@@ -22,6 +22,8 @@ entity RC2014_fpga is
 
 --		nM1          : out   std_logic; -- 19
 --		nMREQ        : out   std_logic; -- 23
+		ROM_nCE		 : out std_logic;
+		RAM_nCE		 : out std_logic;
 		nWR          : out   std_logic; -- 24
 		nRD          : out   std_logic; -- 25
 --		nIORQ        : out   std_logic; -- 26
@@ -117,12 +119,10 @@ begin
 		port map(clk => clk, reset => reset, A => CPU_A, D => CPU_D_O, hex => hex);
 
 	-- CPU is 18mhz, UART is set to 7.3728Mhz
-	clocks_inst : entity work.clocks
+	clocks_inst : entity work.fracn_73728
 		PORT MAP(
-			areset => reset,
-			inclk0 => clk,
-			c0     => UART_clk,
-			c1     => CPU_clk
+			clock     => clk,
+			output_50 => CPU_clk
 		);
 
 	-- T80 CPU
@@ -159,6 +159,9 @@ begin
 	RAM_OE <= not (RAM_nRD or RAM_nCS);
 	RAM_CS <= not RAM_nCS;
 
+	RAM_nCE <= RAM_nCS;
+	ROM_nCE <= ROM_nCS;
+	
 	ram64k : entity work.ram64k
 		PORT MAP(
 			address => CPU_A,
