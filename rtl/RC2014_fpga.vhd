@@ -16,20 +16,24 @@ use work.user_types.all;
 entity RC2014_fpga is
 	port(
 		-- Z80_BUS
-		clk          : in    std_logic; -- 21
-		nRESET       : in    std_logic; -- 20
+		clk          : in    std_logic; -- 
+		nRESET_PB	 : in    std_logic;
+		nRESET       : out    std_logic; -- 2
+		
+		RAM_nCE      : out   std_logic; -- 4
+		ROM_nCE      : out   std_logic; -- 38
+		IDE_nCE      : out   std_logic; -- 40
+		nRD          : out   std_logic; -- 19
+		nWR          : out   std_logic; -- 20
 
-		RAM_nCE      : out   std_logic; -- 24
-		nOE          : out   std_logic; -- 25
-		nWE          : out   std_logic; -- 25
-
-		A            : out   std_logic_vector(18 downto 0); -- 1 - 16
-		D            : inout std_logic_vector(7 downto 0); -- 27 - 34
+		A            : out   std_logic_vector(18 downto 0); -- 5-10,13-18,31-37
+		D            : inout std_logic_vector(7 downto 0); -- 21-28
 
 		-- UART/FTDI
-		RTS          : out   std_logic;
-		TX           : out   std_logic; -- 35
-		RX           : in    std_logic; -- 36
+		nRTS         : out   std_logic; -- a2-5
+		nCTS         : in    std_logic; -- a2-6
+		TX           : out   std_logic; -- a2-7
+		RX           : in    std_logic; -- a2-8
 
 		-- FPGA Board specific pins
 		rom_page_led : out   std_logic;
@@ -72,13 +76,9 @@ architecture struct of RC2014_fpga is
 	signal ROM_nCS : std_logic := '1';
 	signal nPage   : std_logic := '0';
 
-	signal RAM_D   : std_logic_vector(7 downto 0);
-	signal RAM_nWR : std_logic := '1';
-	signal RAM_nRD : std_logic := '1';
+	signal MEM_nWR : std_logic := '1';
+	signal MEM_nRD : std_logic := '1';
 	signal RAM_nCS : std_logic := '1';
-	signal RAM_WE  : std_logic;
-	signal RAM_OE  : std_logic;
-	signal RAM_CS  : std_logic;
 
 	signal IO_nWR : std_logic := '1';
 	signal IO_nRD : std_logic := '1';
@@ -86,7 +86,6 @@ architecture struct of RC2014_fpga is
 	signal UART_clk : std_logic;
 	signal UART_D   : std_logic_vector(7 downto 0);
 	signal UART_nCS : std_logic := '1';
-	signal UART_RST : std_logic;
 	signal UART_CS  : std_logic;
 
 	--	signal SD_clk : std_logic;
@@ -98,7 +97,7 @@ architecture struct of RC2014_fpga is
 	signal reset : std_logic := '0';
 
 begin
-	reset <= not nRESET;
+	reset <= not nRESET_PB;
 
 	stepper : ENTITY work.single_step
 		PORT MAP(
@@ -113,33 +112,24 @@ begin
 	display_0 : entity work.display
 		port map(clk => clk, reset => reset, A => CPU_A, D => CPU_D_O, HEX => HEX);
 
-	-- CPU is 18mhz, UART is set to 7.3728Mhz
---	clocks_inst : entity work.clocks
---		PORT MAP(
---			areset => reset,
---			inclk0 => clk,
---			c0     => UART_clk,
---			c1     => CPU_clk
---		);
-
 	clock_inst : entity work.fracn_73728
 		port map(
-			clock => clk,
+			clock     => clk,
 			output_50 => CPU_clk
 		);
-		
+
 	UART_clk <= CPU_clk;
 
-	--CPU_nINT  <= '1';
 	CPU_nNMI   <= '1';
 	CPU_nBUSRQ <= '1';
-	--CPU_nWAIT  <= '1';
 
+	IDE_nCE <= '0';
+	
 	-- T80 CPU
 	cpu : entity work.T80s
 		generic map(Mode => 1, T2Write => 1, IOWait => 0)
 		port map(
-			RESET_n => nRESET,
+			RESET_n => nRESET_PB,
 			CLK_n   => CPU_clk,
 			WAIT_n  => CPU_nWAIT,
 			INT_n   => CPU_nINT,
@@ -159,48 +149,32 @@ begin
 		);
 
 	A <= "000" & CPU_A;
-	D <= CPU_D_O when RAM_nWR = '0'
-		else (others => 'Z');
+	D <= CPU_D_O when MEM_nWR = '0' else (others => 'Z');
 
 	CPU_D_I <= UART_D when UART_nCS = '0'
-	           else ROM_D when ROM_nCS = '0'
-	           else D when RAM_nCS = '0'
+				  else ROM_D when ROM_nCS = '0'
+	           else D when RAM_nCS = '0' -- or ROM_nCS = '0'
 	           else x"FF";
 
-	nWE     <= RAM_nWR or RAM_nCS;
-	nOE     <= RAM_nRD or RAM_nCS;
+	nWR     <= MEM_nWR;
+	nRD     <= MEM_nRD;
 	RAM_nCE <= RAM_nCS;
-
-	--	RAM_WE <= not (RAM_nWR or RAM_nCS);
-	--	RAM_OE <= not (RAM_nRD or RAM_nCS);
-	--	RAM_CS <= not RAM_nCS;
-
-	--	ram64k : entity work.ram64k
-	--		PORT MAP(
-	--			address => CPU_A,
-	--			clken   => RAM_CS,
-	--			clock   => clk,
-	--			data    => CPU_D_O,
-	--			rden    => RAM_OE,
-	--			wren    => RAM_WE,
-	--			q       => RAM_D
-	--		);
+	ROM_nCE <= ROM_nCS;
 
 	rom32k : entity work.SCM_V100_S3_SCS3_32K
 		port map(
-			addra => CPU_A(14 downto 0),
-			clka  => clk,
-			douta => ROM_D
+			address => CPU_A(14 downto 0),
+			rden => RAM_nCS,
+			clock  => clk,
+			q => ROM_D
 		);
 
-
-	UART_RST <= not nRESET;
 	UART_CS  <= not UART_nCS;
 
 	uart1 : entity work.acia6850
 		port map(
 			clk      => clk,            -- System Clock
-			rst      => UART_RST,       -- Reset input (active high)
+			rst      => reset,       -- Reset input (active high)
 			cs       => UART_CS,        -- miniUART Chip Select
 			addr     => CPU_A(0),       -- Register Select
 			rw       => CPU_nWR,        -- Read / Not Write  1 - Read, 0 - Write
@@ -213,8 +187,8 @@ begin
 			RxD      => RX,             -- Receive Data
 			TxD      => TX,             -- Transmit Data
 			DCD_n    => '0',            -- Data Carrier Detect
-			CTS_n    => '0',            -- Clear To Send
-			RTS_n    => RTS             -- Request To send
+			CTS_n    => nCTS,           -- Clear To Send
+			RTS_n    => nRTS            -- Request To send
 		);
 
 	--	SD_nWR <= SD_nCS or IO_nRD;
@@ -243,9 +217,9 @@ begin
 	UART_nCS <= '0' when CPU_A(7 downto 1) = "1000000" and (IO_nWR = '0' or IO_nRD = '0') else '1';
 
 	-- Write to LED's at port 0
-	leds : process(nRESET, clk)
+	leds : process(nRESET_PB, clk)
 	begin
-		if (nRESET = '0') then
+		if (nRESET_PB = '0') then
 			LED <= (others => '0');
 		elsif (rising_edge(clk)) then
 			if IO_nWR = '0' and CPU_A(7 downto 0) = x"00" then
@@ -255,9 +229,9 @@ begin
 	end process;
 
 	-- Handle paging out ROM at port 0x38
-	process(nRESET, clk)
+	process(nRESET_PB, clk)
 	begin
-		if (nRESET = '0') then
+		if (nRESET_PB = '0') then
 			nPage <= '0';
 		elsif (rising_edge(clk)) then
 			if IO_nWR = '0' and CPU_A(7 downto 0) = x"38" then
@@ -268,23 +242,17 @@ begin
 
 	rom_page_led <= nPage;
 
-	RAM_nRD <= CPU_nRD or CPU_nMREQ;
-	RAM_nWR <= CPU_nWR or CPU_nMREQ;
+	MEM_nRD <= CPU_nRD or CPU_nMREQ;
+	MEM_nWR <= CPU_nWR or CPU_nMREQ;
 
 	IO_nRD <= CPU_nRD or CPU_nIORQ;
 	IO_nWR <= CPU_nWR or CPU_nIORQ;
-	
+
 	-- Control Bus
 	-- ROM located from 0000-7FFF
 	ROM_nCS <= '0' when CPU_A(15) = '0' and nPage = '0' else '1';
 	RAM_nCS <= not ROM_nCS;
 
-
-
-	--	nM1   <= CPU_nM1;
-	--	nMREQ <= CPU_nMREQ;
-	--	nWR   <= CPU_nWR;
-	--	nRD   <= CPU_nRD;
-	--	nIORQ <= CPU_nIORQ;
+	nRESET <= nRESET_PB;
 
 end;
