@@ -51,10 +51,10 @@ begin
 		-- Reset for 3 clock cycles
 		reset <= '1', '0' after clock_period * 2;
 		wait for clock_period * 2;
-		
+
 		nM1 <= '1', '0' after clock_period * 2;
 		wait for clock_period * 2;
-		
+
 		step_pb <= '1', '0' after clock_period * 2;
 		wait for clock_period * 8;
 

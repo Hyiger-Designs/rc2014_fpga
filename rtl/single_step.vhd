@@ -1,8 +1,6 @@
 LIBRARY ieee;
 USE ieee.std_logic_1164.all;
 
-LIBRARY work;
-
 ENTITY single_step IS
 	PORT(
 		clk     : in  std_logic;
@@ -29,10 +27,10 @@ BEGIN
 
 	m1_pulse_gen : entity work.pulse_generator
 		port map(
-			clk   => clk,
-			reset => reset,
-			trig  => nM1,
-			pulse => m1_pulse
+			CLK   => clk,
+			RESET => reset,
+			TRIG  => nM1,
+			PULSE => m1_pulse
 		);
 
 	PROCESS(step_pb, m1_pulse, S)

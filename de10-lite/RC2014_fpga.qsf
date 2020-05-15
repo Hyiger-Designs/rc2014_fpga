@@ -18,8 +18,8 @@
 # -------------------------------------------------------------------------- #
 #
 # Quartus Prime
-# Version 18.1.1 Build 646 04/11/2019 SJ Lite Edition
-# Date created = 23:45:55  October 17, 2019
+# Version 19.1.0 Build 670 09/22/2019 SJ Lite Edition
+# Date created = 22:07:58  April 24, 2020
 #
 # -------------------------------------------------------------------------- #
 #
@@ -40,7 +40,7 @@
 
 # Project-Wide Assignments
 # ========================
-set_global_assignment -name LAST_QUARTUS_VERSION "18.1.1 Lite Edition"
+set_global_assignment -name LAST_QUARTUS_VERSION "19.1.0 Lite Edition"
 set_global_assignment -name PROJECT_CREATION_TIME_DATE "18:33:33 MARCH 07,2019"
 set_global_assignment -name PROJECT_OUTPUT_DIRECTORY output_files
 set_global_assignment -name SMART_RECOMPILE OFF
@@ -48,8 +48,8 @@ set_global_assignment -name SMART_RECOMPILE OFF
 # Pin & Location Assignments
 # ==========================
 set_location_assignment PIN_P11 -to clk
-set_location_assignment PIN_W10 -to nRESET
-set_location_assignment PIN_B8 -to nRESET_PB
+set_location_assignment PIN_W10 -to nRESET_EXT
+set_location_assignment PIN_B8 -to nRESET
 set_location_assignment PIN_AB7 -to nRTS
 set_location_assignment PIN_AB8 -to nCTS
 set_location_assignment PIN_AB6 -to TX
@@ -65,54 +65,54 @@ set_location_assignment PIN_D14 -to LED[7]
 set_location_assignment PIN_B11 -to rom_page_led
 set_location_assignment PIN_A7 -to step_pb
 set_location_assignment PIN_C10 -to mode_sw
-set_location_assignment PIN_C14 -to HEX[0][0]
-set_location_assignment PIN_E15 -to HEX[0][1]
-set_location_assignment PIN_C15 -to HEX[0][2]
-set_location_assignment PIN_C16 -to HEX[0][3]
-set_location_assignment PIN_E16 -to HEX[0][4]
-set_location_assignment PIN_D17 -to HEX[0][5]
-set_location_assignment PIN_C17 -to HEX[0][6]
-set_location_assignment PIN_D15 -to HEX[0][7]
-set_location_assignment PIN_C18 -to HEX[1][0]
-set_location_assignment PIN_D18 -to HEX[1][1]
-set_location_assignment PIN_E18 -to HEX[1][2]
-set_location_assignment PIN_B16 -to HEX[1][3]
-set_location_assignment PIN_A17 -to HEX[1][4]
-set_location_assignment PIN_A18 -to HEX[1][5]
-set_location_assignment PIN_B17 -to HEX[1][6]
-set_location_assignment PIN_A16 -to HEX[1][7]
-set_location_assignment PIN_B20 -to HEX[2][0]
-set_location_assignment PIN_A20 -to HEX[2][1]
-set_location_assignment PIN_B19 -to HEX[2][2]
-set_location_assignment PIN_A21 -to HEX[2][3]
-set_location_assignment PIN_B21 -to HEX[2][4]
-set_location_assignment PIN_C22 -to HEX[2][5]
-set_location_assignment PIN_B22 -to HEX[2][6]
-set_location_assignment PIN_A19 -to HEX[2][7]
-set_location_assignment PIN_F21 -to HEX[3][0]
-set_location_assignment PIN_E22 -to HEX[3][1]
-set_location_assignment PIN_E21 -to HEX[3][2]
-set_location_assignment PIN_C19 -to HEX[3][3]
-set_location_assignment PIN_C20 -to HEX[3][4]
-set_location_assignment PIN_D19 -to HEX[3][5]
-set_location_assignment PIN_E17 -to HEX[3][6]
-set_location_assignment PIN_D22 -to HEX[3][7]
-set_location_assignment PIN_F18 -to HEX[4][0]
-set_location_assignment PIN_E20 -to HEX[4][1]
-set_location_assignment PIN_E19 -to HEX[4][2]
-set_location_assignment PIN_J18 -to HEX[4][3]
-set_location_assignment PIN_H19 -to HEX[4][4]
-set_location_assignment PIN_F19 -to HEX[4][5]
-set_location_assignment PIN_F20 -to HEX[4][6]
-set_location_assignment PIN_F17 -to HEX[4][7]
-set_location_assignment PIN_J20 -to HEX[5][0]
-set_location_assignment PIN_K20 -to HEX[5][1]
-set_location_assignment PIN_L18 -to HEX[5][2]
-set_location_assignment PIN_N18 -to HEX[5][3]
-set_location_assignment PIN_M20 -to HEX[5][4]
-set_location_assignment PIN_N19 -to HEX[5][5]
-set_location_assignment PIN_N20 -to HEX[5][6]
-set_location_assignment PIN_L19 -to HEX[5][7]
+set_location_assignment PIN_C14 -to DISP[0][0]
+set_location_assignment PIN_E15 -to DISP[0][1]
+set_location_assignment PIN_C15 -to DISP[0][2]
+set_location_assignment PIN_C16 -to DISP[0][3]
+set_location_assignment PIN_E16 -to DISP[0][4]
+set_location_assignment PIN_D17 -to DISP[0][5]
+set_location_assignment PIN_C17 -to DISP[0][6]
+set_location_assignment PIN_D15 -to DISP[0][7]
+set_location_assignment PIN_C18 -to DISP[1][0]
+set_location_assignment PIN_D18 -to DISP[1][1]
+set_location_assignment PIN_E18 -to DISP[1][2]
+set_location_assignment PIN_B16 -to DISP[1][3]
+set_location_assignment PIN_A17 -to DISP[1][4]
+set_location_assignment PIN_A18 -to DISP[1][5]
+set_location_assignment PIN_B17 -to DISP[1][6]
+set_location_assignment PIN_A16 -to DISP[1][7]
+set_location_assignment PIN_B20 -to DISP[2][0]
+set_location_assignment PIN_A20 -to DISP[2][1]
+set_location_assignment PIN_B19 -to DISP[2][2]
+set_location_assignment PIN_A21 -to DISP[2][3]
+set_location_assignment PIN_B21 -to DISP[2][4]
+set_location_assignment PIN_C22 -to DISP[2][5]
+set_location_assignment PIN_B22 -to DISP[2][6]
+set_location_assignment PIN_A19 -to DISP[2][7]
+set_location_assignment PIN_F21 -to DISP[3][0]
+set_location_assignment PIN_E22 -to DISP[3][1]
+set_location_assignment PIN_E21 -to DISP[3][2]
+set_location_assignment PIN_C19 -to DISP[3][3]
+set_location_assignment PIN_C20 -to DISP[3][4]
+set_location_assignment PIN_D19 -to DISP[3][5]
+set_location_assignment PIN_E17 -to DISP[3][6]
+set_location_assignment PIN_D22 -to DISP[3][7]
+set_location_assignment PIN_F18 -to DISP[4][0]
+set_location_assignment PIN_E20 -to DISP[4][1]
+set_location_assignment PIN_E19 -to DISP[4][2]
+set_location_assignment PIN_J18 -to DISP[4][3]
+set_location_assignment PIN_H19 -to DISP[4][4]
+set_location_assignment PIN_F19 -to DISP[4][5]
+set_location_assignment PIN_F20 -to DISP[4][6]
+set_location_assignment PIN_F17 -to DISP[4][7]
+set_location_assignment PIN_J20 -to DISP[5][0]
+set_location_assignment PIN_K20 -to DISP[5][1]
+set_location_assignment PIN_L18 -to DISP[5][2]
+set_location_assignment PIN_N18 -to DISP[5][3]
+set_location_assignment PIN_M20 -to DISP[5][4]
+set_location_assignment PIN_N19 -to DISP[5][5]
+set_location_assignment PIN_N20 -to DISP[5][6]
+set_location_assignment PIN_L19 -to DISP[5][7]
 set_location_assignment PIN_Y5 -to A[15]
 set_location_assignment PIN_AA6 -to A[14]
 set_location_assignment PIN_Y6 -to A[13]
@@ -223,9 +223,9 @@ set_global_assignment -name OUTPUT_IO_TIMING_FAR_END_VMEAS "HALF SIGNAL SWING" -
 
 	# EDA Netlist Writer Assignments
 	# ==============================
-set_global_assignment -name EDA_DESIGN_INSTANCE_NAME NA -section_id single_step
-set_global_assignment -name EDA_TEST_BENCH_MODULE_NAME single_step_tb -section_id single_step
-set_global_assignment -name EDA_TEST_BENCH_FILE ../test/single_step_tb.vhd -section_id single_step
+	set_global_assignment -name EDA_DESIGN_INSTANCE_NAME NA -section_id single_step
+	set_global_assignment -name EDA_TEST_BENCH_MODULE_NAME single_step_tb -section_id single_step
+	set_global_assignment -name EDA_TEST_BENCH_FILE ../test/single_step_tb.vhd -section_id single_step
 
 # end EDA_TEST_BENCH_SETTINGS(single_step)
 # ----------------------------------------
@@ -235,11 +235,11 @@ set_global_assignment -name EDA_TEST_BENCH_FILE ../test/single_step_tb.vhd -sect
 
 	# EDA Netlist Writer Assignments
 	# ==============================
-set_global_assignment -name EDA_TIME_SCALE "1 ps" -section_id eda_simulation
-set_global_assignment -name EDA_OUTPUT_DATA_FORMAT VHDL -section_id eda_simulation
-set_global_assignment -name EDA_TEST_BENCH_ENABLE_STATUS TEST_BENCH_MODE -section_id eda_simulation
-set_global_assignment -name EDA_NATIVELINK_SIMULATION_TEST_BENCH single_step -section_id eda_simulation
-set_global_assignment -name EDA_TEST_BENCH_NAME single_step -section_id eda_simulation
+	set_global_assignment -name EDA_TIME_SCALE "1 ps" -section_id eda_simulation
+	set_global_assignment -name EDA_OUTPUT_DATA_FORMAT VHDL -section_id eda_simulation
+	set_global_assignment -name EDA_TEST_BENCH_ENABLE_STATUS TEST_BENCH_MODE -section_id eda_simulation
+	set_global_assignment -name EDA_NATIVELINK_SIMULATION_TEST_BENCH single_step -section_id eda_simulation
+	set_global_assignment -name EDA_TEST_BENCH_NAME single_step -section_id eda_simulation
 
 # end EDA_TOOL_SETTINGS(eda_simulation)
 # -------------------------------------
@@ -249,30 +249,29 @@ set_global_assignment -name EDA_TEST_BENCH_NAME single_step -section_id eda_simu
 
 	# Fitter Assignments
 	# ==================
-set_instance_assignment -name WEAK_PULL_UP_RESISTOR ON -to RX
-set_instance_assignment -name GLOBAL_SIGNAL GLOBAL_CLOCK -to clk
-set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to nRESET
-set_instance_assignment -name IO_STANDARD "3.3 V SCHMITT TRIGGER" -to step_pb
-set_instance_assignment -name IO_STANDARD "3.3 V SCHMITT TRIGGER" -to nRESET_PB
+	set_instance_assignment -name WEAK_PULL_UP_RESISTOR ON -to RX
+	set_instance_assignment -name GLOBAL_SIGNAL GLOBAL_CLOCK -to clk
+	set_instance_assignment -name IO_STANDARD "3.3 V SCHMITT TRIGGER" -to step_pb
+	set_instance_assignment -name IO_STANDARD "3.3 V SCHMITT TRIGGER" -to nRESET
 
 	# start DESIGN_PARTITION(Top)
 	# ---------------------------
 
 		# Incremental Compilation Assignments
 		# ===================================
-set_global_assignment -name PARTITION_NETLIST_TYPE SOURCE -section_id Top
-set_global_assignment -name PARTITION_FITTER_PRESERVATION_LEVEL PLACEMENT_AND_ROUTING -section_id Top
-set_global_assignment -name PARTITION_COLOR 16764057 -section_id Top
+		set_global_assignment -name PARTITION_NETLIST_TYPE SOURCE -section_id Top
+		set_global_assignment -name PARTITION_FITTER_PRESERVATION_LEVEL PLACEMENT_AND_ROUTING -section_id Top
+		set_global_assignment -name PARTITION_COLOR 16764057 -section_id Top
 
 	# end DESIGN_PARTITION(Top)
 	# -------------------------
 
 # end ENTITY(RC2014_fpga)
 # -----------------------
+set_global_assignment -name VHDL_FILE ../rtl/fracn_10.vhd
 set_global_assignment -name VHDL_FILE ../rtl/fracn_73728.vhd
 set_global_assignment -name VHDL_FILE ../rtl/hex_to_sseg.vhd
 set_global_assignment -name VHDL_FILE ../rtl/single_step.vhd
-set_global_assignment -name VHDL_FILE SCM_V100_S3_SCS3_32K.vhd
 set_global_assignment -name SDC_FILE RC2014_fpga.sdc
 set_global_assignment -name VHDL_FILE ../rtl/T80/T80s.vhd
 set_global_assignment -name VHDL_FILE ../rtl/T80/T80_Reg.vhd
@@ -290,7 +289,8 @@ set_global_assignment -name VHDL_FILE ../rtl/pulse_generator.vhd
 set_global_assignment -name VHDL_FILE ../test/single_step_tb.vhd
 set_global_assignment -name VHDL_FILE ../rtl/display.vhd
 set_global_assignment -name VHDL_FILE ../rtl/user_types.vhd
-set_global_assignment -name SIGNALTAP_FILE stp1.stp
 set_global_assignment -name SMF_FILE RC2014_fpga.smf
-set_global_assignment -name QIP_FILE SCM_V100_S3_SCS3_32K.qip
+set_global_assignment -name VHDL_FILE ../rtl/DPRAM.vhd
+set_global_assignment -name VHDL_FILE ../rtl/RAM_ROM_Pager.vhd
+set_global_assignment -name VHDL_FILE ../rtl/gen_register.vhd
 set_instance_assignment -name PARTITION_HIERARCHY root_partition -to | -section_id Top
